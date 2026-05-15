@@ -1,0 +1,1661 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Giáo trình homeschooling hè 2 tháng cho trẻ 5-7 tuổi và 10-12 tuổi, có lịch từng ngày từng giờ, checklist và rubric.">
+  <title>Giáo trình homeschooling hè 2 tháng</title>
+  <link rel="icon" href="logo.jpg">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f8fb;
+      --paper: rgba(255, 255, 255, 0.92);
+      --paper-solid: #ffffff;
+      --text: #1d1d1f;
+      --muted: #74777d;
+      --line: rgba(0, 0, 0, 0.08);
+      --line-strong: rgba(0, 0, 0, 0.14);
+      --brand-blue: #116ad8;
+      --brand-blue-dark: #0759bc;
+      --brand-blue-soft: #eaf3ff;
+      --brand-gray: #7a7d82;
+      --brand-gray-soft: #eef1f5;
+      --blue: var(--brand-blue);
+      --blue-soft: var(--brand-blue-soft);
+      --green: #1d8f5f;
+      --amber: #b25b00;
+      --shadow: 0 18px 60px rgba(17, 106, 216, 0.08), 0 1px 1px rgba(0, 0, 0, 0.04);
+      --radius: 8px;
+      --content: 980px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 20rem, var(--bg) 100%);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.62;
+    }
+
+    a { color: inherit; }
+
+    .app-shell {
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 22px;
+      border-right: 1px solid var(--line);
+      background: rgba(247, 249, 252, 0.86);
+      -webkit-backdrop-filter: saturate(180%) blur(22px);
+      backdrop-filter: saturate(180%) blur(22px);
+      overflow: auto;
+    }
+
+    .brand {
+      padding: 10px 8px 18px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 16px;
+    }
+
+    .brand-mark {
+      display: grid;
+      grid-template-columns: 78px minmax(0, 1fr);
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .brand-logo {
+      display: block;
+      width: 78px;
+      height: 72px;
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px;
+      box-shadow: 0 8px 26px rgba(17, 106, 216, 0.08);
+    }
+
+    .brand-name {
+      min-width: 0;
+      color: var(--brand-blue);
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 820;
+      letter-spacing: 0;
+    }
+
+    .brand-tagline {
+      margin-top: 4px;
+      color: var(--brand-gray);
+      font-size: 12px;
+      line-height: 1.3;
+      font-weight: 560;
+    }
+
+    .brand-kicker {
+      color: var(--brand-blue);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-title {
+      margin: 8px 0 6px;
+      font-size: 22px;
+      line-height: 1.12;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    .brand-subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .search-panel {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      padding: 0 0 14px;
+      background: linear-gradient(180deg, rgba(247, 249, 252, 0.98), rgba(247, 249, 252, 0.84));
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 42px;
+      padding: 0 13px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset, 0 6px 24px rgba(17,106,216,0.04);
+    }
+
+    .search-box svg {
+      flex: 0 0 auto;
+      color: var(--muted);
+    }
+
+    .search-box input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      font: inherit;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .search-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .toc {
+      display: grid;
+      gap: 2px;
+      padding-bottom: 28px;
+    }
+
+    .toc-link {
+      display: block;
+      border-radius: var(--radius);
+      color: #424245;
+      font-size: 13px;
+      line-height: 1.32;
+      text-decoration: none;
+      padding: 8px 10px;
+    }
+
+    .toc-link:hover,
+    .toc-link.is-active {
+      background: rgba(17, 106, 216, 0.09);
+      color: var(--brand-blue);
+    }
+
+    .toc-l1 { display: none; }
+    .toc-l2 { font-weight: 720; margin-top: 8px; }
+    .toc-l3 { padding-left: 20px; font-weight: 620; }
+    .toc-l4 { padding-left: 34px; color: var(--muted); font-size: 12px; }
+
+    .content-wrap {
+      min-width: 0;
+      padding: 34px 38px 80px;
+    }
+
+    .hero {
+      max-width: var(--content);
+      margin: 0 auto 22px;
+      padding: 42px 0 28px;
+      border-bottom: 1px solid rgba(17, 106, 216, 0.14);
+    }
+
+    .hero-eyebrow {
+      margin: 0 0 10px;
+      color: var(--brand-blue);
+      font-size: 13px;
+      font-weight: 760;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(36px, 5vw, 68px);
+      line-height: 0.98;
+      font-weight: 820;
+      letter-spacing: 0;
+    }
+
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .hero-logo {
+      width: 132px;
+      height: 92px;
+      object-fit: contain;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 14px 40px rgba(17, 106, 216, 0.10);
+    }
+
+    .hero-brand-copy {
+      color: var(--brand-gray);
+      font-size: 15px;
+      line-height: 1.45;
+      max-width: 460px;
+    }
+
+    .hero-brand-copy strong {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--brand-blue);
+      font-size: 18px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: #424245;
+      font-size: 19px;
+      line-height: 1.48;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      min-height: 94px;
+      padding: 16px;
+      border: 1px solid rgba(17, 106, 216, 0.12);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(250,253,255,0.88));
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      color: var(--brand-gray);
+      font-size: 13px;
+      line-height: 1.32;
+    }
+
+    .quick-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: var(--content);
+      margin: 0 auto 22px;
+    }
+
+    .action-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: 40px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.8);
+      color: #1d1d1f;
+      font-size: 14px;
+      font-weight: 620;
+      text-decoration: none;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .action-button:hover { border-color: rgba(17,106,216,0.35); color: var(--brand-blue); }
+
+    main.document {
+      max-width: var(--content);
+      margin: 0 auto;
+      padding: 28px 42px 56px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.97), rgba(255,255,255,0.92));
+      box-shadow: var(--shadow);
+    }
+
+    .title {
+      display: none;
+    }
+
+    h2, h3, h4 {
+      scroll-margin-top: 24px;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 54px 0 16px;
+      padding-top: 8px;
+      font-size: 34px;
+      line-height: 1.12;
+      font-weight: 800;
+    }
+
+    h2:first-child { margin-top: 12px; }
+
+    h3 {
+      margin: 36px 0 12px;
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 760;
+    }
+
+    h4 {
+      margin: 28px 0 12px;
+      padding: 14px 16px;
+      border: 1px solid rgba(17, 106, 216, 0.15);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(234, 243, 255, 0.94), rgba(255, 255, 255, 0.76));
+      color: #0a4f9c;
+      font-size: 18px;
+      line-height: 1.28;
+      font-weight: 740;
+    }
+
+    p {
+      margin: 12px 0;
+      color: #2b2b2d;
+    }
+
+    strong { font-weight: 740; }
+
+    ul, ol {
+      margin: 12px 0 18px;
+      padding-left: 1.3rem;
+    }
+
+    li {
+      margin: 7px 0;
+      padding-left: 2px;
+    }
+
+    code {
+      padding: 2px 6px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #f5f5f7;
+      font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+    }
+
+    .table-wrap {
+      width: 100%;
+      margin: 18px 0 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: auto;
+      background: var(--paper-solid);
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.04);
+    }
+
+    table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #fbfbfd;
+      color: #1d1d1f;
+      font-weight: 740;
+      text-align: left;
+      border-bottom: 1px solid var(--line-strong);
+    }
+
+    th, td {
+      padding: 12px 14px;
+      vertical-align: top;
+      border-right: 1px solid var(--line);
+    }
+
+    th:last-child, td:last-child { border-right: 0; }
+
+    tr + tr td { border-top: 1px solid var(--line); }
+    tbody tr:nth-child(even) td { background: rgba(245, 245, 247, 0.48); }
+
+    .section-title + .week-title,
+    .week-title + p {
+      margin-top: 12px;
+    }
+
+    .week-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 13px;
+      border: 1px solid rgba(17, 106, 216, 0.16);
+      border-radius: var(--radius);
+      background: rgba(234, 243, 255, 0.82);
+      color: var(--brand-blue-dark);
+      font-size: 20px;
+    }
+
+    .subsection-title {
+      color: #1d1d1f;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    mark.search-hit {
+      padding: 0 3px;
+      border-radius: 5px;
+      background: #fff2a8;
+      color: inherit;
+    }
+
+    .mobile-topbar {
+      display: none;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 58px;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(247, 249, 252, 0.88);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      backdrop-filter: saturate(180%) blur(20px);
+    }
+
+    .mobile-topbar button,
+    .print-button {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.86);
+      color: var(--text);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 650;
+      padding: 9px 13px;
+      cursor: pointer;
+    }
+
+    .empty-state {
+      display: none;
+      padding: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 1080px) {
+      .app-shell { grid-template-columns: 1fr; }
+      .mobile-topbar { display: flex; }
+      .sidebar {
+        position: fixed;
+        inset: 58px auto 0 0;
+        z-index: 20;
+        width: min(88vw, 340px);
+        transform: translateX(-104%);
+        transition: transform 180ms ease;
+        box-shadow: 20px 0 60px rgba(0,0,0,0.18);
+      }
+      body.nav-open .sidebar { transform: translateX(0); }
+      .content-wrap { padding: 18px 16px 56px; }
+      .hero { padding: 28px 0 22px; }
+      .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      main.document { padding: 22px 20px 42px; border-radius: var(--radius); }
+      h2 { font-size: 28px; }
+      h3 { font-size: 22px; }
+    }
+
+    @media (max-width: 620px) {
+      body { font-size: 15px; }
+      .hero { padding: 24px 20px; }
+      .hero h1 { font-size: 38px; }
+      .hero p { font-size: 16px; }
+      .hero-brand { align-items: flex-start; gap: 12px; }
+      .hero-logo { width: 96px; height: 72px; }
+      .hero-brand-copy { font-size: 13px; }
+      .hero-stats { grid-template-columns: 1fr; }
+      .stat { min-height: 78px; }
+      .quick-actions { gap: 8px; }
+      .action-button { width: 100%; justify-content: center; }
+      table { min-width: 780px; font-size: 13px; }
+      th, td { padding: 10px 11px; }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+      }
+      .sidebar, .mobile-topbar, .quick-actions { display: none !important; }
+      .app-shell { display: block; }
+      .content-wrap { padding: 0; }
+      .hero, main.document {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background: #fff;
+      }
+      .hero { margin-bottom: 24px; }
+      .title { display: block; }
+      h2, h3, h4 { break-after: avoid; }
+      .table-wrap {
+        overflow: visible;
+        break-inside: avoid;
+        box-shadow: none;
+      }
+      table { min-width: 0; font-size: 10px; }
+      th { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mobile-topbar">
+    <button type="button" id="navToggle" aria-label="Mở mục lục">Mục lục</button>
+    <strong>Giáo trình hè</strong>
+    <button type="button" class="print-button" onclick="window.print()">In/PDF</button>
+  </div>
+
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Mục lục">
+      <div class="brand">
+        <div class="brand-mark">
+          <img class="brand-logo" src="logo.jpg" alt="BEVA logo">
+          <div>
+            <div class="brand-name">BEVA</div>
+            <div class="brand-tagline">better mind, better life</div>
+          </div>
+        </div>
+        <div class="brand-kicker">Homeschooling mùa hè</div>
+        <div class="brand-title">Giáo trình 2 tháng</div>
+        <p class="brand-subtitle">56 ngày học tại nhà cho trẻ 5-7 và 10-12 tuổi, theo tinh thần Montessori, Steiner, Reggio, Dewey và Socrates.</p>
+      </div>
+      <div class="search-panel">
+        <label class="search-box" for="searchInput">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="m21 21-4.2-4.2m1.2-5.3a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <input id="searchInput" type="search" placeholder="Tìm tuần, ngày, hoạt động..." autocomplete="off">
+        </label>
+        <div class="search-meta">
+          <span id="resultCount">Nhập để lọc mục lục</span>
+          <span>⌘/Ctrl + F</span>
+        </div>
+      </div>
+      <nav class="toc" id="toc"><a href="#giao-trinh-homeschooling-he-2-thang-cho-tre-5-7-tuoi-va-10-12-tuoi" class="toc-link toc-l1" data-title="giáo trình homeschooling hè 2 tháng cho trẻ 5-7 tuổi và 10-12 tuổi">Giáo trình homeschooling hè 2 tháng cho trẻ 5-7 tuổi và 10-12 tuổi</a>
+<a href="#1-cach-dung-giao-trinh" class="toc-link toc-l2" data-title="1. cách dùng giáo trình">1. Cách dùng giáo trình</a>
+<a href="#doi-tuong" class="toc-link toc-l3" data-title="đối tượng">Đối tượng</a>
+<a href="#thoi-luong" class="toc-link toc-l3" data-title="thời lượng">Thời lượng</a>
+<a href="#quy-tac-quan-trong-cho-nguoi-lon" class="toc-link toc-l3" data-title="quy tắc quan trọng cho người lớn">Quy tắc quan trọng cho người lớn</a>
+<a href="#cau-truc-moi-ngay" class="toc-link toc-l3" data-title="cấu trúc mỗi ngày">Cấu trúc mỗi ngày</a>
+<a href="#chuan-bi-co-dinh" class="toc-link toc-l3" data-title="chuẩn bị cố định">Chuẩn bị cố định</a>
+<a href="#2-dau-ra-sau-2-thang" class="toc-link toc-l2" data-title="2. đầu ra sau 2 tháng">2. Đầu ra sau 2 tháng</a>
+<a href="#nhom-5-7-tuoi" class="toc-link toc-l3" data-title="nhóm 5-7 tuổi">Nhóm 5-7 tuổi</a>
+<a href="#nhom-10-12-tuoi" class="toc-link toc-l3" data-title="nhóm 10-12 tuổi">Nhóm 10-12 tuổi</a>
+<a href="#san-pham-cuoi-khoa" class="toc-link toc-l3" data-title="sản phẩm cuối khóa">Sản phẩm cuối khóa</a>
+<a href="#3-tieu-chuan-van-hanh-moi-ngay" class="toc-link toc-l2" data-title="3. tiêu chuẩn vận hành mỗi ngày">3. Tiêu chuẩn vận hành mỗi ngày</a>
+<a href="#truoc-khi-bat-dau" class="toc-link toc-l3" data-title="trước khi bắt đầu">Trước khi bắt đầu</a>
+<a href="#trong-khi-hoc" class="toc-link toc-l3" data-title="trong khi học">Trong khi học</a>
+<a href="#sau-khi-hoc" class="toc-link toc-l3" data-title="sau khi học">Sau khi học</a>
+<a href="#4-lo-trinh-8-tuan" class="toc-link toc-l2" data-title="4. lộ trình 8 tuần">4. Lộ trình 8 tuần</a>
+<a href="#5-giao-trinh-tung-ngay-tung-gio" class="toc-link toc-l2" data-title="5. giáo trình từng ngày từng giờ">5. Giáo trình từng ngày từng giờ</a>
+<a href="#tuan-1-tu-lap-va-nhip-song" class="toc-link toc-l3" data-title="tuần 1. tự lập và nhịp sống">Tuần 1. Tự lập và nhịp sống</a>
+<a href="#ngay-1-thu-hai-khoi-dong-mua-he-va-lap-goc-hoc" class="toc-link toc-l4" data-title="ngày 1 - thứ hai: khởi động mùa hè và lập góc học">Ngày 1 - Thứ Hai: Khởi động mùa hè và lập góc học</a>
+<a href="#ngay-2-thu-ba-bang-nhip-ngay-cua-con" class="toc-link toc-l4" data-title="ngày 2 - thứ ba: bảng nhịp ngày của con">Ngày 2 - Thứ Ba: Bảng nhịp ngày của con</a>
+<a href="#ngay-3-thu-tu-tu-cham-soc-ban-than" class="toc-link toc-l4" data-title="ngày 3 - thứ tư: tự chăm sóc bản thân">Ngày 3 - Thứ Tư: Tự chăm sóc bản thân</a>
+<a href="#ngay-4-thu-nam-don-dep-khong-gian-va-trat-tu" class="toc-link toc-l4" data-title="ngày 4 - thứ năm: dọn dẹp không gian và trật tự">Ngày 4 - Thứ Năm: Dọn dẹp không gian và trật tự</a>
+<a href="#ngay-5-thu-sau-tu-lap-trong-bua-an" class="toc-link toc-l4" data-title="ngày 5 - thứ sáu: tự lập trong bữa ăn">Ngày 5 - Thứ Sáu: Tự lập trong bữa ăn</a>
+<a href="#ngay-6-thu-bay-du-an-gia-dinh-mot-buoi-sang-tu-lap" class="toc-link toc-l4" data-title="ngày 6 - thứ bảy: dự án gia đình - một buổi sáng tự lập">Ngày 6 - Thứ Bảy: Dự án gia đình - một buổi sáng tự lập</a>
+<a href="#ngay-7-chu-nhat-nghi-sau-va-tong-ket-tuan-1" class="toc-link toc-l4" data-title="ngày 7 - chủ nhật: nghỉ sâu và tổng kết tuần 1">Ngày 7 - Chủ Nhật: Nghỉ sâu và tổng kết tuần 1</a>
+<a href="#tuan-2-thien-nhien-quanh-nha" class="toc-link toc-l3" data-title="tuần 2. thiên nhiên quanh nhà">Tuần 2. Thiên nhiên quanh nhà</a>
+<a href="#ngay-8-thu-hai-chon-doi-tuong-quan-sat" class="toc-link toc-l4" data-title="ngày 8 - thứ hai: chọn đối tượng quan sát">Ngày 8 - Thứ Hai: Chọn đối tượng quan sát</a>
+<a href="#ngay-9-thu-ba-la-cay-va-phan-loai" class="toc-link toc-l4" data-title="ngày 9 - thứ ba: lá cây và phân loại">Ngày 9 - Thứ Ba: Lá cây và phân loại</a>
+<a href="#ngay-10-thu-tu-dat-nuoc-va-su-song" class="toc-link toc-l4" data-title="ngày 10 - thứ tư: đất, nước và sự sống">Ngày 10 - Thứ Tư: Đất, nước và sự sống</a>
+<a href="#ngay-11-thu-nam-con-trung-va-sinh-vat-nho" class="toc-link toc-l4" data-title="ngày 11 - thứ năm: côn trùng và sinh vật nhỏ">Ngày 11 - Thứ Năm: Côn trùng và sinh vật nhỏ</a>
+<a href="#ngay-12-thu-sau-nhat-ky-thien-nhien" class="toc-link toc-l4" data-title="ngày 12 - thứ sáu: nhật ký thiên nhiên">Ngày 12 - Thứ Sáu: Nhật ký thiên nhiên</a>
+<a href="#ngay-13-thu-bay-di-thuc-te-thien-nhien-gan-nha" class="toc-link toc-l4" data-title="ngày 13 - thứ bảy: đi thực tế thiên nhiên gần nhà">Ngày 13 - Thứ Bảy: Đi thực tế thiên nhiên gần nhà</a>
+<a href="#ngay-14-chu-nhat-nghi-va-tong-ket-tuan-2" class="toc-link toc-l4" data-title="ngày 14 - chủ nhật: nghỉ và tổng kết tuần 2">Ngày 14 - Chủ Nhật: Nghỉ và tổng kết tuần 2</a>
+<a href="#tuan-3-bep-va-dinh-duong" class="toc-link toc-l3" data-title="tuần 3. bếp và dinh dưỡng">Tuần 3. Bếp và dinh dưỡng</a>
+<a href="#ngay-15-thu-hai-an-toan-bep-va-dung-cu" class="toc-link toc-l4" data-title="ngày 15 - thứ hai: an toàn bếp và dụng cụ">Ngày 15 - Thứ Hai: An toàn bếp và dụng cụ</a>
+<a href="#ngay-16-thu-ba-pha-nuoc-trai-cay-hoac-nuoc-chanh" class="toc-link toc-l4" data-title="ngày 16 - thứ ba: pha nước trái cây hoặc nước chanh">Ngày 16 - Thứ Ba: Pha nước trái cây hoặc nước chanh</a>
+<a href="#ngay-17-thu-tu-salad-mau-sac-va-nhom-thuc-pham" class="toc-link toc-l4" data-title="ngày 17 - thứ tư: salad, màu sắc và nhóm thực phẩm">Ngày 17 - Thứ Tư: Salad, màu sắc và nhóm thực phẩm</a>
+<a href="#ngay-18-thu-nam-lam-banh-khong-phuc-tap" class="toc-link toc-l4" data-title="ngày 18 - thứ năm: làm bánh không phức tạp">Ngày 18 - Thứ Năm: Làm bánh không phức tạp</a>
+<a href="#ngay-19-thu-sau-so-cong-thuc-gia-dinh" class="toc-link toc-l4" data-title="ngày 19 - thứ sáu: sổ công thức gia đình">Ngày 19 - Thứ Sáu: Sổ công thức gia đình</a>
+<a href="#ngay-20-thu-bay-nau-mot-bua-nhe-cho-gia-dinh" class="toc-link toc-l4" data-title="ngày 20 - thứ bảy: nấu một bữa nhẹ cho gia đình">Ngày 20 - Thứ Bảy: Nấu một bữa nhẹ cho gia đình</a>
+<a href="#ngay-21-chu-nhat-nghi-va-tong-ket-tuan-3" class="toc-link toc-l4" data-title="ngày 21 - chủ nhật: nghỉ và tổng kết tuần 3">Ngày 21 - Chủ Nhật: Nghỉ và tổng kết tuần 3</a>
+<a href="#tuan-4-nuoc-khong-khi-va-anh-sang" class="toc-link toc-l3" data-title="tuần 4. nước, không khí và ánh sáng">Tuần 4. Nước, không khí và ánh sáng</a>
+<a href="#ngay-22-thu-hai-noi-va-chim" class="toc-link toc-l4" data-title="ngày 22 - thứ hai: nổi và chìm">Ngày 22 - Thứ Hai: Nổi và chìm</a>
+<a href="#ngay-23-thu-ba-tan-va-khong-tan" class="toc-link toc-l4" data-title="ngày 23 - thứ ba: tan và không tan">Ngày 23 - Thứ Ba: Tan và không tan</a>
+<a href="#ngay-24-thu-tu-bay-hoi-va-ngung-tu" class="toc-link toc-l4" data-title="ngày 24 - thứ tư: bay hơi và ngưng tụ">Ngày 24 - Thứ Tư: Bay hơi và ngưng tụ</a>
+<a href="#ngay-25-thu-nam-anh-sang-va-bong" class="toc-link toc-l4" data-title="ngày 25 - thứ năm: ánh sáng và bóng">Ngày 25 - Thứ Năm: Ánh sáng và bóng</a>
+<a href="#ngay-26-thu-sau-khong-khi-co-o-dau" class="toc-link toc-l4" data-title="ngày 26 - thứ sáu: không khí có ở đâu?">Ngày 26 - Thứ Sáu: Không khí có ở đâu?</a>
+<a href="#ngay-27-thu-bay-goc-trien-lam-khoa-hoc" class="toc-link toc-l4" data-title="ngày 27 - thứ bảy: góc triển lãm khoa học">Ngày 27 - Thứ Bảy: Góc triển lãm khoa học</a>
+<a href="#ngay-28-chu-nhat-nghi-va-tong-ket-tuan-4" class="toc-link toc-l4" data-title="ngày 28 - chủ nhật: nghỉ và tổng kết tuần 4">Ngày 28 - Chủ Nhật: Nghỉ và tổng kết tuần 4</a>
+<a href="#tuan-5-cho-tien-va-do-luong" class="toc-link toc-l3" data-title="tuần 5. chợ, tiền và đo lường">Tuần 5. Chợ, tiền và đo lường</a>
+<a href="#ngay-29-thu-hai-tien-gia-va-nhu-cau" class="toc-link toc-l4" data-title="ngày 29 - thứ hai: tiền, giá và nhu cầu">Ngày 29 - Thứ Hai: Tiền, giá và nhu cầu</a>
+<a href="#ngay-30-thu-ba-do-chieu-dai-khoi-luong-dung-tich" class="toc-link toc-l4" data-title="ngày 30 - thứ ba: đo chiều dài, khối lượng, dung tích">Ngày 30 - Thứ Ba: Đo chiều dài, khối lượng, dung tích</a>
+<a href="#ngay-31-thu-tu-lap-ke-hoach-bua-an-co-ngan-sach" class="toc-link toc-l4" data-title="ngày 31 - thứ tư: lập kế hoạch bữa ăn có ngân sách">Ngày 31 - Thứ Tư: Lập kế hoạch bữa ăn có ngân sách</a>
+<a href="#ngay-32-thu-nam-di-cho-hoac-mo-phong-di-cho" class="toc-link toc-l4" data-title="ngày 32 - thứ năm: đi chợ hoặc mô phỏng đi chợ">Ngày 32 - Thứ Năm: Đi chợ hoặc mô phỏng đi chợ</a>
+<a href="#ngay-33-thu-sau-cua-hang-nho-tai-nha" class="toc-link toc-l4" data-title="ngày 33 - thứ sáu: cửa hàng nhỏ tại nhà">Ngày 33 - Thứ Sáu: Cửa hàng nhỏ tại nhà</a>
+<a href="#ngay-34-thu-bay-nau-theo-ngan-sach" class="toc-link toc-l4" data-title="ngày 34 - thứ bảy: nấu theo ngân sách">Ngày 34 - Thứ Bảy: Nấu theo ngân sách</a>
+<a href="#ngay-35-chu-nhat-nghi-va-tong-ket-tuan-5" class="toc-link toc-l4" data-title="ngày 35 - chủ nhật: nghỉ và tổng kết tuần 5">Ngày 35 - Chủ Nhật: Nghỉ và tổng kết tuần 5</a>
+<a href="#tuan-6-cau-chuyen-va-100-ngon-ngu" class="toc-link toc-l3" data-title="tuần 6. câu chuyện và 100 ngôn ngữ">Tuần 6. Câu chuyện và 100 ngôn ngữ</a>
+<a href="#ngay-36-thu-hai-chon-cau-chuyen-va-nhan-vat" class="toc-link toc-l4" data-title="ngày 36 - thứ hai: chọn câu chuyện và nhân vật">Ngày 36 - Thứ Hai: Chọn câu chuyện và nhân vật</a>
+<a href="#ngay-37-thu-ba-boi-canh-va-the-gioi-cau-chuyen" class="toc-link toc-l4" data-title="ngày 37 - thứ ba: bối cảnh và thế giới câu chuyện">Ngày 37 - Thứ Ba: Bối cảnh và thế giới câu chuyện</a>
+<a href="#ngay-38-thu-tu-van-de-va-cach-giai-quyet" class="toc-link toc-l4" data-title="ngày 38 - thứ tư: vấn đề và cách giải quyết">Ngày 38 - Thứ Tư: Vấn đề và cách giải quyết</a>
+<a href="#ngay-39-thu-nam-ke-bang-hinh-am-thanh-va-chuyen-dong" class="toc-link toc-l4" data-title="ngày 39 - thứ năm: kể bằng hình, âm thanh và chuyển động">Ngày 39 - Thứ Năm: Kể bằng hình, âm thanh và chuyển động</a>
+<a href="#ngay-40-thu-sau-hoan-thien-san-pham-ke-chuyen" class="toc-link toc-l4" data-title="ngày 40 - thứ sáu: hoàn thiện sản phẩm kể chuyện">Ngày 40 - Thứ Sáu: Hoàn thiện sản phẩm kể chuyện</a>
+<a href="#ngay-41-thu-bay-san-khau-gia-dinh" class="toc-link toc-l4" data-title="ngày 41 - thứ bảy: sân khấu gia đình">Ngày 41 - Thứ Bảy: Sân khấu gia đình</a>
+<a href="#ngay-42-chu-nhat-nghi-va-tong-ket-tuan-6" class="toc-link toc-l4" data-title="ngày 42 - chủ nhật: nghỉ và tổng kết tuần 6">Ngày 42 - Chủ Nhật: Nghỉ và tổng kết tuần 6</a>
+<a href="#tuan-7-du-an-cong-dong-gia-dinh" class="toc-link toc-l3" data-title="tuần 7. dự án cộng đồng gia đình">Tuần 7. Dự án cộng đồng gia đình</a>
+<a href="#ngay-43-thu-hai-tim-van-de-trong-nha" class="toc-link toc-l4" data-title="ngày 43 - thứ hai: tìm vấn đề trong nhà">Ngày 43 - Thứ Hai: Tìm vấn đề trong nhà</a>
+<a href="#ngay-44-thu-ba-lap-ke-hoach-va-phan-cong" class="toc-link toc-l4" data-title="ngày 44 - thứ ba: lập kế hoạch và phân công">Ngày 44 - Thứ Ba: Lập kế hoạch và phân công</a>
+<a href="#ngay-45-thu-tu-thuc-hien-vong-1" class="toc-link toc-l4" data-title="ngày 45 - thứ tư: thực hiện vòng 1">Ngày 45 - Thứ Tư: Thực hiện vòng 1</a>
+<a href="#ngay-46-thu-nam-thuc-hien-vong-2-va-tieu-chuan-hoa" class="toc-link toc-l4" data-title="ngày 46 - thứ năm: thực hiện vòng 2 và tiêu chuẩn hóa">Ngày 46 - Thứ Năm: Thực hiện vòng 2 và tiêu chuẩn hóa</a>
+<a href="#ngay-47-thu-sau-bao-cao-du-an-gia-dinh" class="toc-link toc-l4" data-title="ngày 47 - thứ sáu: báo cáo dự án gia đình">Ngày 47 - Thứ Sáu: Báo cáo dự án gia đình</a>
+<a href="#ngay-48-thu-bay-ngay-phuc-vu-gia-dinh" class="toc-link toc-l4" data-title="ngày 48 - thứ bảy: ngày phục vụ gia đình">Ngày 48 - Thứ Bảy: Ngày phục vụ gia đình</a>
+<a href="#ngay-49-chu-nhat-nghi-va-tong-ket-tuan-7" class="toc-link toc-l4" data-title="ngày 49 - chủ nhật: nghỉ và tổng kết tuần 7">Ngày 49 - Chủ Nhật: Nghỉ và tổng kết tuần 7</a>
+<a href="#tuan-8-trien-lam-mua-he-va-tong-ket" class="toc-link toc-l3" data-title="tuần 8. triển lãm mùa hè và tổng kết">Tuần 8. Triển lãm mùa hè và tổng kết</a>
+<a href="#ngay-50-thu-hai-xem-lai-hanh-trinh-7-tuan" class="toc-link toc-l4" data-title="ngày 50 - thứ hai: xem lại hành trình 7 tuần">Ngày 50 - Thứ Hai: Xem lại hành trình 7 tuần</a>
+<a href="#ngay-51-thu-ba-chon-chu-de-trien-lam" class="toc-link toc-l4" data-title="ngày 51 - thứ ba: chọn chủ đề triển lãm">Ngày 51 - Thứ Ba: Chọn chủ đề triển lãm</a>
+<a href="#ngay-52-thu-tu-viet-va-luyen-bai-trinh-bay" class="toc-link toc-l4" data-title="ngày 52 - thứ tư: viết và luyện bài trình bày">Ngày 52 - Thứ Tư: Viết và luyện bài trình bày</a>
+<a href="#ngay-53-thu-nam-hoan-thien-portfolio" class="toc-link toc-l4" data-title="ngày 53 - thứ năm: hoàn thiện portfolio">Ngày 53 - Thứ Năm: Hoàn thiện portfolio</a>
+<a href="#ngay-54-thu-sau-tong-duyet-trien-lam" class="toc-link toc-l4" data-title="ngày 54 - thứ sáu: tổng duyệt triển lãm">Ngày 54 - Thứ Sáu: Tổng duyệt triển lãm</a>
+<a href="#ngay-55-thu-bay-trien-lam-mua-he" class="toc-link toc-l4" data-title="ngày 55 - thứ bảy: triển lãm mùa hè">Ngày 55 - Thứ Bảy: Triển lãm mùa hè</a>
+<a href="#ngay-56-chu-nhat-nghi-dong-khoa-va-mo-mua-tiep-theo" class="toc-link toc-l4" data-title="ngày 56 - chủ nhật: nghỉ, đóng khóa và mở mùa tiếp theo">Ngày 56 - Chủ Nhật: Nghỉ, đóng khóa và mở mùa tiếp theo</a>
+<a href="#6-checklist-quan-sat-hang-ngay" class="toc-link toc-l2" data-title="6. checklist quan sát hằng ngày">6. Checklist quan sát hằng ngày</a>
+<a href="#7-rubric-dau-ra-theo-nhom-tuoi" class="toc-link toc-l2" data-title="7. rubric đầu ra theo nhóm tuổi">7. Rubric đầu ra theo nhóm tuổi</a>
+<a href="#nhom-5-7-tuoi-2" class="toc-link toc-l3" data-title="nhóm 5-7 tuổi">Nhóm 5-7 tuổi</a>
+<a href="#nhom-10-12-tuoi-2" class="toc-link toc-l3" data-title="nhóm 10-12 tuổi">Nhóm 10-12 tuổi</a>
+<a href="#8-mau-ghi-nhan-cuoi-ngay" class="toc-link toc-l2" data-title="8. mẫu ghi nhận cuối ngày">8. Mẫu ghi nhận cuối ngày</a>
+<a href="#mau-cho-tre-5-7-tuoi" class="toc-link toc-l3" data-title="mẫu cho trẻ 5-7 tuổi">Mẫu cho trẻ 5-7 tuổi</a>
+<a href="#mau-cho-tre-10-12-tuoi" class="toc-link toc-l3" data-title="mẫu cho trẻ 10-12 tuổi">Mẫu cho trẻ 10-12 tuổi</a>
+<a href="#mau-cho-nguoi-lon" class="toc-link toc-l3" data-title="mẫu cho người lớn">Mẫu cho người lớn</a>
+<a href="#9-cau-noi-mau-theo-tinh-huong" class="toc-link toc-l2" data-title="9. câu nói mẫu theo tình huống">9. Câu nói mẫu theo tình huống</a>
+<a href="#10-khi-tre-khong-hop-tac" class="toc-link toc-l2" data-title="10. khi trẻ không hợp tác">10. Khi trẻ không hợp tác</a>
+<a href="#neu-tre-5-7-tuoi-tu-choi" class="toc-link toc-l3" data-title="nếu trẻ 5-7 tuổi từ chối">Nếu trẻ 5-7 tuổi từ chối</a>
+<a href="#neu-tre-10-12-tuoi-chong-doi" class="toc-link toc-l3" data-title="nếu trẻ 10-12 tuổi chống đối">Nếu trẻ 10-12 tuổi chống đối</a>
+<a href="#11-tieu-chuan-hoan-thanh-cuoi-khoa" class="toc-link toc-l2" data-title="11. tiêu chuẩn hoàn thành cuối khóa">11. Tiêu chuẩn hoàn thành cuối khóa</a>
+<a href="#12-bang-tu-danh-gia-cuoi-khoa" class="toc-link toc-l2" data-title="12. bảng tự đánh giá cuối khóa">12. Bảng tự đánh giá cuối khóa</a>
+<a href="#cho-tre" class="toc-link toc-l3" data-title="cho trẻ">Cho trẻ</a>
+<a href="#cho-nguoi-lon" class="toc-link toc-l3" data-title="cho người lớn">Cho người lớn</a>
+<a href="#13-goi-y-dieu-chinh-theo-thuc-te-gia-dinh" class="toc-link toc-l2" data-title="13. gợi ý điều chỉnh theo thực tế gia đình">13. Gợi ý điều chỉnh theo thực tế gia đình</a>
+<a href="#14-mot-ngay-mau-rut-gon-khi-gia-dinh-ban" class="toc-link toc-l2" data-title="14. một ngày mẫu rút gọn khi gia đình bận">14. Một ngày mẫu rút gọn khi gia đình bận</a></nav>
+      <div class="empty-state" id="emptyState">Không tìm thấy mục phù hợp.</div>
+    </aside>
+
+    <div class="content-wrap">
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-brand">
+          <img class="hero-logo" src="logo.jpg" alt="BEVA logo">
+          <div class="hero-brand-copy"><strong>BEVA</strong>better mind, better life</div>
+        </div>
+        <p class="hero-eyebrow">Bản HTML chuyên nghiệp</p>
+        <h1 id="heroTitle">Giáo trình homeschooling hè 2 tháng</h1>
+        <p>Dễ đọc, dễ tìm, dễ in và đủ chi tiết để phụ huynh triển khai từng ngày từng giờ cho hai nhóm tuổi.</p>
+        <div class="hero-stats">
+          <div class="stat"><strong>8</strong><span>tuần chủ đề rõ ràng</span></div>
+          <div class="stat"><strong>56</strong><span>ngày có lịch cụ thể</span></div>
+          <div class="stat"><strong>2</strong><span>nhóm tuổi 5-7 và 10-12</span></div>
+          <div class="stat"><strong>5</strong><span>lăng kính giáo dục tích hợp</span></div>
+        </div>
+      </section>
+
+      <div class="quick-actions" aria-label="Lối tắt">
+        <a class="action-button" href="#4-lo-trinh-8-tuan">Lộ trình 8 tuần</a>
+        <a class="action-button" href="#5-giao-trinh-tung-ngay-tung-gio">Từng ngày từng giờ</a>
+        <a class="action-button" href="#6-checklist-quan-sat-hang-ngay">Checklist</a>
+        <a class="action-button" href="#7-rubric-dau-ra-theo-nhom-tuoi">Rubric</a>
+        <button type="button" class="print-button" onclick="window.print()">In hoặc lưu PDF</button>
+      </div>
+
+      <main class="document" id="document">
+<h1 id="giao-trinh-homeschooling-he-2-thang-cho-tre-5-7-tuoi-va-10-12-tuoi" class="title">Giáo trình homeschooling hè 2 tháng cho trẻ 5-7 tuổi và 10-12 tuổi</h1>
+<p>Tài liệu dành cho mẹ, cha hoặc người chăm sóc muốn tổ chức một mùa hè có nhịp sống, có học tập, có trải nghiệm thật và có đầu ra rõ ràng tại nhà.</p>
+<p>Tinh thần cốt lõi:</p>
+<ul>
+<li>Montessori: chuẩn bị môi trường để trẻ tự làm, tự sửa, tự lập.</li>
+<li>Steiner/Waldorf: giữ nhịp sống ấm áp, nghệ thuật, thiên nhiên, vận động và tưởng tượng.</li>
+<li>Reggio Emilia: lắng nghe nhiều cách biểu đạt của trẻ qua vẽ, nặn, xây, kể, diễn, ảnh, mô hình.</li>
+<li>Dewey: học qua việc thật, vấn đề thật, sai thật, sửa thật.</li>
+<li>Socrates: hỏi dịu để trẻ tự quan sát, suy luận, thử lại và rút kinh nghiệm.</li>
+</ul>
+<h2 id="1-cach-dung-giao-trinh" class="section-title">1. Cách dùng giáo trình</h2>
+<h3 id="doi-tuong" class="subsection-title">Đối tượng</h3>
+<ul>
+<li>Nhóm nhỏ: trẻ 5-7 tuổi.</li>
+<li>Nhóm lớn: trẻ 10-12 tuổi.</li>
+<li>Có thể học riêng từng nhóm hoặc cho hai nhóm cùng học trong một gia đình. Khi học chung, trẻ lớn có thể làm vai trò &quot;trưởng dự án nhỏ&quot;, nhưng không biến trẻ lớn thành người trông em.</li>
+</ul>
+<h3 id="thoi-luong" class="subsection-title">Thời lượng</h3>
+<ul>
+<li>8 tuần, 56 ngày.</li>
+<li>Thứ Hai đến thứ Sáu: ngày học chính.</li>
+<li>Thứ Bảy: ngày dự án gia đình, đi thực tế, làm việc thật.</li>
+<li>Chủ Nhật: ngày nghỉ sâu, dọn nhẹ, đọc sách, tổng kết tuần.</li>
+</ul>
+<h3 id="quy-tac-quan-trong-cho-nguoi-lon" class="subsection-title">Quy tắc quan trọng cho người lớn</h3>
+<ol>
+<li>Nói ít hơn, chuẩn bị kỹ hơn.</li>
+<li>Làm mẫu chậm một lần, rồi lùi lại quan sát.</li>
+<li>Khi trẻ sai, xem đó là dữ liệu học tập.</li>
+<li>Không chấm trẻ bằng đẹp/xấu, đúng/sai quá nhanh.</li>
+<li>Luôn kết thúc bằng phản tư: &quot;Con thấy gì?&quot;, &quot;Con đã thử cách nào?&quot;, &quot;Lần sau con muốn đổi gì?&quot;</li>
+</ol>
+<h3 id="cau-truc-moi-ngay" class="subsection-title">Cấu trúc mỗi ngày</h3>
+<p>Các bảng từng ngày ở phần 5 dùng khung giờ dưới đây làm nhịp cố định. Những khung ăn, nghỉ, vệ sinh, ngủ được giữ đều hằng ngày; phần thay đổi theo ngày là mục tiêu học tập, dự án, vật liệu, câu hỏi và đầu ra.</p>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Nhịp ngày</th><th>Vai trò phương pháp</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Thức dậy, vệ sinh, gấp chăn, chuẩn bị góc học</td><td>Montessori</td></tr>
+<tr><td>07:30-08:00</td><td>Ăn sáng, giao việc trong ngày</td><td>Montessori + Steiner</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động, đi bộ, yoga trẻ em, trò chơi thân thể</td><td>Steiner</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn sáng: câu chuyện, câu hỏi lớn, kế hoạch ngày</td><td>Steiner + Socrates</td></tr>
+<tr><td>09:00-10:15</td><td>Khối học sâu 1: dự án chính</td><td>Dewey + Reggio</td></tr>
+<tr><td>10:15-10:45</td><td>Nghỉ, ăn nhẹ, chơi tự do</td><td>Steiner</td></tr>
+<tr><td>10:45-11:45</td><td>Khối học sâu 2: ngôn ngữ, toán, khoa học theo tuổi</td><td>Montessori + Dewey</td></tr>
+<tr><td>11:45-13:30</td><td>Ăn trưa, dọn bàn, nghỉ yên tĩnh</td><td>Montessori + Steiner</td></tr>
+<tr><td>13:30-14:30</td><td>Đọc sách, nhật ký, vẽ/nặn/mô hình</td><td>Reggio</td></tr>
+<tr><td>14:30-16:00</td><td>Khối trải nghiệm: bếp, vườn, thí nghiệm, đi chợ, làm đồ</td><td>Dewey</td></tr>
+<tr><td>16:00-17:00</td><td>Việc nhà, ngoài trời, chăm cây, vận động tự do</td><td>Montessori + Steiner</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư tối, kể lại ngày, chuẩn bị ngày mai</td><td>Socrates</td></tr>
+<tr><td>20:00-20:30</td><td>Đọc sách, ngủ</td><td>Steiner</td></tr>
+</tbody></table></div>
+<h3 id="chuan-bi-co-dinh" class="subsection-title">Chuẩn bị cố định</h3>
+<ul>
+<li>Kệ thấp hoặc hộp riêng cho từng nhóm: giấy, bút chì, màu, kéo an toàn, hồ dán, thước, dây, hộp giấy, đất nặn, sổ.</li>
+<li>Khay việc đời sống: khăn lau, bình nước nhỏ, cốc, thìa, bát, thước dây, cân bếp nếu có.</li>
+<li>Góc thiên nhiên: chậu cây, hạt giống, lá, đá, kính lúp nếu có, bình tưới.</li>
+<li>Góc dự án: bảng lớn hoặc giấy A3, nơi dán ảnh, bản vẽ, câu nói của trẻ.</li>
+<li>Hồ sơ học tập: mỗi trẻ một bìa hoặc hộp để lưu nhật ký, ảnh, sản phẩm, checklist.</li>
+</ul>
+<h2 id="2-dau-ra-sau-2-thang" class="section-title">2. Đầu ra sau 2 tháng</h2>
+<h3 id="nhom-5-7-tuoi" class="subsection-title">Nhóm 5-7 tuổi</h3>
+<p>Trẻ có thể:</p>
+<ul>
+<li>Tự thực hiện nhịp sáng cơ bản: gấp chăn, vệ sinh, chuẩn bị góc học, cất đồ.</li>
+<li>Hoàn thành 8 dự án nhỏ bằng nhiều hình thức: tranh, mô hình, kể chuyện, thí nghiệm, việc thật.</li>
+<li>Biết quan sát và nói 1-3 câu về điều mình thấy, điều mình thử, điều mình muốn làm lại.</li>
+<li>Làm được việc gia đình vừa sức: lau bàn, tưới cây, rửa rau, chia đồ ăn, dọn kệ.</li>
+<li>Nhận biết số lượng, đo đơn giản, phân loại, so sánh, kể lại trình tự việc đã làm.</li>
+</ul>
+<h3 id="nhom-10-12-tuoi" class="subsection-title">Nhóm 10-12 tuổi</h3>
+<p>Trẻ có thể:</p>
+<ul>
+<li>Tự lập kế hoạch ngày/tuần ở mức cơ bản và tự đánh giá cuối ngày.</li>
+<li>Hoàn thành 8 sản phẩm dự án có nghiên cứu, ghi chép, thử nghiệm và trình bày.</li>
+<li>Biết dùng câu hỏi: quan sát, giả thuyết, bằng chứng, phương án khác, phản tư.</li>
+<li>Vận dụng toán, ngôn ngữ, khoa học vào việc thật: bếp, chợ, tài chính nhỏ, trồng cây, triển lãm.</li>
+<li>Có một hồ sơ học tập mùa hè gồm nhật ký, bảng đo, ảnh, bản thiết kế, bài trình bày và tự đánh giá.</li>
+</ul>
+<h3 id="san-pham-cuoi-khoa" class="subsection-title">Sản phẩm cuối khóa</h3>
+<ul>
+<li>1 triển lãm gia đình cuối tuần 8.</li>
+<li>1 portfolio cho mỗi trẻ.</li>
+<li>1 bài trình bày 3-5 phút cho trẻ 5-7 tuổi hoặc 8-12 phút cho trẻ 10-12 tuổi.</li>
+<li>1 bảng tự đánh giá của trẻ và 1 bảng quan sát của người lớn.</li>
+</ul>
+<h2 id="3-tieu-chuan-van-hanh-moi-ngay" class="section-title">3. Tiêu chuẩn vận hành mỗi ngày</h2>
+<h3 id="truoc-khi-bat-dau" class="subsection-title">Trước khi bắt đầu</h3>
+<ul>
+<li>Mục tiêu ngày đã rõ trong một câu.</li>
+<li>Vật liệu để sẵn, trẻ tự lấy được phần phù hợp.</li>
+<li>Người lớn chuẩn bị 2 câu nói mẫu và 2 câu hỏi mở.</li>
+<li>Có phương án nếu trẻ từ chối, làm đổ, làm sai hoặc quá mệt.</li>
+</ul>
+<h3 id="trong-khi-hoc" class="subsection-title">Trong khi học</h3>
+<ul>
+<li>Trẻ có ít nhất một phần việc thật.</li>
+<li>Trẻ được chọn ít nhất một yếu tố: vật liệu, thứ tự, cách biểu đạt hoặc vai trò.</li>
+<li>Người lớn không làm hộ quá nhanh.</li>
+<li>Có ghi nhận quá trình: ảnh, lời trẻ, bản vẽ, số đo hoặc sản phẩm.</li>
+</ul>
+<h3 id="sau-khi-hoc" class="subsection-title">Sau khi học</h3>
+<ul>
+<li>Trẻ kể lại hoặc biểu đạt điều đã học.</li>
+<li>Người lớn hỏi ít nhất một câu phản tư.</li>
+<li>Trẻ cất đồ, sửa lỗi hoặc chuẩn bị cho lần sau.</li>
+<li>Người lớn ghi 2 dòng: điều trẻ làm tốt và điều cần hỗ trợ.</li>
+</ul>
+<h2 id="4-lo-trinh-8-tuan" class="section-title">4. Lộ trình 8 tuần</h2>
+<div class="table-wrap"><table><thead><tr><th>Tuần</th><th>Chủ đề</th><th>Câu hỏi lớn</th><th>Sản phẩm tuần</th></tr></thead><tbody>
+<tr><td>1</td><td>Tự lập và nhịp sống</td><td>Con có thể tự chăm sóc mình như thế nào?</td><td>Bảng nhịp ngày, góc học tự quản</td></tr>
+<tr><td>2</td><td>Thiên nhiên quanh nhà</td><td>Một hạt/cây/lá thay đổi ra sao?</td><td>Nhật ký thiên nhiên, mô hình vòng đời</td></tr>
+<tr><td>3</td><td>Bếp và dinh dưỡng</td><td>Thức ăn biến đổi thế nào khi mình nấu?</td><td>Sổ công thức gia đình</td></tr>
+<tr><td>4</td><td>Nước, không khí, ánh sáng</td><td>Vì sao vật nổi, chìm, bay hơi, tạo bóng?</td><td>Góc thí nghiệm khoa học</td></tr>
+<tr><td>5</td><td>Chợ, tiền và đo lường</td><td>Gia đình dùng toán trong đời sống thế nào?</td><td>Cửa hàng nhỏ hoặc kế hoạch bữa ăn</td></tr>
+<tr><td>6</td><td>Câu chuyện và 100 ngôn ngữ</td><td>Một ý tưởng có thể kể bằng bao nhiêu cách?</td><td>Sách tranh/kịch/mô hình kể chuyện</td></tr>
+<tr><td>7</td><td>Dự án cộng đồng gia đình</td><td>Mình có thể làm điều gì hữu ích cho nhà?</td><td>Dự án cải thiện một góc nhà</td></tr>
+<tr><td>8</td><td>Triển lãm mùa hè</td><td>Con đã lớn lên ở điểm nào?</td><td>Triển lãm, thuyết trình, portfolio</td></tr>
+</tbody></table></div>
+<h2 id="5-giao-trinh-tung-ngay-tung-gio" class="section-title">5. Giáo trình từng ngày từng giờ</h2>
+<h3 id="tuan-1-tu-lap-va-nhip-song" class="week-title">Tuần 1. Tự lập và nhịp sống</h3>
+<p><strong>Mục tiêu tuần:</strong> trẻ xây nhịp sống an toàn, biết tự làm các việc cơ bản, hiểu học ở nhà vẫn cần trật tự mềm mại.</p>
+<p><strong>Đầu ra tuần:</strong> bảng nhịp ngày cá nhân, góc học tự quản, checklist tự lập 7 ngày.</p>
+<h4 id="ngay-1-thu-hai-khoi-dong-mua-he-va-lap-goc-hoc" class="day-title">Ngày 1 - Thứ Hai: Khởi động mùa hè và lập góc học</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Gấp chăn, rửa mặt, chọn áo, đặt đồ bẩn đúng chỗ.</td><td>Tự kiểm tra phòng, ghi 3 việc sáng vào sổ.</td><td>Giường gọn, đồ cá nhân đúng vị trí.</td></tr>
+<tr><td>07:30-08:00</td><td>Ăn sáng</td><td>Tự lấy cốc, khăn, thìa; lau chỗ ngồi sau ăn.</td><td>Chuẩn bị nước uống cho cả nhà, ghi món sáng.</td><td>Bàn ăn sạch.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Đi bộ 10 phút, chơi &quot;làm theo nhịp vỗ&quot;.</td><td>Đi bộ nhanh, giãn cơ, đo nhịp tim trước/sau.</td><td>Cơ thể tỉnh táo.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Nghe chuyện &quot;góc học biết thở&quot;; chọn tên góc học.</td><td>Viết mục tiêu hè trong 5 câu.</td><td>Tên góc học, mục tiêu cá nhân.</td></tr>
+<tr><td>09:00-10:15</td><td>Lập góc học</td><td>Phân loại bút, giấy, màu vào hộp có hình ký hiệu.</td><td>Thiết kế sơ đồ góc học: khu đọc, khu viết, khu vật liệu.</td><td>Góc học dùng được.</td></tr>
+<tr><td>10:15-10:45</td><td>Nghỉ</td><td>Ăn nhẹ, chơi tự do không màn hình.</td><td>Ăn nhẹ, đọc 5 trang sách.</td><td>Tự điều chỉnh năng lượng.</td></tr>
+<tr><td>10:45-11:45</td><td>Ngôn ngữ/toán</td><td>Đếm vật liệu, vẽ nhãn cho hộp.</td><td>Lập danh mục vật liệu, ước tính số lượng cần bổ sung.</td><td>Nhãn hộp, danh mục.</td></tr>
+<tr><td>13:30-14:30</td><td>Biểu đạt</td><td>Vẽ &quot;góc học mơ ước&quot;.</td><td>Viết bản cam kết học hè 8 dòng.</td><td>Tranh hoặc cam kết.</td></tr>
+<tr><td>14:30-16:00</td><td>Việc thật</td><td>Lau kệ, đặt khay, tập lấy-cất đồ 3 vòng.</td><td>Sắp xếp kệ theo nguyên tắc: dễ thấy, dễ lấy, dễ cất.</td><td>Kệ học hoàn chỉnh.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Hôm nay con tự làm được việc gì?&quot;</td><td>&quot;Điều gì trong góc học giúp mình tập trung?&quot;</td><td>1 ghi chú phản tư.</td></tr>
+</tbody></table></div>
+<p>Câu hỏi Socrates: &quot;Con muốn góc học giúp con làm điều gì?&quot;, &quot;Đồ nào cần ở thấp để con tự lấy?&quot;</p>
+<h4 id="ngay-2-thu-ba-bang-nhip-ngay-cua-con" class="day-title">Ngày 2 - Thứ Ba: Bảng nhịp ngày của con</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Làm theo 4 thẻ hình: thức dậy, vệ sinh, gấp chăn, cất đồ.</td><td>Tự bấm giờ nhịp sáng, ghi mất bao lâu.</td><td>Bảng thời gian thực tế.</td></tr>
+<tr><td>07:30-08:00</td><td>Ăn sáng</td><td>Tự rót nước chậm, lau nếu đổ.</td><td>Tính lượng nước uống buổi sáng.</td><td>Tự phục vụ.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Bài hát vận động theo mùa hè.</td><td>Chuỗi 6 động tác giãn cơ, hướng dẫn lại cho em nếu có.</td><td>Cơ thể sẵn sàng.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Nghe chuyện &quot;một ngày có nhịp&quot;.</td><td>Phân tích ngày hôm qua: lúc nào tập trung nhất.</td><td>Nhận diện nhịp cá nhân.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Làm bảng nhịp ngày bằng tranh dán.</td><td>Thiết kế lịch ngày theo khung giờ, có màu cho học/nghỉ/việc nhà.</td><td>Bảng nhịp ngày.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán/thời gian</td><td>Ghép tranh sáng-trưa-chiều-tối.</td><td>Tính tổng thời gian học, nghỉ, vận động.</td><td>Hiểu trình tự thời gian.</td></tr>
+<tr><td>13:30-14:30</td><td>Nghệ thuật</td><td>Tô màu biểu tượng từng khung giờ.</td><td>Làm phiên bản sạch đẹp để dán tường.</td><td>Lịch trực quan.</td></tr>
+<tr><td>14:30-16:00</td><td>Thử nghiệm</td><td>Thực hành chuyển hoạt động bằng bài hát/chuông nhẹ.</td><td>Viết 3 quy tắc chuyển hoạt động không cáu gắt.</td><td>Nghi thức chuyển tiếp.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>Chỉ vào thẻ mình thích nhất trong ngày.</td><td>Ghi 1 điểm cần chỉnh cho lịch ngày mai.</td><td>Lịch được điều chỉnh.</td></tr>
+</tbody></table></div>
+<p>Câu nói mẫu: &quot;Mình không chạy theo đồng hồ cứng. Mình dùng nhịp để cơ thể biết điều gì sắp đến.&quot;</p>
+<h4 id="ngay-3-thu-tu-tu-cham-soc-ban-than" class="day-title">Ngày 3 - Thứ Tư: Tự chăm sóc bản thân</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Tự chọn quần áo phù hợp thời tiết.</td><td>Kiểm tra vệ sinh cá nhân bằng checklist riêng.</td><td>Tự chăm sóc.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Trò chơi &quot;cơ thể nói gì&quot;.</td><td>Theo dõi năng lượng từ 1-5 trước vận động.</td><td>Nhận biết cơ thể.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Gọi tên cảm giác: đói, no, mệt, vui, khó chịu.</td><td>Viết bảng tín hiệu cơ thể và cách đáp ứng.</td><td>Từ vựng cảm xúc/cơ thể.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Làm hộp &quot;con tự chăm sóc&quot;: lược, khăn, bình nước, thẻ việc.</td><td>Thiết kế checklist chăm sóc bản thân buổi sáng/tối.</td><td>Hộp hoặc checklist.</td></tr>
+<tr><td>10:45-11:45</td><td>Kỹ năng</td><td>Tập gấp áo, gấp khăn, xếp tất.</td><td>Tối ưu ngăn quần áo: nhóm theo loại, dán nhãn.</td><td>Ngăn đồ gọn.</td></tr>
+<tr><td>13:30-14:30</td><td>Biểu đạt</td><td>Vẽ cơ thể và dán nhãn cảm giác.</td><td>Viết 1 đoạn: &quot;Khi căng thẳng, cơ thể mình...&quot;</td><td>Bản đồ cơ thể.</td></tr>
+<tr><td>14:30-16:00</td><td>Việc thật</td><td>Chuẩn bị túi đi chơi giả định: nước, mũ, khăn.</td><td>Lập danh sách đồ cần cho một buổi dã ngoại.</td><td>Túi tự chuẩn bị.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con đã tự chăm sóc mình ở bước nào?&quot;</td><td>&quot;Việc nào mình hay quên và cần tín hiệu nhắc?&quot;</td><td>Điều chỉnh checklist.</td></tr>
+</tbody></table></div>
+<p>Tiêu chuẩn đạt: trẻ không cần làm hoàn hảo, nhưng tự bắt đầu được ít nhất 2 việc chăm sóc bản thân.</p>
+<h4 id="ngay-4-thu-nam-don-dep-khong-gian-va-trat-tu" class="day-title">Ngày 4 - Thứ Năm: Dọn dẹp không gian và trật tự</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Cất đồ ngủ, đưa đồ chơi &quot;về nhà&quot;.</td><td>Kiểm tra 5 điểm gọn: giường, bàn, sàn, sách, quần áo.</td><td>Phòng gọn hơn.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Trò chơi nhặt màu: tìm đồ cùng màu và cất đúng.</td><td>Dọn nhanh 10 phút theo đồng hồ.</td><td>Chuyển động có mục tiêu.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Chuyện &quot;mỗi đồ vật có một ngôi nhà&quot;.</td><td>Thảo luận: vì sao trật tự giúp não đỡ mệt?</td><td>Hiểu bản chất trật tự.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Dán ký hiệu nhà cho đồ: sách, màu, đồ chơi.</td><td>Thiết kế sơ đồ lưu trữ và nguyên tắc &quot;một vào, một ra&quot;.</td><td>Bản đồ lưu trữ.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán/phân loại</td><td>Phân loại theo màu, kích thước, chức năng.</td><td>Tạo bảng kiểm kê đồ dùng, quyết định giữ/cho/tái chế.</td><td>Đồ được phân loại.</td></tr>
+<tr><td>13:30-14:30</td><td>Nghệ thuật</td><td>Làm biển tên cho hộp.</td><td>Làm nhãn tối giản, dễ đọc.</td><td>Hộp có nhãn.</td></tr>
+<tr><td>14:30-16:00</td><td>Việc thật</td><td>Tập quy trình: lấy, dùng, lau, cất.</td><td>Tổ chức lại một ngăn/kệ thật.</td><td>Không gian sạch.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>Chỉ đồ đã &quot;về nhà&quot;.</td><td>Đánh giá hệ thống nào dễ duy trì nhất.</td><td>1 cải tiến nhỏ.</td></tr>
+</tbody></table></div>
+<p>Câu nói mẫu: &quot;Đồ vật có chỗ ở rõ thì con không cần mất sức tìm.&quot;</p>
+<h4 id="ngay-5-thu-sau-tu-lap-trong-bua-an" class="day-title">Ngày 5 - Thứ Sáu: Tự lập trong bữa ăn</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Tự rửa tay đúng 6 bước bằng bài hát.</td><td>Chuẩn bị checklist vệ sinh bếp.</td><td>Sẵn sàng bữa ăn.</td></tr>
+<tr><td>07:30-08:00</td><td>Ăn sáng</td><td>Tự bày thìa, cốc, khăn.</td><td>Phụ trách nước uống và trái cây.</td><td>Bàn ăn có trẻ tham gia.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Câu chuyện &quot;bàn ăn biết cảm ơn&quot;.</td><td>Trao đổi: một bữa ăn cần bao nhiêu việc vô hình?</td><td>Biết trân trọng lao động.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Tập bày bàn cho 2 người.</td><td>Lập sơ đồ bày bàn cho cả nhà.</td><td>Bàn ăn mẫu.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán/đời sống</td><td>Đếm số bát, thìa, cốc cần dùng.</td><td>Tính khẩu phần đơn giản: mỗi người 1 phần trái cây.</td><td>Áp dụng số lượng.</td></tr>
+<tr><td>13:30-14:30</td><td>Biểu đạt</td><td>Vẽ bữa ăn gia đình.</td><td>Viết thực đơn 1 bữa cân bằng.</td><td>Tranh/thực đơn.</td></tr>
+<tr><td>14:30-16:00</td><td>Việc thật</td><td>Rửa rau, lau bàn, chia trái cây mềm.</td><td>Chuẩn bị một món đơn giản không dùng lửa hoặc có giám sát.</td><td>Món ăn nhỏ.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con thích việc nào ở bữa ăn?&quot;</td><td>&quot;Việc nào giúp bữa ăn diễn ra dễ hơn?&quot;</td><td>Checklist bữa ăn.</td></tr>
+</tbody></table></div>
+<p>Tiêu chuẩn đạt: trẻ tham gia trước, trong và sau bữa ăn, không chỉ &quot;giúp cho vui&quot;.</p>
+<h4 id="ngay-6-thu-bay-du-an-gia-dinh-mot-buoi-sang-tu-lap" class="day-title">Ngày 6 - Thứ Bảy: Dự án gia đình - một buổi sáng tự lập</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-08:00</td><td>Tự vận hành sáng</td><td>Làm theo bảng nhịp với hỗ trợ bằng hình.</td><td>Tự theo lịch, không cần nhắc quá 2 lần.</td><td>Sáng tự lập.</td></tr>
+<tr><td>08:00-09:00</td><td>Bữa sáng gia đình</td><td>Phụ trách khăn/cốc.</td><td>Phụ trách kiểm tra bàn ăn và nước.</td><td>Bữa sáng trật tự.</td></tr>
+<tr><td>09:00-10:30</td><td>Tổng dọn nhẹ</td><td>Chọn 1 khu vực nhỏ để dọn.</td><td>Chọn 1 vấn đề lưu trữ để cải thiện.</td><td>Một góc nhà tốt hơn.</td></tr>
+<tr><td>10:30-11:30</td><td>Chơi ngoài trời</td><td>Chơi tự do, quan sát nắng/gió.</td><td>Chụp/ghi 5 chi tiết thiên nhiên quanh nhà.</td><td>Chất liệu cho tuần 2.</td></tr>
+<tr><td>15:00-16:00</td><td>Chuẩn bị tuần sau</td><td>Chọn chậu/hạt/lá để quan sát.</td><td>Lập câu hỏi nghiên cứu thiên nhiên.</td><td>Góc thiên nhiên sẵn sàng.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>Kể 1 việc tự làm.</td><td>Tự chấm 1-3 điểm tự lập.</td><td>Bảng tự đánh giá.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-7-chu-nhat-nghi-sau-va-tong-ket-tuan-1" class="day-title">Ngày 7 - Chủ Nhật: Nghỉ sâu và tổng kết tuần 1</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:30-08:30</td><td>Sáng chậm</td><td>Tự làm 2 việc quen thuộc, không vội.</td><td>Tự chọn nhịp sáng nhẹ.</td><td>Cơ thể được nghỉ.</td></tr>
+<tr><td>09:00-10:00</td><td>Xem lại sản phẩm</td><td>Chọn tranh/bảng nhịp thích nhất.</td><td>Sắp xếp portfolio tuần 1.</td><td>Hồ sơ tuần 1.</td></tr>
+<tr><td>10:00-11:00</td><td>Đọc sách</td><td>Nghe đọc sách 20 phút.</td><td>Đọc 30-45 phút, ghi 3 ý.</td><td>Nuôi nhịp đọc.</td></tr>
+<tr><td>15:00-16:00</td><td>Họp gia đình</td><td>Nói &quot;con tự hào vì...&quot;</td><td>Trình bày điều đã cải thiện trong góc học.</td><td>Tổng kết miệng.</td></tr>
+<tr><td>19:30-20:00</td><td>Chuẩn bị ngủ</td><td>Chọn đồ cho ngày mai.</td><td>Viết mục tiêu tuần 2.</td><td>Sẵn sàng tuần 2.</td></tr>
+</tbody></table></div>
+<h3 id="tuan-2-thien-nhien-quanh-nha" class="week-title">Tuần 2. Thiên nhiên quanh nhà</h3>
+<p><strong>Mục tiêu tuần:</strong> trẻ quan sát thiên nhiên bằng mắt, tay, mũi, tai; biết ghi nhận thay đổi qua thời gian.</p>
+<p><strong>Đầu ra tuần:</strong> nhật ký thiên nhiên, bảng đo cây/hạt, bộ sưu tập lá/đá có chú thích.</p>
+<h4 id="ngay-8-thu-hai-chon-doi-tuong-quan-sat" class="day-title">Ngày 8 - Thứ Hai: Chọn đối tượng quan sát</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Tưới cây bằng bình nhỏ.</td><td>Kiểm tra độ ẩm đất, ghi thời tiết.</td><td>Bắt đầu quan sát.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Đi bộ tìm 3 màu trong thiên nhiên.</td><td>Đi bộ, ghi 5 dấu hiệu thời tiết.</td><td>Mở giác quan.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Chuyện &quot;hạt mầm thức dậy&quot;.</td><td>Câu hỏi: một nhà khoa học quan sát thế nào?</td><td>Tinh thần quan sát.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Chọn một hạt/cây/lá làm &quot;bạn quan sát&quot;.</td><td>Chọn câu hỏi nghiên cứu: cây cần gì để lớn?</td><td>Đối tượng nghiên cứu.</td></tr>
+<tr><td>10:45-11:45</td><td>Khoa học</td><td>Vẽ cây/lá lần 1.</td><td>Lập bảng: ngày, chiều cao, màu lá, đất, ánh sáng.</td><td>Nhật ký ngày 1.</td></tr>
+<tr><td>13:30-14:30</td><td>Nghệ thuật</td><td>In lá bằng màu hoặc chà lá bằng bút sáp.</td><td>Vẽ phác thảo khoa học có chú thích.</td><td>Bản vẽ quan sát.</td></tr>
+<tr><td>14:30-16:00</td><td>Việc thật</td><td>Gieo hạt đậu/rau mầm.</td><td>Thiết kế thí nghiệm: đủ nắng/ít nắng hoặc đủ nước/ít nước.</td><td>Khay gieo hạt.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con thấy cây có gì đặc biệt?&quot;</td><td>&quot;Mình cần bằng chứng gì để trả lời câu hỏi?&quot;</td><td>Câu hỏi nghiên cứu.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-9-thu-ba-la-cay-va-phan-loai" class="day-title">Ngày 9 - Thứ Ba: Lá cây và phân loại</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Quan sát hạt đã gieo, phun nước nhẹ.</td><td>Ghi dữ liệu cây/hạt ngày 2.</td><td>Dữ liệu liên tục.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Tìm lá to, lá nhỏ, lá dài, lá tròn.</td><td>Thu mẫu lá rụng, không bứt lá sống nếu không cần.</td><td>Bộ lá an toàn.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Sờ lá, mô tả mềm/cứng/nhẵn/nhám.</td><td>Thảo luận tiêu chí phân loại.</td><td>Từ vựng quan sát.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Phân loại lá theo màu/hình/kích thước.</td><td>Phân loại lá theo gân, mép, hình dạng, môi trường.</td><td>Bảng phân loại.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán</td><td>Đếm số lá từng nhóm, so sánh nhiều/ít.</td><td>Tạo biểu đồ cột số lượng mẫu lá.</td><td>Biểu đồ lá.</td></tr>
+<tr><td>13:30-14:30</td><td>Nghệ thuật</td><td>Làm tranh con vật từ lá.</td><td>Làm trang herbarium đơn giản có nhãn.</td><td>Sản phẩm lá.</td></tr>
+<tr><td>14:30-16:00</td><td>Trải nghiệm</td><td>Ép lá giữa giấy.</td><td>Ghi giả thuyết: vì sao lá khác nhau?</td><td>Mẫu ép lá.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Lá nào làm con ngạc nhiên?&quot;</td><td>&quot;Tiêu chí phân loại nào rõ nhất?&quot;</td><td>Ghi chú thiên nhiên.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-10-thu-tu-dat-nuoc-va-su-song" class="day-title">Ngày 10 - Thứ Tư: Đất, nước và sự sống</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Chạm đất khô/ẩm, nói cảm giác.</td><td>Đo lượng nước tưới bằng cốc đong.</td><td>Quan sát đất.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Chơi &quot;hạt mầm lớn lên&quot;: cuộn người, vươn lên.</td><td>Giãn cơ, mô phỏng vòng đời cây bằng động tác.</td><td>Hiểu qua cơ thể.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Chuyện &quot;giọt nước đi tìm rễ&quot;.</td><td>Câu hỏi: cây uống nước bằng cách nào?</td><td>Câu hỏi khoa học.</td></tr>
+<tr><td>09:00-10:15</td><td>Thí nghiệm</td><td>Hai cốc đất: khô và ẩm; quan sát bằng tay/mắt.</td><td>So sánh đất cát, đất thịt, đất trộn nếu có.</td><td>Bảng so sánh đất.</td></tr>
+<tr><td>10:45-11:45</td><td>Khoa học</td><td>Vẽ cây cần gì: nắng, nước, đất, không khí.</td><td>Viết giả thuyết và biến số thí nghiệm.</td><td>Sơ đồ nhu cầu cây.</td></tr>
+<tr><td>13:30-14:30</td><td>Biểu đạt</td><td>Nặn hạt mầm bằng đất nặn.</td><td>Vẽ sơ đồ rễ hút nước.</td><td>Mô hình/sơ đồ.</td></tr>
+<tr><td>14:30-16:00</td><td>Việc thật</td><td>Tưới đúng lượng, lau nước tràn.</td><td>Thiết lập lịch tưới và người phụ trách.</td><td>Lịch chăm cây.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Nếu tưới quá nhiều thì sao?&quot;</td><td>&quot;Dữ liệu hôm nay ủng hộ giả thuyết nào?&quot;</td><td>Ghi nhật ký.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-11-thu-nam-con-trung-va-sinh-vat-nho" class="day-title">Ngày 11 - Thứ Năm: Côn trùng và sinh vật nhỏ</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Quan sát cây, tìm dấu hiệu sinh vật.</td><td>Ghi dữ liệu cây/hạt ngày 4.</td><td>Theo dõi liên tục.</td></tr>
+<tr><td>08:00-08:30</td><td>Ngoài trời</td><td>Đi tìm kiến/bướm/sâu từ khoảng cách an toàn.</td><td>Quan sát hành vi sinh vật 10 phút, không phá tổ.</td><td>Ghi nhận sinh vật.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Câu chuyện &quot;chú kiến đi làm&quot;.</td><td>Thảo luận đạo đức quan sát: không hại sinh vật.</td><td>Quy tắc quan sát.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Vẽ sinh vật đã thấy.</td><td>Lập phiếu quan sát: nơi thấy, hoạt động, số lượng, câu hỏi.</td><td>Phiếu sinh vật.</td></tr>
+<tr><td>10:45-11:45</td><td>Ngôn ngữ</td><td>Kể 3 câu về bạn kiến/bướm.</td><td>Viết đoạn mô tả khách quan, tránh tưởng tượng lẫn dữ liệu.</td><td>Kể/mô tả.</td></tr>
+<tr><td>13:30-14:30</td><td>Reggio</td><td>Làm sinh vật từ lá, que, đất nặn.</td><td>Làm mô hình hệ sinh thái nhỏ.</td><td>Mô hình.</td></tr>
+<tr><td>14:30-16:00</td><td>Tìm hiểu</td><td>Xem sách tranh/bách khoa phù hợp.</td><td>Tra cứu sách/nguồn an toàn, ghi 3 thông tin kiểm chứng.</td><td>Thẻ thông tin.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con đã quan sát mà không làm đau bạn nhỏ nào chưa?&quot;</td><td>&quot;Điều nào là dữ liệu, điều nào là suy đoán?&quot;</td><td>Phân biệt dữ liệu.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-12-thu-sau-nhat-ky-thien-nhien" class="day-title">Ngày 12 - Thứ Sáu: Nhật ký thiên nhiên</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Tưới cây, nói lời chào cây.</td><td>Ghi dữ liệu ngày 5, so sánh với ngày 1.</td><td>Chuỗi dữ liệu.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Đi bộ lặng im 5 phút nghe âm thanh.</td><td>Ghi bản đồ âm thanh quanh nhà.</td><td>Quan sát bằng tai.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Kể lại thay đổi của hạt/cây.</td><td>Câu hỏi: điều gì thay đổi, điều gì giữ nguyên?</td><td>Nhận diện thay đổi.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Làm trang nhật ký: tranh + 1 câu.</td><td>Hoàn thiện 5 trang nhật ký có ngày, dữ liệu, nhận xét.</td><td>Nhật ký thiên nhiên.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán/khoa học</td><td>So sánh cao-thấp, nhiều-ít.</td><td>Vẽ biểu đồ chiều cao hoặc số lá.</td><td>Biểu đồ.</td></tr>
+<tr><td>13:30-14:30</td><td>Nghệ thuật</td><td>Trang trí bìa nhật ký.</td><td>Viết lời mở đầu cho nhật ký thiên nhiên.</td><td>Bìa/sổ.</td></tr>
+<tr><td>14:30-16:00</td><td>Trưng bày</td><td>Chọn 3 sản phẩm thiên nhiên để dán bảng.</td><td>Sắp xếp góc trưng bày theo câu hỏi nghiên cứu.</td><td>Góc tuần 2.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Cây đã dạy con điều gì?&quot;</td><td>&quot;Mình cần quan sát thêm bao lâu để kết luận?&quot;</td><td>Kết luận tạm thời.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-13-thu-bay-di-thuc-te-thien-nhien-gan-nha" class="day-title">Ngày 13 - Thứ Bảy: Đi thực tế thiên nhiên gần nhà</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-08:00</td><td>Chuẩn bị</td><td>Tự lấy mũ, nước, khăn.</td><td>Chuẩn bị túi quan sát: sổ, bút, nước, túi rác.</td><td>Sẵn sàng đi.</td></tr>
+<tr><td>08:00-10:00</td><td>Đi công viên/sân chung</td><td>Tìm 5 màu, 3 âm thanh, 2 mùi dễ chịu.</td><td>Lập bản đồ tuyến đi và điểm quan sát.</td><td>Ghi chép thực địa.</td></tr>
+<tr><td>10:00-11:00</td><td>Nghỉ và vẽ nhanh</td><td>Vẽ điều thích nhất.</td><td>Phác thảo 1 cảnh, ghi chú ánh sáng/gió/người/cây.</td><td>Ký họa.</td></tr>
+<tr><td>15:00-16:00</td><td>Về nhà xử lý</td><td>Dán tranh vào nhật ký.</td><td>Chọn 3 dữ liệu đáng tin và 1 câu hỏi mới.</td><td>Nhật ký bổ sung.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con muốn quay lại quan sát gì?&quot;</td><td>&quot;Đi thực tế khác gì quan sát trong nhà?&quot;</td><td>Ý tưởng tuần sau.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-14-chu-nhat-nghi-va-tong-ket-tuan-2" class="day-title">Ngày 14 - Chủ Nhật: Nghỉ và tổng kết tuần 2</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>08:00-09:00</td><td>Sáng chậm</td><td>Tự chăm cây nhẹ.</td><td>Tự kiểm tra thí nghiệm cây.</td><td>Duy trì trách nhiệm.</td></tr>
+<tr><td>09:00-10:00</td><td>Portfolio</td><td>Chọn 2 trang nhật ký đẹp nhất.</td><td>Sắp xếp dữ liệu, tranh, ảnh theo thứ tự thời gian.</td><td>Hồ sơ tuần 2.</td></tr>
+<tr><td>10:00-11:00</td><td>Đọc sách</td><td>Sách tranh về cây/côn trùng.</td><td>Sách khoa học thiếu nhi về thực vật.</td><td>Đọc sâu.</td></tr>
+<tr><td>15:00-16:00</td><td>Họp gia đình</td><td>Kể 1 điều cây cần.</td><td>Trình bày giả thuyết đã kiểm tra.</td><td>Tổng kết miệng.</td></tr>
+<tr><td>19:30-20:00</td><td>Chuẩn bị tuần 3</td><td>Chọn món muốn làm.</td><td>Lập câu hỏi về bếp và dinh dưỡng.</td><td>Sẵn sàng tuần 3.</td></tr>
+</tbody></table></div>
+<h3 id="tuan-3-bep-va-dinh-duong" class="week-title">Tuần 3. Bếp và dinh dưỡng</h3>
+<p><strong>Mục tiêu tuần:</strong> trẻ hiểu bếp là phòng thí nghiệm đời sống; biết đo, trộn, chia, nếm, dọn và phản tư.</p>
+<p><strong>Đầu ra tuần:</strong> sổ công thức gia đình, 2 món thực hành, bảng an toàn bếp.</p>
+<h4 id="ngay-15-thu-hai-an-toan-bep-va-dung-cu" class="day-title">Ngày 15 - Thứ Hai: An toàn bếp và dụng cụ</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Rửa tay, buộc tóc nếu cần.</td><td>Kiểm tra vệ sinh bếp trước khi dùng.</td><td>Sẵn sàng bếp.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Trò chơi &quot;đầu bếp chậm rãi&quot;.</td><td>Giãn cơ cổ tay, vai; nói về tập trung khi dùng dao/lửa.</td><td>Tâm thế an toàn.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Chuyện &quot;căn bếp biết chăm sóc&quot;.</td><td>Thảo luận: rủi ro trong bếp và cách giảm rủi ro.</td><td>Ý thức an toàn.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Nhận diện dụng cụ: thìa, bát, rây, cốc đong.</td><td>Lập bảng dụng cụ: công dụng, nguy cơ, quy tắc dùng.</td><td>Bảng dụng cụ.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán</td><td>So sánh nhiều/ít bằng cốc nước.</td><td>Đọc đơn vị: ml, g, muỗng, cốc; đổi đơn giản.</td><td>Hiểu đo lường.</td></tr>
+<tr><td>13:30-14:30</td><td>Nghệ thuật</td><td>Vẽ biển &quot;rửa tay&quot;, &quot;dao sắc&quot;, &quot;nóng&quot;.</td><td>Thiết kế poster an toàn bếp.</td><td>Bảng an toàn.</td></tr>
+<tr><td>14:30-16:00</td><td>Việc thật</td><td>Rửa rau, lau bàn, phân loại dụng cụ.</td><td>Sắp xếp trạm bếp: rửa, cắt, trộn, dọn.</td><td>Bếp có trạm rõ.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Dụng cụ nào cần người lớn đứng cạnh?&quot;</td><td>&quot;Quy tắc nào quan trọng nhất và vì sao?&quot;</td><td>Quy tắc bếp.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-16-thu-ba-pha-nuoc-trai-cay-hoac-nuoc-chanh" class="day-title">Ngày 16 - Thứ Ba: Pha nước trái cây hoặc nước chanh</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Chuẩn bị khăn lau và cốc.</td><td>Ghi công thức dự kiến theo tỉ lệ.</td><td>Trạm pha chế.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Ép tay, xoay cổ tay qua trò chơi.</td><td>Khởi động cổ tay, đo mạch trước/sau.</td><td>Sẵn sàng thao tác.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Ngửi chanh/hoa quả, mô tả chua/ngọt/thơm.</td><td>Câu hỏi: vị thay đổi khi thêm nước/đường thế nào?</td><td>Câu hỏi vị giác.</td></tr>
+<tr><td>09:00-10:15</td><td>Thực hành</td><td>Rửa quả, vắt chanh với hỗ trợ, khuấy, nếm.</td><td>Thiết kế 3 mẫu tỉ lệ: ít ngọt, vừa, đậm.</td><td>3 mẫu nước.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán/khoa học</td><td>Đếm muỗng, so sánh cốc đầy/vơi.</td><td>Ghi bảng tỉ lệ, đánh giá vị theo thang 1-5.</td><td>Bảng thử vị.</td></tr>
+<tr><td>13:30-14:30</td><td>Biểu đạt</td><td>Vẽ ly nước mùa hè.</td><td>Viết công thức tối ưu và lý do chọn.</td><td>Trang công thức.</td></tr>
+<tr><td>14:30-16:00</td><td>Phục vụ</td><td>Mời người nhà thử, tự dọn trạm pha.</td><td>Thu phản hồi 2 người, điều chỉnh công thức.</td><td>Công thức hoàn thiện.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Khi chua quá, con làm gì?&quot;</td><td>&quot;Dữ liệu phản hồi có khớp khẩu vị của mình không?&quot;</td><td>Bài học tỉ lệ.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-17-thu-tu-salad-mau-sac-va-nhom-thuc-pham" class="day-title">Ngày 17 - Thứ Tư: Salad, màu sắc và nhóm thực phẩm</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Rửa tay, chuẩn bị bát riêng.</td><td>Kiểm tra nguyên liệu và hạn dùng.</td><td>An toàn thực phẩm.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Trò chơi &quot;màu rau chạy về nhà&quot;.</td><td>Đi bộ, kể tên nhóm thực phẩm đã ăn hôm qua.</td><td>Nhận diện dinh dưỡng.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Nhìn rau quả theo màu cầu vồng.</td><td>Thảo luận: bữa ăn cân bằng gồm những nhóm nào?</td><td>Khung dinh dưỡng.</td></tr>
+<tr><td>09:00-10:15</td><td>Thực hành</td><td>Rửa, xé rau mềm, trộn salad.</td><td>Thiết kế salad 4 nhóm: rau, đạm, tinh bột, chất béo tốt.</td><td>Món salad.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán/ngôn ngữ</td><td>Phân loại theo màu, đếm số miếng.</td><td>Tính khẩu phần cho 4 người, viết nhãn thành phần.</td><td>Khẩu phần.</td></tr>
+<tr><td>13:30-14:30</td><td>Nghệ thuật</td><td>Làm bánh xe màu thực phẩm bằng tranh.</td><td>Vẽ đĩa ăn cân bằng.</td><td>Bản đồ dinh dưỡng.</td></tr>
+<tr><td>14:30-16:00</td><td>Phục vụ</td><td>Bày salad ra đĩa đẹp.</td><td>Thu nhận xét về vị, màu, độ giòn.</td><td>Món ăn có trình bày.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Màu nào con ăn hôm nay?&quot;</td><td>&quot;Nếu thiếu một nhóm thực phẩm thì bữa ăn ra sao?&quot;</td><td>Nhận xét dinh dưỡng.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-18-thu-nam-lam-banh-khong-phuc-tap" class="day-title">Ngày 18 - Thứ Năm: Làm bánh không phức tạp</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Chuẩn bị tạp dề/khăn.</td><td>Đọc công thức, đánh dấu bước cần người lớn.</td><td>Kế hoạch làm bánh.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Chuyện &quot;bột, nước và hơi ấm&quot;.</td><td>Câu hỏi: vì sao bột thay đổi khi trộn/nướng/hấp?</td><td>Câu hỏi biến đổi.</td></tr>
+<tr><td>09:00-10:15</td><td>Thực hành</td><td>Đong bằng muỗng, trộn bột, xếp khuôn.</td><td>Cân nguyên liệu, nhân đôi hoặc chia đôi công thức.</td><td>Mẻ bánh.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán</td><td>Đếm khuôn, chia đều phần bột.</td><td>Tính tỉ lệ, thời gian, nhiệt độ; ghi sai số.</td><td>Bảng công thức.</td></tr>
+<tr><td>13:30-14:30</td><td>Biểu đạt</td><td>Vẽ quá trình làm bánh 3 bước.</td><td>Viết quy trình dạng hướng dẫn.</td><td>Trang quy trình.</td></tr>
+<tr><td>14:30-16:00</td><td>Thử vị</td><td>Nếm, mô tả mềm/cứng/ngọt/thơm.</td><td>Đánh giá kết cấu, đề xuất thay đổi lần sau.</td><td>Bảng nhận xét.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Bước nào cần chậm nhất?&quot;</td><td>&quot;Nếu bánh khô/nhão, mình thay đổi biến nào?&quot;</td><td>Kết luận thử nghiệm.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-19-thu-sau-so-cong-thuc-gia-dinh" class="day-title">Ngày 19 - Thứ Sáu: Sổ công thức gia đình</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Tự chuẩn bị góc vẽ công thức.</td><td>Thu thập ảnh/ghi chú các món trong tuần.</td><td>Tư liệu.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Diễn lại thao tác bếp bằng cơ thể.</td><td>Vận động nhẹ, thả lỏng sau tuần bếp.</td><td>Cơ thể ổn định.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Kể món mình thích nhất.</td><td>Chọn tiêu chí công thức tốt: rõ, an toàn, ngon, dễ lặp lại.</td><td>Tiêu chí.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Làm trang công thức bằng tranh: nguyên liệu, bước, thành phẩm.</td><td>Biên tập 2 công thức có định lượng, bước, lưu ý an toàn.</td><td>Sổ công thức.</td></tr>
+<tr><td>10:45-11:45</td><td>Ngôn ngữ</td><td>Kể lại trình tự trước-sau.</td><td>Viết đoạn &quot;điều tôi học trong bếp&quot;.</td><td>Bài viết.</td></tr>
+<tr><td>13:30-14:30</td><td>Thiết kế</td><td>Trang trí bìa sổ.</td><td>Thiết kế mục lục sổ công thức.</td><td>Bìa/mục lục.</td></tr>
+<tr><td>14:30-16:00</td><td>Chia sẻ</td><td>Trình bày công thức cho người nhà.</td><td>Dạy lại một bước bếp an toàn cho em/người lớn.</td><td>Trình bày.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con có thể tự làm phần nào lần sau?&quot;</td><td>&quot;Công thức của mình đã đủ để người khác làm theo chưa?&quot;</td><td>Sửa sổ.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-20-thu-bay-nau-mot-bua-nhe-cho-gia-dinh" class="day-title">Ngày 20 - Thứ Bảy: Nấu một bữa nhẹ cho gia đình</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-08:00</td><td>Lập kế hoạch</td><td>Chọn việc: rửa, xếp, khuấy, bày bàn.</td><td>Chọn món, lập danh sách nguyên liệu.</td><td>Kế hoạch bữa nhẹ.</td></tr>
+<tr><td>08:00-09:00</td><td>Đi chợ/kiểm đồ</td><td>Nhận diện rau/quả.</td><td>So giá, kiểm ngân sách nhỏ.</td><td>Nguyên liệu.</td></tr>
+<tr><td>09:30-11:00</td><td>Làm bữa nhẹ</td><td>Làm phần an toàn, có người lớn cạnh.</td><td>Điều phối quy trình, kiểm vệ sinh.</td><td>Bữa nhẹ.</td></tr>
+<tr><td>15:00-16:00</td><td>Dọn và ghi nhận</td><td>Dán ảnh món ăn.</td><td>Ghi chi phí, thời gian, phản hồi.</td><td>Trang dự án bếp.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con thấy mọi người ăn món của con thế nào?&quot;</td><td>&quot;Lần sau tối ưu bước nào?&quot;</td><td>Bài học phục vụ.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-21-chu-nhat-nghi-va-tong-ket-tuan-3" class="day-title">Ngày 21 - Chủ Nhật: Nghỉ và tổng kết tuần 3</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>08:00-09:00</td><td>Sáng chậm</td><td>Tự chuẩn bị nước uống.</td><td>Tự làm bữa sáng đơn giản nếu phù hợp.</td><td>Duy trì tự lập.</td></tr>
+<tr><td>09:00-10:00</td><td>Portfolio</td><td>Chọn 1 công thức yêu thích.</td><td>Sắp xếp sổ công thức, thêm mục lục.</td><td>Hồ sơ tuần 3.</td></tr>
+<tr><td>10:00-11:00</td><td>Đọc sách</td><td>Sách tranh về thức ăn/cơ thể.</td><td>Đọc về dinh dưỡng hoặc khoa học thực phẩm.</td><td>Đọc liên hệ.</td></tr>
+<tr><td>15:00-16:00</td><td>Họp gia đình</td><td>Nói món muốn thử tiếp.</td><td>Đề xuất cải thiện bữa ăn gia đình.</td><td>Ý tưởng tuần 4.</td></tr>
+<tr><td>19:30-20:00</td><td>Chuẩn bị tuần 4</td><td>Chuẩn bị cốc, chậu, đèn pin.</td><td>Viết câu hỏi về nước/ánh sáng/không khí.</td><td>Sẵn sàng khoa học.</td></tr>
+</tbody></table></div>
+<h3 id="tuan-4-nuoc-khong-khi-va-anh-sang" class="week-title">Tuần 4. Nước, không khí và ánh sáng</h3>
+<p><strong>Mục tiêu tuần:</strong> trẻ làm thí nghiệm đơn giản, biết dự đoán, quan sát, ghi kết quả và giải thích vừa sức.</p>
+<p><strong>Đầu ra tuần:</strong> góc thí nghiệm khoa học, 4 phiếu thí nghiệm, 1 mô hình hoặc poster giải thích.</p>
+<h4 id="ngay-22-thu-hai-noi-va-chim" class="day-title">Ngày 22 - Thứ Hai: Nổi và chìm</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Chuẩn bị khăn lau, chậu nước.</td><td>Lập bảng dự đoán vật nổi/chìm.</td><td>Trạm nước an toàn.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Diễn &quot;nổi nhẹ, chìm nặng&quot;.</td><td>Trò chơi dự đoán nhanh bằng vật quanh nhà.</td><td>Khởi động khái niệm.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Câu hỏi: &quot;Vì sao lá nổi?&quot;</td><td>Câu hỏi: nổi/chìm chỉ do nặng nhẹ không?</td><td>Giả thuyết.</td></tr>
+<tr><td>09:00-10:15</td><td>Thí nghiệm</td><td>Thả lá, đá, thìa, nắp chai, gỗ; nói nổi/chìm.</td><td>Ghi vật liệu, khối lượng tương đối, hình dạng, kết quả.</td><td>Bảng kết quả.</td></tr>
+<tr><td>10:45-11:45</td><td>Khoa học</td><td>Phân nhóm nổi/chìm bằng tranh.</td><td>Phân tích vai trò vật liệu, hình dạng, không khí.</td><td>Nhận xét.</td></tr>
+<tr><td>13:30-14:30</td><td>Reggio</td><td>Làm thuyền giấy/lá.</td><td>Thiết kế thuyền chở nhiều đồng xu nhất.</td><td>Thuyền thử nghiệm.</td></tr>
+<tr><td>14:30-16:00</td><td>Thử lại</td><td>Cho thuyền chở hạt/đồng xu.</td><td>Tối ưu thiết kế, ghi số lần thử.</td><td>Dữ liệu thử lại.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Vật nào làm con bất ngờ?&quot;</td><td>&quot;Giả thuyết ban đầu đúng đến đâu?&quot;</td><td>Kết luận.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-23-thu-ba-tan-va-khong-tan" class="day-title">Ngày 23 - Thứ Ba: Tan và không tan</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Chuẩn bị cốc, thìa, khăn.</td><td>Lập bảng chất thử: muối, đường, cát, dầu nếu có.</td><td>Trạm thí nghiệm.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Nếm an toàn: đường/muối rất ít, nói vị.</td><td>Câu hỏi: nước nóng/lạnh ảnh hưởng thế nào?</td><td>Dự đoán.</td></tr>
+<tr><td>09:00-10:15</td><td>Thí nghiệm</td><td>Khuấy đường, muối, cát trong nước.</td><td>So sánh tốc độ tan ở nước lạnh/ấm với giám sát.</td><td>Bảng tan/không tan.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán</td><td>Đếm số thìa trước khi tan.</td><td>Ghi thời gian tan, vẽ biểu đồ đơn giản.</td><td>Dữ liệu.</td></tr>
+<tr><td>13:30-14:30</td><td>Biểu đạt</td><td>Vẽ &quot;hạt đường biến mất&quot;.</td><td>Viết giải thích: tan không phải là biến mất hoàn toàn.</td><td>Giải thích.</td></tr>
+<tr><td>14:30-16:00</td><td>Ứng dụng</td><td>Pha nước muối/đường đúng vị.</td><td>Liên hệ nấu ăn: ướp, pha, hòa tan.</td><td>Ứng dụng đời sống.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con thấy gì khi khuấy?&quot;</td><td>&quot;Bằng chứng nào cho thấy chất vẫn còn trong nước?&quot;</td><td>Kết luận.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-24-thu-tu-bay-hoi-va-ngung-tu" class="day-title">Ngày 24 - Thứ Tư: Bay hơi và ngưng tụ</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Đặt 2 khăn ướt: nơi nắng/nơi râm.</td><td>Đo kích thước vệt nước hoặc cân khăn nếu có.</td><td>Thí nghiệm bắt đầu.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Trò chơi &quot;giọt nước bay lên&quot;.</td><td>Mô phỏng vòng tuần hoàn nước bằng động tác.</td><td>Hiểu bằng thân thể.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Chuyện &quot;giọt nước đi du lịch&quot;.</td><td>Câu hỏi: nước biến đi đâu khi khô?</td><td>Giả thuyết.</td></tr>
+<tr><td>09:00-10:15</td><td>Quan sát</td><td>So sánh khăn/vệt nước nắng và râm.</td><td>Thiết kế bảng thời gian khô, yếu tố ảnh hưởng.</td><td>Dữ liệu bay hơi.</td></tr>
+<tr><td>10:45-11:45</td><td>Khoa học</td><td>Vẽ mây, mưa, nắng.</td><td>Làm thí nghiệm ngưng tụ trên nắp lạnh với giám sát.</td><td>Vòng nước.</td></tr>
+<tr><td>13:30-14:30</td><td>Nghệ thuật</td><td>Làm tranh vòng tuần hoàn nước.</td><td>Vẽ sơ đồ có mũi tên và thuật ngữ.</td><td>Poster.</td></tr>
+<tr><td>14:30-16:00</td><td>Ứng dụng</td><td>Phơi khăn đúng chỗ.</td><td>Tối ưu cách phơi đồ trong nhà.</td><td>Việc thật.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Khăn nào khô nhanh hơn?&quot;</td><td>&quot;Yếu tố nào ảnh hưởng mạnh nhất?&quot;</td><td>Kết luận.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-25-thu-nam-anh-sang-va-bong" class="day-title">Ngày 25 - Thứ Năm: Ánh sáng và bóng</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Quan sát bóng buổi sáng.</td><td>Đánh dấu vị trí bóng theo giờ.</td><td>Bắt đầu dữ liệu bóng.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Chơi đuổi bóng an toàn.</td><td>Tạo dáng bóng và dự đoán hướng sáng.</td><td>Khám phá ánh sáng.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Câu hỏi: &quot;Bóng có màu gì?&quot;</td><td>Câu hỏi: bóng thay đổi theo nguồn sáng thế nào?</td><td>Dự đoán.</td></tr>
+<tr><td>09:00-10:15</td><td>Thí nghiệm</td><td>Dùng đèn pin tạo bóng tay/đồ vật.</td><td>Thay đổi khoảng cách nguồn sáng-vật-màn, đo bóng.</td><td>Bảng bóng.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán</td><td>So sánh bóng dài/ngắn.</td><td>Vẽ quan hệ khoảng cách và kích thước bóng.</td><td>Số đo.</td></tr>
+<tr><td>13:30-14:30</td><td>Reggio</td><td>Kể chuyện bằng bóng tay.</td><td>Viết kịch bản sân khấu bóng 2 phút.</td><td>Kịch bóng.</td></tr>
+<tr><td>14:30-16:00</td><td>Trình diễn</td><td>Làm sân khấu bóng bằng hộp/giấy.</td><td>Dàn dựng kịch bóng có thông điệp.</td><td>Màn trình diễn.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Làm sao để bóng to hơn?&quot;</td><td>&quot;Điều gì kiểm soát hình dạng bóng?&quot;</td><td>Kết luận ánh sáng.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-26-thu-sau-khong-khi-co-o-dau" class="day-title">Ngày 26 - Thứ Sáu: Không khí có ở đâu?</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Thổi bong bóng/xoay chong chóng nếu có.</td><td>Ghi hướng gió bằng giấy nhẹ.</td><td>Nhận biết không khí.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Chạy nhẹ cảm nhận gió.</td><td>Thử thở sâu, quan sát nhịp tim.</td><td>Cảm nhận cơ thể.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Câu hỏi: &quot;Không nhìn thấy thì làm sao biết có?&quot;</td><td>Thảo luận bằng chứng gián tiếp.</td><td>Tư duy bằng chứng.</td></tr>
+<tr><td>09:00-10:15</td><td>Thí nghiệm</td><td>Úp cốc vào nước với giấy khô bên trong, có giám sát.</td><td>Làm thí nghiệm cốc/giấy và giải thích không khí chiếm chỗ.</td><td>Phiếu thí nghiệm.</td></tr>
+<tr><td>10:45-11:45</td><td>Khoa học</td><td>Vẽ nơi con thấy không khí làm việc.</td><td>Viết 5 bằng chứng về không khí trong đời sống.</td><td>Bằng chứng.</td></tr>
+<tr><td>13:30-14:30</td><td>Nghệ thuật</td><td>Làm chong chóng giấy.</td><td>Thiết kế máy đo gió đơn giản bằng giấy/dây.</td><td>Sản phẩm gió.</td></tr>
+<tr><td>14:30-16:00</td><td>Thử nghiệm</td><td>Chạy thử chong chóng.</td><td>So sánh tốc độ quay ở các vị trí.</td><td>Dữ liệu gió.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con thấy gió ở đâu?&quot;</td><td>&quot;Bằng chứng nào mạnh nhất?&quot;</td><td>Kết luận.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-27-thu-bay-goc-trien-lam-khoa-hoc" class="day-title">Ngày 27 - Thứ Bảy: Góc triển lãm khoa học</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-08:00</td><td>Chuẩn bị</td><td>Chọn thí nghiệm thích nhất.</td><td>Chọn thí nghiệm giải thích rõ nhất.</td><td>Chủ đề triển lãm.</td></tr>
+<tr><td>09:00-10:30</td><td>Làm góc khoa học</td><td>Dán tranh, vật mẫu, ảnh.</td><td>Sắp xếp phiếu thí nghiệm theo câu hỏi-giả thuyết-kết quả.</td><td>Góc khoa học.</td></tr>
+<tr><td>10:30-11:30</td><td>Trình bày thử</td><td>Nói 3 câu: con làm gì, thấy gì, thích gì.</td><td>Trình bày 5 phút có bằng chứng.</td><td>Tập thuyết trình.</td></tr>
+<tr><td>15:00-16:00</td><td>Mời người nhà</td><td>Cho người nhà xem một thí nghiệm an toàn.</td><td>Điều phối phần hỏi đáp.</td><td>Chia sẻ khoa học.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con muốn thử lại điều gì?&quot;</td><td>&quot;Giải thích của mình đã rõ với người nghe chưa?&quot;</td><td>Sửa phần trình bày.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-28-chu-nhat-nghi-va-tong-ket-tuan-4" class="day-title">Ngày 28 - Chủ Nhật: Nghỉ và tổng kết tuần 4</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>08:00-09:00</td><td>Sáng chậm</td><td>Chọn 1 vật nổi/chìm để kể lại.</td><td>Xem lại 4 phiếu thí nghiệm.</td><td>Ôn nhẹ.</td></tr>
+<tr><td>09:00-10:00</td><td>Portfolio</td><td>Dán tranh khoa học.</td><td>Sắp xếp phiếu theo chuẩn: câu hỏi, dự đoán, cách làm, kết quả.</td><td>Hồ sơ tuần 4.</td></tr>
+<tr><td>10:00-11:00</td><td>Đọc sách</td><td>Sách tranh khoa học.</td><td>Đọc về nước/ánh sáng/không khí.</td><td>Mở rộng.</td></tr>
+<tr><td>15:00-16:00</td><td>Họp gia đình</td><td>Kể thí nghiệm vui nhất.</td><td>Chọn thí nghiệm muốn cải tiến.</td><td>Tổng kết.</td></tr>
+<tr><td>19:30-20:00</td><td>Chuẩn bị tuần 5</td><td>Chuẩn bị tiền giả, giỏ, thước.</td><td>Lập câu hỏi về chợ, tiền, đo lường.</td><td>Sẵn sàng tuần 5.</td></tr>
+</tbody></table></div>
+<h3 id="tuan-5-cho-tien-va-do-luong" class="week-title">Tuần 5. Chợ, tiền và đo lường</h3>
+<p><strong>Mục tiêu tuần:</strong> trẻ thấy toán học sống trong mua bán, đo, chia, lập kế hoạch và ra quyết định.</p>
+<p><strong>Đầu ra tuần:</strong> cửa hàng nhỏ tại nhà hoặc kế hoạch bữa ăn có ngân sách, bảng giá, hóa đơn giả, phản tư tài chính.</p>
+<h4 id="ngay-29-thu-hai-tien-gia-va-nhu-cau" class="day-title">Ngày 29 - Thứ Hai: Tiền, giá và nhu cầu</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Tự cất tiền giả/thẻ số vào hộp.</td><td>Chuẩn bị sổ ngân sách tuần.</td><td>Góc toán đời sống.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Chơi &quot;đổi vai người bán-người mua&quot;.</td><td>Trò chơi quyết định nhanh: cần hay muốn.</td><td>Khởi động tài chính.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Chuyện &quot;đồng tiền đi chợ&quot;.</td><td>Thảo luận: nhu cầu, mong muốn, lựa chọn.</td><td>Khái niệm cơ bản.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Nhận biết mệnh giá bằng tiền giả, ghép số.</td><td>Lập bảng nhu cầu cho bữa ăn/góc học.</td><td>Bảng nhu cầu.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán</td><td>Chơi mua 1-2 món bằng số đơn giản.</td><td>So sánh giá, tính tổng, tiền thừa.</td><td>Hóa đơn giả.</td></tr>
+<tr><td>13:30-14:30</td><td>Biểu đạt</td><td>Vẽ cửa hàng mơ ước.</td><td>Thiết kế bảng giá 10 mặt hàng.</td><td>Bảng giá.</td></tr>
+<tr><td>14:30-16:00</td><td>Việc thật</td><td>Dán giá lên đồ chơi/đồ khô.</td><td>Tổ chức cửa hàng nhỏ, phân loại mặt hàng.</td><td>Cửa hàng tại nhà.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con chọn mua gì trước?&quot;</td><td>&quot;Làm sao quyết định khi tiền có giới hạn?&quot;</td><td>Bài học lựa chọn.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-30-thu-ba-do-chieu-dai-khoi-luong-dung-tich" class="day-title">Ngày 30 - Thứ Ba: Đo chiều dài, khối lượng, dung tích</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Đo bàn tay bằng dây.</td><td>Chuẩn bị thước, cân, cốc đong.</td><td>Trạm đo.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Bước chân dài/ngắn, đếm bước.</td><td>Đo quãng đường bằng bước chân và thước.</td><td>So sánh đo.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Câu hỏi: &quot;Làm sao biết cái nào dài hơn?&quot;</td><td>Câu hỏi: vì sao cần đơn vị chuẩn?</td><td>Hiểu đơn vị.</td></tr>
+<tr><td>09:00-10:15</td><td>Thực hành</td><td>Đo đồ vật bằng bàn tay, que, dây.</td><td>Đo bằng cm, g, ml; ghi sai số khi đo lặp lại.</td><td>Bảng đo.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán</td><td>Sắp xếp dài-ngắn, nặng-nhẹ.</td><td>Chuyển đổi đơn giản: 1000 ml = 1 lít, 100 cm = 1 m.</td><td>Bài tập đời sống.</td></tr>
+<tr><td>13:30-14:30</td><td>Nghệ thuật</td><td>Làm thước giấy trang trí.</td><td>Làm poster &quot;đơn vị quanh nhà&quot;.</td><td>Công cụ đo.</td></tr>
+<tr><td>14:30-16:00</td><td>Ứng dụng</td><td>Đong nước tưới cây.</td><td>Đo nguyên liệu cho bữa nhẹ hoặc thí nghiệm.</td><td>Đo trong việc thật.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Đo bằng tay và thước khác nhau không?&quot;</td><td>&quot;Khi nào cần đo chính xác?&quot;</td><td>Kết luận đo lường.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-31-thu-tu-lap-ke-hoach-bua-an-co-ngan-sach" class="day-title">Ngày 31 - Thứ Tư: Lập kế hoạch bữa ăn có ngân sách</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Chọn 2 món yêu thích từ tranh.</td><td>Kiểm tra tủ lạnh/tủ bếp, ghi nguyên liệu sẵn có.</td><td>Danh sách ban đầu.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Câu hỏi: &quot;Một bữa ăn cần gì?&quot;</td><td>Câu hỏi: làm sao ăn đủ mà không lãng phí?</td><td>Mục tiêu bữa ăn.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Dán tranh thực đơn 1 bữa.</td><td>Lập thực đơn 1 bữa cho 4 người với ngân sách giả định.</td><td>Thực đơn.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán</td><td>Đếm số người, số bát, số phần.</td><td>Tính chi phí dự kiến, so sánh phương án A/B.</td><td>Ngân sách.</td></tr>
+<tr><td>13:30-14:30</td><td>Biểu đạt</td><td>Vẽ đĩa ăn của con.</td><td>Viết lý do chọn món theo dinh dưỡng/chi phí.</td><td>Giải thích lựa chọn.</td></tr>
+<tr><td>14:30-16:00</td><td>Việc thật</td><td>Giúp soạn danh sách mua 3 món.</td><td>Lập danh sách mua hàng theo thứ tự ưu tiên.</td><td>Danh sách đi chợ.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Món nào là cần, món nào là thích?&quot;</td><td>&quot;Mình đã cân bằng chi phí và dinh dưỡng chưa?&quot;</td><td>Điều chỉnh thực đơn.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-32-thu-nam-di-cho-hoac-mo-phong-di-cho" class="day-title">Ngày 32 - Thứ Năm: Đi chợ hoặc mô phỏng đi chợ</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Tự chuẩn bị túi, mũ, nước.</td><td>Mang danh sách, bút, ngân sách.</td><td>Sẵn sàng đi chợ.</td></tr>
+<tr><td>08:00-09:30</td><td>Đi chợ/mô phỏng</td><td>Tìm rau/quả theo màu, nói tên.</td><td>Ghi giá, so sánh 2 lựa chọn, hỏi lịch sự.</td><td>Dữ liệu giá.</td></tr>
+<tr><td>09:30-10:15</td><td>Về nhà</td><td>Phân loại đồ mua.</td><td>Tính tổng chi phí, tiền thừa, sai lệch dự kiến.</td><td>Hóa đơn.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán</td><td>Ghép món với số lượng.</td><td>Phân tích mua đúng ngân sách hay vượt.</td><td>Bảng chi phí.</td></tr>
+<tr><td>13:30-14:30</td><td>Reggio</td><td>Vẽ phiên chợ.</td><td>Viết đoạn quan sát đời sống ở chợ.</td><td>Tranh/bài viết.</td></tr>
+<tr><td>14:30-16:00</td><td>Việc thật</td><td>Rửa/cất rau quả đúng chỗ.</td><td>Sơ chế và bảo quản nguyên liệu.</td><td>Tủ bếp gọn.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con đã thấy ai làm việc chăm chỉ?&quot;</td><td>&quot;Đi chợ dạy mình điều gì về lao động và lựa chọn?&quot;</td><td>Bài học xã hội.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-33-thu-sau-cua-hang-nho-tai-nha" class="day-title">Ngày 33 - Thứ Sáu: Cửa hàng nhỏ tại nhà</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Sắp xếp quầy hàng.</td><td>Kiểm bảng giá, tiền giả, hóa đơn.</td><td>Cửa hàng sẵn sàng.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Diễn vai chào khách.</td><td>Luyện giao tiếp bán hàng lịch sự.</td><td>Vai trò rõ.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Quy tắc mua bán: chào, hỏi, cảm ơn.</td><td>Thảo luận công bằng, giá cả, trả lại tiền thừa.</td><td>Quy tắc cửa hàng.</td></tr>
+<tr><td>09:00-10:15</td><td>Mô phỏng</td><td>Làm người bán/người mua với 3 món.</td><td>Quản lý quầy, ghi hóa đơn, tính tiền thừa.</td><td>Phiên chợ mini.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán</td><td>Đếm món đã bán.</td><td>Tổng kết doanh thu giả, mặt hàng bán chạy.</td><td>Báo cáo nhỏ.</td></tr>
+<tr><td>13:30-14:30</td><td>Thiết kế</td><td>Làm biển cửa hàng.</td><td>Thiết kế logo và bảng khuyến mãi hợp lý.</td><td>Nhận diện cửa hàng.</td></tr>
+<tr><td>14:30-16:00</td><td>Mời khách</td><td>Mời người nhà mua hàng.</td><td>Thu phản hồi trải nghiệm khách hàng.</td><td>Cửa hàng hoạt động.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con thích làm người bán hay người mua?&quot;</td><td>&quot;Dữ liệu bán hàng nói điều gì?&quot;</td><td>Kết luận tuần.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-34-thu-bay-nau-theo-ngan-sach" class="day-title">Ngày 34 - Thứ Bảy: Nấu theo ngân sách</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-08:00</td><td>Kế hoạch</td><td>Chọn việc vừa sức trong bữa ăn.</td><td>Chốt thực đơn và ngân sách thật hoặc giả.</td><td>Kế hoạch.</td></tr>
+<tr><td>08:00-09:00</td><td>Mua/kiểm đồ</td><td>Nhận diện nguyên liệu.</td><td>Ghi chi phí và thay thế nếu cần.</td><td>Bảng chi phí.</td></tr>
+<tr><td>09:30-11:00</td><td>Làm món</td><td>Rửa, trộn, bày.</td><td>Điều phối nấu với người lớn giám sát.</td><td>Món ăn.</td></tr>
+<tr><td>15:00-16:00</td><td>Báo cáo</td><td>Vẽ món đã làm.</td><td>Viết báo cáo: ngân sách, món, điều chỉnh.</td><td>Trang dự án.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con giúp bữa ăn ở bước nào?&quot;</td><td>&quot;Mình đã dùng tiền và nguyên liệu có trách nhiệm chưa?&quot;</td><td>Tự đánh giá.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-35-chu-nhat-nghi-va-tong-ket-tuan-5" class="day-title">Ngày 35 - Chủ Nhật: Nghỉ và tổng kết tuần 5</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>08:00-09:00</td><td>Sáng chậm</td><td>Tự dọn góc cửa hàng.</td><td>Sắp xếp hóa đơn, bảng giá.</td><td>Gọn gàng.</td></tr>
+<tr><td>09:00-10:00</td><td>Portfolio</td><td>Chọn biển cửa hàng hoặc tranh chợ.</td><td>Sắp xếp báo cáo ngân sách.</td><td>Hồ sơ tuần 5.</td></tr>
+<tr><td>10:00-11:00</td><td>Đọc sách</td><td>Sách về nghề nghiệp/chợ.</td><td>Đọc về tiền, trao đổi, lao động.</td><td>Mở rộng xã hội.</td></tr>
+<tr><td>15:00-16:00</td><td>Họp gia đình</td><td>Kể điều học được ở chợ.</td><td>Trình bày cách ra quyết định khi có giới hạn.</td><td>Tổng kết.</td></tr>
+<tr><td>19:30-20:00</td><td>Chuẩn bị tuần 6</td><td>Chọn câu chuyện thích.</td><td>Chọn chủ đề muốn kể bằng nhiều ngôn ngữ.</td><td>Sẵn sàng sáng tạo.</td></tr>
+</tbody></table></div>
+<h3 id="tuan-6-cau-chuyen-va-100-ngon-ngu" class="week-title">Tuần 6. Câu chuyện và 100 ngôn ngữ</h3>
+<p><strong>Mục tiêu tuần:</strong> trẻ biết một ý tưởng có thể biểu đạt bằng lời, tranh, mô hình, kịch, âm thanh, chuyển động.</p>
+<p><strong>Đầu ra tuần:</strong> một sản phẩm kể chuyện đa hình thức: sách tranh, kịch bóng, mô hình hoặc audio kể chuyện.</p>
+<h4 id="ngay-36-thu-hai-chon-cau-chuyen-va-nhan-vat" class="day-title">Ngày 36 - Thứ Hai: Chọn câu chuyện và nhân vật</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Chọn 3 vật liệu mở: hộp, vải, que.</td><td>Chuẩn bị sổ ý tưởng, vật liệu mô hình.</td><td>Góc sáng tạo.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Diễn dáng nhân vật vui/buồn/chậm/nhanh.</td><td>Tập biểu cảm cơ thể theo tính cách nhân vật.</td><td>Mở thân thể.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Nghe một câu chuyện ngắn.</td><td>Phân tích nhân vật, bối cảnh, xung đột.</td><td>Khung truyện.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Chọn nhân vật chính, vẽ chân dung.</td><td>Viết hồ sơ nhân vật: mục tiêu, khó khăn, thay đổi.</td><td>Nhân vật.</td></tr>
+<tr><td>10:45-11:45</td><td>Ngôn ngữ</td><td>Kể 3 câu: ai, ở đâu, muốn gì.</td><td>Viết đoạn mở đầu 150-250 chữ.</td><td>Bản nháp truyện.</td></tr>
+<tr><td>13:30-14:30</td><td>Reggio</td><td>Nặn nhân vật bằng đất/hộp.</td><td>Tạo moodboard vật liệu, màu, hình ảnh.</td><td>Mô hình/ý tưởng.</td></tr>
+<tr><td>14:30-16:00</td><td>Thử kể</td><td>Kể cho người lớn nghe bằng tranh/mô hình.</td><td>Trình bày ý tưởng, nhận câu hỏi góp ý.</td><td>Ý tưởng được nghe.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Nhân vật của con đang muốn gì?&quot;</td><td>&quot;Xung đột của truyện có đủ rõ chưa?&quot;</td><td>Sửa ý tưởng.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-37-thu-ba-boi-canh-va-the-gioi-cau-chuyen" class="day-title">Ngày 37 - Thứ Ba: Bối cảnh và thế giới câu chuyện</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Sắp xếp vật liệu theo màu/chất liệu.</td><td>Chuẩn bị bản đồ thế giới truyện.</td><td>Trật tự sáng tạo.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Đi như nhân vật trong rừng/biển/thành phố.</td><td>Diễn không gian bằng chuyển động.</td><td>Cảm nhận bối cảnh.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Câu hỏi: &quot;Câu chuyện xảy ra ở đâu?&quot;</td><td>Câu hỏi: bối cảnh ảnh hưởng lựa chọn nhân vật thế nào?</td><td>Hiểu bối cảnh.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Vẽ bản đồ nơi nhân vật sống.</td><td>Thiết kế bản đồ có vị trí, quy tắc, nguy cơ, tài nguyên.</td><td>Bản đồ truyện.</td></tr>
+<tr><td>10:45-11:45</td><td>Ngôn ngữ</td><td>Gọi tên 5 thứ trong thế giới truyện.</td><td>Viết mô tả bối cảnh dùng 5 giác quan.</td><td>Từ vựng/mô tả.</td></tr>
+<tr><td>13:30-14:30</td><td>Nghệ thuật</td><td>Làm nền bằng giấy, lá, vải.</td><td>Làm mô hình bối cảnh tỉ lệ nhỏ.</td><td>Bối cảnh.</td></tr>
+<tr><td>14:30-16:00</td><td>Thử nghiệm</td><td>Đặt nhân vật vào bối cảnh, kể thử.</td><td>Kiểm tra logic thế giới truyện.</td><td>Cảnh 1.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Nhân vật thích nơi nào nhất?&quot;</td><td>&quot;Bối cảnh có làm câu chuyện thú vị hơn không?&quot;</td><td>Điều chỉnh.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-38-thu-tu-van-de-va-cach-giai-quyet" class="day-title">Ngày 38 - Thứ Tư: Vấn đề và cách giải quyết</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Chọn thẻ cảm xúc cho nhân vật.</td><td>Ghi mục tiêu và trở ngại của nhân vật.</td><td>Xung đột.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Diễn &quot;gặp khó - thử lại&quot;.</td><td>Tập cảnh căng thẳng bằng động tác.</td><td>Cảm xúc nhân vật.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Câu chuyện về một lần làm chưa được.</td><td>Socrates: vấn đề thật là gì, có mấy cách giải?</td><td>Tư duy giải quyết vấn đề.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Vẽ 3 tranh: bắt đầu, gặp khó, vui lại.</td><td>Viết dàn ý 3 hồi: mở, xung đột, chuyển hóa.</td><td>Cấu trúc truyện.</td></tr>
+<tr><td>10:45-11:45</td><td>Ngôn ngữ</td><td>Kể bằng câu &quot;bỗng nhiên...&quot;</td><td>Viết đối thoại giữa 2 nhân vật.</td><td>Lời thoại.</td></tr>
+<tr><td>13:30-14:30</td><td>Reggio</td><td>Dùng mô hình diễn vấn đề.</td><td>Dựng storyboard 6 khung.</td><td>Storyboard.</td></tr>
+<tr><td>14:30-16:00</td><td>Thử kể</td><td>Kể thử cho người nghe hỏi 1 câu.</td><td>Nhận phản hồi: chỗ nào chưa rõ, chỗ nào cuốn hút.</td><td>Bản nháp cải tiến.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Nhân vật đã thử cách nào?&quot;</td><td>&quot;Cách giải quyết có đến từ hành động của nhân vật không?&quot;</td><td>Sửa dàn ý.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-39-thu-nam-ke-bang-hinh-am-thanh-va-chuyen-dong" class="day-title">Ngày 39 - Thứ Năm: Kể bằng hình, âm thanh và chuyển động</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Chuẩn bị nhạc cụ đơn giản: thìa, hộp, giấy.</td><td>Chuẩn bị vật liệu âm thanh, ánh sáng, đạo cụ.</td><td>Trạm biểu đạt.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Diễn nhân vật không dùng lời.</td><td>Biểu diễn một cảnh chỉ bằng cơ thể.</td><td>Ngôn ngữ cơ thể.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Nghe âm thanh và đoán cảm xúc.</td><td>Thảo luận: âm thanh thay đổi cảm giác câu chuyện ra sao?</td><td>Cảm thụ.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Tạo 3 âm thanh cho câu chuyện.</td><td>Thiết kế âm thanh/nền sáng cho 3 cảnh chính.</td><td>Bảng âm thanh.</td></tr>
+<tr><td>10:45-11:45</td><td>Ngôn ngữ</td><td>Kể một đoạn có âm thanh phụ họa.</td><td>Biên tập kịch bản có chỉ dẫn sân khấu.</td><td>Kịch bản.</td></tr>
+<tr><td>13:30-14:30</td><td>Nghệ thuật</td><td>Làm đạo cụ đơn giản.</td><td>Hoàn thiện đạo cụ/mô hình/bối cảnh.</td><td>Đạo cụ.</td></tr>
+<tr><td>14:30-16:00</td><td>Tập diễn</td><td>Diễn thử 3-5 phút.</td><td>Diễn thử, bấm thời gian, ghi điểm cần sửa.</td><td>Bản diễn thử.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Âm thanh nào hợp với nhân vật?&quot;</td><td>&quot;Chi tiết nào giúp người xem hiểu mà không cần giải thích?&quot;</td><td>Cải tiến.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-40-thu-sau-hoan-thien-san-pham-ke-chuyen" class="day-title">Ngày 40 - Thứ Sáu: Hoàn thiện sản phẩm kể chuyện</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Xếp tranh/mô hình theo thứ tự.</td><td>Kiểm kịch bản, đạo cụ, thời lượng.</td><td>Sẵn sàng hoàn thiện.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Kể lại câu chuyện bằng 3 tranh.</td><td>Nói thông điệp chính trong 1 câu.</td><td>Cốt lõi truyện.</td></tr>
+<tr><td>09:00-10:15</td><td>Sản xuất</td><td>Làm sách tranh 4-6 trang hoặc mô hình kể chuyện.</td><td>Hoàn thiện sách/kịch/mô hình 8-12 cảnh.</td><td>Sản phẩm chính.</td></tr>
+<tr><td>10:45-11:45</td><td>Ngôn ngữ</td><td>Người lớn ghi lời trẻ kể nguyên văn.</td><td>Biên tập lời kể, kiểm lỗi chính tả/cấu trúc.</td><td>Lời kể.</td></tr>
+<tr><td>13:30-14:30</td><td>Thiết kế</td><td>Làm bìa, đặt tên truyện.</td><td>Viết lời giới thiệu tác giả và thông điệp.</td><td>Bìa và lời giới thiệu.</td></tr>
+<tr><td>14:30-16:00</td><td>Chia sẻ</td><td>Kể cho người nhà nghe.</td><td>Trình bày và trả lời 3 câu hỏi.</td><td>Buổi kể chuyện.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con thích trang/cảnh nào nhất?&quot;</td><td>&quot;Người nghe hiểu thông điệp chưa?&quot;</td><td>Sửa cuối.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-41-thu-bay-san-khau-gia-dinh" class="day-title">Ngày 41 - Thứ Bảy: Sân khấu gia đình</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>08:00-09:00</td><td>Chuẩn bị</td><td>Chọn trang phục/đạo cụ đơn giản.</td><td>Lên lịch diễn, phân vai, chuẩn bị không gian.</td><td>Sân khấu nhỏ.</td></tr>
+<tr><td>09:00-10:30</td><td>Tập</td><td>Tập kể tự nhiên, không ép thuộc.</td><td>Tập diễn có mở đầu-kết thúc rõ.</td><td>Bản diễn ổn.</td></tr>
+<tr><td>15:00-16:00</td><td>Biểu diễn</td><td>Kể hoặc diễn 3-5 phút.</td><td>Biểu diễn 8-12 phút hoặc thuyết trình sản phẩm.</td><td>Sản phẩm tuần 6.</td></tr>
+<tr><td>16:00-16:30</td><td>Ghi nhận</td><td>Người lớn ghi lời trẻ.</td><td>Thu phản hồi người xem.</td><td>Tư liệu portfolio.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con vui nhất lúc nào?&quot;</td><td>&quot;Điểm mạnh của sản phẩm là gì, cần nâng ở đâu?&quot;</td><td>Tự đánh giá.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-42-chu-nhat-nghi-va-tong-ket-tuan-6" class="day-title">Ngày 42 - Chủ Nhật: Nghỉ và tổng kết tuần 6</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>08:00-09:00</td><td>Sáng chậm</td><td>Cất đạo cụ vào hộp.</td><td>Lưu kịch bản/sách/mô hình.</td><td>Gọn gàng.</td></tr>
+<tr><td>09:00-10:00</td><td>Portfolio</td><td>Chọn ảnh buổi diễn.</td><td>Sắp xếp bản nháp và bản cuối để thấy tiến bộ.</td><td>Hồ sơ tuần 6.</td></tr>
+<tr><td>10:00-11:00</td><td>Đọc sách</td><td>Đọc truyện tranh.</td><td>Đọc truyện ngắn, chú ý cách xây nhân vật.</td><td>Nuôi đọc.</td></tr>
+<tr><td>15:00-16:00</td><td>Họp gia đình</td><td>Nói nhân vật mình yêu thích.</td><td>Phân tích quy trình sáng tạo tuần qua.</td><td>Tổng kết.</td></tr>
+<tr><td>19:30-20:00</td><td>Chuẩn bị tuần 7</td><td>Chọn một góc nhà muốn làm đẹp hơn.</td><td>Xác định một vấn đề gia đình có thể cải thiện.</td><td>Ý tưởng dự án cộng đồng.</td></tr>
+</tbody></table></div>
+<h3 id="tuan-7-du-an-cong-dong-gia-dinh" class="week-title">Tuần 7. Dự án cộng đồng gia đình</h3>
+<p><strong>Mục tiêu tuần:</strong> trẻ dùng năng lực đã học để cải thiện một góc nhà hoặc một thói quen gia đình.</p>
+<p><strong>Đầu ra tuần:</strong> một dự án cải thiện thật, có trước-sau, kế hoạch, phân công, thực hiện, đánh giá.</p>
+<h4 id="ngay-43-thu-hai-tim-van-de-trong-nha" class="day-title">Ngày 43 - Thứ Hai: Tìm vấn đề trong nhà</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Quan sát góc hay bừa, góc khó lấy đồ.</td><td>Ghi 5 vấn đề nhỏ trong nhà.</td><td>Danh sách vấn đề.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Đi &quot;tham quan nhà&quot; như nhà thám hiểm.</td><td>Khảo sát nhà, chụp ảnh trước nếu phù hợp.</td><td>Dữ liệu hiện trạng.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Câu hỏi: &quot;Góc nào cần được giúp?&quot;</td><td>Câu hỏi: vấn đề nào thật, vừa sức, đo được?</td><td>Chọn vấn đề.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Vẽ góc cần cải thiện.</td><td>Lập ma trận: ảnh hưởng, độ khó, thời gian, vật liệu.</td><td>Quyết định dự án.</td></tr>
+<tr><td>10:45-11:45</td><td>Ngôn ngữ</td><td>Nói 3 câu: vấn đề, mong muốn, việc con làm.</td><td>Viết mô tả vấn đề và tiêu chí thành công.</td><td>Bản mô tả.</td></tr>
+<tr><td>13:30-14:30</td><td>Thiết kế</td><td>Làm tranh &quot;trước và sau mơ ước&quot;.</td><td>Phác thảo thiết kế giải pháp.</td><td>Bản thiết kế.</td></tr>
+<tr><td>14:30-16:00</td><td>Khảo sát</td><td>Đo/kể đồ trong góc đó.</td><td>Đo kích thước, kiểm vật liệu, hỏi ý kiến người dùng.</td><td>Dữ liệu dự án.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con muốn giúp nhà ở điểm nào?&quot;</td><td>&quot;Tiêu chí nào cho biết dự án thành công?&quot;</td><td>Tiêu chí.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-44-thu-ba-lap-ke-hoach-va-phan-cong" class="day-title">Ngày 44 - Thứ Ba: Lập kế hoạch và phân công</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Chọn một việc mình làm được.</td><td>Viết timeline dự án 4 ngày.</td><td>Vai trò.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Trò chơi chuyền vật liệu theo nhóm.</td><td>Bài tập phối hợp: phân vai trong 5 phút.</td><td>Hợp tác.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Câu chuyện &quot;mỗi người một việc&quot;.</td><td>Thảo luận vai trò: người thiết kế, người làm, người kiểm tra.</td><td>Phân công.</td></tr>
+<tr><td>09:00-10:15</td><td>Dự án</td><td>Làm thẻ việc bằng hình.</td><td>Lập bảng Kanban: cần làm, đang làm, đã xong.</td><td>Bảng việc.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán</td><td>Đếm vật liệu cần: hộp, nhãn, dây.</td><td>Ước lượng thời gian, chi phí, vật liệu sẵn có.</td><td>Kế hoạch nguồn lực.</td></tr>
+<tr><td>13:30-14:30</td><td>Thiết kế</td><td>Làm nhãn/hình trang trí.</td><td>Thiết kế giải pháp chi tiết, đo lại nếu cần.</td><td>Vật liệu sẵn sàng.</td></tr>
+<tr><td>14:30-16:00</td><td>Chuẩn bị</td><td>Gom vật liệu, lau khu vực nhỏ.</td><td>Chuẩn bị quy trình thực hiện ngày mai.</td><td>Trạm dự án.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Việc nào con chọn làm?&quot;</td><td>&quot;Kế hoạch có điểm nào rủi ro?&quot;</td><td>Điều chỉnh.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-45-thu-tu-thuc-hien-vong-1" class="day-title">Ngày 45 - Thứ Tư: Thực hiện vòng 1</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Kiểm thẻ việc của mình.</td><td>Kiểm bảng Kanban.</td><td>Sẵn sàng làm.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Khởi động bằng dọn nhanh 5 phút.</td><td>Khởi động, nhắc nguyên tắc an toàn.</td><td>Năng lượng làm việc.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Nhắc câu: &quot;làm chậm, làm rõ&quot;.</td><td>Nêu mục tiêu trong ngày bằng 1 câu.</td><td>Tập trung.</td></tr>
+<tr><td>09:00-10:15</td><td>Thực hiện</td><td>Lau, phân loại, dán nhãn, cất đồ nhẹ.</td><td>Sắp xếp, đo, lắp, thử hệ thống lưu trữ.</td><td>Phiên bản 1.</td></tr>
+<tr><td>10:45-11:45</td><td>Kiểm tra</td><td>Tự lấy-cất thử 3 món.</td><td>Test người dùng: ai cũng lấy-cất được không?</td><td>Dữ liệu test.</td></tr>
+<tr><td>13:30-14:30</td><td>Ghi nhận</td><td>Vẽ góc sau khi làm.</td><td>Ghi ảnh trước-sau và lỗi còn lại.</td><td>Tư liệu.</td></tr>
+<tr><td>14:30-16:00</td><td>Sửa nhẹ</td><td>Điều chỉnh nhãn/hộp.</td><td>Sửa theo dữ liệu test.</td><td>Phiên bản tốt hơn.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Cái gì dễ hơn sau khi dọn?&quot;</td><td>&quot;Giải pháp đã giải quyết đúng vấn đề chưa?&quot;</td><td>Quyết định sửa tiếp.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-46-thu-nam-thuc-hien-vong-2-va-tieu-chuan-hoa" class="day-title">Ngày 46 - Thứ Năm: Thực hiện vòng 2 và tiêu chuẩn hóa</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Dùng thử hệ thống mới.</td><td>Ghi lỗi phát sinh sau 1 ngày.</td><td>Dữ liệu thật.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Câu hỏi: &quot;Chỗ nào vẫn khó?&quot;</td><td>Câu hỏi: làm sao duy trì sau dự án?</td><td>Tư duy bền vững.</td></tr>
+<tr><td>09:00-10:15</td><td>Sửa vòng 2</td><td>Di chuyển nhãn/hộp cho dễ hơn.</td><td>Tối ưu vị trí, quy tắc, checklist duy trì.</td><td>Phiên bản 2.</td></tr>
+<tr><td>10:45-11:45</td><td>Ngôn ngữ</td><td>Tập nói quy tắc dùng góc mới.</td><td>Viết hướng dẫn sử dụng 5-7 bước.</td><td>Hướng dẫn.</td></tr>
+<tr><td>13:30-14:30</td><td>Thiết kế</td><td>Làm biển &quot;sau khi dùng hãy cất về nhà&quot;.</td><td>Làm poster quy tắc duy trì.</td><td>Biển hướng dẫn.</td></tr>
+<tr><td>14:30-16:00</td><td>Thực hành</td><td>Cả nhà dùng thử 1 vòng.</td><td>Thu phản hồi người dùng và chỉnh cuối.</td><td>Hệ thống dùng được.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con nhớ quy tắc nào?&quot;</td><td>&quot;Điều gì giúp dự án sống tiếp sau tuần này?&quot;</td><td>Kế hoạch duy trì.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-47-thu-sau-bao-cao-du-an-gia-dinh" class="day-title">Ngày 47 - Thứ Sáu: Báo cáo dự án gia đình</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Dùng góc mới không cần nhắc quá 2 lần.</td><td>Kiểm hệ thống bằng checklist.</td><td>Bằng chứng hoạt động.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Kể &quot;trước đây... bây giờ...&quot;</td><td>Nêu vấn đề, giải pháp, bằng chứng, bài học.</td><td>Khung báo cáo.</td></tr>
+<tr><td>09:00-10:15</td><td>Báo cáo</td><td>Làm tranh trước-sau.</td><td>Viết báo cáo 1 trang: mục tiêu, quy trình, kết quả, bài học.</td><td>Báo cáo.</td></tr>
+<tr><td>10:45-11:45</td><td>Toán/dữ liệu</td><td>Đếm số đồ đã cất đúng.</td><td>So sánh thời gian tìm đồ trước/sau nếu có.</td><td>Dữ liệu tác động.</td></tr>
+<tr><td>13:30-14:30</td><td>Biểu đạt</td><td>Trang trí bảng dự án.</td><td>Thiết kế slide giấy/poster trình bày.</td><td>Poster.</td></tr>
+<tr><td>14:30-16:00</td><td>Trình bày</td><td>Nói 3-5 câu trước gia đình.</td><td>Trình bày 8 phút, trả lời câu hỏi.</td><td>Báo cáo miệng.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con đã giúp nhà thế nào?&quot;</td><td>&quot;Mình học gì về giải quyết vấn đề thật?&quot;</td><td>Tổng kết tuần.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-48-thu-bay-ngay-phuc-vu-gia-dinh" class="day-title">Ngày 48 - Thứ Bảy: Ngày phục vụ gia đình</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-08:00</td><td>Chọn việc phục vụ</td><td>Chọn 1 việc: tưới cây, lau bàn, xếp khăn.</td><td>Chọn 1 việc có ích kéo dài 30-60 phút.</td><td>Vai trò phục vụ.</td></tr>
+<tr><td>09:00-10:30</td><td>Làm việc thật</td><td>Làm cùng người lớn, không đòi hoàn hảo.</td><td>Tự quản một phần việc và báo khi cần hỗ trợ.</td><td>Việc hoàn thành.</td></tr>
+<tr><td>10:30-11:30</td><td>Ghi nhận</td><td>Dán sticker việc đã làm.</td><td>Ghi thời gian, khó khăn, cách xử lý.</td><td>Nhật ký phục vụ.</td></tr>
+<tr><td>15:00-16:00</td><td>Cảm ơn</td><td>Làm thiệp cảm ơn người trong nhà.</td><td>Viết thư cảm ơn một người lao động trong gia đình.</td><td>Thiệp/thư.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Khi con giúp, nhà thay đổi gì?&quot;</td><td>&quot;Phục vụ khác gì bị sai vặt?&quot;</td><td>Bài học cộng đồng.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-49-chu-nhat-nghi-va-tong-ket-tuan-7" class="day-title">Ngày 49 - Chủ Nhật: Nghỉ và tổng kết tuần 7</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>08:00-09:00</td><td>Sáng chậm</td><td>Dùng góc mới tự nhiên.</td><td>Kiểm dự án sau một ngày.</td><td>Duy trì.</td></tr>
+<tr><td>09:00-10:00</td><td>Portfolio</td><td>Chọn tranh trước-sau.</td><td>Sắp xếp báo cáo, ảnh, phản hồi.</td><td>Hồ sơ tuần 7.</td></tr>
+<tr><td>10:00-11:00</td><td>Đọc sách</td><td>Sách về gia đình/cộng đồng.</td><td>Đọc về thiết kế, cộng đồng, trách nhiệm.</td><td>Mở rộng.</td></tr>
+<tr><td>15:00-16:00</td><td>Họp gia đình</td><td>Nói &quot;con thấy nhà mình...&quot;</td><td>Đề xuất cách duy trì dự án trong tháng tới.</td><td>Cam kết duy trì.</td></tr>
+<tr><td>19:30-20:00</td><td>Chuẩn bị tuần 8</td><td>Chọn sản phẩm muốn trưng bày.</td><td>Lập danh sách portfolio 7 tuần.</td><td>Sẵn sàng triển lãm.</td></tr>
+</tbody></table></div>
+<h3 id="tuan-8-trien-lam-mua-he-va-tong-ket" class="week-title">Tuần 8. Triển lãm mùa hè và tổng kết</h3>
+<p><strong>Mục tiêu tuần:</strong> trẻ nhìn lại quá trình lớn lên, chọn bằng chứng, kể câu chuyện học tập và tự hào lành mạnh.</p>
+<p><strong>Đầu ra tuần:</strong> triển lãm gia đình, portfolio hoàn chỉnh, bài trình bày cuối khóa.</p>
+<h4 id="ngay-50-thu-hai-xem-lai-hanh-trinh-7-tuan" class="day-title">Ngày 50 - Thứ Hai: Xem lại hành trình 7 tuần</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Tự lấy hộp sản phẩm.</td><td>Chuẩn bị toàn bộ portfolio.</td><td>Tư liệu tập trung.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Đi quanh nhà xem &quot;dấu vết mùa hè&quot;.</td><td>Đi kiểm 8 chủ đề đã học.</td><td>Kích hoạt ký ức.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Chọn 3 khoảnh khắc thích nhất.</td><td>Lập timeline 7 tuần với sản phẩm chính.</td><td>Dòng thời gian.</td></tr>
+<tr><td>09:00-10:15</td><td>Portfolio</td><td>Chọn mỗi tuần 1 sản phẩm.</td><td>Chọn bằng chứng mạnh nhất cho từng năng lực.</td><td>Bộ chọn lọc.</td></tr>
+<tr><td>10:45-11:45</td><td>Ngôn ngữ</td><td>Kể &quot;con đã làm...&quot; với tranh.</td><td>Viết bản nháp câu chuyện học tập cá nhân.</td><td>Câu chuyện học tập.</td></tr>
+<tr><td>13:30-14:30</td><td>Thiết kế</td><td>Làm bìa portfolio.</td><td>Thiết kế mục lục và phân khu triển lãm.</td><td>Bìa/mục lục.</td></tr>
+<tr><td>14:30-16:00</td><td>Sắp xếp</td><td>Xếp sản phẩm theo tuần.</td><td>Gắn nhãn: mục tiêu, quá trình, bài học.</td><td>Portfolio có cấu trúc.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con thấy mình giỏi hơn ở việc gì?&quot;</td><td>&quot;Bằng chứng nào cho thấy mình tiến bộ thật?&quot;</td><td>Tự nhận thức.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-51-thu-ba-chon-chu-de-trien-lam" class="day-title">Ngày 51 - Thứ Ba: Chọn chủ đề triển lãm</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Chọn 3 sản phẩm muốn khoe.</td><td>Xác định thông điệp triển lãm.</td><td>Chủ đề cá nhân.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Câu hỏi: &quot;Con muốn người xem biết gì?&quot;</td><td>Câu hỏi: triển lãm kể câu chuyện nào về sự lớn lên?</td><td>Thông điệp.</td></tr>
+<tr><td>09:00-10:15</td><td>Thiết kế</td><td>Làm bảng tên triển lãm.</td><td>Lập sơ đồ không gian: khu tự lập, thiên nhiên, bếp, khoa học, sáng tạo.</td><td>Sơ đồ triển lãm.</td></tr>
+<tr><td>10:45-11:45</td><td>Ngôn ngữ</td><td>Tập giới thiệu từng sản phẩm bằng 1 câu.</td><td>Viết nhãn triển lãm 40-60 chữ/sản phẩm.</td><td>Nhãn sản phẩm.</td></tr>
+<tr><td>13:30-14:30</td><td>Nghệ thuật</td><td>Trang trí biển tên, khung tranh.</td><td>Thiết kế phong cách trưng bày nhất quán.</td><td>Bộ nhận diện.</td></tr>
+<tr><td>14:30-16:00</td><td>Thử trưng bày</td><td>Đặt sản phẩm lên bàn/kệ.</td><td>Kiểm luồng xem, ánh sáng, thứ tự kể chuyện.</td><td>Bố cục thử.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Sản phẩm nào nói về con rõ nhất?&quot;</td><td>&quot;Người xem có hiểu hành trình không cần mình giải thích quá nhiều không?&quot;</td><td>Điều chỉnh.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-52-thu-tu-viet-va-luyen-bai-trinh-bay" class="day-title">Ngày 52 - Thứ Tư: Viết và luyện bài trình bày</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Chọn tranh hỗ trợ khi nói.</td><td>Chuẩn bị thẻ ý chính.</td><td>Tư liệu nói.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Tập đứng vững, thở sâu, nói rõ.</td><td>Tập giọng, ngắt nhịp, giao tiếp mắt.</td><td>Tự tin cơ thể.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Người lớn làm mẫu nói 3 câu.</td><td>Phân tích cấu trúc: mở đầu, 3 ý, kết.</td><td>Khung trình bày.</td></tr>
+<tr><td>09:00-10:15</td><td>Viết/nói</td><td>Tập nói: &quot;Con làm..., con học..., con muốn...&quot;</td><td>Viết bài 8-12 phút hoặc dàn ý 5 phần.</td><td>Bản nháp.</td></tr>
+<tr><td>10:45-11:45</td><td>Luyện tập</td><td>Nói trước 1 người, nhận 1 lời góp ý.</td><td>Bấm giờ, ghi chỗ dài/ngắn/chưa rõ.</td><td>Bản tập 1.</td></tr>
+<tr><td>13:30-14:30</td><td>Biểu đạt</td><td>Vẽ thẻ nhắc ý.</td><td>Làm thẻ cue card, không đọc nguyên văn.</td><td>Thẻ trình bày.</td></tr>
+<tr><td>14:30-16:00</td><td>Luyện lần 2</td><td>Nói 3-5 phút có tranh.</td><td>Nói 8-12 phút có sản phẩm minh họa.</td><td>Bản tập 2.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Khi nói, con muốn nhìn ai?&quot;</td><td>&quot;Ý nào cần bằng chứng cụ thể hơn?&quot;</td><td>Sửa bài.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-53-thu-nam-hoan-thien-portfolio" class="day-title">Ngày 53 - Thứ Năm: Hoàn thiện portfolio</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Sắp xếp tranh/sản phẩm vào bìa.</td><td>Kiểm mục lục và thứ tự tài liệu.</td><td>Portfolio sạch.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Chọn sticker cảm xúc cho từng tuần.</td><td>Chọn tiêu đề cho từng chương portfolio.</td><td>Cấu trúc cảm xúc.</td></tr>
+<tr><td>09:00-10:15</td><td>Hoàn thiện</td><td>Dán tranh, ảnh, câu nói của trẻ.</td><td>Biên tập phần chú thích, dữ liệu, phản tư.</td><td>Portfolio bản gần cuối.</td></tr>
+<tr><td>10:45-11:45</td><td>Ngôn ngữ</td><td>Người lớn ghi lời trẻ dưới sản phẩm.</td><td>Viết trang &quot;Tôi đã thay đổi như thế nào&quot;.</td><td>Trang tự sự.</td></tr>
+<tr><td>13:30-14:30</td><td>Thiết kế</td><td>Trang trí bìa cuối.</td><td>Kiểm tính mạch lạc và thẩm mỹ.</td><td>Portfolio hoàn thiện.</td></tr>
+<tr><td>14:30-16:00</td><td>Kiểm chuẩn</td><td>Chỉ từng sản phẩm và nói nội dung.</td><td>Dùng rubric chấm portfolio, sửa thiếu sót.</td><td>Bản cuối.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con muốn giữ sản phẩm nào lâu nhất?&quot;</td><td>&quot;Portfolio này chứng minh năng lực nào?&quot;</td><td>Tự đánh giá.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-54-thu-sau-tong-duyet-trien-lam" class="day-title">Ngày 54 - Thứ Sáu: Tổng duyệt triển lãm</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Nhịp sáng</td><td>Kiểm sản phẩm, khăn lau, bàn trưng bày.</td><td>Kiểm danh sách khách, không gian, thứ tự trình bày.</td><td>Sẵn sàng tổng duyệt.</td></tr>
+<tr><td>08:00-08:30</td><td>Vận động</td><td>Thở, đứng vững, mỉm cười.</td><td>Thực hành quản lý hồi hộp.</td><td>Tâm thế trình bày.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Nhắc: triển lãm là chia sẻ, không thi.</td><td>Nhắc: mục tiêu là kể quá trình, không biểu diễn hoàn hảo.</td><td>An toàn cảm xúc.</td></tr>
+<tr><td>09:00-10:15</td><td>Tổng duyệt</td><td>Dẫn người lớn đi xem 3 khu.</td><td>Chạy toàn bộ tour triển lãm, bấm giờ.</td><td>Bản tổng duyệt.</td></tr>
+<tr><td>10:45-11:45</td><td>Sửa lỗi</td><td>Chỉnh nhãn/tranh bị lệch.</td><td>Chỉnh luồng xem, nhãn thiếu, phần nói quá dài.</td><td>Triển lãm rõ hơn.</td></tr>
+<tr><td>13:30-14:30</td><td>Nghỉ sáng tạo</td><td>Vẽ thiệp mời.</td><td>Viết lời mời triển lãm.</td><td>Thiệp mời.</td></tr>
+<tr><td>14:30-16:00</td><td>Tổng duyệt lần 2</td><td>Nói ngắn, rõ, tự nhiên.</td><td>Tập trả lời câu hỏi khó bằng bình tĩnh.</td><td>Sẵn sàng ngày mai.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con cần người lớn giúp gì ngày mai?&quot;</td><td>&quot;Phần nào đã ổn, phần nào cần giữ ngắn?&quot;</td><td>Điều chỉnh cuối.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-55-thu-bay-trien-lam-mua-he" class="day-title">Ngày 55 - Thứ Bảy: Triển lãm mùa hè</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>07:00-08:00</td><td>Chuẩn bị</td><td>Tự mặc đồ, kiểm 3 sản phẩm chính.</td><td>Kiểm không gian, âm thanh/ánh sáng nếu dùng.</td><td>Sẵn sàng.</td></tr>
+<tr><td>08:00-09:00</td><td>Bày triển lãm</td><td>Đặt tranh, mô hình, portfolio.</td><td>Điều phối trưng bày theo sơ đồ.</td><td>Triển lãm mở.</td></tr>
+<tr><td>09:00-10:30</td><td>Đón khách gia đình</td><td>Giới thiệu 3-5 phút.</td><td>Dẫn tour 8-12 phút, trả lời câu hỏi.</td><td>Trình bày cuối khóa.</td></tr>
+<tr><td>10:30-11:00</td><td>Ghi nhận</td><td>Nhận lời chúc/góp ý bằng tranh hoặc sticker.</td><td>Thu phản hồi bằng phiếu ngắn.</td><td>Phản hồi người xem.</td></tr>
+<tr><td>15:00-16:00</td><td>Ăn mừng nhẹ</td><td>Chọn món nhẹ đã biết làm.</td><td>Cùng chuẩn bị tiệc nhỏ hoặc nước uống.</td><td>Kết nối gia đình.</td></tr>
+<tr><td>19:30-20:00</td><td>Phản tư</td><td>&quot;Con tự hào vì...&quot;</td><td>&quot;Điều gì trong 2 tháng này đáng nhớ nhất?&quot;</td><td>Tự hào lành mạnh.</td></tr>
+</tbody></table></div>
+<h4 id="ngay-56-chu-nhat-nghi-dong-khoa-va-mo-mua-tiep-theo" class="day-title">Ngày 56 - Chủ Nhật: Nghỉ, đóng khóa và mở mùa tiếp theo</h4>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Hoạt động</th><th>Nhóm 5-7 tuổi</th><th>Nhóm 10-12 tuổi</th><th>Đầu ra</th></tr></thead><tbody>
+<tr><td>08:00-09:00</td><td>Sáng chậm</td><td>Tự cất sản phẩm vào hộp kỷ niệm.</td><td>Lưu portfolio, chọn nơi cất an toàn.</td><td>Kết thúc gọn.</td></tr>
+<tr><td>09:00-10:00</td><td>Xem lại</td><td>Xem ảnh/tranh từ tuần 1 đến tuần 8.</td><td>Đọc lại trang phản tư đầu và cuối khóa.</td><td>Nhìn thấy tiến bộ.</td></tr>
+<tr><td>10:00-11:00</td><td>Thư cho con</td><td>Người lớn đọc thư ghi nhận nỗ lực của trẻ.</td><td>Trẻ viết thư cho bản thân 3 tháng sau.</td><td>Thư kết khóa.</td></tr>
+<tr><td>15:00-16:00</td><td>Họp gia đình</td><td>Chọn 1 thói quen muốn giữ.</td><td>Chọn 1 dự án muốn tiếp tục sau hè.</td><td>Kế hoạch tiếp nối.</td></tr>
+<tr><td>19:30-20:00</td><td>Nghi thức đóng khóa</td><td>Nói lời cảm ơn mùa hè.</td><td>Tự chấm rubric cuối khóa, đặt mục tiêu mới.</td><td>Hoàn tất khóa.</td></tr>
+</tbody></table></div>
+<h2 id="6-checklist-quan-sat-hang-ngay" class="section-title">6. Checklist quan sát hằng ngày</h2>
+<p>Chấm bằng dấu <code>✓</code>, <code>~</code>, hoặc để trống.</p>
+<p><code>✓</code> = đã làm ổn định.</p>
+<p><code>~</code> = đã thử nhưng cần hỗ trợ.</p>
+<p>Trống = chưa phù hợp hôm nay.</p>
+<div class="table-wrap"><table><thead><tr><th>Tiêu chí</th><th>5-7 tuổi</th><th>10-12 tuổi</th><th>Ghi chú của người lớn</th></tr></thead><tbody>
+<tr><td>Trẻ bắt đầu nhịp sáng mà không cần nhắc quá nhiều</td><td></td><td></td><td></td></tr>
+<tr><td>Trẻ tự lấy và cất ít nhất 2 vật liệu</td><td></td><td></td><td></td></tr>
+<tr><td>Trẻ có một phần việc thật trong ngày</td><td></td><td></td><td></td></tr>
+<tr><td>Trẻ thử, sai, sửa trong giới hạn an toàn</td><td></td><td></td><td></td></tr>
+<tr><td>Trẻ biểu đạt bằng lời, tranh, mô hình, số liệu hoặc hành động</td><td></td><td></td><td></td></tr>
+<tr><td>Người lớn nói ngắn, không làm hộ quá nhanh</td><td></td><td></td><td></td></tr>
+<tr><td>Có ghi nhận quá trình học</td><td></td><td></td><td></td></tr>
+<tr><td>Có câu hỏi phản tư cuối ngày</td><td></td><td></td><td></td></tr>
+</tbody></table></div>
+<h2 id="7-rubric-dau-ra-theo-nhom-tuoi" class="section-title">7. Rubric đầu ra theo nhóm tuổi</h2>
+<h3 id="nhom-5-7-tuoi-2" class="subsection-title">Nhóm 5-7 tuổi</h3>
+<div class="table-wrap"><table><thead><tr><th>Năng lực</th><th>Đạt tốt</th><th>Đang hình thành</th><th>Cần hỗ trợ</th></tr></thead><tbody>
+<tr><td>Tự lập</td><td>Tự bắt đầu 3-4 việc quen thuộc, biết cất đồ sau dùng.</td><td>Làm được khi có thẻ hình hoặc nhắc nhẹ.</td><td>Chờ người lớn làm hộ, dễ bỏ dở.</td></tr>
+<tr><td>Tập trung</td><td>Theo một hoạt động 15-30 phút tùy loại.</td><td>Tập trung 10-15 phút, cần nghỉ xen kẽ.</td><td>Khó duy trì trên 5-10 phút.</td></tr>
+<tr><td>Quan sát</td><td>Nói/vẽ được 2-3 chi tiết cụ thể.</td><td>Nói được 1 chi tiết khi được gợi mở.</td><td>Trả lời chung chung, cần người lớn làm mẫu.</td></tr>
+<tr><td>Việc thật</td><td>Tham gia bếp, cây, dọn dẹp ở bước an toàn.</td><td>Muốn làm nhưng thao tác còn vội.</td><td>Tránh việc hoặc dễ nản khi sai.</td></tr>
+<tr><td>Phản tư</td><td>Nói được mình thích gì, khó gì, muốn thử gì.</td><td>Chỉ nói được khi có câu hỏi rất cụ thể.</td><td>Chưa muốn nói, có thể vẽ/chỉ thay lời.</td></tr>
+</tbody></table></div>
+<h3 id="nhom-10-12-tuoi-2" class="subsection-title">Nhóm 10-12 tuổi</h3>
+<div class="table-wrap"><table><thead><tr><th>Năng lực</th><th>Đạt tốt</th><th>Đang hình thành</th><th>Cần hỗ trợ</th></tr></thead><tbody>
+<tr><td>Tự quản</td><td>Tự xem lịch, chuẩn bị vật liệu, hoàn thành phần việc.</td><td>Cần người lớn nhắc ở điểm chuyển hoạt động.</td><td>Hay quên kế hoạch, cần chia việc nhỏ hơn.</td></tr>
+<tr><td>Tư duy dự án</td><td>Có câu hỏi, giả thuyết, dữ liệu, kết luận và sửa.</td><td>Có làm dự án nhưng thiếu dữ liệu hoặc phản tư.</td><td>Làm sản phẩm đẹp nhưng chưa rõ quá trình học.</td></tr>
+<tr><td>Toán đời sống</td><td>Tính được đo lường, chi phí, tỉ lệ, thời gian cơ bản.</td><td>Tính được khi có mẫu.</td><td>Né toán hoặc làm vội, cần vật thật hỗ trợ.</td></tr>
+<tr><td>Diễn đạt</td><td>Trình bày rõ quá trình, biết dùng bằng chứng.</td><td>Trình bày được nhưng còn rời rạc.</td><td>Cần khung câu và luyện nói ngắn.</td></tr>
+<tr><td>Trách nhiệm</td><td>Nhìn thấy việc mình làm ảnh hưởng đến gia đình.</td><td>Làm khi được giao rõ.</td><td>Dễ coi việc nhà là việc của người lớn.</td></tr>
+</tbody></table></div>
+<h2 id="8-mau-ghi-nhan-cuoi-ngay" class="section-title">8. Mẫu ghi nhận cuối ngày</h2>
+<h3 id="mau-cho-tre-5-7-tuoi" class="subsection-title">Mẫu cho trẻ 5-7 tuổi</h3>
+<ul>
+<li>Hôm nay con đã làm: ...</li>
+<li>Con thích nhất: ...</li>
+<li>Con thấy khó ở: ...</li>
+<li>Lần sau con muốn thử: ...</li>
+<li>Con muốn vẽ lại điều này: ...</li>
+</ul>
+<h3 id="mau-cho-tre-10-12-tuoi" class="subsection-title">Mẫu cho trẻ 10-12 tuổi</h3>
+<ul>
+<li>Mục tiêu hôm nay của tôi là: ...</li>
+<li>Tôi đã làm được: ...</li>
+<li>Bằng chứng là: ...</li>
+<li>Điều chưa ổn là: ...</li>
+<li>Nguyên nhân có thể là: ...</li>
+<li>Lần sau tôi sẽ thay đổi: ...</li>
+</ul>
+<h3 id="mau-cho-nguoi-lon" class="subsection-title">Mẫu cho người lớn</h3>
+<ul>
+<li>Hôm nay trẻ tập trung nhất khi: ...</li>
+<li>Trẻ quá tải khi: ...</li>
+<li>Tôi đã làm hộ quá nhanh ở điểm nào: ...</li>
+<li>Câu hỏi/câu nói hiệu quả nhất hôm nay: ...</li>
+<li>Ngày mai tôi cần chuẩn bị: ...</li>
+</ul>
+<h2 id="9-cau-noi-mau-theo-tinh-huong" class="section-title">9. Câu nói mẫu theo tình huống</h2>
+<div class="table-wrap"><table><thead><tr><th>Tình huống</th><th>Câu nên nói</th><th>Tinh thần</th></tr></thead><tbody>
+<tr><td>Trẻ làm đổ nước</td><td>&quot;Nước đổ rồi. Con lấy khăn lau nhé. Lần sau mình rót chậm hơn.&quot;</td><td>Montessori</td></tr>
+<tr><td>Trẻ nản vì sai</td><td>&quot;Sai cho mình biết cách này chưa ổn. Con muốn thử cách nào khác?&quot;</td><td>Dewey + Socrates</td></tr>
+<tr><td>Trẻ không muốn bắt đầu</td><td>&quot;Con chọn bắt đầu bằng phần dễ hay phần con thích trước?&quot;</td><td>Montessori</td></tr>
+<tr><td>Trẻ làm khác mẫu</td><td>&quot;Con kể cho mẹ/cô nghe ý tưởng của con.&quot;</td><td>Reggio</td></tr>
+<tr><td>Trẻ quá kích thích</td><td>&quot;Mình dừng lại, thở chậm, uống nước, rồi chọn bước tiếp theo.&quot;</td><td>Steiner</td></tr>
+<tr><td>Trẻ hỏi vì sao</td><td>&quot;Con đoán điều gì đang xảy ra? Điều gì làm con nghĩ vậy?&quot;</td><td>Socrates</td></tr>
+<tr><td>Trẻ lớn né trách nhiệm</td><td>&quot;Việc này ảnh hưởng đến ai trong nhà? Con có thể nhận phần nào vừa sức?&quot;</td><td>Dewey</td></tr>
+<tr><td>Hai trẻ tranh vật liệu</td><td>&quot;Mình có một vật liệu và hai ý tưởng. Các con đề xuất 2 cách chia công bằng.&quot;</td><td>Socrates + Reggio</td></tr>
+</tbody></table></div>
+<h2 id="10-khi-tre-khong-hop-tac" class="section-title">10. Khi trẻ không hợp tác</h2>
+<h3 id="neu-tre-5-7-tuoi-tu-choi" class="subsection-title">Nếu trẻ 5-7 tuổi từ chối</h3>
+<p>Làm theo 4 bước:</p>
+<ol>
+<li>Giảm lời: &quot;Mẹ thấy con chưa sẵn sàng.&quot;</li>
+<li>Cho lựa chọn nhỏ: &quot;Con chọn lau bàn hay xếp thìa trước?&quot;</li>
+<li>Làm mẫu lại thật chậm.</li>
+<li>Rút ngắn hoạt động, giữ nhịp: hoàn thành một bước nhỏ rồi nghỉ.</li>
+</ol>
+<p>Không nên:</p>
+<ul>
+<li>Dọa, so sánh, gắn nhãn lười.</li>
+<li>Giảng dài về lợi ích học tập.</li>
+<li>Ép hoàn thành sản phẩm khi trẻ đã quá tải.</li>
+</ul>
+<h3 id="neu-tre-10-12-tuoi-chong-doi" class="subsection-title">Nếu trẻ 10-12 tuổi chống đối</h3>
+<p>Làm theo 5 bước:</p>
+<ol>
+<li>Hỏi thực tế: &quot;Phần nào làm con không muốn làm?&quot;</li>
+<li>Tách vấn đề: khó, chán, mệt, không thấy ý nghĩa hay sợ sai?</li>
+<li>Thỏa thuận đầu ra tối thiểu.</li>
+<li>Cho trẻ chọn cách làm hoặc thứ tự làm.</li>
+<li>Cuối ngày phản tư bằng dữ liệu, không trách móc.</li>
+</ol>
+<p>Câu hỏi hữu ích:</p>
+<ul>
+<li>&quot;Nếu giảm độ khó 20%, con sẽ bắt đầu ở đâu?&quot;</li>
+<li>&quot;Con muốn chứng minh điều gì qua sản phẩm này?&quot;</li>
+<li>&quot;Bằng chứng nào cho thấy hôm nay vẫn có tiến bộ?&quot;</li>
+</ul>
+<h2 id="11-tieu-chuan-hoan-thanh-cuoi-khoa" class="section-title">11. Tiêu chuẩn hoàn thành cuối khóa</h2>
+<p>Một khóa hè được xem là hoàn thành tốt khi:</p>
+<ul>
+<li>Trẻ đi qua đủ 8 chủ đề, dù mỗi chủ đề có thể sâu-nông khác nhau.</li>
+<li>Mỗi tuần có ít nhất 1 sản phẩm lưu vào portfolio.</li>
+<li>Trẻ có tiến bộ quan sát được trong tự lập, tập trung, biểu đạt, việc thật và phản tư.</li>
+<li>Người lớn giữ được vai trò chuẩn bị môi trường, quan sát, hỏi mở, không kiểm soát quá mức.</li>
+<li>Gia đình có ít nhất 1 thói quen mới muốn giữ sau khóa học.</li>
+</ul>
+<p>Điều không cần ép:</p>
+<ul>
+<li>Không cần trẻ ngồi học như lớp học truyền thống cả ngày.</li>
+<li>Không cần mọi sản phẩm phải đẹp.</li>
+<li>Không cần hoàn thành đúng 100% lịch nếu trẻ bệnh, mệt hoặc gia đình có việc.</li>
+<li>Không cần mua giáo cụ đắt tiền. Việc thật, vật liệu mở và sự quan sát tinh tế quan trọng hơn.</li>
+</ul>
+<h2 id="12-bang-tu-danh-gia-cuoi-khoa" class="section-title">12. Bảng tự đánh giá cuối khóa</h2>
+<h3 id="cho-tre" class="subsection-title">Cho trẻ</h3>
+<div class="table-wrap"><table><thead><tr><th>Câu hỏi</th><th>Con trả lời</th></tr></thead><tbody>
+<tr><td>Việc con tự làm tốt hơn sau mùa hè là gì?</td><td></td></tr>
+<tr><td>Dự án nào làm con tự hào nhất?</td><td></td></tr>
+<tr><td>Con đã từng sai ở đâu và sửa thế nào?</td><td></td></tr>
+<tr><td>Con học được gì từ thiên nhiên/bếp/khoa học/chợ/câu chuyện?</td><td></td></tr>
+<tr><td>Con muốn tiếp tục học điều gì?</td><td></td></tr>
+</tbody></table></div>
+<h3 id="cho-nguoi-lon" class="subsection-title">Cho người lớn</h3>
+<div class="table-wrap"><table><thead><tr><th>Tiêu chí</th><th>1</th><th>2</th><th>3</th><th>Ghi chú</th></tr></thead><tbody>
+<tr><td>Tôi chuẩn bị môi trường để trẻ tự làm.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Tôi làm mẫu ngắn và lùi lại quan sát.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Tôi cho trẻ thử, sai, sửa trong an toàn.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Tôi ghi nhận quá trình, không chỉ sản phẩm cuối.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Tôi dùng câu hỏi mở thay vì đưa đáp án quá nhanh.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Tôi giữ nhịp sống đủ ấm và đủ linh hoạt.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Tôi nhìn thấy tiến bộ thật của trẻ.</td><td></td><td></td><td></td><td></td></tr>
+</tbody></table></div>
+<p>Thang điểm:</p>
+<ul>
+<li>1 = chưa rõ hoặc chưa ổn định.</li>
+<li>2 = đã làm được nhưng còn cần nhắc mình.</li>
+<li>3 = làm tốt, trẻ phản hồi tích cực.</li>
+</ul>
+<h2 id="13-goi-y-dieu-chinh-theo-thuc-te-gia-dinh" class="section-title">13. Gợi ý điều chỉnh theo thực tế gia đình</h2>
+<ul>
+<li>Nếu gia đình chỉ có buổi sáng: giữ các khung 07:00-11:45, chuyển phần trải nghiệm chiều sang cuối tuần.</li>
+<li>Nếu phụ huynh đi làm: chuẩn bị khay vật liệu từ tối hôm trước, giao người chăm sóc làm theo bảng giờ.</li>
+<li>Nếu có nhiều trẻ: dùng cùng chủ đề, khác đầu ra. Trẻ nhỏ làm bằng tranh/mô hình, trẻ lớn làm bằng dữ liệu/báo cáo.</li>
+<li>Nếu trẻ dùng màn hình nhiều: không cắt đột ngột bằng chiến tranh quyền lực. Thay bằng nhịp cố định: vận động, việc thật, sáng tạo, đọc, rồi mới đến thời lượng màn hình đã thỏa thuận.</li>
+<li>Nếu trẻ có nhu cầu đặc biệt về cảm giác, chú ý hoặc cảm xúc: giảm thời lượng, tăng dự đoán bằng thẻ hình, cho nghỉ giác quan, ưu tiên an toàn và tham khảo chuyên gia khi cần.</li>
+</ul>
+<h2 id="14-mot-ngay-mau-rut-gon-khi-gia-dinh-ban" class="section-title">14. Một ngày mẫu rút gọn khi gia đình bận</h2>
+<div class="table-wrap"><table><thead><tr><th>Giờ</th><th>Việc cần giữ</th><th>Cách làm nhanh</th></tr></thead><tbody>
+<tr><td>07:00-07:30</td><td>Tự lập sáng</td><td>Gấp chăn, vệ sinh, cất đồ ngủ.</td></tr>
+<tr><td>08:30-09:00</td><td>Vòng tròn</td><td>Một câu chuyện hoặc một câu hỏi lớn.</td></tr>
+<tr><td>09:00-10:00</td><td>Dự án chính</td><td>Làm một hoạt động cốt lõi của ngày.</td></tr>
+<tr><td>10:00-10:20</td><td>Ghi nhận</td><td>Vẽ, viết, chụp ảnh hoặc ghi lời trẻ.</td></tr>
+<tr><td>15:00-15:30</td><td>Việc thật</td><td>Bếp, cây, dọn nhà hoặc đo lường.</td></tr>
+<tr><td>19:30-19:45</td><td>Phản tư</td><td>&quot;Con thấy gì? Con đã thử gì? Lần sau đổi gì?&quot;</td></tr>
+</tbody></table></div>
+<p>Chỉ cần giữ 3 điều: trẻ được làm thật, có ghi nhận, có phản tư.</p>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const navToggle = document.getElementById("navToggle");
+    const searchInput = document.getElementById("searchInput");
+    const links = Array.from(document.querySelectorAll(".toc-link"));
+    const resultCount = document.getElementById("resultCount");
+    const emptyState = document.getElementById("emptyState");
+
+    navToggle?.addEventListener("click", () => {
+      document.body.classList.toggle("nav-open");
+    });
+
+    links.forEach((link) => {
+      link.addEventListener("click", () => document.body.classList.remove("nav-open"));
+    });
+
+    const normalize = (value) =>
+      value
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/đ/g, "d");
+
+    searchInput.addEventListener("input", () => {
+      const query = normalize(searchInput.value.trim());
+      let visible = 0;
+      links.forEach((link) => {
+        const match = !query || normalize(link.textContent).includes(query);
+        link.style.display = match ? "" : "none";
+        if (match) visible += 1;
+      });
+      resultCount.textContent = query ? visible + " mục phù hợp" : "Nhập để lọc mục lục";
+      emptyState.style.display = visible ? "none" : "block";
+    });
+
+    const sections = links
+      .map((link) => document.getElementById(link.getAttribute("href").slice(1)))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+      if (!visible) return;
+      links.forEach((link) => {
+        link.classList.toggle("is-active", link.getAttribute("href") === "#" + visible.target.id);
+      });
+    }, { rootMargin: "-18% 0px -74% 0px", threshold: 0.01 });
+
+    sections.forEach((section) => observer.observe(section));
+  </script>
+</body>
+</html>
