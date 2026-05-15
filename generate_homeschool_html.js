@@ -469,6 +469,7 @@ const htmlDoc = `<!doctype html>
     h2 {
       margin: 54px 0 16px;
       padding-top: 8px;
+      color: var(--brand-blue);
       font-size: 34px;
       line-height: 1.12;
       font-weight: 800;
@@ -597,7 +598,7 @@ const htmlDoc = `<!doctype html>
       top: 0;
       z-index: 10;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       gap: 12px;
       min-height: 58px;
       padding: 10px 16px;
@@ -695,7 +696,6 @@ const htmlDoc = `<!doctype html>
   <div class="mobile-topbar">
     <button type="button" id="navToggle" aria-label="Mở mục lục">Mục lục</button>
     <strong>Giáo trình hè</strong>
-    <button type="button" class="print-button" onclick="window.print()">In/PDF</button>
   </div>
 
   <div class="app-shell">
