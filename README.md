@@ -1,6 +1,6 @@
-# Giáo trình homeschooling hè 2 tháng
+# Thư viện giáo trình BEVA
 
-Trang HTML chuyên nghiệp cho giáo trình homeschooling mùa hè dành cho trẻ 5-7 tuổi và 10-12 tuổi.
+Trang GitHub Pages cho các tài liệu giáo trình và bản dịch HTML.
 
 ## Xem nhanh
 
@@ -10,9 +10,10 @@ Sau khi bật GitHub Pages, trang chính sẽ mở ở:
 https://<github-user>.github.io/<repo-name>/
 ```
 
-`index.html` sẽ tự chuyển tới file giao diện chính:
+Các tài liệu hiện có:
 
 ```text
+Harrer_Math_Lessons_vi.html
 Giao_trinh_homeschooling_he_2_thang_5-7_va_10-12.html
 ```
 
@@ -20,6 +21,7 @@ Giao_trinh_homeschooling_he_2_thang_5-7_va_10-12.html
 
 - `Giao_trinh_homeschooling_he_2_thang_5-7_va_10-12.md`: bản giáo trình Markdown.
 - `Giao_trinh_homeschooling_he_2_thang_5-7_va_10-12.html`: bản HTML hoàn chỉnh, có logo BEVA, sidebar mục lục, tìm kiếm, nút in/PDF.
+- `Harrer_Math_Lessons_vi.html`: bản HTML tiếng Việt của *Math Lessons for Elementary Grades*.
 - `generate_homeschool_html.js`: script sinh lại HTML từ Markdown.
 - `logo.jpg`: logo dùng cho thiết kế HTML.
 - `Tai_lieu_bang_phuong_phap_giao_duc_Montessori_Steiner_Reggio_Dewey.docx`: tài liệu tham khảo ban đầu.
@@ -63,4 +65,3 @@ Rồi mở:
 ```text
 http://127.0.0.1:8765/
 ```
-

@@ -1,0 +1,2354 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Những bài học Toán cho các lớp Tiểu học</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1d1d1f;
+      --muted: #6e6e73;
+      --soft: #f5f5f7;
+      --paper: #ffffff;
+      --line: #d7d7dc;
+      --accent: #2f6f73;
+      --accent-soft: #eaf3f1;
+      --gold: #b9802e;
+      --code-bg: #f7f3ec;
+      --code-line: #e5d9c9;
+      --shadow: 0 30px 80px rgba(29, 29, 31, 0.10);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.62;
+      letter-spacing: 0;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { background: #eef0f3; color: var(--ink); }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(47, 111, 115, 0.10), transparent 28rem),
+        linear-gradient(180deg, #fafafa 0%, #eef0f3 100%);
+    }
+
+    .book {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      min-height: 100vh;
+    }
+
+    .cover {
+      min-height: 100vh;
+      padding: 88px 76px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.98)),
+        linear-gradient(135deg, #f7f4ed 0%, #ffffff 44%, #eef5f4 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cover-kicker {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .cover h1 {
+      max-width: 760px;
+      margin: 32px 0 18px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      font-size: clamp(52px, 8vw, 86px);
+      line-height: 0.96;
+      letter-spacing: 0;
+      font-weight: 760;
+    }
+
+    .cover-subtitle {
+      max-width: 610px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 23px;
+      line-height: 1.34;
+      font-weight: 430;
+    }
+
+    .cover-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      padding-top: 34px;
+      border-top: 1px solid rgba(29,29,31,0.12);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cover-meta strong {
+      display: block;
+      color: var(--ink);
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    .toc {
+      padding: 64px 76px 60px;
+      break-after: page;
+    }
+
+    .toc h2 {
+      margin: 0 0 30px;
+      font-size: 34px;
+      letter-spacing: 0;
+    }
+
+    .toc-grid {
+      columns: 2;
+      column-gap: 44px;
+    }
+
+    .toc-item {
+      display: block;
+      break-inside: avoid;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(29,29,31,0.10);
+      padding: 9px 0;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .toc-depth-2 {
+      color: var(--accent);
+      font-weight: 750;
+      margin-top: 13px;
+      font-size: 16px;
+    }
+
+    .toc-depth-3 {
+      padding-left: 14px;
+      color: var(--muted);
+    }
+
+    main.content {
+      padding: 56px 76px 84px;
+    }
+
+    h1.doc-title {
+      display: none;
+    }
+
+    .chapter-title {
+      break-before: page;
+      margin: 0 0 28px;
+      padding-top: 22px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      font-size: 38px;
+      line-height: 1.08;
+      letter-spacing: 0;
+      font-weight: 760;
+      color: var(--ink);
+    }
+
+    main.content > .chapter-title:first-child {
+      break-before: auto;
+    }
+
+    .chapter-eyebrow {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .lesson-title {
+      break-after: avoid;
+      margin: 34px 0 12px;
+      color: #263f42;
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: 0;
+      font-weight: 735;
+    }
+
+    .minor-title {
+      break-after: avoid;
+      margin: 24px 0 8px;
+      color: var(--gold);
+      font-size: 17px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      font-weight: 720;
+    }
+
+    p {
+      margin: 0 0 12px;
+      text-align: justify;
+      text-wrap: pretty;
+      orphans: 3;
+      widows: 3;
+    }
+
+    em { color: #38383d; }
+    strong { font-weight: 735; }
+
+    ul, ol {
+      margin: 10px 0 16px 1.15rem;
+      padding: 0;
+    }
+
+    li {
+      margin: 5px 0;
+      padding-left: 4px;
+    }
+
+    code {
+      font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+      font-size: 0.93em;
+      background: rgba(47,111,115,0.08);
+      border-radius: 5px;
+      padding: 0.08em 0.32em;
+    }
+
+    .formula-block {
+      break-inside: avoid;
+      margin: 16px 0 18px;
+      padding: 15px 17px;
+      overflow-x: auto;
+      white-space: pre;
+      background: var(--code-bg);
+      border: 1px solid var(--code-line);
+      border-radius: 8px;
+      color: #3d3227;
+      line-height: 1.42;
+    }
+
+    .formula-block code {
+      display: block;
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
+      font-size: 12.3px;
+    }
+
+    blockquote {
+      break-inside: avoid;
+      margin: 24px 0;
+      padding: 4px 0 4px 22px;
+      border-left: 3px solid var(--accent);
+      color: #424247;
+      font-size: 18px;
+    }
+
+    .table-wrap {
+      break-inside: avoid;
+      overflow-x: auto;
+      margin: 18px 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th, td {
+      padding: 9px 11px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--accent-soft);
+      color: #244144;
+      font-weight: 730;
+      text-align: left;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    hr {
+      border: 0;
+      height: 1px;
+      margin: 32px 0;
+      background: var(--line);
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 18mm 16mm 20mm 16mm;
+      }
+
+      html, body {
+        background: white;
+      }
+
+      .book {
+        width: auto;
+        min-height: 0;
+        box-shadow: none;
+      }
+
+      .cover {
+        min-height: calc(297mm - 38mm);
+        padding: 24mm 18mm 18mm;
+        break-after: page;
+      }
+
+      .cover h1 {
+        font-size: 58px;
+      }
+
+      .cover-subtitle {
+        font-size: 19px;
+      }
+
+      .toc {
+        padding: 0;
+      }
+
+      .toc-grid {
+        columns: 2;
+      }
+
+      main.content {
+        padding: 0;
+      }
+
+      .chapter-title {
+        font-size: 31px;
+        padding-top: 0;
+      }
+
+      .lesson-title {
+        font-size: 21px;
+      }
+
+      p, li {
+        font-size: 13.2px;
+        line-height: 1.58;
+      }
+
+      .formula-block code {
+        font-size: 10.2px;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="book">
+    <section class="cover">
+      <div>
+        <div class="cover-kicker">Waldorf Mathematics · Vietnamese Edition</div>
+        <h1>Những bài học Toán cho các lớp Tiểu học</h1>
+        <p class="cover-subtitle">Bản dịch tiếng Việt theo tinh thần Waldorf/Steiner</p>
+      </div>
+      <div class="cover-meta">
+        <div><strong>Dorothy Harrer</strong>Tác giả nguyên bản</div>
+        <div><strong>A4 · Sách giáo khoa sang</strong>Thiết kế PDF từ bản dịch Markdown</div>
+      </div>
+    </section>
+    <nav class="toc" aria-label="Mục lục">
+      <h2>Mục lục</h2>
+      <div class="toc-grid"><a class="toc-item toc-depth-2" href="#thong-tin-xuat-ban"><span>Thông tin xuất bản</span></a>
+<a class="toc-item toc-depth-2" href="#muc-luc"><span>Mục lục</span></a>
+<a class="toc-item toc-depth-2" href="#trich-doan-tu-rudolf-steiner"><span>Trích đoạn từ Rudolf Steiner</span></a>
+<a class="toc-item toc-depth-3" href="#tu-khoa-hoc-thuc-hanh-danh-cho-giao-vien-cua-rudolf-steiner"><span>Từ Khóa học thực hành dành cho giáo viên của Rudolf Steiner</span></a>
+<a class="toc-item toc-depth-3" href="#tu-khoa-hoc-ve-su-pham-chuong-8-cua-rudolf-steiner"><span>Từ Khóa học về Sư phạm, Chương 8, của Rudolf Steiner</span></a>
+<a class="toc-item toc-depth-3" href="#mot-vai-trich-doan-tu-giao-duc-va-doi-song-tinh-than-hien-dai-cua-rudolf-steiner"><span>Một vài trích đoạn từ Giáo dục và Đời sống Tinh thần Hiện đại của Rudolf Steiner</span></a>
+<a class="toc-item toc-depth-3" href="#bon-phep-tinh-va-cac-khi-chat-tu-khoa-hoc-ve-su-pham-rudolf-steiner-giang-nam-1919"><span>“Bốn phép tính và các khí chất”, từ Khóa học về Sư phạm, Rudolf Steiner giảng năm 1919</span></a>
+<a class="toc-item toc-depth-2" href="#mot-vai-suy-nghi-lien-quan-den-viec-day-so-hoc"><span>Một vài suy nghĩ liên quan đến việc dạy số học</span></a>
+<a class="toc-item toc-depth-2" href="#cac-con-so-va-bon-phep-tinh-cho-lop-mot"><span>Các con số và bốn phép tính cho lớp Một</span></a>
+<a class="toc-item toc-depth-3" href="#cac-con-so"><span>Các con số</span></a>
+<a class="toc-item toc-depth-3" href="#so-ba"><span>Số Ba</span></a>
+<a class="toc-item toc-depth-3" href="#hai-bon-va-tam"><span>Hai, Bốn và Tám</span></a>
+<a class="toc-item toc-depth-3" href="#tu-mot-den-nam"><span>Từ Một đến Năm</span></a>
+<a class="toc-item toc-depth-3" href="#sau"><span>Sáu</span></a>
+<a class="toc-item toc-depth-3" href="#cac-tong"><span>Các tổng</span></a>
+<a class="toc-item toc-depth-3" href="#tat-ca-chung-ta-la-mot-lop-hoc-toan-the"><span>Tất cả chúng ta là một lớp học toàn thể</span></a>
+<a class="toc-item toc-depth-3" href="#nhung-chu-lun-va-chau-bau"><span>Những chú lùn và châu báu</span></a>
+<a class="toc-item toc-depth-3" href="#bon-phep-tinh"><span>Bốn phép tính</span></a>
+<a class="toc-item toc-depth-3" href="#gia-dinh-da-tro-thanh-mot-nguoi-cau-chuyen-cho-so-8"><span>Gia đình đã trở thành một người: câu chuyện cho số 8</span></a>
+<a class="toc-item toc-depth-2" href="#mot-tuyen-chon-bai-hoc-cho-lop-hai"><span>Một tuyển chọn bài học cho lớp Hai</span></a>
+<a class="toc-item toc-depth-3" href="#con-so-giau-co-nhat"><span>Con số giàu có nhất</span></a>
+<a class="toc-item toc-depth-3" href="#con-so-giau-co-nhat-tiep-tuc-trong-mot-bai-hoc-khac"><span>Con số giàu có nhất (tiếp tục trong một bài học khác)</span></a>
+<a class="toc-item toc-depth-3" href="#so-le-va-so-chan"><span>Số lẻ và số chẵn</span></a>
+<a class="toc-item toc-depth-3" href="#khoi-lon-va-lua-nho"><span>Khói Lớn và Lửa Nhỏ</span></a>
+<a class="toc-item toc-depth-3" href="#tro-choi-phep-nhan-cho-hoc-sinh-lop-hai"><span>Trò chơi phép nhân cho học sinh lớp Hai</span></a>
+<a class="toc-item toc-depth-3" href="#hai-hinh-dang-dan-nhap-vao-bang-4"><span>Hai hình dạng: Dẫn nhập vào bảng 4</span></a>
+<a class="toc-item toc-depth-3" href="#cac-co-van-cua-duc-vua"><span>Các cố vấn của Đức Vua</span></a>
+<a class="toc-item toc-depth-3" href="#luyen-bang-8"><span>Luyện bảng 8</span></a>
+<a class="toc-item toc-depth-3" href="#bang-9"><span>Bảng 9</span></a>
+<a class="toc-item toc-depth-3" href="#bang-10"><span>Bảng 10</span></a>
+<a class="toc-item toc-depth-3" href="#do-do-dai-theo-duong-thang"><span>Đo độ dài theo đường thẳng</span></a>
+<a class="toc-item toc-depth-3" href="#cac-van-tho-ve-thoi-gian"><span>Các vần thơ về thời gian</span></a>
+<a class="toc-item toc-depth-3" href="#cau-chuyen-so-cho-bang-6"><span>Câu chuyện số cho bảng 6</span></a>
+<a class="toc-item toc-depth-3" href="#theo-doi-cac-con-so-bai-tap-dem"><span>Theo dõi các con số: bài tập đếm</span></a>
+<a class="toc-item toc-depth-3" href="#mot-bai-tap-dem-khac"><span>Một bài tập đếm khác</span></a>
+<a class="toc-item toc-depth-3" href="#nguoi-khong-lo-dem-bang-chan"><span>Người khổng lồ đếm bằng chân</span></a>
+<a class="toc-item toc-depth-3" href="#ba-vao-bon"><span>Ba vào bốn</span></a>
+<a class="toc-item toc-depth-3" href="#dem-cac-goc"><span>Đếm các góc</span></a>
+<a class="toc-item toc-depth-2" href="#mot-tuyen-chon-bai-hoc-cho-lop-ba"><span>Một tuyển chọn bài học cho lớp Ba</span></a>
+<a class="toc-item toc-depth-3" href="#anh-trai-va-em-gai"><span>Anh Trai và Em Gái</span></a>
+<a class="toc-item toc-depth-3" href="#cong-nhan-va-tru-chia"><span>Cộng-Nhân và Trừ-Chia</span></a>
+<a class="toc-item toc-depth-3" href="#cac-con-so-phai-noi-su-that"><span>Các con số phải nói sự thật</span></a>
+<a class="toc-item toc-depth-3" href="#cac-quan-he-so"><span>Các quan hệ số</span></a>
+<a class="toc-item toc-depth-3" href="#cac-don-vi-do-ban-dau"><span>Các đơn vị đo ban đầu</span></a>
+<a class="toc-item toc-depth-3" href="#do-chat-long"><span>Đo chất lỏng</span></a>
+<a class="toc-item toc-depth-3" href="#do-kho"><span>Đo khô</span></a>
+<a class="toc-item toc-depth-3" href="#trong-luong"><span>Trọng lượng</span></a>
+<a class="toc-item toc-depth-3" href="#thoi-gian"><span>Thời gian</span></a>
+<a class="toc-item toc-depth-2" href="#mot-tuyen-chon-bai-hoc-cho-lop-bon"><span>Một tuyển chọn bài học cho lớp Bốn</span></a>
+<a class="toc-item toc-depth-3" href="#nhung-nguoi-tho-so-dan-nhap-vao-nho-va-muon"><span>Những người thợ Số: dẫn nhập vào nhớ và mượn</span></a>
+<a class="toc-item toc-depth-3" href="#cau-do"><span>Câu đố</span></a>
+<a class="toc-item toc-depth-3" href="#do-dien-tich"><span>Đo diện tích</span></a>
+<a class="toc-item toc-depth-3" href="#cay-phan-so"><span>Cây phân số</span></a>
+<a class="toc-item toc-depth-3" href="#an-mot-qua-tao-nhe"><span>Ăn một quả táo nhé!</span></a>
+<a class="toc-item toc-depth-3" href="#cong-phan-so"><span>Cộng phân số</span></a>
+<a class="toc-item toc-depth-3" href="#tru-phan-so"><span>Trừ phân số</span></a>
+<a class="toc-item toc-depth-3" href="#phan-so-cua-cac-so-lon-hon-1"><span>Phân số của các số lớn hơn 1</span></a>
+<a class="toc-item toc-depth-3" href="#phan-so-cua-so-le"><span>Phân số của số lẻ</span></a>
+<a class="toc-item toc-depth-3" href="#nhan-voi-phan-so"><span>Nhân với phân số</span></a>
+<a class="toc-item toc-depth-3" href="#dang-don-gian-nhat-cua-phan-so"><span>Dạng đơn giản nhất của phân số</span></a>
+<a class="toc-item toc-depth-3" href="#mo-rong-phan-so"><span>Mở rộng phân số</span></a>
+<a class="toc-item toc-depth-3" href="#tim-mau-so-chung"><span>Tìm mẫu số chung</span></a>
+<a class="toc-item toc-depth-3" href="#phan-so-dung-phan-so-khong-dung-hon-so"><span>Phân số đúng, phân số không đúng, hỗn số</span></a>
+<a class="toc-item toc-depth-3" href="#nghien-cuu-ve-so-binh-phuong"><span>Nghiên cứu về số bình phương</span></a>
+<a class="toc-item toc-depth-3" href="#hang-chuc-nhu-nguoi-tro-giup"><span>Hàng chục như người trợ giúp</span></a>
+<a class="toc-item toc-depth-3" href="#chia-dai"><span>Chia dài</span></a>
+<a class="toc-item toc-depth-2" href="#mot-tuyen-chon-bai-hoc-cho-lop-nam"><span>Một tuyển chọn bài học cho lớp Năm</span></a>
+<a class="toc-item toc-depth-3" href="#lich-su-cac-con-so"><span>Lịch sử các con số</span></a>
+<a class="toc-item toc-depth-3" href="#cau-chuyen-ve-pythagoras"><span>Câu chuyện về Pythagoras</span></a>
+<a class="toc-item toc-depth-3" href="#bang-phan-so-tuong-duong-trong-mot-inch"><span>Bảng phân số tương đương trong một inch</span></a>
+<a class="toc-item toc-depth-3" href="#chia-voi-phan-so"><span>Chia với phân số</span></a>
+<a class="toc-item toc-depth-3" href="#em-co-the-triet-tieu-no"><span>Em có thể triệt tiêu nó</span></a>
+<a class="toc-item toc-depth-3" href="#he-thap-phan"><span>Hệ thập phân</span></a>
+<a class="toc-item toc-depth-3" href="#phan-so-thuong-va-phan-so-thap-phan"><span>Phân số thường và phân số thập phân</span></a>
+<a class="toc-item toc-depth-2" href="#mot-tuyen-chon-bai-hoc-cho-lop-sau"><span>Một tuyển chọn bài học cho lớp Sáu</span></a>
+<a class="toc-item toc-depth-3" href="#he-thap-phan-2"><span>Hệ thập phân</span></a>
+<a class="toc-item toc-depth-3" href="#percent-nghia-la-tren-mot-tram"><span>Percent nghĩa là trên một trăm</span></a>
+<a class="toc-item toc-depth-3" href="#mill-la-gi"><span>Mill là gì?</span></a>
+<a class="toc-item toc-depth-3" href="#phan-tram-phan-so"><span>Phần trăm phân số</span></a>
+<a class="toc-item toc-depth-3" href="#dan-nhap-vao-lai"><span>Dẫn nhập vào lãi</span></a>
+<a class="toc-item toc-depth-3" href="#them-vai-van-de-ve-lai"><span>Thêm vài vấn đề về lãi</span></a>
+<a class="toc-item toc-depth-3" href="#nam-nay-nam-sau-mot-luc-nao-do"><span>Năm nay? Năm sau? Một lúc nào đó?</span></a>
+<a class="toc-item toc-depth-3" href="#lai-don-va-lai-kep"><span>Lãi đơn và lãi kép</span></a>
+<a class="toc-item toc-depth-3" href="#lai-kep"><span>Lãi kép</span></a>
+<a class="toc-item toc-depth-3" href="#hoa-hong"><span>Hoa hồng</span></a>
+<a class="toc-item toc-depth-3" href="#mot-so-bai-toan"><span>Một số bài toán</span></a>
+<a class="toc-item toc-depth-3" href="#them-cong-thuc"><span>Thêm công thức</span></a>
+<a class="toc-item toc-depth-3" href="#cac-dot-ban-hang-dac-biet"><span>Các đợt bán hàng đặc biệt</span></a>
+<a class="toc-item toc-depth-3" href="#thue"><span>Thuế</span></a>
+<a class="toc-item toc-depth-3" href="#mot-so-cau-trich-dan-ve-thue"><span>Một số câu trích dẫn về thuế</span></a>
+<a class="toc-item toc-depth-3" href="#cac-ty-le-tuong-duong"><span>Các tỷ lệ tương đương</span></a>
+<a class="toc-item toc-depth-3" href="#them-cac-ty-le-tuong-duong"><span>Thêm các tỷ lệ tương đương</span></a></div>
+    </nav>
+    <main class="content"><h1 id="nhung-bai-hoc-toan-cho-cac-lop-tieu-hoc" class="doc-title"><span>Những bài học Toán cho các lớp Tiểu học</span></h1>
+<p>Dorothy Harrer</p>
+<p>Hiệp hội các Trường Waldorf Bắc Mỹ (AWSNA) - Văn phòng Xuất bản<br>38 Main Street, Chatham, NY 12037</p>
+<h2 id="thong-tin-xuat-ban" class="chapter-title"><span class="chapter-eyebrow">Phần</span><span>Thông tin xuất bản</span></h2>
+<p>Được in với sự hỗ trợ của Quỹ Chương trình Waldorf.</p>
+<p>Xuất bản bởi: Hiệp hội các Trường Waldorf Bắc Mỹ, Văn phòng Xuất bản, 38 Main Street, Chatham, NY 12037.</p>
+<p>Tên sách: <em>Math Lessons for Elementary Grades</em><br>Tác giả: Dorothy Harrer<br>Thiết kế, dàn trang và bìa: Hallie Jean Wootan<br>Biên tập: Hallie Jean Wootan<br>Minh họa: Anna Kraus (các trang 16, 25, 27 và 29)<br>Đọc sửa và biên tập bản sao: Charles H. Blatchford</p>
+<p>In lần đầu bởi Mercury Press năm 1985.<br>In lần thứ hai 1990.<br>In lần thứ ba 1996.<br>In lần thứ tư 1998.<br>Bản hiệu đính và biên tập lại bởi AWSNA 2005.<br>In lần thứ năm 2012.</p>
+<p>© 2005 bởi AWSNA<br>ISBN #1-888365-49-8</p>
+<h2 id="muc-luc" class="chapter-title"><span class="chapter-eyebrow">Phần</span><span>Mục lục</span></h2>
+<ul>
+<li>Trích đoạn từ Rudolf Steiner</li>
+<li>Một vài suy nghĩ liên quan đến việc dạy số học</li>
+<li>Các con số và bốn phép tính cho lớp Một</li>
+<li>Một tuyển chọn bài học cho lớp Hai</li>
+<li>Một tuyển chọn bài học cho lớp Ba</li>
+<li>Một tuyển chọn bài học cho lớp Bốn</li>
+<li>Một tuyển chọn bài học cho lớp Năm</li>
+<li>Một tuyển chọn bài học cho lớp Sáu</li>
+</ul>
+<h2 id="trich-doan-tu-rudolf-steiner" class="chapter-title"><span class="chapter-eyebrow">Phần</span><span>Trích đoạn từ Rudolf Steiner</span></h2>
+<h3 id="tu-khoa-hoc-thuc-hanh-danh-cho-giao-vien-cua-rudolf-steiner" class="lesson-title"><span>Từ <em>Khóa học thực hành dành cho giáo viên</em> của Rudolf Steiner</span></h3>
+<p>Việc đọc và viết mà ta dạy trẻ được quy định bởi quy ước; chúng nảy sinh trong hoạt động của thân thể vật lý. Dạy trẻ số học lại là một việc hoàn toàn khác. Ta sẽ cảm thấy rằng ở đây điều quan trọng nhất không phải là hình dạng của các chữ số, mà là thực tại đang sống trong những hình dạng chữ số ấy. Và thực tại sống động này đối với thế giới tinh thần còn quan trọng hơn thực tại sống trong việc đọc và viết. Nếu ta tiến thêm một bước nữa để dạy trẻ những hoạt động mà ta phải gọi là nghệ thuật, thì cùng với những hoạt động ấy ta bước vào một lĩnh vực luôn mang ý nghĩa vĩnh cửu, vươn lên tới hoạt động của tinh thần và tâm hồn trong con người. Trong số học, việc dạy của ta đã bớt tính vật lý hơn; còn khi ta dạy trẻ âm nhạc, vẽ, hay bất cứ điều gì thuộc loại ấy, ta thật sự đang dạy tâm hồn và tinh thần.</p>
+<h3 id="tu-khoa-hoc-ve-su-pham-chuong-8-cua-rudolf-steiner" class="lesson-title"><span>Từ <em>Khóa học về Sư phạm</em>, Chương 8, của Rudolf Steiner</span></h3>
+<p>Nếu thầy cô phát hiện một điểm yếu đặc biệt liên quan đến số học, nên làm như sau: có thể nhóm những trẻ không giỏi số học lại với nhau và cho các em thêm một giờ hoặc nửa giờ thể dục. . . . Thầy cô phải cố gắng tăng cường năng lực của những trẻ này bằng thể dục và eurhythmy. Trước hết, cho các em làm bài tập với gậy, gậy cầm trong tay: phía trước 1, 2, 3; phía sau 1, 2, 3, 4. Mỗi lần trẻ phải đổi vị trí của cây gậy. Trẻ phải nỗ lực bằng cách nào đó để đưa được gậy ra phía sau mình ở nhịp 3. Rồi phải có chạy: 3 bước tiến, 5 bước lùi; 3 bước tiến, 4 bước lùi; 5 bước tiến, 3 bước lùi, v.v. Hãy cố gắng . . . kết hợp con số với chuyển động của trẻ, để trẻ buộc phải đếm trong khi đang chuyển động. Vì sao điều đó có tác dụng? . . . Nền tảng của số học là chuyển động được ý chí hóa một cách có ý thức, là cảm thức vận động; và điều đó sẽ có tác dụng đánh thức năng lực số học của trẻ vào đời sống.</p>
+<h3 id="mot-vai-trich-doan-tu-giao-duc-va-doi-song-tinh-than-hien-dai-cua-rudolf-steiner" class="lesson-title"><span>Một vài trích đoạn từ <em>Giáo dục và Đời sống Tinh thần Hiện đại</em> của Rudolf Steiner</span></h3>
+<p>Các bài giảng tại Ilkley, Yorkshire, 1923, Chương IX, trang 158-161.</p>
+<p>. . . mọi điều được truyền đạt cho trẻ theo cách bên ngoài thông qua số học, hoặc thậm chí thông qua việc đếm, đều phá hủy một điều gì đó trong cơ thể con người. Bắt đầu từ đơn vị rồi cộng thêm từng mảnh, từng mảnh, đơn giản là phá hủy cơ thể con người. Nhưng nếu trước hết ta đánh thức một nhận thức về cái toàn thể, rồi sau đó là nhận thức về các phần của cái toàn thể ấy - bắt đầu với cái toàn thể rồi mới đi đến các phần - thì cơ thể được làm cho sống động hơn.</p>
+<p>Trước hết ta có 1 - ta gọi đó là thể thống nhất. Sau đó 2, 3, 4, v.v. được thêm vào, từng đơn vị một, và ta hoàn toàn không biết vì sao số này theo sau số kia, cũng không biết cuối cùng điều gì xảy ra. . . . Chính đơn vị là điều trẻ cũng phải nhìn thấy trước tiên như một cái toàn thể. Bất cứ điều gì cũng là một thể thống nhất. Ở đây ta buộc phải minh họa bằng một hình vẽ. Vì thế ta phải vẽ một đường; nhưng ta cũng có thể dùng một quả táo để làm điều tôi sắp làm với một đường thẳng.</p>
+<pre class="formula-block"><code>1 2
+1 2 3</code></pre>
+<p>Vậy đây là 1. Bây giờ ta đi từ cái toàn thể đến các phần, hay các thành viên của nó. Như vậy, ở đây ta đã làm cho 1 thành 2, nhưng 1 vẫn còn đó. Rồi ta tiếp tục. Bằng một lần phân chia nữa, 3 xuất hiện. Thể thống nhất luôn vẫn là cái toàn thể bao trùm tất cả. . . .</p>
+<p>Ta đếm đến 10 bởi vì ta cảm nhận các chi thể của mình, các chi thể của đôi bàn tay. Ta cảm nhận hai bàn tay của mình một cách đối xứng với 10 ngón tay. Cảm nhận này cũng nảy sinh và được trẻ trải nghiệm ở bên trong; và ta phải khơi gọi cảm thức về số bằng một sự chuyển tiếp từ cái toàn thể đến các phần. . . . Việc chỉ đơn thuần cộng thêm một hay nhiều đơn vị chỉ nên được đưa vào ở giai đoạn thứ hai. . . .</p>
+<p>Công việc giảng dạy của thầy cô cũng sẽ được nâng cao và làm cho sống động về bản chất nếu thầy cô đảo ngược tương tự các hình thức tính toán đơn giản khác. . . . Chẳng hạn, hãy thử dẫn trẻ nói: “Nếu em có 7, em phải lấy bớt bao nhiêu để còn 3,” thay vì “Nếu em lấy 4 khỏi 7 thì còn lại bao nhiêu?” Việc ta có 7 là điều có thật, và phần ta còn lại cũng có thật; ta phải lấy bớt bao nhiêu từ 7 để được 3? Bắt đầu với hình thức tư duy này, ta đứng ngay giữa đời sống, trong khi với hình thức ngược lại ta đối diện với một sự trừu tượng. . . . Đến lúc thích hợp, ta có thể dễ dàng quay lại cách kia. Như vậy, một lần nữa, trong phép nhân và phép chia ta không nên hỏi kết quả sẽ là gì khi ta chia 10 thành hai phần, mà nên hỏi ta phải chia 10 như thế nào để được số 5. . . . Đây là hai đứa trẻ - 10 quả táo sẽ được chia cho chúng. Mỗi em sẽ nhận 5 quả. Đó là những thực tại. . . . Khi làm theo cách này, mọi sự luôn lập tức thích nghi với đời sống; và . . . kết quả là cách cộng thuần túy bên ngoài thường gặp, bằng việc đếm thêm hết vật này đến vật khác vốn gây tác dụng làm khô cứng các giờ số học, sẽ trở thành một sức mạnh làm cho sống động.</p>
+<h3 id="bon-phep-tinh-va-cac-khi-chat-tu-khoa-hoc-ve-su-pham-rudolf-steiner-giang-nam-1919" class="lesson-title"><span>“Bốn phép tính và các khí chất”, từ <em>Khóa học về Sư phạm</em>, Rudolf Steiner giảng năm 1919</span></h3>
+<p>Làm thế nào dùng bốn quy tắc số học để giúp bốn khí chất?</p>
+<p>Phép cộng liên hệ với khí chất điềm đạm; phép trừ với khí chất u sầu; phép nhân với khí chất linh hoạt; phép chia, khi ta làm ngược để trở về số bị chia, với khí chất nóng nảy.</p>
+<p>Phép chia liên hệ với phép trừ, và phép nhân thật ra chỉ là phép cộng lặp lại. Vì vậy thầy cô cũng có thể đổi chỗ và giao phép trừ cho trẻ khí chất nóng nảy.</p>
+<p>Điều rất quan trọng là không làm việc theo lối đơn điệu, chẳng hạn suốt 6 tháng chỉ làm phép cộng, v.v.; mà bất cứ khi nào có thể, hãy đưa cả bốn quy tắc nối tiếp nhau thật nhanh, rồi luyện tập tất cả. Thầy cô sẽ thấy cách này tiết kiệm cho mình rất nhiều thời gian.</p>
+<p>Phép cộng là quy tắc số học đặc biệt phù hợp với trẻ khí chất điềm đạm. Giả sử tôi có vài hạt đậu hoặc một đống quả cơm cháy. Một trẻ đếm chúng và thấy có 27 hạt/quả (tổng). Ta xuất phát từ tổng, không phải từ các số hạng. Bây giờ ta phải chia cái toàn thể thành các số hạng - thành những đống nhỏ. Ta sẽ có một đống, chẳng hạn 12; một đống khác 7; thêm một đống 3 và một đống 5. Như vậy ta đã dùng hết toàn bộ quả cơm cháy. Ta đang thực hiện tiến trình số học với tổng 27. Tôi sẽ để tiến trình này cho một số trẻ có khí chất điềm đạm rõ rệt thực hiện.</p>
+<pre class="formula-block"><code>27 = 12 + 7 + 3 + 5</code></pre>
+<p>Sau đó, vì tiến trình có thể đảo ngược, tôi sẽ gọi một vài trẻ khí chất nóng nảy lên để gộp các đống lại, nhằm cho thấy:</p>
+<pre class="formula-block"><code>12 + 7 + 3 + 5 = 27</code></pre>
+<p>Phép trừ đặc biệt dành cho trẻ khí chất u sầu khi được thực hiện theo cách sau. Với các trẻ khí chất u sầu, tôi cho các em thấy một đống nhỏ quả cơm cháy và bảo các em đếm. Các em phát hiện có 8 quả trong đống. Tôi nói: “Thầy/cô chỉ muốn 3 quả. Phải đặt riêng bao nhiêu quả cơm cháy sang một bên để thầy/cô chỉ còn 3 quả?” Các em sẽ phát hiện rằng phải lấy đi 5 quả.</p>
+<pre class="formula-block"><code>8 - ? = 3</code></pre>
+<p>Tôi để một trẻ khí chất linh hoạt làm tiến trình ngược lại. Tôi hỏi em điều gì đã được lấy đi, và để em nói: “Nếu em lấy 5 khỏi 8, em sẽ còn lại 3.”</p>
+<pre class="formula-block"><code>8 - 5 = ?</code></pre>
+<p>Phép nhân. Bây giờ tôi chọn một trẻ trong nhóm khí chất linh hoạt và để em đếm ra 56 quả cơm cháy. Từ đó tôi lấy 8 quả và hỏi em tìm xem trong 56 có bao nhiêu lần 8 quả cơm cháy. Em thấy đáp án là 7.</p>
+<pre class="formula-block"><code>56 ÷ 8 = ?</code></pre>
+<p>Bây giờ tôi để bài toán được làm theo cách ngược lại bởi các trẻ khí chất u sầu và nói: “Lần này thầy/cô không muốn tìm xem 8 chứa trong 56 bao nhiêu lần, mà muốn biết con có thể lấy 7 ra từ đó bao nhiêu lần.”</p>
+<pre class="formula-block"><code>56 = ? × 7</code></pre>
+<p>Tôi luôn để tiến trình ngược lại được thực hiện bởi khí chất đối lập.</p>
+<p>Tiếp theo, tôi đặt phép chia trước trẻ khí chất nóng nảy bằng cách nói: “Nhìn đây, con có một đống nhỏ gồm 8; thầy/cô muốn biết trong số nào con có thể tìm thấy 8 bảy lần.”</p>
+<pre class="formula-block"><code>? = 7 × 8</code></pre>
+<p>Đó là hình thức tôi dùng phép chia cho trẻ khí chất nóng nảy (khi ta làm ngược để trở về số bị chia). Sau đó tôi để các trẻ khí chất điềm đạm thực hiện tiến trình đối lập, tức phép chia thông thường.</p>
+<pre class="formula-block"><code>56 ÷ ? = 8</code></pre>
+<p>Vì vậy, ta sẽ lấy cả bốn quy tắc cùng một lúc và chú ý sao cho qua luyện tập, trẻ nắm được chúng gần như đồng thời.</p>
+<h2 id="mot-vai-suy-nghi-lien-quan-den-viec-day-so-hoc" class="chapter-title"><span class="chapter-eyebrow">Phần</span><span>Một vài suy nghĩ liên quan đến việc dạy số học</span></h2>
+<p>Khi ta tạo một hình ảnh sư phạm về trẻ, ta có thể làm điều đó bằng cách đặt trí tưởng tượng ở vùng đầu, sự hiểu biết gần với trái tim, và ý chí ở vùng vận động, trong các chi thể.</p>
+<p>Thị giác hoạt động mạnh nhất ở các vùng phía trên, trong khi thính giác phóng xuống phía ý chí. Liên hệ với thị giác, những hình thức như lớn và nhỏ, rộng và hẹp, v.v. tác động đến năng lực tư duy, còn màu sắc khuấy động cảm xúc. Nhịp điệu khuấy động ý chí. Thị giác và thính giác có thể gặp nhau trong cõi cảm xúc, nơi làm chiếc cầu nối giữa tư duy và ý chí.</p>
+<p>Ở tuổi sáu hoặc bảy, trẻ giàu tưởng tượng và hoạt động. Ta phải chạm tới sự hiểu biết của trẻ từ một phía thông qua các tưởng tượng, các bài học bằng hình ảnh; và từ phía kia thông qua hoạt động mà trẻ yêu thích nhất, tức hoạt động có nhịp điệu. Các tưởng tượng đánh thức năng lực tư duy của trẻ; hoạt động nhịp điệu củng cố trí nhớ của trẻ.</p>
+<p>Hình thức ba phần của một bài học chính có thể đến với trẻ trong cả ba cõi: tưởng tượng, hiểu biết và ý chí. Trật tự diễn tiến có thể bắt đầu bằng công việc nhịp điệu và kết thúc bằng phần thị giác. Ở giữa là phần kịch tính, nơi trẻ hoàn toàn đắm mình trong nội dung cảm xúc của việc diễn lại một điều gì đó.</p>
+<p>Cũng như bài học hằng ngày thành hình theo bản thể của trẻ, chương trình học của ba năm đầu cũng phát triển khi trẻ tiến về buổi bình minh của năng lực tư duy. Ba năm đầu, theo nhiều cách, là một thể thống nhất. Giáo viên dần dần nhấn mạnh công việc trí tuệ nhiều hơn, khi trẻ cho thấy những dấu hiệu rằng các em có thể vui thích với yếu tố hoạt động nằm trong chính các con số. Nhưng công việc chủ động và nhịp điệu không bị bỏ qua.</p>
+<h2 id="cac-con-so-va-bon-phep-tinh-cho-lop-mot" class="chapter-title"><span class="chapter-eyebrow">Phần</span><span>Các con số và bốn phép tính cho lớp Một</span></h2>
+<h3 id="cac-con-so" class="lesson-title"><span>Các con số</span></h3>
+<p>Khi ban đầu ta tìm số một,<br>Ta thấy nó trong mặt trời rực sáng.<br>Với em và tôi,<br>Ta đếm một, hai:<br>Ngày, đêm,<br>Tối, sáng,<br>Tốt, xấu,<br>Vui, buồn,<br>Bạn gái, bạn trai,<br>Ta đếm trong niềm vui,<br>Tất cả đều là những cặp hai<br>Mà ta có thể dùng.</p>
+<p>Cha, mẹ và con, ta nhìn thấy<br>Và đếm thật nhanh: một, hai, ba.<br>Ta biết rất rõ rằng có bốn mùa,<br>Cũng như bốn yếu tố mà ta cùng sống với:<br>Lửa và Nước, Đất và Khí<br>Là bốn yếu tố ta cùng chia sẻ.<br>Và bốn giới của tự nhiên, ta có thể kể cho em nghe.</p>
+<p>Số ngón tay tôi có trên một bàn tay<br>Là một, hai, ba, bốn, năm.<br>Năm ngón chân trên mỗi bàn chân<br>Giúp tôi giữ thăng bằng và đứng vững.</p>
+<p>Ai đếm tất cả các ngón tay của mình đều biết<br>Rằng mình cũng có cùng số ngón chân:<br>Một, hai, ba, bốn, năm, sáu, bảy, tám, chín và mười.</p>
+<p>Ta đếm các giờ trong mỗi ngày,<br>Và khi đếm, ta luôn nói:<br>Một, hai, ba - bốn, năm, sáu -<br>Bảy, tám, chín - mười, mười một, mười hai.</p>
+<p>Ta đếm các tháng trong mỗi năm,<br>Và khi đếm, em sẽ nghe:<br>Một, hai, ba - bốn, năm, sáu -<br>Bảy, tám, chín - mười, mười một, mười hai.</p>
+<p>Những con số khác nhau của trái đất<br>Đã ở quanh ta từ khi ta sinh ra;<br>Nhưng dù ta cố gắng đến đâu,<br>Ta cũng không thể đếm hết các vì sao trên bầu trời.</p>
+<h3 id="so-ba" class="lesson-title"><span>Số Ba</span></h3>
+<p>Tôi và em<br>Và bạn ấy<br>Là chúng ta<br>Trong số ba.</p>
+<p>Và ta có thể thấy<br>Mặt Trời, Mặt Trăng và Trái Đất,<br>Một bộ ba khác<br>Luôn hiện hữu.</p>
+<p>Cha, Mẹ và Con<br>Là ba.</p>
+<p>Đất, Nước và Khí<br>Ở khắp nơi để ta cùng chia sẻ.</p>
+<p>Đầu, Tim và Tay<br>Ta có thể điều khiển<br>Để làm theo ý chí của ta,<br>Hoàn thành điều tốt lành.</p>
+<p>Số Ba<br>Có thể mang một hình dạng<br>Mà ta có thể tạo nên.</p>
+<h3 id="hai-bon-va-tam" class="lesson-title"><span>Hai, Bốn và Tám</span></h3>
+<p>Mắt, tai, tay và chân -<br>Mỗi người ta gặp đều có bốn cặp.</p>
+<p>Qua đôi mắt, tôi có thể thấy mọi vẻ đẹp.<br>Qua đôi tai, tôi có thể nghe điều chân thật.<br>Tay và chân rồi sẽ giúp tôi biểu lộ điều thiện<br>Trong tất cả những việc tôi làm.</p>
+<p>Hai mắt, hai tai, hai tay, hai chân<br>Là bốn lần hai trong con số tám.</p>
+<h3 id="tu-mot-den-nam" class="lesson-title"><span>Từ Một đến Năm</span></h3>
+<p>Ta sống trong một thế giới toàn thể,<br>Nơi các con số được mở ra.</p>
+<p>Một và hai<br>Là tôi và em.</p>
+<p>Có ba màu<br>Tự thân tỏa sáng:<br>Đỏ, Xanh lam và Vàng.</p>
+<p>Ba màu khác xuất hiện:<br>Tím, Cam và Xanh lá,<br>Khi Đỏ hòa với Xanh lam,<br>Hoặc Vàng với Đỏ,<br>Hoặc Xanh lam với Vàng.</p>
+<p>Đất cho đôi chân ta chỗ tựa vững chắc.<br>Hơi thở của ta đến từ không khí.<br>Nước cho ta thức uống và lửa cho ta hơi ấm.<br>Bốn yếu tố chăm nom ta.</p>
+<p>Ta có thể đếm năm ngón tay, thêm nữa,<br>Cùng năm ngón chân trên mỗi bàn chân.</p>
+<h3 id="sau" class="lesson-title"><span>Sáu</span></h3>
+<p>Có 6 cửa sổ<br>Cho em và tôi:<br>Qua 2 cửa ta nghe,<br>Qua 2 cửa ta nhìn,<br>1 cửa cho ta ngửi,<br>1 cửa kia kể lại.</p>
+<p>2 tai để nghe,<br>2 mắt để nhìn,<br>1 mũi để ngửi,<br>1 miệng để kể<br>Câu chuyện này!</p>
+<h3 id="cac-tong" class="lesson-title"><span>Các tổng</span></h3>
+<p>Một là một<br>Và đứng một mình.</p>
+<p>Hai là một và một.<br>Ba là hai và một.<br>Bốn là hai và hai,<br>Nhưng cũng là ba và một.</p>
+<p>Trong năm có ba và hai,<br>Và cũng có bốn và một.<br>Vậy là phép đếm của ta đã xong.</p>
+<h3 id="tat-ca-chung-ta-la-mot-lop-hoc-toan-the" class="lesson-title"><span>Tất cả chúng ta là một lớp học toàn thể</span></h3>
+<p>Diễn trong vòng tròn.</p>
+<p>Đi hàng một.</p>
+<p>Tất cả chúng ta là một lớp học toàn thể.<br>Từng người một, hãy nhìn chúng ta đi qua,<br>Trong khi đôi chân hát bài ca:<br>Hai bước ngắn và một bước dài.</p>
+<p>Chọn người phía trước làm bạn cặp.</p>
+<p>Bây giờ ta đi hai người một hàng,<br>Trong một vòng tròn trọn vẹn và đúng,<br>Trong khi đôi chân hát bài ca:<br>Hai bước ngắn và một bước dài.</p>
+<p>Giáo viên chọn ba trẻ đứng cách xa nhau trong vòng tròn, đặt tên số cho các em là Một, Hai và Ba.</p>
+<p>Ta chạy vào, vui tươi,<br>Một đến Hai, Hai đến Ba,<br>Ba đến nơi Một nên đứng,<br>Tất cả lại về vòng tròn,<br>Trong khi đôi chân hát bài ca:<br>Hai bước ngắn và một bước dài.</p>
+<p>Giáo viên chọn bốn trẻ theo cách tương tự để chạy thành một hình vuông.</p>
+<p>Chạy thành hình vuông và đếm bốn -<br>Một --, hai --, ba --<br>Và thêm một nữa --.</p>
+<p>Tất cả:</p>
+<p>Trong khi đôi chân hát bài ca:<br>Hai bước ngắn và một bước dài.</p>
+<p>Tất cả đứng thành vòng tròn, tay và chân duỗi ra.</p>
+<p>Chúng ta là những ngôi sao đầy ánh sáng<br>Với năm tia sáng rực rỡ<br>Trong bầu trời đêm tối,<br>Di chuyển tay trong tay,<br>Trong khi đôi chân hát bài ca:<br>Hai bước ngắn và một bước dài.</p>
+<h3 id="nhung-chu-lun-va-chau-bau" class="lesson-title"><span>Những chú lùn và châu báu</span></h3>
+<p>Sâu dưới lòng đất, các chú lùn luôn bận rộn làm việc để gom châu báu cho Kho báu của Vua Lùn. Mỗi chú lùn phải mang về đúng 12 viên châu báu mỗi ngày, không hơn, không kém, bởi phần lớn các chú chỉ có thể đếm đến 12; nhưng có bốn chú lùn có thể đếm nhiều hơn và ít hơn, và điều này khiến các chú hành động khác đi. Trông các chú thậm chí cũng khác với những người bạn bình thường của mình. Hai chú trong số này thường về nhà với nhiều hơn 12 viên châu báu, còn hai chú kia thì ít hơn.</p>
+<p>Tên của chú thứ nhất là Nhân. Vàng như ngọn nến, chú thắp sáng những nơi ẩn khuất để tìm thêm kho báu, ít nhất là nhiều gấp 2 lần 12 viên châu báu mỗi ngày. Và chú phải đi hai chuyến, thay vì một chuyến, để có thể khoe khoang trước tất cả những người khác: “Gấp đôi ta mang về, để làm vui lòng Đức Vua!”</p>
+<p>Cộng là chú lùn thứ hai, béo, xanh lá và tham lam. Chú thích nghĩ rằng “3 và 3 và 3 và 3 là mười hai”; và khi cộng những gì mình tìm thấy, chú muốn có thêm nữa, không chỉ cho Đức Vua mà còn cho chính mình. Chú nhét đầy hai tay và nhồi đầy quần, đến nỗi quần kêu lách cách khi chú đến gần Đức Vua. Khi chú chỉ trao cho Đức Vua 12 viên đá xinh đẹp, Đức Vua nghe tiếng quần kêu lách cách và lật ngược Cộng lại để lấy hết phần còn lại. Cộng nói: “Quần tôi nhồi bằng tất cả những gì tôi cộng thêm.”</p>
+<p>Trừ, chú lùn thứ ba, có màu xanh lam và rách rưới. Áo chú có lỗ thủng và chiếc bao chú mang cũng có lỗ thủng. Những viên châu báu chú nhặt được rơi ra qua các lỗ thủng, trong khi chú than khóc: “Xanh rách rưới, ta biết làm sao?” Chú luôn có ít hơn mức phải có, ngay cả khi chú gặp một người luôn sẵn lòng chia sẻ những gì mình tìm được và vì thế cũng có ít hơn.</p>
+<p>Ấm áp và đỏ như máu trong tim, chú lùn thứ tư tên là Chia. Khi nghe tiếng khóc than của Trừ xanh lam, chú vội chạy đến và nói: “Châu báu tôi mang, tôi sẽ chia cùng bạn.”</p>
+<p>Bây giờ Vua Lùn biết tất cả về bốn chú lùn này. Ngài biết rằng Trừ sẽ luôn làm mất châu báu, nhưng Cộng sẽ tìm thấy chúng và thêm vào đống của mình. Đức Vua biết rằng Chia sẽ có ít hơn vì chú đủ tử tế để chia châu báu của mình và trao một phần cho Trừ; và rằng dù Chia chỉ mang về một phần của số mình lẽ ra phải mang, Nhân sẽ mang về nhiều hơn mức phải có, để cuối cùng không mất gì mà còn được thêm một ít.</p>
+<p>Nếu -</p>
+<p>Trừ làm mất 8 và còn lại 4,</p>
+<p>và -</p>
+<p>Cộng nhặt 8 viên ấy lên và cộng chúng vào 12 viên của mình,</p>
+<p>và -</p>
+<p>Chia trao 6 viên cho Trừ và giữ 6 viên,</p>
+<p>và -</p>
+<p>Nhân gom được 2 lần 12, thì tất cả các chú mang về tổng cộng bao nhiêu viên châu báu?</p>
+<h3 id="bon-phep-tinh" class="lesson-title"><span>Bốn phép tính</span></h3>
+<p>Khi đọc và diễn các câu thơ này, ta có thể dựa vào các khí chất của trẻ: Chia là khí chất nóng nảy, Cộng là khí chất điềm đạm, Trừ là khí chất u sầu, và Nhân là khí chất linh hoạt (D.H. phỏng theo các câu thơ tương tự của Margaret Peckham).</p>
+<p>Chia là chú lùn già tử tế. ÷<br>Với mỗi người chú đều sẻ chia.<br>Những viên châu báu chú gom được<br>Chú chia ra thật cẩn thận.</p>
+<p>Cộng giữ bất cứ thứ gì chú tìm thấy. +<br>Mỗi bàn tay ôm cả một đống.<br>Chú cộng châu báu lại với nhau<br>Và nói: “Chúng là của tôi để giữ.”</p>
+<p>Trừ là chú lùn thật bất cẩn. -<br>Chú làm mất mọi thứ.<br>Chiếc túi rách của chú trống rỗng<br>Vì chú trừ đi mọi thứ.</p>
+<p>Nhân biết rất rõ ×<br>Rằng 2 lần 2 là 4.<br>Chú luôn thích nhân lên<br>Để có nhiều hơn thật nhiều.</p>
+<h3 id="gia-dinh-da-tro-thanh-mot-nguoi-cau-chuyen-cho-so-8" class="lesson-title"><span>Gia đình đã trở thành một người: câu chuyện cho số 8</span></h3>
+<p>Ngày xửa ngày xưa, có một cung điện xinh đẹp được xây trên một đồng cỏ trần gian bởi những bàn tay vô hình. Tháp cung điện được phủ bằng một mái vòm hoàn hảo, tròn như chính trái đất; và qua các cửa sổ trên tháp, người ta có thể nhìn và nghe xa rộng về mọi hướng. Bên trong cung điện có nhiều phòng và lối đi dành cho làm việc và vui chơi.</p>
+<p>Một ngày nọ, một gia đình trẻ em được một người vú khổng lồ đưa đến sống trong cung điện. Bà lớn hơn cung điện đến mức không thể vào trong cùng lũ trẻ, mà phải chăm sóc các em từ bên ngoài. Bà đi những chuyến ngắn ra chợ để lấy thức ăn và nước uống cho các em; nhưng thời gian còn lại bà đứng canh bên ngoài để ngăn rắc rối khỏi cửa.</p>
+<p>Mọi người tự hỏi liệu những đứa trẻ có cha hay mẹ không. Không ai biết các em đến từ đâu, hay ai đã xây cung điện của các em. Hơn nữa, đó là một gia đình đông đến mức người ta càng ngạc nhiên. Có tất cả tám đứa trẻ, và cứ hai em là một cặp sinh đôi. Bốn cặp sinh đôi! Mỗi cặp không chỉ trông giống nhau, mà mỗi cặp còn thích làm cùng một loại việc.</p>
+<p>Cặp sinh đôi nhỏ nhất là con trai. Các em thích chạy và chơi suốt ngày. Các em chẳng muốn ngồi yên chút nào, miễn là còn thức; và nữ khổng lồ thường thấy các em đá nhau và giẫm lên ngón chân nhau trong những trò chơi thô bạo.</p>
+<p>Cặp sinh đôi nhỏ kế tiếp dịu dàng hơn. Các em là con gái. Các em luôn vui vẻ chơi cùng nhau, xây lâu đài cát, hái hoa và mặc quần áo cho búp bê. Đôi tay các em luôn bận rộn.</p>
+<p>Cặp kế tiếp luôn ngồi bên hai cửa sổ của tháp. Các em cũng là con gái. Vì lớn hơn, các em không còn muốn chơi. Các em thích mở cửa sổ và lắng nghe gió chơi những khúc nhạc dịu dàng trong hàng cây. Khi nghe tiếng chim hót hay tiếng người nói chuyện và cười đùa từ xa, các em tự hỏi khi nào sẽ có ai đó đến mang một thông điệp quan trọng dành riêng cho mình.</p>
+<p>Cặp sinh đôi lớn nhất là con trai. Các em cũng ở trên tháp, nhìn chăm chú ra ngoài qua hai cửa sổ khác để xem chuyện gì đang diễn ra trong thế giới bên ngoài. Các em thích ngắm bình minh và hoàng hôn, thấy màu sắc của những bông hoa trên cánh đồng, nhìn thật xa đến mái nhà và tháp chuông của các thị trấn xa xôi. Các em muốn nắm lấy tất cả những gì mình thấy, muốn nhận tất cả là của riêng mình, nhưng các em không thể tự đưa mình xuống khỏi tháp.</p>
+<p>Vì thế, bốn cặp sinh đôi này, sống cùng nhau trong cung điện nhưng theo những cách tách biệt đến vậy, đều phải được nữ khổng lồ chăm sóc, bởi các em không chăm sóc lẫn nhau. Những cặp sinh đôi trên tháp không bao giờ xuống tầng dưới, còn hai bé gái nhỏ và hai bé trai nhỏ hầu như không biết rằng có ai ở tầng trên.</p>
+<p>Thời gian trôi qua, và những người xung quanh biết về gia đình kỳ lạ trong cung điện xinh đẹp ấy càng lúc càng tự hỏi cuối cùng điều gì sẽ xảy ra, bởi những con người có lý trí biết rằng trẻ em phải học cách tự chăm sóc mình và giúp đỡ lẫn nhau.</p>
+<p>Trong suốt thời gian ấy, một Đức Vua vĩ đại và tốt lành đang lên đường tìm kiếm các con của mình. Đó dường như là một hành trình bất tận, xa như từ trời xuống đất. Những đứa trẻ đã bị các người khổng lồ mang khỏi quê hương, những kẻ muốn giành quyền lực trên Đức Vua.</p>
+<p>Đức Vua không mang theo quân đội hay vũ khí, nhưng Ngài sở hữu một vật quý hơn mười nghìn người lính vũ trang. Đó là một chiếc áo choàng kỳ diệu phủ từ đầu đến chân. Khi mặc nó, Ngài có thể đi bình an qua từng yếu tố trong bốn yếu tố: qua đá, qua nước, qua gió và lửa; và Ngài có thể làm điều ấy mà không bị nhìn thấy.</p>
+<p>Ngay cả nữ khổng lồ già, đang canh giữ bên cung điện của các cặp sinh đôi, cũng không thể thấy Ngài khi Ngài đi ngang qua bà và bước vào cổng. Ngài đi qua tất cả các lối đi và căn phòng, lên tận mái vòm, và vui mừng khôn xiết khi tìm thấy tất cả những đứa con sinh đôi của mình ở đó.</p>
+<p>Đức Vua và các con sinh đôi của Ngài sẽ trốn khỏi người vú khổng lồ đang canh giữ cung điện-nhà tù của các em như thế nào? Cả tám đứa trẻ không thể cùng chui dưới chiếc áo choàng kỳ diệu của Ngài. Đức Vua đưa tất cả các em lại với nhau trong trái tim của cung điện và dạy các em cách có thể giúp đỡ nhau.</p>
+<p>Đức Vua nói với bốn đứa trẻ lớn hơn như sau: “Vì các con biết cách nhìn và lắng nghe, các con phải trở thành đôi mắt và đôi tai cho các em trai, em gái nhỏ hơn của mình.”</p>
+<p>Rồi Ngài nói với bốn đứa nhỏ hơn: “Vì các con có đôi tay và đôi chân thật bận rộn, các con phải trở thành các chi thể cho những anh chị lớn hơn của mình và giúp các anh chị bước ra thế giới.”</p>
+<p>Rồi Ngài nói với tất cả: “Nếu các con làm điều này, các con sẽ trở nên như một người và có thể cùng ta bước vào chiếc áo choàng kỳ diệu.”</p>
+<p>Vậy là bốn cặp sinh đôi trở nên như một người. Đức Vua khoác áo choàng quanh các con và dẫn các em đi qua người vú khổng lồ, bắt đầu hành trình trở về quê hương.</p>
+<h2 id="mot-tuyen-chon-bai-hoc-cho-lop-hai" class="chapter-title"><span class="chapter-eyebrow">Chương</span><span>Một tuyển chọn bài học cho lớp Hai</span></h2>
+<h3 id="con-so-giau-co-nhat" class="lesson-title"><span>Con số giàu có nhất</span></h3>
+<p>Ngày xửa ngày xưa, nhiều con số khác nhau đang đi lại trong một cung điện số xinh đẹp, nơi có nhiều bậc thang dẫn lên một ngai vàng. Mỗi con số đều muốn ngồi trên ngai, cai trị các con số khác và trở thành con số quan trọng nhất. Không một con số nào muốn nói: “Tôi không lớn bằng bạn.”</p>
+<p>Số Một nói:</p>
+<p>Tôi đứng đầu trước tất cả các bạn!<br>Ngai vàng hoàng gia thuộc về tôi.<br>Khi chúng ta được đếm, các bạn sẽ thấy<br>Tất cả các bạn chỉ đi theo sau tôi.</p>
+<p>“Tôi không đồng ý,” Số Hai nói,<br>“vì tôi nhiều hơn bạn!”</p>
+<p>Số Bốn<br>Dậm chân xuống sàn<br>Và gầm lên,<br>“Tôi nhiều hơn<br>Một hay Hai!”</p>
+<p>Và Sáu kêu lên,<br>“Chuyện gì thế này?<br>Cứ nhìn tôi<br>Rồi các bạn sẽ thấy!”</p>
+<p>Tám hét lên, “Tôi giàu như Sáu<br>Và làm được nhiều trò chẳng kém.”</p>
+<p>Số Chín nói, “Thế cũng hay,<br>Nhưng tôi cao hơn trong dãy!”</p>
+<p>Rồi Số Mười Hai nói, “Hãy xem<br>Trong toàn bộ tôi<br>Có bao nhiêu con số.”</p>
+<p>Mười Ba tuyên bố mình nên làm Vua,<br>Vì cậu có nhiều hơn về mọi thứ.</p>
+<p>Gợi ý: Có thể hỏi trẻ: “Trong các con số này, số nào nên làm Vua?” Có thể bảo các em suy nghĩ đến ngày hôm sau. Trẻ thường nhận một nhiệm vụ như vậy với nhiều hào hứng. Bài học kế tiếp có thể bắt đầu bằng câu hỏi: “Đức Vua sẽ giàu hơn hay nghèo hơn thần dân của mình?” Sau đó, nghiên cứu sau đây có thể được làm trên bảng đen để cả lớp chép vào vở.</p>
+<pre class="formula-block"><code>1 2 4 6 8
+1 2 4 6 8
+1 2 3 4
+1 2 2
+12
+12 1 1
+6
+4
+3 9
+2 9 13
+3 13
+1
+1 1</code></pre>
+<p>Bắt đầu với các số một, các con số dần dần được khoanh tròn và xuất hiện như những viên ngọc trên vương miện ở bên cạnh. 12 hiện ra là con số giàu có nhất trong các số này.</p>
+<h3 id="con-so-giau-co-nhat-tiep-tuc-trong-mot-bai-hoc-khac" class="lesson-title"><span>Con số giàu có nhất (tiếp tục trong một bài học khác)</span></h3>
+<p>Giờ đây, khi 12 đã là Vua, ngài ra lệnh cho tất cả các số nhỏ hơn phải chia đều với ngài công việc của vương quốc.</p>
+<p>Trước hết, ngài tuyên bố rằng họ có 6 ngày để làm việc và ngày thứ 7 để nghỉ. Ít nhất 2 con số phải chỉ huy trong mỗi ngày của 6 ngày.</p>
+<pre class="formula-block"><code>2 + 2 + 2 + 2 + 2 + 2 = 12</code></pre>
+<p>Tiếp theo, họ phải chia đều thành 2 nhóm lính gác để canh giữ cung điện của Đức Vua ban ngày và ban đêm.</p>
+<pre class="formula-block"><code>6 + 6 = 12</code></pre>
+<p>Rồi họ phải chia thành 3 nhóm bằng nhau cho 3 loại công việc:</p>
+<ul>
+<li>Đọc từ các Sách Minh triết</li>
+<li>Hát những Bài ca Vui mừng</li>
+<li>Diễu hành trong các Đoàn diễu binh Cung điện</li>
+</ul>
+<pre class="formula-block"><code>4 + 4 + 4 = 12</code></pre>
+<p>Họ phải chia thành 4 nhóm cho 4 nghề khác nhau:</p>
+<pre class="formula-block"><code>3 + 3 + 3 + 3 = 12</code></pre>
+<ul>
+<li>Cày đất</li>
+<li>Nhóm lửa trong bếp lò</li>
+<li>Gánh nước từ giếng</li>
+<li>Làm thoáng các phòng trong cung điện</li>
+</ul>
+<p>Cuối cùng, họ phải chia ra sao cho có người đứng trên tháp cung điện và gọi to từng giờ trong ngày.</p>
+<pre class="formula-block"><code>1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 12</code></pre>
+<p>Và đó là cách Vua Mười Hai chia sẻ công việc của vương quốc mình!</p>
+<p>Những tổ hợp số này cũng có thể được luyện trong phép chia và phép nhân, ví dụ: <code>12 = 6 × 2</code> và <code>6 = 12 ÷ 2</code>, v.v.</p>
+<h3 id="so-le-va-so-chan" class="lesson-title"><span>Số lẻ và số chẵn</span></h3>
+<p>Ghi chú: Khi hình thức của một bài học bắt đầu bằng hoạt động, chuyển sang đếm đồ vật rồi đến viết, trẻ được giúp tập trung và đưa vào tư duy những gì các em đã học qua chi thể, hơi thở và cảm xúc kịch tính.</p>
+<h4 id="khoi-lon-va-lua-nho" class="minor-title"><span>Số học vận động</span></h4>
+<p>Trẻ đứng đối diện nhau thành hai hàng. Những bạn đối diện nắm tay nhau thành cặp và được đặt tên số. Mỗi cặp lặp lại các số của mình:</p>
+<pre class="formula-block"><code>1 có 2 làm bạn cặp
+3 có 4 làm bạn cặp
+5 có 6 làm bạn cặp
+7 có 8 làm bạn cặp
+9 có 10 làm bạn cặp, v.v.</code></pre>
+<p>Các em thấy và học rằng khi hai bên “chẵn”, tất cả đều có bạn cặp. Nếu có một bạn không có bạn cặp, bạn ấy là “lẻ”. Nếu giáo viên gọi “7”, tất cả các số lớn hơn 7 ngồi xuống, tức 8, 9, 10 ngồi xuống. Khi đó 7 được thấy là lẻ và trẻ đọc đồng thanh: “7 là một số lẻ.” Nếu giáo viên gọi “4”, tất cả các số lớn hơn 4 ngồi xuống. 1 và 3 vẫn đứng đối diện 2 và 4. Tất cả đều có bạn cặp và trẻ đọc đồng thanh: “4 là một số chẵn.” Hoạt động này có thể diễn ra rất nhanh và linh hoạt; trẻ học suy nghĩ nhanh khi phải quyết định mình đứng hay ngồi. Cuối cùng, có thể yêu cầu trẻ tự nói các số của mình theo từng bên - <code>1, 3, 5, 7, 9</code> và <code>2, 4, 6, 8, 10</code> - và nhờ đó phát hiện rằng một bên là các số “lẻ”, còn bên kia là các số “chẵn”. Sau đó các số lẻ có thể tạo thành một vòng tròn nhỏ, vừa di chuyển vừa đếm và bước giữa các số lẻ: <code>1 - bước - 3 - bước - 5 - bước</code>, v.v. Rồi các số chẵn cũng làm tương tự. Dần dần, các em luyện đếm mà không bước giữa các số.</p>
+<h4 id="tro-choi-phep-nhan-cho-hoc-sinh-lop-hai" class="minor-title"><span>Đếm đồ vật (với hạt đậu, vỏ sò, quả sồi, v.v.)</span></h4>
+<p>Các đội lẻ và chẵn ngồi đối diện nhau qua bàn học. Giáo viên đưa cho đội lẻ một số hạt đậu lẻ và đưa cho đội chẵn một số hạt đậu chẵn. Mỗi bạn lẻ sau đó đưa cho bạn chẵn đối diện đủ số hạt để làm cho bạn chẵn trở thành lẻ và bạn lẻ trở thành chẵn. Hoặc các bạn chẵn có thể đưa cho các bạn lẻ đủ số hạt để làm các bạn ấy thành chẵn, còn chính mình trở thành lẻ. Giáo viên có thể nghĩ ra các biến thể.</p>
+<h4 id="hai-hinh-dang-dan-nhap-vao-bang-4" class="minor-title"><span>Bài viết</span></h4>
+<p>Trong mẫu số sau, trẻ viết hàng thấp nhất trước, tô số lẻ màu xanh lam và số chẵn màu đỏ. Sau đó, ngay phía trên mỗi số lẻ, các em viết <code>1</code> bằng màu xanh lam, màu dành cho số lẻ. Tiếp theo, các em viết <code>2</code> bằng màu đỏ phía trên mỗi số chẵn (màu đỏ dành cho số chẵn).</p>
+<pre class="formula-block"><code>0 0 2 2 4 4 6 6 8 8
+1 2 1 2 1 2 1 2 1 2
+1 2 3 4 5 6 7 8 9 10</code></pre>
+<p>Hàng trên cùng xuất hiện khi các em viết câu trả lời, đọc từ hàng dưới lên, cho các câu hỏi:</p>
+<pre class="formula-block"><code>1 là 1 cộng với gì?
+2 là 2 cộng với gì?
+3 là 1 cộng với gì?
+4 là 2 cộng với gì?
+và cứ như vậy.</code></pre>
+<p>Các em thích thú khi phát hiện rằng toàn bộ hàng trên cùng, ngoại trừ các số không, hiện ra bằng màu đỏ và theo một trình tự xác định của bảng 2.</p>
+<h4 id="cac-co-van-cua-duc-vua" class="minor-title"><span>Chính tả số</span></h4>
+<p>Có thể đọc ngẫu nhiên các con số để trẻ viết bằng xanh lam hoặc đỏ tùy theo số đó là lẻ hay chẵn. Về sau, có thể đọc những ví dụ đơn giản và bảo trẻ dùng xanh lam và đỏ để biểu thị lẻ và chẵn.</p>
+<h3 id="luyen-bang-8" class="lesson-title"><span>Khói Lớn và Lửa Nhỏ</span></h3>
+<p>Ghi chú: Khi giáo viên kể câu chuyện này, có thể minh họa và viết các câu chuyện số lên bảng đen để cả lớp chép lại. Trẻ nên tham gia vào việc tìm ra các câu chuyện số.</p>
+<p>Khói Lớn là một chú sóc xám có thể leo vút lên những cây cao nhất và nhảy từ cành này sang cành khác, gần như bay như chim và không bao giờ trượt chỗ đặt chân trên cành kế tiếp.</p>
+<p>Lửa Nhỏ là một cô sóc chuột đỏ lao vun vút trên mặt đất như lửa và đào hang sâu dưới đất để làm ngôi nhà mùa đông bên dưới tuyết và băng.</p>
+<p>Đó là tháng Mười, và cả hai đều đang bận rộn tìm và cất hạt dẻ, quả sồi và hạt giống ở những nơi bí mật cho các bữa tiệc mùa đông của mình.</p>
+<p>Khói Lớn cất hạt trong các hốc cây và cả giữa rễ cỏ. Lửa Nhỏ cất những gì mình nhặt được dưới lòng đất trong các phòng đường hầm mà cô tạo ra.</p>
+<p>Một buổi sáng, cách đây không lâu, cả hai cùng nhặt được một số hạt phỉ trong khoảng một giờ. Tổng cộng các bạn đã tìm được 12 hạt. Khói Lớn may mắn hơn Lửa Nhỏ. Cậu đã tìm và cất được 5 hạt. Lửa Nhỏ tìm và cất được 4 hạt.</p>
+<p>Rồi, khi Khói Lớn đi tìm thêm, Lửa Nhỏ tìm thấy 2 hạt mà Khói Lớn đã giấu. Cô đặt chúng vào phòng kho của mình cùng với 4 hạt của cô. Bây giờ cô có <code>?</code>.</p>
+<p>Trong số 8 hạt mà Khói Lớn đã giấu, bây giờ cậu chỉ còn lại <code>?</code>.</p>
+<p>Bây giờ mỗi bạn có số hạt bằng nhau trong tổng số 12!</p>
+<p>Và bây giờ, vì đã tìm ra các kho của Khói Lớn, Lửa Nhỏ để cậu đi săn tìm, còn cô thì lục các chỗ giấu của cậu. Cô có thể nhét rất nhiều trong má và bỏ túi thêm 4 hạt nữa của cậu. Bây giờ cô có <code>?</code> hạt và cậu còn lại <code>?</code>. Cô có nhiều gấp mấy lần cậu?</p>
+<p>Khi cô quay lại để lấy 2 hạt cuối cùng của cậu, cậu đuổi cô đi bằng một trận mắng ra trò; nhưng cậu không thể lấy lại những gì cô đã lấy, vì cậu không thể chui vào các đường hầm của cô. Cậu quá lớn.</p>
+<h4 id="bang-9" class="minor-title"><span>Luyện tập đếm đồ vật, vẽ và viết</span></h4>
+<p>Gợi ý: Mỗi trẻ có thể cùng tham gia hoạt động này một lúc sau khi hạt được phát ra. Tay trái có thể là Khói Lớn và tay phải có thể là Lửa Nhỏ, mỗi tay xử lý và sắp xếp các hạt theo câu chuyện và các biến thể.</p>
+<pre class="formula-block"><code>8 + 4 = 12
+6 + 6 = 12
+2 + 10 = 12</code></pre>
+<h3 id="bang-10" class="lesson-title"><span>Trò chơi phép nhân cho học sinh lớp Hai</span></h3>
+<p>Ghi chú: Viết cho 20 trẻ, nhưng có thể điều chỉnh cho bất kỳ số lượng nào. Nhân vật: Cổng (10), Người đi tìm và phát hiện kho báu (10).</p>
+<p>Các Cổng đứng thành vòng tròn, còn Người đi tìm kho báu đứng bên ngoài. Các Cổng quay mặt ra ngoài và đeo những chiếc khăn lụa mềm buộc vào cổ tay, nhiều màu khác nhau, cùng mũ giấy cùng màu; Người đi tìm kho báu đội mũ một màu.</p>
+<p>Cổng:</p>
+<p>Mười cánh cổng canh giữ kho báu!<br>Mở chúng không khó lắm đâu,<br>Vì mỗi cổng trao một chiếc chìa<br>Sẽ mở ra điều bí ẩn.</p>
+<p>Người đi tìm kho báu:</p>
+<p>Chúng tôi tìm kho báu ẩn giấu này<br>Và điều ấy sẽ làm chúng tôi vui.<br>Điều duy nhất, cho đến nay,<br>Làm chúng tôi có tiếng<br>Là mỗi người chúng tôi<br>Đều có cùng một tên,<br>Và tên ấy là “2”.<br>(hoặc 3, hoặc 4, hoặc 5, v.v.)</p>
+<p>Từng người một, Người đi tìm kho báu tiến đến một Cổng.</p>
+<p>Người đi tìm kho báu:</p>
+<p>Tôi đứng đây,<br>Tôi có thể đi qua không?</p>
+<p>Cổng:</p>
+<p>Tôi là 2 (hoặc 4, hoặc 6, hoặc 8, v.v.)<br>Bạn là ai?</p>
+<p>Người đi tìm kho báu:</p>
+<p>Tôi là 2! (v.v.)</p>
+<p>Cổng:</p>
+<p>Vậy hãy cúi chào một lần<br>Và bạn có thể đi qua.</p>
+<p>2 đi qua 2, sau một lần cúi chào, và đứng bên trong vòng tròn.</p>
+<p>Người đi tìm kho báu:</p>
+<pre class="formula-block"><code>2 là 1 lần 2.</code></pre>
+<p>V.v., rồi các Người đi tìm kho báu khác tiếp tục, cho đến <code>10 lần</code>, cho đến khi tất cả đều ở trong vòng tròn.</p>
+<p>Người đi tìm kho báu:</p>
+<p>Bây giờ, mọi kho báu ẩn giấu<br>Ta thật sự có thể đo,<br>Những chiếc chìa đã dẫn ta đến vị trí<br>Chỉ là 10 phép nhân dễ dàng.</p>
+<p>Tất cả:</p>
+<pre class="formula-block"><code>2 = 1 × 2
+4 = 2 × 2
+6 = 3 × 2
+...</code></pre>
+<p>Tiếp tục đến <code>10 × 2</code>, hoặc bất cứ bảng nhân nào đã được diễn.</p>
+<pre class="formula-block"><code>Cổng đóng    Cổng mở</code></pre>
+<h3 id="do-do-dai-theo-duong-thang" class="lesson-title"><span>Hai hình dạng: Dẫn nhập vào bảng 4</span></h3>
+<p>Có hai hình dạng trong thế giới này hoàn toàn không giống nhau. Một ngày nọ, chúng kết bạn và kể cho nhau nghe điều đang làm mình phiền lòng.</p>
+<p>Hình thứ nhất nói: “Khi tôi đứng lên, tôi không bao giờ đứng yên được. Tôi cứ phải di chuyển mãi và mệt đến mức ngã bẹt xuống!”</p>
+<p>Hình kia nói: “Thế chẳng là gì. Khi tôi đứng lên, tôi không đi đâu được. Tôi cố lắm nhưng cứ bị kẹt lại rồi cũng ngã bẹt xuống!”</p>
+<p>“À,” hình thứ nhất nói, “hẳn sẽ vui nếu có thể đứng yên, dù chỉ một khoảnh khắc. Đó sẽ là một sự thay đổi đối với tôi.”</p>
+<p>Hình thứ hai đáp: “Tôi sẽ đánh đổi bất cứ điều gì để có thể đứng lên và lăn đi.”</p>
+<p>Các em nghĩ những hình dạng ấy trông như thế nào?</p>
+<p>Ghi chú: Đến đây, giáo viên có thể yêu cầu trẻ lấy giấy và bút chì ra, rồi vẽ mỗi hình theo cách các em nghĩ.</p>
+<p>Nhiều em đã có ý đúng! Một vài em vẽ tam giác thay vì hình vuông. Bây giờ giáo viên đưa ra một hình tròn bằng bìa đỏ có thể lăn đi và một hình vuông bằng bìa xanh lá không thể lăn và chạy, nhưng đứng được một khoảnh khắc trên cạnh đáy, rồi mệt và ngã bẹt xuống.</p>
+<p>Nào, hình tròn mời hình vuông vào bên trong hình tròn để đi dạo. Lần này, một hình vuông phải được cắt sao cho vừa bên trong hình tròn và có thể dán vào đó bằng băng dính trong hoặc keo cao su.</p>
+<p>“Ôi,” hình tròn kêu lên sau khi lăn một đoạn ngắn rồi ngã bẹt xuống, “tôi thật mệt khi cứ lăn quanh và ước gì mình có thể đứng yên, im lặng một lát.”</p>
+<p>“Dễ thôi. Tôi sẽ giúp bạn,” hình vuông nói. “Tôi sẽ làm mình lớn hơn và để bạn vào bên trong tôi.”</p>
+<p>Vậy là hình vuông phóng to chính mình để hình tròn có thể vừa khít bên trong nó (dùng một hình vuông thứ hai lớn hơn). Rồi hình vuông đứng thẳng và vững mà không lăn.</p>
+<p>“Thật vui biết bao!” hình tròn kêu lên. “Bạn giữ tôi khỏi lăn quanh.”</p>
+<p>“Than ôi,” hình vuông nức nở, “sức mạnh và thăng bằng của tôi đã cạn rồi.”</p>
+<p>Rồi cả hai cùng ngã bẹt xuống.</p>
+<h4 id="cac-van-tho-ve-thoi-gian" class="minor-title"><span>Vẽ</span></h4>
+<p>Cho trẻ vẽ hình tròn bên trong hình vuông, vẽ tay tự do.</p>
+<h4 id="cau-chuyen-so-cho-bang-6" class="minor-title"><span>Bài viết</span></h4>
+<p>Hình vuông là hình dạng của bảng 4. Nó có bốn cạnh bằng nhau.</p>
+<pre class="formula-block"><code>4 = 1 × 4
+8 = 2 × 4
+12 = 3 × 4
+...
+đến 48</code></pre>
+<h3 id="theo-doi-cac-con-so-bai-tap-dem" class="lesson-title"><span>Các cố vấn của Đức Vua</span></h3>
+<p>Phỏng theo một câu chuyện của Margaret Peckham.</p>
+<p>Ngày xửa ngày xưa, có một vị Vua trẻ cai trị một vương quốc rộng lớn. Ngài rất giàu. Phòng kho báu lớn của ngài chất đầy những túi vàng và đá quý. Ngài được biết đến là vị Vua giàu nhất thế giới, nhưng ngài không hạnh phúc. Thần dân không thích ngài vì trông ngài cau có và khổ sở; họ gọi ngài bằng những cái tên như Vua Cau Có hay Bệ Hạ Khốn Khổ.</p>
+<p>Không một vị Vua nào, dù giàu đến đâu, có thể cai trị vương quốc tốt đẹp nếu ngài không cảm thấy hạnh phúc. Vị Vua trẻ này biết điều đó, nhưng ngài không biết phải làm gì. Giá mà có ai đó cố vấn cho ngài, nói cho ngài biết phải làm gì để ngài hạnh phúc và thần dân yêu mến ngài!</p>
+<p>Cuối cùng, ngài quyết định gọi một cố vấn. Ngài ra lệnh cho các sứ giả thổi kèn từ bốn tháp của cung điện. Đó là tín hiệu để toàn dân tụ họp.</p>
+<p>Rồi các sứ giả gọi vang về cả bốn hướng: “Hãy nghe đây! Hãy nghe đây! Hãy nghe đây! Hãy nghe đây! Bệ Hạ đang tìm một cố vấn giúp ngài cai trị khôn ngoan và tốt đẹp. Ai chứng tỏ mình là một cố vấn giỏi sẽ không bao giờ thiếu thốn điều gì trong suốt phần đời còn lại!”</p>
+<p>Không lâu sau, có tiếng gõ ở cổng cung điện. Nghe thấy, Đức Vua bảo người hầu mở cổng. Ngài ngồi vào ngai khi một người đàn ông kỳ lạ bước vào phòng ngai và đứng trước Đức Vua. Quả là một người kỳ lạ, toàn thân mặc màu xanh lam đậm! Ông dài và gầy, với cái mũi dài gầy, những ngón tay dài gầy, cái miệng là một đường mảnh, mái tóc dài mảnh; và thậm chí có một dấu hiệu dài, mảnh trên tay áo.</p>
+<p>Ông cúi chào kính cẩn trước Đức Vua và nói: “Tâu Bệ Hạ, thần đến để cố vấn cho ngài cách cai trị vương quốc khôn ngoan và tốt đẹp.”</p>
+<p>“Tên ngươi là gì?” Đức Vua hỏi.</p>
+<p>“Tên thần,” người đàn ông nói, chỉ vào dấu hiệu trên tay áo, “là Trừ.”</p>
+<p>Rồi Đức Vua nói với Trừ rằng dù có mọi sự giàu sang, ngài vẫn vô cùng bất hạnh.</p>
+<p>Trừ đáp: “Tất cả vàng và đá quý của ngài sẽ không bao giờ làm ngài hạnh phúc. Hãy để thần lấy chúng đi. Khi ấy ngài sẽ hạnh phúc như một chú chim bay lượn và hót ca vui sướng suốt ngày.”</p>
+<p>Đức Vua mừng vì được cố vấn như vậy và để Trừ mang đi tất cả các túi vàng và châu báu cho đến khi không còn lại một túi nào. Rồi trước khi rời đi, Trừ đặt dấu “-” của mình lên ngai của Đức Vua.</p>
+<p>Bây giờ Đức Vua cố cảm thấy hạnh phúc để dân chúng yêu mến mình. Nhưng thay vào đó, ngài bắt đầu thấy đói vì không còn tiền mua thức ăn cho bàn tiệc. Ngày này qua ngày khác, ngài càng đói hơn, gầy hơn và cáu hơn. Cuối cùng, ngài quyết định rằng Trừ đã cho mình lời khuyên rất tệ, nên ngài bảo các sứ giả thổi kèn và gọi một cố vấn mới.</p>
+<p>Người đàn ông kỳ lạ tiếp theo xuất hiện trông rất tử tế và hào phóng. Ông mặc một chiếc áo choàng đỏ ấm áp, và trên tay áo có dấu “÷”. Khi ông cúi chào Đức Vua, Đức Vua hỏi vì sao trông ông ấm áp và tử tế đến vậy.</p>
+<p>Người đàn ông đáp: “Vì thần chia sẻ tất cả những gì mình có với người khác.”</p>
+<p>“Tên ngươi là gì?” Đức Vua hỏi.</p>
+<p>“Thần được gọi là Chia, vì khi thần chia sẻ, thần chia ra.” Rồi Đức Vua kể cho ông nghe cách Trừ đã lấy đi toàn bộ kho báu hoàng gia, khiến ngài không còn gì để mua thức ăn cho bàn tiệc.</p>
+<p>“Ôi cái ông Trừ ấy!” Chia nói. “Ông ấy là anh em của thần và thần biết ông ấy rõ. Ông ấy chẳng bao giờ còn lại gì để chia sẻ vì ông ấy làm mất tất cả những gì mình có. Thần sẽ tìm những gì ông ấy đã lấy khỏi ngài và giúp ngài chia chúng ra, chia sẻ với tất cả thần dân. Khi ấy ngài sẽ hạnh phúc, và họ sẽ yêu mến ngài.”</p>
+<p>Khi rời đi, Chia đặt dấu của mình lên ngai của Đức Vua: “÷”. Chẳng bao lâu ông trở lại, mang cho Đức Vua tất cả kho báu mà Trừ đã lấy đi. Ông giúp Đức Vua chia chúng ra và chia sẻ với mọi người trong vương quốc.</p>
+<p>Điều này khiến Đức Vua chỉ còn phần của mình, rất nhỏ, không đủ để mua thóc cho ngựa và thịt cho chó săn. Vì vậy ngài quyết định rằng lời khuyên của Chia vẫn chưa đủ tốt.</p>
+<p>Một lần nữa Đức Vua ra lệnh cho các sứ giả thổi kèn và gọi một cố vấn mới.</p>
+<p>Bây giờ xuất hiện một người đàn ông béo, chậm chạp, xanh và tròn như một bắp cải. Ông có vẻ lăn vào, nhưng như một quả bóng muốn ngừng lăn. Trên cánh tay béo với tay áo chật có dấu “+”.</p>
+<p>“Tên ngươi là gì?” Đức Vua hỏi khi người đàn ông béo đứng trước ngài, không thể cúi chào vì quá béo và tròn.</p>
+<p>“Tên thần,” người đàn ông nói, phồng má lên, “là Cộng, vì thần thích cứ thêm vào những gì mình có.”</p>
+<p>Đức Vua kể cho Cộng nghe Chia đã sắp xếp cho ngài chia sẻ quá nhiều của cải với dân chúng trong vương quốc, đến nỗi phần còn lại không đủ mua thóc cho ngựa và thịt cho chó săn.</p>
+<p>“Thần sẽ giúp ngài!” Cộng nói, rồi gọi tất cả dân chúng của Đức Vua lại. Họ tự nguyện đến, hy vọng Đức Vua có thêm điều gì để chia sẻ với họ. Cộng nói với dân chúng rằng vì Đức Vua đã chia sẻ quá nhiều của cải với họ, phần của chính ngài quá nhỏ để mua thức ăn cho ngựa và chó săn.</p>
+<p>Rồi dân chúng, vốn thích nhìn Đức Vua và tất cả triều thần cưỡi những con ngựa nhảy nhót đi qua cùng chó săn để săn thú, mang trả lại toàn bộ vàng và châu báu vào phòng kho báu của Đức Vua, nơi Cộng chất tất cả lên lại cho đến khi Đức Vua có nhiều như lúc ban đầu. Rồi Cộng đặt dấu “+” của mình lên ngai Đức Vua và khuyên Đức Vua giữ lại tất cả của cải.</p>
+<p>Một lần nữa, Đức Vua giàu có, dân chúng cảm thấy nghèo, và mọi người đều bất hạnh.</p>
+<p>“Ôi trời,” Đức Vua kêu lên, “ta lại quay đúng về nơi ta bắt đầu. Ta phải làm gì?”</p>
+<p>Lần thứ tư, ngài ra lệnh cho các sứ giả thổi kèn và gọi một cố vấn khác; đáp lại, một người thứ tư xuất hiện, sáng như ngọn lửa vàng. Người ấy nhảy múa chỗ này chỗ kia, không bao giờ đứng yên một nơi, và trên tay áo có một dấu ngoằn ngoèo “×”. Người ấy cứ đi chéo qua chéo lại trong lúc lắng nghe Đức Vua và trả lời ngài.</p>
+<p>Khi Đức Vua kể cho người đang nhảy múa nghe mọi việc đã thành ra thế nào, người giống ngọn lửa đáp: “Ngài sẽ không bao giờ có đủ cho chính mình, cho dân chúng, cho ngựa và chó của mình, trừ khi ngài làm theo lời khuyên của thần.”</p>
+<p>“Tên ngươi là gì?” Đức Vua hỏi.</p>
+<p>“Thần là Nhân, và lời khuyên của thần là ngài hãy biến mọi thứ mình có thành nhiều hơn bằng cách nhân lên.”</p>
+<p>Bây giờ Nhân vẽ dấu của mình lên ngai Đức Vua, rồi mời Đức Vua đi dạo cùng mình. Nhân dẫn Đức Vua ra vùng quê bên ngoài thành phố và chỉ cho ngài một cây táo. Ông khuyên Đức Vua trồng thêm nhiều cây táo để nhân sản lượng táo lên. Ông chỉ cho ngài một cánh đồng ngô và khuyên ngài làm thêm nhiều cánh đồng ngô để nhân sản lượng ngô lên. Ông chỉ cho ngài một vườn rau và khuyên ngài trồng thêm nhiều khu vườn như vậy để nhân các vụ rau lên.</p>
+<p>Khi Đức Vua thực hiện lời khuyên của Nhân, ngài thu hoạch nhiều đến mức không biết phải làm gì với số ấy. Ngài phải xây đủ loại kho chứa và tháp để giữ phần sản vật dư thừa, vậy mà vẫn có nhiều thứ hư hỏng và mục nát.</p>
+<p>Giờ đây, trong tuyệt vọng, Đức Vua rời cung điện và vương quốc, đi thật xa để cố quên những rắc rối và các cố vấn của mình. Cuộc lang thang dẫn ngài vào một vùng hoang dã không lối mòn, nơi ngài hẳn đã lạc mất mãi mãi và bị quên lãng, nếu một ngày kia không có một bà lão hiện ra trước ngài, nhìn ngài như thể bà biết tất cả những gì đang xảy ra.</p>
+<p>Bà nói với ngài: “Chà, thưa Bệ Hạ, ta thấy ngài đã tìm được các cố vấn của mình!”</p>
+<p>Nói xong, bà biến mất; Đức Vua quay lại và trở về vương quốc, vì ngài đã bắt đầu hiểu ý bà.</p>
+<p>Khi về đến nhà, ngài cho gọi Trừ, Chia, Cộng và Nhân, rồi yêu cầu cả bốn cùng trở thành cố vấn của mình.</p>
+<p>Theo lời khuyên của Ngài Nhân, toàn dân làm việc để nhân lên mọi thứ họ cần và đem phần dư lại cho Đức Vua. Bá tước Cộng cộng tất cả lại, để Công tước Chia có thể chia đều của cải dư thừa cho Hiệp sĩ Trừ lấy đi và trao cho mỗi người dân phần của họ, đồng thời để lại một phần dư cho Đức Vua.</p>
+<p>Và như thế, bốn Cố vấn đã giúp Đức Vua trở nên giàu có và chia sẻ của cải, để ngài và dân chúng của ngài từ đó về sau hạnh phúc mãi mãi.</p>
+<h3 id="mot-bai-tap-dem-khac" class="lesson-title"><span>Luyện bảng 8</span></h3>
+<p>Tám người lính canh giữ một ngục tối. Bên trong vòng tròn của họ là một tù nhân. Người ấy phải biết đúng mật khẩu để ra khỏi ngục. Các người lính là các số <code>8, 16, 24, 32, 40, 48, 56</code> và <code>64</code>. Tù nhân là số 8.</p>
+<p>Số Tám trước hết phải đi đến số 8, và số 8 nói:</p>
+<p>Hãy cho ta mật khẩu đúng,<br>Rồi ta sẽ cho bạn đi qua.</p>
+<p>Tám dậm chân một lần và được phép đi ra để trở thành số 1 trong một vòng tròn mới. Bây giờ người lính số 8 phải vào ngục và cố ra ngoài bằng cách đi đến người lính số 16, người nói:</p>
+<p>Hãy cho ta mật khẩu đúng,<br>Rồi ta sẽ cho bạn đi qua.</p>
+<p>Tám mới dậm chân hai lần và được phép đi ra để trở thành số 2 trong vòng tròn mới, trong khi 16 đi vào ngục và trở thành Tám. Tám thứ ba này phải dậm chân 3 lần để đi ra qua số 24 và trở thành 3 trong vòng tròn mới, và cứ như vậy cho đến khi số 64 bị bắt bên trong ngục. Hình vẽ phía trên có thể được giao làm bài trong vở.</p>
+<h3 id="nguoi-khong-lo-dem-bang-chan" class="lesson-title"><span>Bảng 9</span></h3>
+<p>Một trình diễn trong buổi sinh hoạt chung.</p>
+<p>Mười trẻ đeo các chữ số từ 0 đến 9 đứng thành một hàng. Những bạn khác trong lớp có thể đứng sang một bên để cùng đọc. Các “con số” bước lên khỏi hàng để đứng cạnh nhau, rồi lại bước lên để đổi chỗ thành những con số mới khi các chữ số được đảo ngược.</p>
+<p>Ta đã học bảng 9,<br>Và bí mật của số chín<br>Các bạn sẽ tìm thấy khi có thể<br>Nhìn xem chúng ta kết hợp thế nào.</p>
+<pre class="formula-block"><code>0 1 2 3 4 5 6 7 8 9
+
+0 9  “là 1 lần chín”
+1 8  “là 2 lần chín”
+2 7  “là 3 lần chín”
+3 6  “là 4 lần chín”
+4 5  “là 5 lần chín”</code></pre>
+<p>Đây không phải bí mật duy nhất ta tìm thấy,<br>Vì mỗi cặp số đều gắn với số 9.</p>
+<p>Sau khi mỗi dòng sau được nói, các con số đi ra phía sau và đổi chỗ để hoàn tất tiến trình.</p>
+<pre class="formula-block"><code>9 + 0 = 9
+8 + 1 = 9
+7 + 2 = 9
+6 + 3 = 9
+5 + 4 = 9
+4 + 5 = 9
+3 + 6 = 9
+2 + 7 = 9
+1 + 8 = 9
+0 + 9 = 9</code></pre>
+<p>Bây giờ các con số trở về vị trí thành một hàng từ 0 đến 9, và cả lớp đếm từng số đến chín rồi quay ngược lại.</p>
+<pre class="formula-block"><code>0 1 2 3 4 5 6 7 8 9,
+9 8 7 6 5 4 3 2 1 0</code></pre>
+<h3 id="ba-vao-bon" class="lesson-title"><span>Bảng 10</span></h3>
+<p>Giơ ngón đầu tiên của bàn tay phải lên làm số 1. Các ngón trên mỗi bàn tay lần lượt theo sau cho đến khi ngón cái trái bật lên là 10, và cứ như vậy, với ngón cái trái biểu thị sự chuyển từ 10 sang 20 sang 30, v.v.</p>
+<p>Mỗi lần, ngón cái trái có tên là gì? (đến 100)</p>
+<p>Viết chúng lên bảng đen, như ở dòng đầu dưới đây. Sau đó tiếp tục đến 990:</p>
+<pre class="formula-block"><code>10 20 30 40 50 60 70 80 90 100
+110 120 130 140 150 160 170 180 190 200
+210 220 230 240 250 260 270 280 290 300
+310 320 330 340 350 360 370 380 390 400
+410 420 430 440 450 460 470 480 490 500
+510 520 530 540 550 560 570 580 590 600
+610 620 630 640 650 660 670 680 690 700
+710 720 730 740 750 760 770 780 790 800
+810 820 830 840 850 860 870 880 890 900
+910 920 930 940 950 960 970 980 990 ?</code></pre>
+<p>Em có thể thấy gì trong mẫu số này? Phần nào của các số trong mỗi cột vẫn giữ nguyên? (<code>10, 20, 30</code>, v.v.) Những số nào thay đổi? (<code>1 trăm, 2 trăm, 3 trăm</code>, v.v.)</p>
+<p>Sau 990 sẽ đến gì? 10 trăm!</p>
+<p>10 trăm có thể viết là <code>10,00</code>, nhưng thường được viết là <code>1,000</code> và gọi là 1 nghìn. Ai có thể theo mẫu số của bảng 10 qua các nghìn?</p>
+<h3 id="dem-cac-goc" class="lesson-title"><span>Đo độ dài theo đường thẳng</span></h3>
+<p>Hoạt động: Cho nhiều trẻ khác nhau đo khoảng cách từ một bên bảng đen sang bên kia bằng cách đặt bàn chân nối gót-mũi liên tiếp, đánh dấu một số dấu chân trên sàn bằng phấn. Gợi cho trẻ chú ý rằng có bàn chân ngắn hơn bàn chân khác. Chỉ ra rằng bàn chân của một người đàn ông là một đơn vị đo đáng tin hơn, vì người ấy đã trưởng thành hoàn toàn và bàn chân sẽ không còn lớn thêm như bàn chân trẻ em.</p>
+<p>Bằng bàn chân của mình, một người đàn ông có thể đo độ dài từ nơi này hoặc điểm này đến nơi khác. Độ dài bàn chân của một người đàn ông đã được làm thành một đơn vị đo gọi là “foot” (bộ). Các em sẽ tìm thấy “foot” này trên các thước kẻ mới.</p>
+<p>Để đo một thứ nhỏ hơn một foot, cần một đơn vị ngắn hơn, có thể là một ngón chân hoặc một đốt ngón tay. Chẳng hạn, chiều dài ngón cái của tôi từ đầu ngón đến khớp thứ nhất vừa gần bằng 12 lần trên thước của tôi (giáo viên minh họa). Con số kỳ diệu và giàu có này vừa khít trong một foot. Mỗi thước một foot được chia thành những phần mà người lớn gọi là inches (inch, như các “đốt”). Trong mỗi foot có 12 inches.</p>
+<h4 id="mot-tuyen-chon-bai-hoc-cho-lop-ba" class="minor-title"><span>Bài làm trong vở</span></h4>
+<p>Cho mỗi trẻ đồ lại hình thước của mình và tô màu, rồi viết bên dưới:</p>
+<pre class="formula-block"><code>Đây là một foot</code></pre>
+<p>Bên dưới nữa, cho các em kẻ một đoạn thẳng 1 inch và viết:</p>
+<pre class="formula-block"><code>Đây là 1 inch</code></pre>
+<p>Ghi “quy tắc”:</p>
+<pre class="formula-block"><code>Trong 1 foot có 12 inches
+1 foot = 12 inches</code></pre>
+<p>Để ôn lại trong bài học kế tiếp, trẻ có thể dùng thước foot đo nhiều đồ vật khác nhau như sách, hộp bút chì và bàn học, để tìm xem chúng dài và rộng bao nhiêu foot và/hoặc inch. Sau đó, cũng với thước foot, các em có thể đo chiều dài và chiều rộng của lớp học. Các em nhận ra đây là một việc tẻ nhạt. Bây giờ thước yard được giới thiệu.</p>
+<p>Nếu muốn đo những độ dài lớn hơn một hoặc hai foot, ta có thể dùng một đơn vị đo dài hơn. Đơn vị dài hơn tiếp theo sau foot có thể là một cẳng chân hoặc một cánh tay. Khoảng cách từ mũi đến đầu ngón tay của em dài khoảng ba lần bàn chân của em, khoảng 3 feet. Một đơn vị đo dài 3 feet được gọi là một yard. Cho trẻ xem thước yard. So sánh độ dài của nó với các cánh tay và cẳng chân khác nhau chưa “trưởng thành hoàn toàn”. So sánh thước foot với thước yard.</p>
+<p>Bây giờ các em có thể đo phòng bằng thước yard và thấy công việc được làm nhanh hơn. Cần giúp các em đổi chiều dài và/hoặc chiều rộng của phòng từ yard, feet và inches sang feet và inches.</p>
+<h4 id="anh-trai-va-em-gai" class="minor-title"><span>Bài làm trong vở (để viết)</span></h4>
+<pre class="formula-block"><code>1 yard = 3 feet
+3 feet = 3 × 12 inches = 36 inches
+1 yard = 36 inches</code></pre>
+<p>Ví dụ đơn giản:</p>
+<pre class="formula-block"><code>2 × 3 = 6    2 yards = 6 feet
+3 × 3 = 9    3 yards = 9 feet
+4 × 3 = 12   4 yards = 12 feet</code></pre>
+<h3 id="cong-nhan-va-tru-chia" class="lesson-title"><span>Các vần thơ về thời gian</span></h3>
+<p>Sáu mươi giây làm thành một phút.<br>Hãy đặt thật nhiều lòng tốt vào trong đó.</p>
+<p>Sáu mươi phút làm thành một giờ.<br>Hãy làm việc với tất cả sức mạnh và năng lực của mình.</p>
+<p>Mười hai giờ sáng làm thành một ngày,<br>Đủ thời gian cho làm việc và vui chơi.</p>
+<p>Mười hai giờ tối suốt đêm<br>Cho ta giấc ngủ đến ánh sáng ban mai.</p>
+<p>Bảy ngày sẽ làm thành một tuần.<br>Ta sẽ học được điều này nếu chịu khó.</p>
+<p>Bốn đến năm tuần làm thành các tháng.<br>Hãy nhớ điều này, kẻo thành người ngốc.</p>
+<p>Mười hai tháng dài làm thành một năm,<br>Trong một tháng có sinh nhật của em, em yêu.</p>
+<p>Vần thơ cũ:</p>
+<p>Ba mươi ngày có tháng Chín,<br>Tháng Tư, tháng Sáu và tháng Mười Một.<br>Tất cả các tháng còn lại có ba mươi mốt,<br>Chỉ tháng Hai đứng riêng,<br>Hai mươi tám là phần trọn vẹn của nó,<br>Và 29 trong mỗi năm nhuận.</p>
+<p>Trong mỗi năm có bốn mùa.<br>Ta chắc chắn sẽ thấy chúng:<br>Xuân và Hạ, rồi đến Thu,<br>Đông cuối cùng nhưng tốt đẹp nhất trong tất cả.</p>
+<h3 id="cac-con-so-phai-noi-su-that" class="lesson-title"><span>Câu chuyện số cho bảng 6</span></h3>
+<p>Được thực hiện trong một lớp Hai.</p>
+<p>Câu chuyện này đi kèm với việc vẽ lục giác bằng tay tự do theo các bước I đến VII, như minh họa.</p>
+<h4 id="cac-quan-he-so" class="minor-title"><span>Bước I</span></h4>
+<p>Ngày xưa có một Đức Vua với cung điện sáng ngời nằm ngay chính giữa vương quốc sáu cạnh của ngài. Ở mỗi cạnh của vương quốc có một bức tường cao, và mỗi bức trong sáu bức tường mang một trong sáu màu đẹp: tím, xanh lam, xanh lá, vàng, cam và đỏ.</p>
+<p>Dù sáu bức tường đẹp đẽ này bảo vệ ngài khỏi mọi kẻ thù, chúng cũng giới hạn vương quốc của ngài trong phần chúng bao quanh; ngoài chúng, Đức Vua không có quyền lực và cũng không biết bên ngoài có gì.</p>
+<h4 id="cac-don-vi-do-ban-dau" class="minor-title"><span>Bước II</span></h4>
+<p>Kỳ lạ thay, Đức Vua có đúng sáu người con trai. Khi đã lớn lên thành những hiệp sĩ cao quý, các chàng cưỡi ngựa rời cung điện của Đức Vua theo sáu hướng khác nhau để khám phá vương quốc.</p>
+<p>Sau cùng, mỗi người đến một góc giữa hai trong sáu bức tường; mỗi người nhìn sang bên phải và thấy một bức tường được xây bằng màu tím, xanh lam, xanh lá, vàng, cam hoặc đỏ. Nhưng xa hơn thế, họ không thể đi.</p>
+<p>Vì vậy, họ trở về gặp Đức Vua và hỏi ngài điều gì nằm bên ngoài các bức tường của vương quốc.</p>
+<p>Đức Vua trả lời: “Ta không biết, vì dù sáu bức tường bảo vệ ta khỏi kẻ thù, chúng không cho phép ta thấy điều nằm bên ngoài. Ta đã có đủ việc phải làm để cai trị vương quốc của mình một cách khôn ngoan và tốt đẹp trong sáu bức tường ấy, và ta phải ở lại đây. Giờ đây, các con có lời chúc phúc của ta để tìm đường vượt qua các bức tường và mang thiện chí của ta đến với tất cả những gì sống bên ngoài.”</p>
+<h4 id="do-chat-long" class="minor-title"><span>Bước III</span></h4>
+<p>Sau đó, mỗi hiệp sĩ chọn một lá cờ có màu phù hợp với bức tường mình đã thấy, và mỗi người lên đường với lá cờ phấp phới cùng tiếng kèn để phá tường.</p>
+<p>Khi đến góc, mỗi hiệp sĩ trẻ, với sự giúp đỡ của những người trung thành, phá xuyên qua các bức tường và tiến ra thế giới bên ngoài vương quốc của cha mình.</p>
+<h4 id="do-kho" class="minor-title"><span>Bước IV</span></h4>
+<p>Hiệp sĩ vàng đi ra bên ngoài các bức tường một quãng xa bằng khoảng cách từ cung điện đến tường. Chàng thấy mình ở trong một sa mạc cháy rực bởi nắng nóng và cát, không một sinh vật sống, không cây cối hay con vật nào trong tầm mắt. Vì vậy chàng trở lại bức tường và nhìn sang phải, rồi sang trái. Thấy ở đằng xa các anh em đỏ và xanh lam, chàng đi thẳng đến gặp đỏ rồi quay lại gặp xanh lam, những người cũng đã đi ra ngoài các góc của mình rồi trở về các bức tường cũ. Hiệp sĩ xanh lam thấy mình đối diện với một đại dương xanh thẳm mà chàng không thể vượt qua, còn hiệp sĩ đỏ bị một biển lửa đỏ chặn lại. Vàng, Đỏ và Xanh lam mỗi người xây một bức tường mới, thẳng và chắc, chạm vào ba điểm trên bức tường cũ. Dọc theo các bức tường mới, họ dựng các hàng người trung thành để canh giữ vương quốc của cha mình khỏi ánh sáng làm lóa mắt, đại dương không đáy và lửa thiêu đốt.</p>
+<h4 id="trong-luong" class="minor-title"><span>Bước V</span></h4>
+<p>Trong lúc ấy, các hiệp sĩ cam, tím và xanh lá mỗi người cũng đã đi ra từ những góc nơi các bức tường vương quốc gặp nhau. Họ cũng đi ra xa như các anh em của mình. Cam đối diện với hơi nóng lấp lánh, tím đối diện với một vực sâu không đáy, còn xanh lá đối diện với một biển cỏ xanh vô tận. Họ cũng trở về để xây các bức tường mới chạm vào các bức tường cũ.</p>
+<h4 id="thoi-gian" class="minor-title"><span>Bước VI</span></h4>
+<p>Bây giờ cả sáu hiệp sĩ đều có thêm can đảm và hợp sức. Đỏ dựng một tuyến phòng vệ và xây một bức tường đỏ từ tím đến cam để bảo vệ vương quốc tốt hơn khỏi ngọn lửa cháy bỏng. Bây giờ đặc biệt chính chàng cảm thấy lòng can đảm lớn lao trong bản thể mình. Hiệp sĩ tím xây một bức tường từ đỏ đến xanh lam. Từ thành lũy của mình, chàng cầu nguyện và tìm thấy những miền trải dài vô tận của cõi vĩnh hằng, nơi chàng có thể nhìn vượt qua vực sâu không đáy đến những cõi không bao giờ có kết thúc. Xanh lam kéo thành lũy của mình từ tím đến xanh lá và xây bức tường sâu, vững trước đại dương xanh thẳm. Khi đã xong, chàng cảm thấy bình thản, an hòa và chắc chắn rằng không cơn bão nào có thể vào vương quốc của cha mình. Xanh lá xây bức tường mới từ xanh lam đến vàng. Bên ngoài bức tường ấy, cỏ lớn và rừng rậm chen lấn về phía vương quốc bên trong nhưng không thể đi qua tường.</p>
+<p>Nhưng từ bức tường của mình, xanh lá có thể nhìn xa trong sự thấu hiểu rằng mọi sự sống đều liên kết với nhau. Vàng xây một bức tường ánh sáng vàng chống lại mặt trời sa mạc làm lóa mắt. Đó là bức tường của minh triết, canh giữ vương quốc của cha mình khỏi tất cả những gì làm lóa và làm choáng váng những người không có minh triết. Nó làm ánh sáng bên ngoài dịu đi trong sức mạnh của ánh sáng bên trong. Cuối cùng, cam xây một bức tường bảo vệ vương quốc khỏi hơi nóng chập chờn giữa sa mạc và lửa. Bức tường cam thiết lập trong vương quốc một sức mạnh của tình yêu ấm áp nơi trái tim trong từng thần dân của Đức Vua.</p>
+<h4 id="mot-tuyen-chon-bai-hoc-cho-lop-bon" class="minor-title"><span>Bước VII</span></h4>
+<p>Mỗi hiệp sĩ, sau khi góp phần mở rộng vương quốc cũ để nó trở thành lớn gấp bốn lần kích thước ban đầu, để mỗi màu đi vào tinh thần của cõi ấy:</p>
+<ul>
+<li>Với vàng đến minh triết (biết phải làm gì).</li>
+<li>Với đỏ đến can đảm (làm điều khó).</li>
+<li>Với xanh lam đến bình an (cảm nhận tình yêu của Thượng Đế dành cho nhân loại).</li>
+<li>Với xanh lá đến thấu hiểu (người khác).</li>
+<li>Với tím đến cảm thức về vĩnh hằng (vượt thời gian).</li>
+<li>Với cam đến tình yêu (dành cho tất cả những gì tốt lành).</li>
+</ul>
+<h3 id="nhung-nguoi-tho-so-dan-nhap-vao-nho-va-muon" class="lesson-title"><span>Theo dõi các con số: bài tập đếm</span></h3>
+<p>Ghi chú: Những bài tập như thế này lúc đầu có thể được làm đồng thanh cùng giáo viên. Khi lớp đã quen với các tiến trình số, từng dòng xen kẽ có thể được đọc như lời đáp lại giáo viên hoặc đáp lại một nhóm trong lớp.</p>
+<pre class="formula-block"><code>2 4 6 8  -&gt;  8 6 4
+4 6 8 10 -&gt; 10 8 6
+6 8 10 12 -&gt; 12 10 8
+8 10 12 14 -&gt; 14 12 10, v.v.
+
+2 4 6 8
+4 6 8 10
+6 8 10 12
+8 10 12 14
+10 12 14 16
+12 14 16 18
+14 16 18 20
+Bạn có thể nghĩ thế là nhiều rồi!
+16 18 20 22
+18 20 22 24
+Nhưng vẫn còn mãi nhiều hơn
+Vượt ngoài 24!!
+
+2 4 6 8
+8 6 2 4
+4 6 8 10
+10 8 4 6
+6 8 10 12
+12 10 6 8, v.v.
+
+2 4 6 8 10
+10 6 8 2 4
+4 6 8 10 12
+12 8 10 4 6, v.v.</code></pre>
+<h3 id="cau-do" class="lesson-title"><span>Một bài tập đếm khác</span></h3>
+<pre class="formula-block"><code>1 2 3 4  -&gt;  4 3 1 2
+2 3 4 5  -&gt;  5 4 2 3
+3 4 5 6  -&gt;  6 5 3 4
+4 5 6 7  -&gt;  7 6 4 5
+5 6 7 8  -&gt;  8 7 5 6
+6 7 8 9  -&gt;  9 8 6 7
+7 8 9 10 -&gt;  Bây giờ ta quay lại.
+
+10 9 7 8
+9 8 6 7
+8 7 5 6
+7 6 4 5
+6 5 3 4
+5 4 2 3
+4 3 1 2
+3 2 0 1</code></pre>
+<p>Và với một,<br>Ta đã xong!</p>
+<h3 id="do-dien-tich" class="lesson-title"><span>Người khổng lồ đếm bằng chân</span></h3>
+<p>Ngày xưa có một Người khổng lồ có thể đếm bằng chân giỏi hơn nhiều so với đếm bằng giọng nói. Ông giỏi đếm đến mức không bao giờ mắc lỗi, dù ông làm điều đó bằng chân.</p>
+<p>Một Đức Vua nghe nói về Người khổng lồ và việc ông rất giỏi số học, nên mời ông đến cung điện. Khi Người khổng lồ đến trước Đức Vua, Đức Vua hỏi ông bốn câu:</p>
+<ol>
+<li>Ta có năm con trai sắp ra thế giới để ngắm nhìn mọi cảnh vật. Trước khi các con đi, ta muốn tặng mỗi con một món quà. Đây là 25 đồng vàng. Ta nên cho mỗi con bao nhiêu đồng để mỗi người có phần bằng nhau? Người khổng lồ trả lời bằng 5 bước. Giáo viên làm mẫu.</li>
+</ol>
+<pre class="formula-block"><code>25 ÷ 5 = 5</code></pre>
+<ol start="2">
+<li>Ta có năm con gái. Các con phải ở nhà, nhưng để làm các con vui, ta muốn tặng mỗi con 2 viên ngọc trai. Ta nên lấy bao nhiêu viên ngọc trai từ kho báu? Người khổng lồ trả lời bằng 10 bước.</li>
+</ol>
+<pre class="formula-block"><code>5 × 2 = 10</code></pre>
+<ol start="3">
+<li>Ta có năm cố vấn. Ta muốn tặng mỗi người một cuốn sách minh triết để đáp lại những lời khôn ngoan của họ, nhưng ta chỉ có 3 cuốn sách để tặng. Có bao nhiêu cố vấn sẽ không nhận được sách? Người khổng lồ trả lời bằng 2 bước.</li>
+</ol>
+<pre class="formula-block"><code>5 - 3 = 2</code></pre>
+<ol start="4">
+<li>Đây là thợ săn trưởng của ta với cung tên. Ta thấy anh ta chỉ có 20 mũi tên. Nếu ta cho anh ta thêm 5 mũi, anh ta sẽ có bao nhiêu? Người khổng lồ trả lời bằng 25 bước.</li>
+</ol>
+<pre class="formula-block"><code>20 + 5 = 25</code></pre>
+<p>Đức Vua muốn thử Người khổng lồ bằng những câu hỏi số khó hơn. Bây giờ trẻ lần lượt đóng vai Người khổng lồ, dùng chân của mình.</p>
+<pre class="formula-block"><code>30 = ? × 5     5 + 5 = ?    35 - 30 = ?    30 ÷ 5 = ?
+15 = ? × 5     3 + 2 = ?    15 - 5 = ?     15 ÷ 5 = ?
+15 = 3 × ?     2 + ? = 6    12 - 5 = ?     20 ÷ 5 = ?
+20 = ? × 5     5 + 10 = ?   8 - 5 = ?      10 ÷ 2 = ?
+20 = 5 × ?     5 + 3 = ?    ? - 5 = 2      15 ÷ 3 = ?
+50 = 10 × ?    5 + 4 = ?    9 - 4 = ?      40 ÷ 5 = ?</code></pre>
+<p>Khi Đức Vua nghe chân Người khổng lồ giậm bước và đếm mà không mắc lỗi nào, ngài vui đến mức mời Người khổng lồ sống trong cung điện và làm Người Đếm trưởng của mình.</p>
+<h4 id="cay-phan-so" class="minor-title"><span>Luyện đếm bằng chân trong các bài học tiếp theo</span></h4>
+<p>Nhiều người khổng lồ đang mang các bao đá lên núi, 100 bước. Trên đỉnh núi, họ đổ tất cả các bao vào một đống gồm 100 viên đá. Rồi mỗi người khổng lồ ném một số viên đá xuống hồ dưới chân núi, vừa đếm vừa trừ cho đến khi hết đá. Sau đó mỗi người khổng lồ nhảy xuống một phần đường núi, khoảng 80 bước nhảy, rồi đi bộ các bước còn lại (20, v.v.). Những ai không đếm đúng các bước còn lại phải quay lại và được cứu. Nếu họ vẫn không thể hoặc không đếm các bước của người cứu mình, họ không thể xuống và bị tính là “loại”.</p>
+<h3 id="an-mot-qua-tao-nhe" class="lesson-title"><span>Ba vào bốn</span></h3>
+<p>3 đi vào 4 bao nhiêu lần? Ta thường nói: “Một lần và còn dư một.” Nhưng ta sẽ vẽ để cho thấy có thể có bốn số ba trong một số bốn như thế nào.</p>
+<p>Hình vẽ đi kèm có thể được phát triển khi câu chuyện tiến triển, bắt đầu với hình vuông lớn nhất.</p>
+<p>Ngày xưa có một thành phố với bốn bức tường có chiều dài bằng nhau, và đúng giữa mỗi bức tường, giữa các góc, có một cánh cổng dẫn vào và ra khỏi thành phố.</p>
+<p>Người cai trị thành phố này có bốn người con trai. Khi họ lớn lên, ông trao cho mỗi người một góc của thành phố nằm giữa các cổng. Mỗi người con xây một bức tường mới với các cổng mới ở giữa mỗi bức tường mới. Bây giờ có 4 thành phố nhỏ ba cạnh bên trong thành phố lớn bốn cạnh.</p>
+<p>Mỗi người con trai của vị cai trị lại có một người con trai. Khi họ lớn lên, ông nội trao cho mỗi người một góc mới nhưng nhỏ hơn của phần thành phố còn lại cho ông. Các cháu trai xây những bức tường mới giữa các cổng của thành phố của cha mình.</p>
+<p>Bây giờ vị cai trị già chỉ còn lại một phần nhỏ hơn nhiều so với toàn bộ những gì ông từng cai trị, nhưng ông không bận lòng vì 4 người con trai và 4 người cháu trai của ông đều sống gần đó; và ông xây 2 con đường cắt ngang phần thành phố của mình để có thể dễ dàng thăm các con và cháu, đồng thời ông tiếp tục cai trị những người sống giữa hai con đường ấy.</p>
+<p>Câu hỏi: Toàn bộ thành phố cũ của vị cai trị lớn hơn phần còn lại của ông bao nhiêu lần?</p>
+<h3 id="cong-phan-so" class="lesson-title"><span>Đếm các góc</span></h3>
+<p>Hôm qua ta đã vẽ 12 tam giác bên trong một hình vuông. Mỗi tam giác có 3 góc. Có tất cả bao nhiêu góc trong 12 tam giác?</p>
+<p>Ta biết:</p>
+<pre class="formula-block"><code>12 × 3 = 36</code></pre>
+<p>Nếu chưa biết, ta có thể làm ra:</p>
+<pre class="formula-block"><code>3 × 2 = 6
+3 × 10 = 30
+6 + 30 = 36</code></pre>
+<p>Cũng có một số hình vuông ẩn trong hình vẽ. Có bao nhiêu? 3 hình vuông. Có bao nhiêu góc trong một hình vuông? 4 góc. Nếu 3 hình vuông mỗi hình có 4 góc, có bao nhiêu “góc vuông”?</p>
+<p>Ta biết:</p>
+<pre class="formula-block"><code>3 × 4 = 12</code></pre>
+<p>12 tam giác tạo ra nhiều góc hơn 3 hình vuông. Nhiều hơn bao nhiêu?</p>
+<pre class="formula-block"><code>Góc tam giác: 36
+Góc hình vuông: -12
+Nhiều hơn: 24 góc</code></pre>
+<p>Những phép tính nào trong bốn phép tính đã giúp ta tìm ra câu trả lời cho các câu hỏi này?</p>
+<pre class="formula-block"><code>× cho phép nhân
++ cho phép cộng
+- cho phép trừ</code></pre>
+<p>Phép tính nào bị thiếu? <code>÷</code> cho phép chia.</p>
+<p>Bất cứ khi nào vị cai trị muốn chia đều của cải cho 4 người con trai, ông phải cho đi, để lại ít hơn cho chính mình. Cả phép chia và phép trừ đều phải giúp. Ông có 10 viên kim cương để chia cho 4 con trai, giữ lại một phần bằng nhau cho chính mình. Làm thế nào?</p>
+<p>Phép chia chia 10 viên kim cương cho 5 người (người cha và 4 con trai).</p>
+<pre class="formula-block"><code>10 ÷ 5 = 2</code></pre>
+<p>Phép trừ lấy đi 8 và để lại 2.</p>
+<pre class="formula-block"><code>10 - 8 = 2</code></pre>
+<p>Rồi phép chia chia 8 viên kim cương cho 4 người con trai bằng nhau.</p>
+<pre class="formula-block"><code>8 ÷ 4 = 2</code></pre>
+<p>Vì vậy ta thấy rằng phép chia và phép trừ làm việc rất tốt cùng nhau. Phép nhân và phép cộng là các đối cực của phép chia và phép trừ, và chúng giống nhau. Cả hai đều làm cùng một công việc là làm cho một điều gì đó thành nhiều hơn, chỉ có điều phép nhân làm nhanh hơn.</p>
+<p>Vị cai trị già muốn có 2 con ngựa đẹp, nhưng ông cần nhiều hơn để 4 người con trai của ông mỗi người cũng có 2 con ngựa đẹp. Phép cộng mang ngựa đến cho ông, mỗi lần 2 con.</p>
+<pre class="formula-block"><code>2 cho người cha
+2 cho con trai cả
+2 cho con trai thứ hai
+2 cho con trai thứ ba
++ 2 cho con trai út
+= tổng cộng 10 con ngựa đẹp trong chuồng</code></pre>
+<p>Rồi vị cai trị muốn có một chiếc yên đẹp cho mỗi con ngựa, và phép nhân mang tất cả đến cho ông cùng một lúc cho mỗi người cưỡi ngựa.</p>
+<pre class="formula-block"><code>5 × 2 = 10
+10 chiếc yên đẹp</code></pre>
+<h2 id="tru-phan-so" class="chapter-title"><span class="chapter-eyebrow">Chương</span><span>Một tuyển chọn bài học cho lớp Ba</span></h2>
+<h3 id="phan-so-cua-cac-so-lon-hon-1" class="lesson-title"><span>Anh Trai và Em Gái</span></h3>
+<p>Anh Trai yêu các con số. Em Gái thì không. Hai anh em học cùng một trường. Anh học lớp Bốn, còn em học lớp Ba.</p>
+<p>Một đêm khi đã lên giường, hai anh em trò chuyện trước khi ngủ, và họ nói thế này:</p>
+<p>“Anh thật sự thích số học,” Anh Trai nói.</p>
+<p>“Em thích đọc và viết hơn nhiều,” Em Gái đáp. “Nó quan trọng hơn nhiều.”</p>
+<p>“Ồ, vậy sao?” Anh Trai kêu lên. “Em sẽ chẳng làm được gì nhiều nếu em không biết số học.”</p>
+<p>“Ồ, có chứ,” Em Gái đáp. “Em vẫn xoay xở rất tốt nếu không có nó. Nó chẳng có ích gì.”</p>
+<p>Anh Trai biết rõ hơn.</p>
+<p>“Em không thể sống dù chỉ một ngày nếu không có số học,” anh nói. “Em phải có khả năng đếm đủ loại thứ.”</p>
+<p>Rồi anh bảo Em Gái ngày hôm sau hãy để tâm đến điều đó. Mỗi lần em phải dùng đến các con số, em phải viết lại hoặc bằng cách nào đó nhớ xem mình đã phải đếm gì.</p>
+<p>Sáng hôm sau, việc đầu tiên là mẹ gọi: “Dậy nhanh nào, các con, mau lên kẻo muộn học.”</p>
+<p>Em Gái mở mắt và nhìn đồng hồ. Cả hai kim đều chỉ vào số 7. Anh Trai thấy em nhìn đồng hồ, nên nhảy khỏi giường, mang cho em một cây bút chì và một tập giấy, rồi bắt em viết “đồng hồ”.</p>
+<p>Trong bữa sáng, cha nói về kỳ nghỉ hè. Gia đình đang dự định thuê một căn nhà gỗ nhỏ bên bãi biển.</p>
+<p>“Con có mấy tháng nghỉ, Em Gái?”</p>
+<p>“Ba,” em trả lời, và Anh Trai reo lên:</p>
+<p>“Đấy! Em phải đếm số tháng.”</p>
+<p>Vì vậy em viết “tháng” vào tập giấy.</p>
+<p>Ngày bắt đầu như thế, và Em Gái muốn chứng minh với Anh Trai rằng dù vậy, em sẽ không phải dùng số nhiều lắm; nên em hứa sẽ viết lại tất cả những thứ em phải đếm trong ngày. “Nhưng,” em nói, “anh sẽ thấy! Tập giấy của em sẽ gần như trống không.”</p>
+<p>Hai anh em lên xe buýt. Khi Em Gái lấy vé xe buýt ra, vài đồng xu rơi khỏi ví và lăn dưới chân các hành khách khác. Em phải tìm và nhặt chúng lên. Chỉ tìm thấy 3 đồng, em biết mình đã mất 2 đồng vì lúc đầu em có 5 đồng. Khi tìm được chỗ ngồi, em lấy tập giấy ra và viết “tiền”, cố không để Anh Trai thấy, vì lúc ấy anh đang bị đám đông trên xe buýt che khuất.</p>
+<p>Một phụ nữ trên xe buýt chú ý thấy em viết và hỏi: “Cháu học trường nào?”</p>
+<p>“Trường Rudolf Steiner,” Em Gái trả lời.</p>
+<p>“Lớp cháu có bao nhiêu bạn?” người phụ nữ hỏi.</p>
+<p>“Hai mươi sáu,” Em Gái trả lời, rồi cắn lưỡi, lấy tập giấy ra và viết “trẻ em”.</p>
+<p>Và ngày cứ tiếp diễn như vậy. Khi về đến nhà chiều hôm ấy, em cho Anh Trai xem một trang trong tập giấy, phủ kín từ trên xuống dưới bằng những từ gọi tên các thứ em đã phải đếm. Đây là những từ ấy:</p>
+<p>“bút chì”: Em nghĩ mình đã mất một cây và đếm lại cho chắc.</p>
+<p>“trang”: Em được bảo tìm trang 60 trong sách đọc và đọc 3 trang.</p>
+<p>“mùa”: Bài học nói về các mùa trong năm, và giáo viên hỏi em: “Có bao nhiêu mùa?”</p>
+<p>“mũi móc”: Khi móc len, em phải đếm từng mũi.</p>
+<p>“cốc màu”: Em phải đếm cốc cho 5 màu vàng, 5 màu xanh lam, 5 màu đỏ.</p>
+<p>“bước”: Trong giờ eurhythmy, các em có một bài tập đi theo hình tam giác, 3 bước mỗi cạnh.</p>
+<p>“bánh sandwich”: Đến giờ ăn trưa, em mở hộp cơm và đếm số bánh sandwich mẹ đã đặt vào.</p>
+<p>“đường phố”: Trên đường về nhà, em cứ nhìn các số trên biển đường để xuống đúng trạm.</p>
+<p>“nhà”: Khi mời một người bạn đến nhà chơi, em đã phải viết địa chỉ: “262 East 95 St.”</p>
+<p>“khu nhà”: 3 khu nhà từ Madison Ave.</p>
+<p>Còn nhiều từ khác trong tập giấy của em, đến nỗi khi Anh Trai nhìn thấy, anh nói: “Em thấy chưa? Anh đã đúng. Thế giới đầy các con số đến mức em phải dùng chúng để sống.”</p>
+<p>Hoạt động: Sau câu chuyện, trẻ có thể viết ra những điều khác mà các em phải đếm hằng ngày.</p>
+<h3 id="phan-so-cua-so-le" class="lesson-title"><span>Cộng-Nhân và Trừ-Chia</span></h3>
+<p>Cộng-Nhân và Trừ-Chia không hề giống nhau, dù họ là anh em. Cộng-Nhân tham lam, còn Trừ-Chia rất hào phóng.</p>
+<p>Khi cha họ mất, ông để lại cho họ một túi lớn đầy đồng vàng để chia nhau và dùng theo điều tốt đẹp nhất trong mỗi người.</p>
+<p>Khi Cộng-Nhân nhìn túi vàng, mắt anh lồi ra. Chúng trở nên to và tròn như chính túi vàng. Đôi mắt Trừ-Chia lấp lánh một ánh sáng còn rực rỡ hơn vàng.</p>
+<p>Hai anh em đếm các đồng vàng thật cẩn thận: “Một cho anh và một cho tôi!” cho đến khi mỗi người nhận phần công bằng và bằng nhau.</p>
+<p>Cộng-Nhân quyết định dùng phần của mình để làm nó tăng lên và lớn hơn. Anh muốn lấy lại nhiều như số mình đã chia với em, và còn hơn thế nữa. Vì vậy anh làm như sau. Anh mua châu báu, ngũ cốc và da thú rồi bán lại với giá gấp đôi số tiền anh đã trả. Cuối cùng, anh có lượng vàng gấp 2 lần lúc bắt đầu, và nó lấp đầy một chiếc túi bằng kích thước chiếc túi cha để lại cho cả hai anh em.</p>
+<p>Trừ-Chia có rất nhiều bạn. Tất cả họ đều rất nghèo. Một người cần giày mới. Một người khác cần thức ăn. Lại có người không có nơi để sống. Trừ-Chia cho mỗi người đủ vàng để có giày mới, thức ăn ngon và một ngôi nhà để sống. Anh còn có một người bạn cần chiếc áo choàng ấm. Rồi có một người không thể mua sữa cho con nhỏ. Một người khác có mái nhà bị dột nhưng không thể trả tiền sửa. Trừ-Chia lại chia sẻ vàng của mình để em bé có đủ sữa, một chiếc áo mới được mua để giữ ấm cho ai đó, và chỗ dột trên mái nhà được sửa tốt.</p>
+<p>Trong suốt thời gian Cộng-Nhân mua thứ gì đó để bán lại với giá gấp đôi, Trừ-Chia cứ cho đi và chia sẻ nguồn vàng của mình cho những người bạn đang gặp rắc rối này hay rắc rối khác. Kết quả là Cộng-Nhân ngày càng giàu hơn, còn Trừ-Chia ngày càng nghèo hơn. Tuy vậy, Cộng-Nhân không kết bạn được với những người anh bán châu báu, ngũ cốc và da thú; họ chỉ quan tâm đến những gì họ có thể mua. Họ chẳng yêu mến Cộng-Nhân chút nào. Những người được Trừ-Chia giúp đỡ thì không bao giờ có thể quên anh. Họ mỉm cười và vẫy tay khi thấy anh. Họ cảm thấy thế giới tốt lành vì họ có một người bạn đã giúp mình.</p>
+<p>Cuối cùng, ngày đến khi Trừ-Chia không còn đồng vàng nào. Bây giờ anh nghèo hơn những người bạn mình đã giúp, trong khi Cộng-Nhân có rất nhiều của cải.</p>
+<p>Bây giờ Trừ-Chia cần giày, một chiếc áo choàng ấm, sữa cho con; và mái nhà của anh bị dột ngay phía trên giường. Anh cần giúp đỡ và biết rằng anh trai mình có rất nhiều vàng.</p>
+<p>Trong lúc ấy, Cộng-Nhân đã kiếm được nhiều tiền đến nỗi trong nhà không còn đủ chỗ để cất. Bao này đến bao khác đầy vàng lấp kín ngôi nhà từ hầm đến gác mái, chỉ để lại một cái tủ nhỏ xíu nơi Cộng-Nhân có thể ngủ, ăn và rửa ráy.</p>
+<p>Khi Trừ-Chia đến thăm Cộng-Nhân, anh gần như phải chen mình qua các bao vàng để đến chiếc giường nơi Cộng-Nhân nằm như một người bệnh. Đúng vậy, anh thật sự bệnh vì quá cô đơn.</p>
+<p>Khi thấy người em đang mỉm cười bên giường mình, Cộng-Nhân bắt đầu khóc, kêu lên: “Đã lâu rồi không ai đến thăm anh!”</p>
+<p>Trừ-Chia thấy thương anh trai mình đến mức anh đi tới bồn rửa và tìm đủ nước để rửa mặt cho anh, rồi đun lên pha một tách trà. Cộng-Nhân nghĩ chưa có thứ gì từng ngon đến thế. Nó làm anh thấy khỏe hơn.</p>
+<p>Khi hai anh em trò chuyện, họ đồng ý rằng Cộng-Nhân giàu vàng nhưng nghèo bạn bè, còn Trừ-Chia giàu bạn bè nhưng nghèo vàng.</p>
+<p>Bây giờ, các em nghĩ câu chuyện kết thúc thế nào?</p>
+<p>Cộng-Nhân có bao giờ học được cách cho đi và chia sẻ không?</p>
+<p>Trừ-Chia có bao giờ học được cách làm ra nhiều tiền hơn số mình có ban đầu không?</p>
+<p>Than ôi, không!</p>
+<p>Cho đến ngày nay, cộng và nhân làm cho một điều gì đó nhiều hơn, còn trừ và chia làm cho ít đi.</p>
+<p>Có lẽ Cộng-Nhân đã đủ khôn ngoan để cho Trừ-Chia lấy đi và chia sẻ một phần vàng của mình, nhằm để lại chỗ trong nhà cho kho báu mới mà anh có thể gom bằng cách bán thêm châu báu, ngũ cốc và da thú với giá gấp đôi số tiền đã trả.</p>
+<h3 id="nhan-voi-phan-so" class="lesson-title"><span>Các con số phải nói sự thật</span></h3>
+<p>Nếu được dùng đúng, các con số luôn nói sự thật. Không đúng khi nói <code>9 - 1 = 10</code>, hay <code>9 × 1 = 10</code>. Dùng 9, 1 và 10, hãy để chúng nói sự thật. Ta sẽ vẽ một hàng gồm 10 viên bi. 9 viên màu đỏ và viên cuối trong hàng màu xanh lam. Rồi ta sẽ vẽ thêm các hàng bên dưới hàng đầu tiên, mỗi hàng có 9 viên đỏ và 1 viên xanh lam.</p>
+<p>Sự thật là:</p>
+<pre class="formula-block"><code>10 = 9 + 1
+20 = 18 + 2
+30 = 27 + 3
+40 = 36 + 4
+50 = 45 + 5
+60 = 54 + 6
+70 = 63 + 7
+80 = 72 + 8
+90 = 81 + 9</code></pre>
+<p>Các em tìm thấy mẫu số nào trong những câu chuyện số này?</p>
+<p>Giữ nguyên các số ấy, hãy đổi các dấu phép tính sao cho các câu chuyện vẫn nói sự thật.</p>
+<pre class="formula-block"><code>10 - 9 = 1
+20 - 18 = 2
+30 - 27 = 3
+...
+90 - 81 = 9</code></pre>
+<h3 id="dang-don-gian-nhat-cua-phan-so" class="lesson-title"><span>Các quan hệ số</span></h3>
+<p>Trẻ rất vui khi được thách thức khám phá “mẫu số” trong nhiều loại tiến trình khác nhau. Nếu những phát hiện của các em còn hời hợt, các em cần được dẫn hướng tới những mẫu có ý nghĩa.</p>
+<h4 id="mo-rong-phan-so" class="minor-title"><span>Chữ số tận cùng trong các bảng</span></h4>
+<p>Hàng chục: “0”</p>
+<pre class="formula-block"><code>10 20 30 40 50 60 70 80 90</code></pre>
+<p>Hàng năm: “5 0 5 0 5 0”</p>
+<pre class="formula-block"><code>5 10 15 20 25 30 35 40 45 50</code></pre>
+<p>Hàng hai: “0 2 4 6 8”</p>
+<pre class="formula-block"><code>0 2 4 6 8
+10 12 14 16 18
+20 22 24 26 28</code></pre>
+<p>Hàng tám: “0 8 6 4 2”</p>
+<pre class="formula-block"><code>0 8 16 24 32
+40 48 56 64 72
+80 88 96 104 112</code></pre>
+<p>Hàng bốn: “0 4 8 2 6”</p>
+<pre class="formula-block"><code>0 4 8 12 16
+20 24 28 32 36
+40 44 48 52 56</code></pre>
+<p>Hàng sáu: “0 6 2 8 4”</p>
+<pre class="formula-block"><code>0 6 12 18 24
+30 36 42 48 54
+60 66 72 78 84</code></pre>
+<p>Hàng ba: “0 3 6 9 / 2 5 8 / 1 4 7”</p>
+<pre class="formula-block"><code>0 3 6 9 12 15 18 21 24 27
+30 33 36 39 42 45 48 51 54 57
+60 63 66 69 72 75 78 81 84 87</code></pre>
+<p>Hàng bảy: “0 7 4 1 / 8 5 2 / 9 6 3”</p>
+<pre class="formula-block"><code>0 7 14 21 28 35 42 49 56 63
+70 77 84 91 98 105 112 119 126 133</code></pre>
+<p>Hàng một: “0 1 2 3 4 5 6 7 8 9”</p>
+<pre class="formula-block"><code>0 1 2 3 4 5 6 7 8 9
+10 11 12 13 14 15 16 17 18 19</code></pre>
+<p>Hàng chín: “0 9 8 7 6 5 4 3 2 1”</p>
+<pre class="formula-block"><code>0 9 18 27 36 45 54 63 72 81
+90 99 108 117 126 135 144 153 162 171</code></pre>
+<h4 id="tim-mau-so-chung" class="minor-title"><span>Phép trừ</span></h4>
+<pre class="formula-block"><code>10 - 8 = 2      8 - 5 = 3      7 - 2 = 5
+20 - 16 = 4     16 - 10 = 6    14 - 4 = 10
+30 - 24 = 6     24 - 15 = 9    21 - 6 = 15
+40 - 32 = 8     32 - 20 = 12   28 - 8 = 20
+50 - 40 = 10    40 - 25 = 15   35 - 10 = 25
+60 - 48 = 12    48 - 30 = 18   42 - 12 = 30
+v.v.            v.v.           v.v.</code></pre>
+<h4 id="phan-so-dung-phan-so-khong-dung-hon-so" class="minor-title"><span>Phép cộng</span></h4>
+<pre class="formula-block"><code>3 + 2 = 5       4 + 3 = 7      9 + 1 = 10
+6 + 4 = 10      8 + 6 = 14     18 + 2 = 20
+9 + 6 = 15      12 + 9 = 21    27 + 3 = 30
+12 + 8 = 20     16 + 12 = 28   36 + 4 = 40
+v.v.            v.v.           v.v.</code></pre>
+<h4 id="nghien-cuu-ve-so-binh-phuong" class="minor-title"><span>Bài tập đếm</span></h4>
+<p>Bắt đầu với 1, cộng 5; bắt đầu với 2, cộng 5:</p>
+<pre class="formula-block"><code>1 6       2 7
+11 16     12 17
+21 26     22 27
+31 36...  32 37...</code></pre>
+<p>Khi các bài trở nên khó hơn, có thể làm ra bằng viết trước khi luyện miệng.</p>
+<p>Bắt đầu với 1, cộng 4; bắt đầu với 2, cộng 4:</p>
+<pre class="formula-block"><code>1 5 9 13 17       2 6 10 14 18
+21 25 29 33 37    22 26 30 34 38
+41 45 49 53 57    42 46 50 54 58
+v.v.              v.v.</code></pre>
+<p>Bắt đầu với 1, cộng 2 (các số lẻ!):</p>
+<pre class="formula-block"><code>1 3 5 7 9 11
+11 13 15 17 19
+21 23 25 27 29
+v.v.</code></pre>
+<p>Bắt đầu với 1, cộng 3:</p>
+<pre class="formula-block"><code>1 4 7 10 13 16 19 22 25 28
+31 34 37 40 43 46 49 52 55 58
+61 64 67 70 73 76 79 82 85 88
+v.v.</code></pre>
+<h3 id="hang-chuc-nhu-nguoi-tro-giup" class="lesson-title"><span>Các đơn vị đo ban đầu</span></h3>
+<p>Từ <em>Columbia Encyclopedia</em>:</p>
+<p>Khoảng cách dài trên đất liền hoặc trên biển được đo bằng hành trình một ngày. “Hồ Mười-Giấc-Ngủ,” do người Mỹ bản địa đặt tên, có lẽ đo chiều dài của nó, hoặc khoảng cách đi quanh nó.</p>
+<p>Kích thước của một cánh đồng mà một người với một ách bò có thể cày trong một ngày là một “furrow-long” (furlong), và chiều rộng của nó là bốn con bò mang ách đứng ngang hàng, tức 1 rod (khoảng 16 ft.).</p>
+<p>1 pace là 3 ft.; 1 mile là 1000 paces.</p>
+<p>Bốn con bò trong chuồng được dành 16 ft. không gian chuồng. 16 ft. vẫn là chiều dài tiêu chuẩn của ván.</p>
+<p>Foot là chiều dài bàn chân của một người đàn ông. Hand là chiều rộng bàn tay của một người đàn ông (4 inches).</p>
+<p>Yard là chiều dài của một bước, hoặc khoảng cách từ mũi đến đầu ngón tay.</p>
+<p>Fathom là từ đầu ngón tay này đến đầu ngón tay kia khi hai tay dang rộng (6 ft.).</p>
+<p>Inch là đốt ngoài của ngón cái, hoặc chiều dài của 3 hạt lúa mạch đặt nối đầu nhau.</p>
+<p>“Trong mọi sự đều có thước đo.”  </p>
+<ul>
+<li>Chaucer</li>
+</ul>
+<p>Sau khi ôn lại đo độ dài theo cách thực hành, có thể hỏi trẻ: “Ngoài độ dài, còn những thứ gì khác có thể đo được?” Ta có thể tiếp nhận gợi ý của các em nhưng hướng các em đến cách đo chất lỏng, khối lượng “khô”, trọng lượng và thời gian. Sau đây là những phần dẫn nhập khả dĩ vào các loại đo lường ấy. Sau đó chúng nên được đưa vào các bài toán thực hành có thể liên hệ một cách hữu ích với trải nghiệm của chính trẻ.</p>
+<h3 id="chia-dai" class="lesson-title"><span>Đo chất lỏng</span></h3>
+<p>Ta có đo nước hay sữa bằng inch và foot không?</p>
+<p>Có thể yêu cầu ba trẻ khác nhau rót 3 inches nước vào 3 đồ chứa có kích thước khác nhau; rồi rót mỗi lượng 3 inches ấy vào ba cốc uống nước bằng thủy tinh hoặc nhựa (cùng kích thước) để thấy rằng mỗi cốc sẽ chứa một lượng nước khác nhau.</p>
+<p>Bây giờ đổ đầy nước vào một bình gallon và rót nước vào bốn chai quart. Rót nước từ một quart vào 2 chai pint. Rót từ pint vào 2 cốc.</p>
+<p>Khi giáo viên minh họa, tên của các đơn vị đo khác nhau được đưa ra và bảng Đo Chất Lỏng được viết lên bảng đen:</p>
+<pre class="formula-block"><code>1 gallon = 4 quarts
+1 quart = 2 pints
+1 pint = 2 cups</code></pre>
+<p>Câu hỏi để trẻ viết và làm:</p>
+<pre class="formula-block"><code>1 gal. = ? pts.
+1 qt. = ? c.
+1 gal. = ? c.
+3 gal. milk = ? c.
+1/2 gal. milk = ? qts.
+2 gal. milk = ? qts. = ? pts. = ? c.</code></pre>
+<h3 id="mot-tuyen-chon-bai-hoc-cho-lop-nam" class="lesson-title"><span>Đo khô</span></h3>
+<p>Nếu có thể, hãy cho cả lớp xem một giỏ bushel, một peck, một half-peck, một giỏ quart (đựng quả mọng) và một giỏ pint.</p>
+<p>Câu hỏi: “Chiếc giỏ lớn nhất này sẽ chứa được bao nhiêu gallon sữa?”</p>
+<p>Trả lời: “Nó sẽ không chứa được chút sữa nào vì sữa sẽ chảy hết ra qua các khe.”</p>
+<p>Câu hỏi: “Các em đã thấy những chiếc giỏ như thế ở đâu?”</p>
+<p>Trả lời: “Ở các chợ vườn ven đường.”</p>
+<p>Câu hỏi: “Trong giỏ có gì?”</p>
+<p>Trả lời: “Khoai tây.” “Táo.” “Đào.” “Quả mọng.” v.v.</p>
+<p>Những chiếc giỏ này là đơn vị đo khô. Trái cây và rau củ sẽ không rò ra khỏi chúng.</p>
+<p>Đặt các giỏ thành một hàng từ lớn nhất đến nhỏ nhất và cho trẻ phán đoán, so sánh chúng về kích thước và về thứ chúng có thể chứa. Chẳng hạn, cần bao nhiêu chiếc nhỏ nhất để đổ đầy chiếc lớn nhất bằng quả mâm xôi? Các em có muốn đổ đầy chiếc giỏ khổng lồ này bằng quả mâm xôi không? Vì sao không? Điều gì sẽ xảy ra với những quả ở đáy giỏ? Điều tương tự có xảy ra với khoai tây hay táo không?</p>
+<p>Tên của các đơn vị đo khô này chỉ khác một phần so với tên của các đơn vị đo chất lỏng. Lớn nhất là bushel, kế tiếp là peck, rồi đến half-peck. Hai đơn vị nhỏ hơn là quart và pint.</p>
+<p>Thông qua hỏi và phán đoán, Bảng Đo Khô được viết lên bảng đen và chép lại.</p>
+<pre class="formula-block"><code>1 bushel (bu.) = 4 pecks (pk.)
+1 peck = 8 quarts
+1 quart = 2 pints</code></pre>
+<h3 id="lich-su-cac-con-so" class="lesson-title"><span>Trọng lượng</span></h3>
+<p>Quay lại với đo độ dài, giáo viên có thể đo và đánh dấu chiều cao của từng trẻ trong lớp trên tường bằng băng dính và tên. Sau đó có thể đặt câu hỏi: “Vì John và Donald cao đúng bằng nhau, các bạn ấy khác nhau ở điểm nào?”</p>
+<p>Rồi nếu cả lớp nói rằng John béo còn Donald gầy, hãy hỏi: “Có ai có thể nói John rộng hơn Donald không?” “Nặng hơn không?”</p>
+<p>Ở đây ta đi đến việc đo sự khác biệt về kích thước bằng cân. Bây giờ có thể cân John và Donald trên cân của trường.</p>
+<p>Trước phần thảo luận sau, nên cho cả lớp xem một cân dược sĩ hoặc cân thăng bằng và trải nghiệm điều xảy ra khi nhiều đồ vật khác nhau được cân đối với nhau.</p>
+<p>Ta cân đồ vật bằng bao nhiêu cách khác nhau?</p>
+<p>Ta có thể cân đồ vật bằng hai bàn tay và tìm xem vật nào nặng hơn. Bên trong, ta có thể cân điều mình thích với điều mình không thích, điều mình muốn làm với điều mình nên làm: muốn chơi với việc phải làm bài tập về nhà, cho ai đó một thứ với việc giữ nó cho riêng mình, để người khác đi trước thay vì chen lên trước.</p>
+<p>Cân bằng là gì?</p>
+<p>“Chỉ làm mà không chơi khiến Jack thành một cậu bé buồn tẻ.”</p>
+<p>“Hãy làm cho người khác điều con muốn họ làm cho mình.”</p>
+<p>Biết ơn điều ta nhận được, hoặc tha thứ cho ai đó.</p>
+<p>Con người không được đánh giá theo số pound họ nặng, mà theo kiểu người họ là. Rồi ta cân các vật chất, ta phán đoán giá trị của chúng và trao lại điều gì đó để đổi lấy. Trong cửa hàng, giá trị được đưa ra bằng tiền. Giá trị của một người tốt không thể đổi thành tiền.</p>
+<p>Ở Ai Cập cổ đại, xứ sở của các Pharaoh, người ta nói rằng khi một người qua đời, người ấy phải đứng trước Osiris, vị thần Ánh sáng, và để trái tim mình được cân trên chiếc cân công lý. Trên chiếc cân ấy, trái tim của mỗi người được cân với chiếc lông vũ của sự thật. Nếu trái tim nhẹ hơn chiếc lông, người ấy có thể được nhận vào xứ sở của các vị thần. Nếu nặng hơn, người ấy bị kết án xuống thế giới ngầm tăm tối, nơi ánh sáng mặt trời không được biết đến.</p>
+<p>Ta đã không cân John và Donald với chiếc lông vũ của sự thật. Các bạn ấy vẫn còn sống rất nhiều và được cân khi còn mang giày. Chiếc cân đo trọng lượng của các bạn ấy bằng pound.</p>
+<p>Trên thế giới có nhiều hệ thống trọng lượng khác nhau. Ở Hoa Kỳ, ta dùng hệ sau:</p>
+<pre class="formula-block"><code>1 ton (tn.) = 2000 pounds (lb.)
+1 pound = 16 ounces (oz.)
+1 ounce = 16 drams</code></pre>
+<p>Nếu ta cân một con người bằng pound, ta sẽ cân chiếc khăn tay của người ấy bằng gì? Đơn vị trọng lượng hữu ích nhất cho một con voi là gì? Cho một con tem bưu chính là gì? Có em nào trả lời được các câu hỏi này không:</p>
+<pre class="formula-block"><code>2 pounds = ? ounces
+2 ounces = ? drams
+3 tons = ? pounds
+1 ton = ? ounces</code></pre>
+<h3 id="cau-chuyen-ve-pythagoras" class="lesson-title"><span>Thời gian</span></h3>
+<h4 id="bang-phan-so-tuong-duong-trong-mot-inch" class="minor-title"><span>Câu đố</span></h4>
+<p>Nó có một gương mặt tròn-tròn<br>Với những cánh tay ở nơi chiếc mũi.<br>Cánh tay dài chạy nhanh,<br>Cánh tay ngắn đến sau cùng,<br>Nhưng đó không phải cuộc đua thật.<br>Mỗi cánh tay giữ nhịp của mình<br>Để nói cho em biết thời gian.<br>Đó là gì?</p>
+<p>Một cậu bé rất nhỏ từng được hỏi: “Buổi sáng con dậy lúc mấy giờ?”</p>
+<p>Cậu trả lời: “Đôi khi con dậy khi đồng hồ ở trên, đôi khi con dậy khi đồng hồ ở dưới.”</p>
+<p>Dĩ nhiên, cậu bé này thậm chí còn chưa bắt đầu đi học và chưa thể đọc các con số trên mặt đồng hồ. Các con số ấy là gì? Từ 1 đến 12. Các khoảng giữa các số được chia như thế nào? Thành các nhóm năm. Có bao nhiêu khoảng? <code>12 × 5 = 60</code>.</p>
+<p>Nếu các em quan sát các cánh tay (kim) của đồng hồ, các em sẽ thấy kim dài đi qua tất cả 60 khoảng trong khi kim ngắn đi qua 5 khoảng. Đôi khi có một kim thứ ba, dài như kim dài kia nhưng rất mảnh, đi qua tất cả 60 khoảng trong khi kim dài chỉ đi qua một khoảng.</p>
+<p>Ai còn có thể đọc vần thơ thời gian đã học ở lớp Hai:</p>
+<p>Sáu mươi giây làm thành một phút.<br>Hãy đặt thật nhiều lòng tốt vào trong đó.<br>Sáu mươi phút làm thành một giờ.<br>Hãy làm việc với tất cả sức mạnh và năng lực của mình.</p>
+<p>Các em nghĩ kim nào chỉ giờ? Kim nào chỉ phút? Kim nhanh nhất trong ba kim đánh dấu điều gì khi nó tích tắc quanh mặt đồng hồ?</p>
+<h4 id="chia-voi-phan-so" class="minor-title"><span>Các đơn vị đo thời gian (để viết)</span></h4>
+<pre class="formula-block"><code>1 hour = 60 minutes
+1 minute = 60 seconds
+1 hour = ? seconds</code></pre>
+<p>Và các câu hỏi tương tự.</p>
+<h2 id="em-co-the-triet-tieu-no" class="chapter-title"><span class="chapter-eyebrow">Chương</span><span>Một tuyển chọn bài học cho lớp Bốn</span></h2>
+<h3 id="he-thap-phan" class="lesson-title"><span>Những người thợ Số: dẫn nhập vào nhớ và mượn</span></h3>
+<p>Em đã bao giờ biết ai có họ là Carpenter (thợ mộc), Mason (thợ xây), Miner (thợ mỏ) hay Cook (đầu bếp) chưa? Những cái tên như vậy có lẽ đến từ rất lâu trước đây, khi một tổ tiên là thợ mộc, thợ xây, thợ mỏ hoặc đầu bếp. Tên gọi đến từ loại công việc mà một người làm. Tôi sẽ kể cho các em một câu chuyện về bốn anh em có họ là Numbers (Số), vì họ làm việc với các con số. Tên riêng của họ giải thích loại công việc họ làm.</p>
+<p>Tên của họ là:</p>
+<pre class="formula-block"><code>Add Numbers       (Cộng Số)
+Multiply Numbers  (Nhân Số)
+Divide Numbers    (Chia Số)
+Subtract Numbers  (Trừ Số)</code></pre>
+<p>Ba người anh em đầu rất thành công trong công việc của mình. Cộng và Nhân thích sưu tầm đồ vật. Họ có nhiều bộ sưu tập: tem, mảnh kính vỡ, đinh, chai, bi; và túi áo túi quần của họ lúc nào cũng đầy. Cộng thích chất thành đống này đến đống khác những thứ mình đã sưu tầm, cho đến khi trong phòng gần như không còn chỗ để anh ra vào. Nhân còn tệ hơn, vì anh cố có trong các bộ sưu tập của mình nhiều gấp hai, ba, bốn hoặc năm lần bất cứ ai khác. Cộng và Nhân luôn mang nhiều đồ vật từ nơi này sang nơi khác. Hàng xóm nói: “Thật là một gia đình! Họ có quá nhiều nơi để đặt đồ, rồi mang qua mang lại suốt ngày, chẳng nghỉ bao giờ.”</p>
+<p>Ngay cả Chia Số cũng mang vác rất nhiều, nhưng anh khác với Cộng và Nhân. Anh luôn chia sẻ kho báu của mình, chia chúng thành các đống nhỏ hơn và mang đến cho bạn bè ở một nơi khác. Nếu còn dư thứ gì, anh sẽ mang phần đó đến một nơi mới.</p>
+<p>Trừ Số quả thật rất khác với ba người thợ Số kia. Anh có thể nhặt vài viên sỏi hoặc vài nắp chai và cho vào túi, nhưng túi của anh có lỗ thủng. Anh cứ làm mất kho báu của mình và chẳng bao giờ có nhiều như lúc bắt đầu. Nếu hàng xóm thấy một vệt nắp chai, mẩu dây, đai ốc và bu lông, hoặc lò xo gãy vương vãi dọc đường, họ sẽ nói: “Trừ Số đã đi qua lối này.”</p>
+<p>Khó có thể nói rằng Trừ từng mang được thứ gì, nhưng anh mượn rất nhiều, vì anh thường đến các Số khác để mượn những gì mình cần.</p>
+<p>Khi ta cộng hoặc nhân các số, ta phải biết cách nhớ sang hàng kế tiếp, bắt đầu từ hàng đơn vị. Ta nhớ từ đơn vị sang chục, từ chục sang trăm, từ trăm sang nghìn, cứ lên cao hơn và sang trái.</p>
+<p>Ví dụ:</p>
+<pre class="formula-block"><code>   42
+   35
++  85
+-----
+  162
+
+  2486
++ 1605
+------
+  4091</code></pre>
+<p>Khi nhân, ta cũng nhớ sau khi nhân.</p>
+<pre class="formula-block"><code>34 × 4 = 136
+263 × 5 = 1315
+3018 × 3 = 9054
+489 × 3 = 1467
+123456789 × 3 = 370370367</code></pre>
+<p>Khi ta chia các số, ta bắt đầu từ hàng cao nhất và mang xuống thấp dần, sang phải, về hàng đơn vị.</p>
+<p>Ví dụ:</p>
+<pre class="formula-block"><code>732 ÷ 6 = 122
+52 ÷ 4 = 13
+345 ÷ 3 = 115
+9876543210 ÷ 5 = 1975308642</code></pre>
+<p>Trong phép trừ, ta bắt đầu từ hàng đơn vị và làm sang hàng chục, vừa làm vừa mượn. Ta mượn bao nhiêu?</p>
+<p>Ví dụ:</p>
+<pre class="formula-block"><code>22 - 13 = 9
+42 - 16 = 26
+235 - 106 = 129
+2354 - 1365 = 989
+987654321 - 864197532 = 123456789</code></pre>
+<p>Em có thể giải thích vì sao không phải lúc nào ta cũng cần nhớ hoặc mượn không?</p>
+<h3 id="phan-so-thuong-va-phan-so-thap-phan" class="lesson-title"><span>Câu đố</span></h3>
+<p>Đó là gì<br>Mà em không thể thấy,<br>Không thể nghe,<br>Không thể ngửi,<br>Không thể nếm,<br>Không thể chạm,<br>Vậy mà em không thể<br>Mặc quần áo nếu thiếu nó,<br>Ăn sáng nếu thiếu nó,<br>Đến trường nếu thiếu nó,<br>Học bài nếu thiếu nó,<br>Ra chơi nếu thiếu nó,<br>Về nhà nếu thiếu nó,<br>Chơi nếu thiếu nó,<br>Ăn tối nếu thiếu nó,<br>Lên giường nếu thiếu nó,<br>Hay ngủ nếu thiếu nó?</p>
+<p>Em không thể đo nó bằng inch hay foot,<br>Bằng gallon hay quart,<br>Bằng pound hay ounce.</p>
+<p>Nhưng nó là một kho báu lớn<br>Mà em có thể đo!</p>
+<p>Đó là gì?</p>
+<p>(Thời gian)</p>
+<h3 id="mot-tuyen-chon-bai-hoc-cho-lop-sau" class="lesson-title"><span>Đo diện tích</span></h3>
+<p>Gợi ý: Có thể kể câu chuyện <em>Too Much Land</em> của Leo Tolstoy trước khi giới thiệu đo diện tích.</p>
+<p>Trong câu chuyện tôi đã kể, người nông dân quan tâm đến khoảng cách xung quanh mảnh đất, hay quan tâm đến lượng đất nằm bên trong ranh giới? Ta sẽ gọi phần đất bên trong là “diện tích”.</p>
+<p>Để xác định một diện tích, ta phải có đơn vị đo bề mặt thay vì đơn vị đo đường. Nếu muốn sơn các bảng đen trong trường, ta phải tìm xem cần bao nhiêu sơn. Mỗi lon sơn, dù kích thước nào, đều có hướng dẫn in trên đó về lượng bề mặt nó sẽ phủ được. Em sẽ đo toàn bộ bề mặt bảng đen trong phòng này như thế nào?</p>
+<p>Phát cho mỗi trẻ một tờ giấy hình vuông và cho trẻ dùng thước đo từng cạnh để thấy rằng nó dài 1 foot.</p>
+<p>Bây giờ mỗi em có một “foot vuông”, và đó là đơn vị đo vuông. Nó có thể là inch vuông, yard vuông hoặc mile vuông. Các đơn vị đo vuông được dùng để đo diện tích bề mặt. Hãy xem một foot vuông đặt vừa bao nhiêu lần vào diện tích của bảng đen này. Việc này nên được làm rất cẩn thận, với sự giúp đỡ của các dấu phấn.</p>
+<p>Ta thấy bảng đen cao 4 feet và dài 6 feet. Có 4 hàng, mỗi hàng 6 hình vuông. Có tất cả bao nhiêu hình vuông? <code>4 × 6 = 24</code>. Vậy diện tích bề mặt của bảng đen là 24 square feet. Ta cũng có thể nói bảng đen cao 4 ô vuông và dài 6 ô vuông.</p>
+<p>Ghi chú: Cho trẻ đo các bề mặt khác nhau trong phòng, như cửa ra vào, cửa sổ, mặt bàn hoặc tương tự, dùng các hình vuông một foot của mình để tìm xem “xấp xỉ bao nhiêu square feet” có trong mỗi bề mặt.</p>
+<h4 id="he-thap-phan-2" class="minor-title"><span>Bước hoặc bài học tiếp theo</span></h4>
+<p>Từ một hình vẽ trên bảng đen cho thấy diện tích 6 sq. ft. (2 hàng, mỗi hàng 3 ô vuông), ta có thể hỏi: “Có bao nhiêu cách để đếm số square feet trong một diện tích?” Square feet thường được viết tắt là <code>sq. ft.</code></p>
+<p>Ta có thể cộng:</p>
+<pre class="formula-block"><code>2 + 2 + 2 = 6</code></pre>
+<p>Hoặc nhân:</p>
+<pre class="formula-block"><code>2 × 3 = 6</code></pre>
+<p>Cách nào tốt hơn?</p>
+<p>Giả sử em muốn tìm diện tích một bức tường dài 35 ft. và cao 15 ft. Em có phải dùng một mảnh giấy hoặc gỗ hình vuông cạnh một foot rồi cứ đặt xuống để đánh dấu từng square foot không? Làm thế thật trẻ con!</p>
+<p>Em biết rằng mỗi cạnh của một square foot dài 1 linear foot. Trong hình vẽ trên bảng đen, chiều rộng đo được 2 linear feet và chiều dài hoặc chiều cao đo được 3 linear feet.</p>
+<pre class="formula-block"><code>2 ft. × 3 ft. = 6 sq. ft.</code></pre>
+<p>Em có thể tìm diện tích bức tường theo cùng cách. Em sẽ nhân gì?</p>
+<pre class="formula-block"><code>35
+×15
+---
+175
++35
+---
+525 sq. ft.</code></pre>
+<p>Quy tắc là: Ta tìm diện tích bằng cách nhân chiều dài với chiều rộng.</p>
+<p>Bây giờ hãy thêm một hàng 3 square feet nữa vào hai hàng trên bảng. Nó tạo thành một diện tích lớn hơn, mỗi cạnh dài 3 feet. Diện tích đo được bao nhiêu? 9 sq. ft.</p>
+<pre class="formula-block"><code>3 ft. × 3 ft. = 9 sq. ft.</code></pre>
+<p>Vì <code>3 ft. = 1 yard</code>, ta có thể gọi diện tích ấy là 1 square yard.</p>
+<pre class="formula-block"><code>1 yd. × 1 yd. = 1 sq. yd.</code></pre>
+<h4 id="percent-nghia-la-tren-mot-tram" class="minor-title"><span>Bài giao</span></h4>
+<p>Đánh dấu 12 inches trên mỗi cạnh của tờ giấy 1 sq. ft. của em để có đúng số square inches trong một square foot. Nếu em biết <code>12 × 12</code> là bao nhiêu, em sẽ biết đúng số square inches cần xuất hiện trong hình vẽ của mình.</p>
+<h4 id="mill-la-gi" class="minor-title"><span>Một câu hỏi thêm</span></h4>
+<p>Bây giờ em đã biết có 144 square inches trong 1 sq. ft.; em có thể tính xem có bao nhiêu sq. in. trong 1 sq. yd. không? Em có thể tìm ba cách làm không?</p>
+<ol>
+<li>Chín square feet sẽ là <code>9 × 144 sq. in.</code></li>
+<li>Nếu 1 yd. đo được 36 inches, hãy tìm số sq. in. trong một sq. yd.</li>
+<li>Hoặc em có thể cộng 144 sq. in. chín lần.</li>
+</ol>
+<p>Em thấy cách nào dễ nhất? Hãy thử cả ba và xem mỗi lần có cùng một đáp án không.</p>
+<h4 id="phan-tram-phan-so" class="minor-title"><span>Bảng đo diện tích</span></h4>
+<pre class="formula-block"><code>1 square yard = 9 sq. ft.
+1 square foot = 144 sq. in.</code></pre>
+<p>Một ngày nào đó các em sẽ học diện tích của 1 square mile!</p>
+<h3 id="dan-nhap-vao-lai" class="lesson-title"><span>Cây phân số</span></h3>
+<p>Cành càng nhiều thì càng nhỏ dần.</p>
+<h3 id="them-vai-van-de-ve-lai" class="lesson-title"><span>Ăn một quả táo nhé!</span></h3>
+<p>Dẫn nhập vào phân số.</p>
+<p>Melinda đến trường với một quả táo. Cô bé vừa định ăn thì Christopher đến và thấy quả táo. Cô bé không muốn giữ tất cả cho riêng mình, nên cắt quả táo thành hai miếng và đưa một nửa cho Christopher. Đúng lúc ấy Jeanne và Ralph bước vào. Melinda và Christopher cắt các nửa của mình thành nửa nữa. Lúc đó quả táo có 4 miếng. Mỗi người có một phần tư. Trước khi các bạn kịp ăn các phần tư, Donald, Lisa, John và Linda bước vào. Bây giờ các phần tư được cắt làm đôi và có tám miếng cho tám trẻ. Quả táo đã được chia thành các phần tám, vừa sắp bị ăn ngấu nghiến thì Claude, Francis, Erich, Olivia, Miriam, Max, Michaela và Hillary ùa vào phòng. Bây giờ các bạn phải cắt mỗi miếng trong tám miếng táo làm đôi, để thành mười sáu miếng rất nhỏ, mỗi miếng là một phần mười sáu của quả táo. Tất cả đều nhỏ quá.</p>
+<p>Trước đó có một miếng. Bây giờ có mười sáu miếng; nhưng dù 16 là một số lớn hơn 1, mỗi miếng lại nhỏ hơn rất nhiều so với 1 quả táo.</p>
+<p>Thay vì ăn những phần mười sáu nhỏ xíu ấy, trẻ có thể ghép tất cả lại, thêm đường và bột, có lẽ thêm vài quả táo nữa, để làm một chiếc bánh táo.</p>
+<p>Đây là một chiếc bánh táo. Để chia sẻ chiếc bánh, trước hết cắt nó thành 2 phần bằng nhau: một nửa.</p>
+<p>Mỗi miếng là một nửa chiếc bánh. Vì 2 nửa của chiếc bánh làm thành một cái toàn thể, chúng liên hệ với cái toàn thể bằng số 2, nhưng ta phải cho phép rằng 1 đã được chia thành 2 miếng.</p>
+<p>Cách viết nào tốt để biểu thị điều đó?</p>
+<p>Ta có thể dùng đường cắt của dao làm đường chia; và nếu viết ra, nó có thể đọc là “1 chia cho 2” hoặc “một nửa”.</p>
+<p>Một phần của một số được gọi là “phân số” của nó. Ta có thể gọi đường chia là “vạch phân số”.</p>
+<pre class="formula-block"><code>1/1 = 1
+
+Số bên dưới vạch phân số càng lớn,
+miếng càng nhỏ!
+
+1 ÷ 2 = 1/2
+1 ÷ 4 = 1/4
+1 ÷ 8 = 1/8</code></pre>
+<h4 id="nam-nay-nam-sau-mot-luc-nao-do" class="minor-title"><span>Số và tên</span></h4>
+<p>Đây là hai từ cần nhớ: numerator (tử số) và denominator (mẫu số).</p>
+<p>Từ “numerator” làm em nghĩ đến từ nào khác? Tôi cho một gợi ý. Chỉ thiếu một chữ cái. Có thể là chữ “b” không? Từ kia là “number” (số). Ai biết “nom” đến từ ngôn ngữ nào và nghĩa là gì? Có thể là tiếng Pháp và có nghĩa là “tên” không? Đúng vậy!</p>
+<p>Số ở trên vạch phân số được gọi là tử số; nó cho ta biết số lượng các phần phân số được gọi tên bên dưới vạch phân số trong mẫu số. Nếu ta đã chia một thứ thành các phần tám, thì 5 phần tám ấy sẽ được viết là <code>5/8</code>.</p>
+<pre class="formula-block"><code>Tử số: đây là con số đếm các phần.
+Mẫu số: đây là tên của các phần, hay của phân số.</code></pre>
+<h3 id="lai-don-va-lai-kep" class="lesson-title"><span>Cộng phân số</span></h3>
+<p>Quả việt quất đã chín và trẻ đi hái quả. Mỗi em mang một lon 2 pound. E rằng các em đã ăn nhiều hơn là hái, vì sau một giờ Jimmy chỉ có <code>1/3</code> pound trong lon, và Jill cũng chỉ có <code>1/3</code> pound trong lon. Hai bạn có tất cả bao nhiêu phần ba?</p>
+<pre class="formula-block"><code>1/3 + 1/3 = 2/3</code></pre>
+<p>Ta đã cộng phần nào của phân số? Tử số! Mẫu số vẫn giữ nguyên. Em có thể cộng các phân số sau theo cùng cách không?</p>
+<pre class="formula-block"><code>3/10 + 4/10 = ?
+5/8 + 5/8 = ?
+7/10 + 2/10 = ?
+v.v.</code></pre>
+<h3 id="lai-kep" class="lesson-title"><span>Trừ phân số</span></h3>
+<p>Vào tháng Mười, táo đã chín và trẻ đi hái táo với cha. Trong khi cha hái được 1 bushel táo đầy, hai em chỉ đổ đầy <code>2/3</code> bushel. Các em hái ít hơn bao nhiêu? 1 cái toàn thể cũng bằng <code>3/3</code>.</p>
+<pre class="formula-block"><code>3/3 - 2/3 = 1/3</code></pre>
+<p>Ta đã trừ phần nào của phân số? Tử số! Ta đã trừ theo phần ba. Giống như trừ 2 phần táo khỏi 3 phần táo, còn lại 1 phần táo. Em có thể trừ các phân số khác không?</p>
+<pre class="formula-block"><code>4/5 - 1/5 = ?
+5/8 - 2/8 = ?
+10/10 - 4/10 = ?
+v.v.</code></pre>
+<h3 id="hoa-hong" class="lesson-title"><span>Phân số của các số lớn hơn 1</span></h3>
+<p>Cho đến nay, ta đã học chia 1 cái toàn thể thành các phân số của cái toàn thể:</p>
+<pre class="formula-block"><code>1/12 của 1 năm = 1 tháng
+1/12 của 1 foot = 1 inch
+1/4 của 1 gallon = 1 quart</code></pre>
+<p>Ta cũng có thể chia các số lớn hơn 1 thành các “phần phân số” của chúng.</p>
+<pre class="formula-block"><code>12 ÷ 2 = 6</code></pre>
+<p>Nghĩa là 12 được chia thành 2 phần bằng nhau thì mỗi phần là 6, hay:</p>
+<pre class="formula-block"><code>1/2 của 12 = 6</code></pre>
+<p>Để tìm <code>1/2</code> của một số, ta chia số ấy cho 2.</p>
+<p>Để tìm <code>1/3</code> của một số, ta chia số ấy cho ?</p>
+<p>Để tìm <code>1/4</code> của một số, ta chia số ấy cho ?</p>
+<h4 id="mot-so-bai-toan" class="minor-title"><span>Bài luyện</span></h4>
+<pre class="formula-block"><code>1/2 của 10
+1/4 của 16
+1/5 của 10
+1/3 của 21
+1/6 của 18
+1/7 của 49
+1/8 của 56
+1/9 của 54
+1/10 của 100</code></pre>
+<p>Nếu <code>1/2</code> của 12 là 6, thì <code>1/2</code> năm là 6 tháng.</p>
+<p>Nếu <code>1/2</code> của 24 là 12, thì <code>1/2</code> ngày là 12 giờ.</p>
+<pre class="formula-block"><code>1/3 của một năm là ? tháng
+1/6 của một giờ là ? phút
+1/7 của một tuần là ? ngày
+1/12 của một phút là ? giây
+1/4 của một bushel là ? pecks
+1/8 của một peck là ? quarts
+1/2 của một quart là ? pints
+1/4 của 2 bushels là ? pecks
+v.v.</code></pre>
+<h3 id="them-cong-thuc" class="lesson-title"><span>Phân số của số lẻ</span></h3>
+<p>Mẹ của Lisa nói với cô bé rằng cô, Melinda và Linda có thể lấy tất cả bánh quy còn lại trong lọ. Các bạn tìm thấy 7 chiếc bánh quy trong lọ. Các bạn chia sao cho mỗi cô bé nhận 2 chiếc và còn dư 1 chiếc; vì vậy các bạn chia chiếc còn lại ấy thành 3 phần bằng nhau. Mỗi cô bé nhận được gì?</p>
+<pre class="formula-block"><code>7 ÷ 3 = 2 1/3</code></pre>
+<p>Ralph, Donald, Claude và Max chia 13 que kẹo sao cho mỗi bạn có 3 que và còn dư 1 que. Các bạn chia que còn dư ấy thành 4 miếng bằng nhau. Mỗi cậu bé nhận được gì?</p>
+<pre class="formula-block"><code>13 ÷ 4 = 3 1/4</code></pre>
+<p>Em nhận thấy điều gì về số dư trong đáp án?</p>
+<p>Nó có thể trở thành tử số của một phân số. Số nào là mẫu số của phân số?</p>
+<p>Giả sử ta muốn chia 11 quả táo cho 4 trẻ. Ta sẽ tính phần bằng nhau của mỗi em như thế nào?</p>
+<pre class="formula-block"><code>11 ÷ 4 = 2 3/4</code></pre>
+<h4 id="cac-dot-ban-hang-dac-biet" class="minor-title"><span>Bài luyện</span></h4>
+<pre class="formula-block"><code>19 ÷ 2 = ?
+13 ÷ 3 = ?
+17 ÷ 5 = ?
+25 ÷ 3 = ?
+v.v.</code></pre>
+<h3 id="thue" class="lesson-title"><span>Nhân với phân số</span></h3>
+<p>Ghi chú: Phần này nên được đưa ra sau khi cả lớp đã thật sự quen với cộng và trừ phân số, có lẽ gần cuối năm.</p>
+<h4 id="mot-so-cau-trich-dan-ve-thue" class="minor-title"><span>Hai của cùng một loại</span></h4>
+<p>Khi tôi nói “hai của cùng một loại,” tôi có thể muốn nói 2 chim cổ đỏ, hoặc 2 viên ngọc hồng lựu, hoặc 2 hoa cúc, hoặc hai đứa trẻ luôn vui vẻ. Nếu tôi nói “2 của 1,” tôi thật sự muốn nói <code>2 × 1</code>. <code>3 của 1</code> cũng như <code>3 × 1</code>. Tương tự, <code>6 của 12</code> là <code>6 × 12</code>. Nếu <code>1 của 5</code> nghĩa là <code>1 × 5</code>, thì <code>1/5 của 5</code> nghĩa là <code>1/5 × 5</code>.</p>
+<h4 id="cac-ty-le-tuong-duong" class="minor-title"><span>Luyện miệng trước khi viết</span></h4>
+<pre class="formula-block"><code>1/5 × 5 = 1/5 của 5 = 1
+2/5 × 5 = 2/5 của 5 = 2
+1/3 × 3 = 1/3 của 3 = 1
+2/7 × 7 = 2/7 của 7 = 2
+1/4 × 4 = 1/4 của 4 = 1
+2/9 × 9 = 2/9 của 9 = 2
+v.v.</code></pre>
+<p>Bây giờ ta có vài câu hỏi khó hơn: ta sẽ tính như thế nào:</p>
+<pre class="formula-block"><code>1/2 của 1/2
+1/2 của 1/4
+1/3 của 1/5
+?</code></pre>
+<h4 id="them-cac-ty-le-tuong-duong" class="minor-title"><span>Vẽ</span></h4>
+<p>Cho trẻ dùng thước vẽ một hình chữ nhật rộng 3 inches và dài 12 inches, rồi cắt ra để gấp.</p>
+<ol>
+<li>Gấp thành 2 phần bằng nhau (<code>2 × 1/2</code>).</li>
+<li>Gấp thành 4 phần bằng nhau (<code>4</code>).</li>
+<li>Gấp thành 8 phần bằng nhau (<code>8</code>).</li>
+</ol>
+<p>Phần nào lớn hơn: <code>1/2</code>, <code>1/4</code> hay <code>1/8</code>?</p>
+<h4 id="viet" class="minor-title"><span>Viết</span></h4>
+<p>Tham chiếu hình chữ nhật đã gấp:</p>
+<pre class="formula-block"><code>1/2 = 4/8
+1/4 = 2/8
+3/4 = 6/8
+1/2 của 1/2 = ?
+1/2 của 1/4 = ?
+1/4 của 4/8 = ?
+1/4 của 1/2 = ?</code></pre>
+<p>Tất cả những điều này đều là phân số của phân số, hay phân số nhân với phân số. Từ giờ trở đi, khi thấy dấu nhân (<code>×</code>), ta có thể nhớ rằng nó nghĩa là “của”.</p>
+<p>Dùng dấu nhân (<code>×</code>) và nếu cần, tham chiếu hình chữ nhật đã gấp.</p>
+<pre class="formula-block"><code>1/2 × 1/2 = 1/4
+1/2 × 1/4 = 1/8</code></pre>
+<p>Em có thể dùng dấu nhân phía trên vạch phân số để nhân các tử số, và phía dưới vạch phân số để nhân các mẫu số không? Có.</p>
+<pre class="formula-block"><code>1 × 1 = 1
+2 × 2 = 4
+
+1 × 1 = 1
+2 × 4 = 8</code></pre>
+<p>Theo cách tương tự, hãy nhân:</p>
+<pre class="formula-block"><code>1/2 × 1/3
+1/2 × 1/5
+1/2 × 1/6</code></pre>
+<p>Hãy tưởng tượng một thanh sô-cô-la được chia thành 9 miếng bằng nhau. Vẽ trên bảng. Một miếng là phần nào của cả thanh? Ba miếng là phần nào?</p>
+<pre class="formula-block"><code>1/3 × 9 = 3
+1/3 × 3 = 1
+1/3 × 1 = 1/3
+1/3 × 1/3 = 1/9</code></pre>
+<p>Ta có thể thấy tất cả điều này trong hình vẽ. Ta còn có thể thấy gì nữa?</p>
+<p>Ta không thể thấy <code>1/2</code> thanh sô-cô-la theo phần chín, vì 9 là số lẻ và 2 không chia đều vào đó.</p>
+<p>Nhưng có một cách để tìm <code>1/2</code> của 9. Bằng cách nào?</p>
+<pre class="formula-block"><code>1 × 9 = 9
+2 × 9 = 18</code></pre>
+<p>Ta đã làm gì? Ta nhân tử số với tử số, <code>1 × 9</code>, và mẫu số với mẫu số, <code>2 × 9</code>. Đó là quy tắc nhân phân số. Dùng quy tắc này để làm các ví dụ sau.</p>
+<h4 id="bai-luyen" class="minor-title"><span>Bài luyện</span></h4>
+<p>Làm miệng, rồi viết.</p>
+<pre class="formula-block"><code>3/4 × 1/2 = ?
+4/5 × 1/2 = ?
+1/3 × 2/5 = ?
+2/5 × 1/2 = ?</code></pre>
+<h3 id="dang-don-gian-nhat-cua-phan-so-2" class="lesson-title"><span>Dạng đơn giản nhất của phân số</span></h3>
+<p>Câu chuyện phân số của hình tròn này có thể được viết như sau:</p>
+<pre class="formula-block"><code>1 whole = 1/1 = 2/2 = 4/4 = 8/8 = 16/16</code></pre>
+<p>Trong năm phân số này, phân số nào đơn giản nhất để dùng?</p>
+<p>Ta có thể thấy:</p>
+<pre class="formula-block"><code>16/16 = 8/8
+8/8 = 4/4
+4/4 = 2/2
+2/2 = 1 hoặc 1/1</code></pre>
+<p>Nếu tôi yêu cầu em nhân 8 với 16, em sẽ làm gì để dễ hơn? Em có thể đổi cả hai về dạng đơn giản nhất trước khi nhân không? Và em có nhận được <code>1 × 1 = 1</code> không?</p>
+<p>Đổi một phân số về dạng đơn giản nhất của nó được gọi là “rút gọn” phân số.</p>
+<p>Trong các phân số sau, tử số là phần nào của mẫu số?</p>
+<pre class="formula-block"><code>4/8   -&gt; 4 là 1/2 của 8
+5/10
+3/9
+6/9
+4/6
+4/12
+8/10</code></pre>
+<p>Thật dễ nhận ra rằng 3 đi vào 9 được 3 lần, để ta có thể rút gọn <code>3/9</code> thành <code>1/3</code>. Điều ta thật sự nghĩ là “3 chia cho 3 bằng 1” và “9 chia cho 3 bằng 3.” Ta chia cả tử số và mẫu số cho 3, và đổi phân số thành <code>1/3</code>.</p>
+<p>Đây là hai cách rút gọn phân số về dạng đơn giản nhất:</p>
+<ol>
+<li>Hỏi tử số là phần nào của mẫu số.</li>
+<li>Chia tử số và mẫu số cho một số nào đó đi vào cả hai.</li>
+</ol>
+<h4 id="bai-luyen-mieng-va-viet" class="minor-title"><span>Bài luyện miệng và viết</span></h4>
+<p>Rút gọn theo cách thứ nhất:</p>
+<pre class="formula-block"><code>4/24, 6/36, 4/20, 9/18, 10/100, v.v.</code></pre>
+<p>Rút gọn theo cách thứ hai:</p>
+<pre class="formula-block"><code>6/8, 9/12, 10/15, 15/20, 12/16, v.v.</code></pre>
+<p>Có một số phân số không thể rút gọn. Vì sao không? Ví dụ: <code>3/7</code>, <code>5/11</code>, <code>7/13</code>, v.v.</p>
+<h4 id="cau-hoi" class="minor-title"><span>Câu hỏi</span></h4>
+<p>Nếu em rút gọn <code>16/24</code> thành <code>8/12</code>, em đã rút gọn nó về dạng đơn giản nhất chưa? Chưa. Em có thể đi xa hơn, và nên làm vậy.</p>
+<pre class="formula-block"><code>16/24 = 8/12 = 2/3</code></pre>
+<p>Chừng nào còn có một số đi vào cả tử số và mẫu số, một phân số vẫn có thể được làm đơn giản hơn. Khi không còn số như vậy, em phải dừng lại.</p>
+<h3 id="mo-rong-phan-so-2" class="lesson-title"><span>Mở rộng phân số</span></h3>
+<p>Khi ta rút gọn một phân số về dạng thấp nhất, ta đi đến điểm dừng; nhưng ta có thể mở rộng nó trở lại và không bao giờ đi đến điểm dừng.</p>
+<pre class="formula-block"><code>8/16 = 4/8 = 2/4 = 1/2
+
+1/2 = 2/4 = 4/8 = 8/16 = 16/32 = 32/64 = 64/128 = 128/256 = ...</code></pre>
+<p>Thật tốt khi ta có thể làm điều này. Ta biết rằng để cộng hoặc trừ phân số, ta chỉ cộng hoặc trừ các tử số.</p>
+<p>Em nhận thấy gì về các mẫu số? Trong mỗi ví dụ, chúng giống nhau.</p>
+<p>Hãy tưởng tượng em có một bát trái cây, gồm lê và táo trộn lẫn. Em không thể trừ hay cộng táo với lê trừ khi em cho chúng một tên chung, chẳng hạn “trái cây”. Em có thể nói: “7 phần trái cây trừ 3 phần trái cây bằng 4 phần trái cây.” Cũng như vậy, các phân số phải có mẫu số chung (tên chung) trước khi có thể được cộng hoặc trừ.</p>
+<p>Em có thể đi đến mẫu số chung bằng cách rút gọn hoặc mở rộng một số phân số nhất định.</p>
+<h3 id="tim-mau-so-chung-2" class="lesson-title"><span>Tìm mẫu số chung</span></h3>
+<p>Khi làm qua các ví dụ như sau, hãy để trẻ rút gọn hoặc mở rộng một phân số khi cần để tìm mẫu số chung. Bắt đầu cho các em rút gọn đáp án về dạng đơn giản nhất.</p>
+<pre class="formula-block"><code>1/2 + 1/4 = 2/4 + 1/4 = 3/4
+1/4 + 1/3 = 3/12 + 4/12 = 7/12
+1/2 - 1/4 = 2/4 - 1/4 = 1/4
+3/8 + 5/16 = 6/16 + 5/16 = 11/16
+v.v.</code></pre>
+<h3 id="phan-so-dung-phan-so-khong-dung-hon-so-2" class="lesson-title"><span>Phân số đúng, phân số không đúng, hỗn số</span></h3>
+<p>Nếu <code>8/8 = 1</code>, thì <code>9/8</code> là gì? Nó lớn hơn 1. Ta phải đổi nó thành <code>1 1/8</code>. Ta gọi một phân số mà tử số lớn hơn mẫu số là “phân số không đúng”. Gọi nó đơn giản là một phân số thì không đúng, vì nó lớn hơn 1 cái toàn thể. Nó hơn một cái toàn thể một phần phân số. Em sẽ đổi <code>10/8</code> như thế nào để được hỗn số? Hãy nhớ rút gọn phần phân số về dạng đơn giản nhất.</p>
+<pre class="formula-block"><code>10/8 = 1 2/8 = 1 1/4</code></pre>
+<h4 id="bai-luyen-mieng-roi-viet" class="minor-title"><span>Bài luyện miệng, rồi viết</span></h4>
+<pre class="formula-block"><code>Nếu 5/5 = 1, thì 7/5 = ?, 9/5 = ?, 10/5 = ?
+Nếu 3/3 = 1, thì 5/3 = ?, 4/3 = ?, 6/3 = ?, 7/3 = ?</code></pre>
+<p>Đổi từ phân số không đúng sang hỗn số:</p>
+<pre class="formula-block"><code>5/2, 7/4, 9/4, 10/6, 14/6</code></pre>
+<p>Đổi từ hỗn số sang phân số không đúng:</p>
+<pre class="formula-block"><code>3 1/3, 5 1/2, 7 3/4, 3 1/5, 10 1/2, 4 2/3</code></pre>
+<h3 id="nghien-cuu-ve-so-binh-phuong-2" class="lesson-title"><span>Nghiên cứu về số bình phương</span></h3>
+<p>Được thực hiện trong một lớp Bốn.</p>
+<p>Đếm và bước, đi lên rồi quay về, tiến tới và lùi lại.</p>
+<p>Dậm chân:</p>
+<pre class="formula-block"><code>1</code></pre>
+<p>Bước:</p>
+<pre class="formula-block"><code>1 2 1
+1 2 3 2 1
+1 2 3 4 3 2 1
+1 2 3 4 5 4 3 2 1
+1 2 3 4 5 6 5 4 3 2 1
+1 2 3 4 5 6 7 6 5 4 3 2 1
+1 2 3 4 5 6 7 8 7 6 5 4 3 2 1
+1 2 3 4 5 6 7 8 9 8 7 6 5 4 3 2 1
+1 2 3 4 5 6 7 8 9 10 9 8 7 6 5 4 3 2 1</code></pre>
+<p>Bài tập vận động này có thể được luyện ở đầu bài học trong vài ngày trước khi đặt câu hỏi hay nghiên cứu thêm.</p>
+<h4 id="nghien-cuu-thu-nhat-viet" class="minor-title"><span>Nghiên cứu thứ nhất: viết</span></h4>
+<pre class="formula-block"><code>1 = 1
+1 + 2 + 1 = 4
+1 + 2 + 3 + 2 + 1 = 9
+1 + 2 + 3 + 4 + 3 + 2 + 1 = 16
+1 + 2 + 3 + 4 + 5 + 4 + 3 + 2 + 1 = 25
+1 + 2 + 3 + 4 + 5 + 6 + 5 + 4 + 3 + 2 + 1 = 36
+1 + 2 + 3 + 4 + 5 + 6 + 7 + 6 + 5 + 4 + 3 + 2 + 1 = 49
+...
+đến 100</code></pre>
+<p>Cần trở nên rõ ràng rằng các số “ở đỉnh đồi” là các số bình phương.</p>
+<h4 id="nghien-cuu-thu-hai-luyen-mieng-va-viet" class="minor-title"><span>Nghiên cứu thứ hai: luyện miệng và viết</span></h4>
+<p>Bảng bình phương:</p>
+<pre class="formula-block"><code>1 = 1 × 1
+4 = 2 × 2
+9 = 3 × 3
+16 = 4 × 4
+25 = 5 × 5
+36 = 6 × 6
+49 = 7 × 7
+64 = 8 × 8
+v.v.</code></pre>
+<h3 id="hang-chuc-nhu-nguoi-tro-giup-2" class="lesson-title"><span>Hàng chục như người trợ giúp</span></h3>
+<p>Một số em có thể nhớ dòng trong vần thơ số đã học ở lớp Một:</p>
+<p>“Năm ngón chân trên mỗi bàn chân giúp tôi giữ thăng bằng và đứng vững.”</p>
+<p>Nghĩa là tổng cộng có mười ngón chân. Ta cũng có mười ngón tay. Và chắc chắn chúng giúp bằng nhiều cách khác, đặc biệt khi chơi piano hay đàn harp. Hai hàng chục này là một phần của thân thể vật lý của ta.</p>
+<pre class="formula-block"><code>2 × 10 = 20, và 20 là bội số của 10.
+4 × 10 là bội số của 10.
+50 × 10 là bội số của 10.</code></pre>
+<p>Hàng chục và các bội số của 10 có thể là Người Trợ Giúp trong cộng, trừ, nhân và chia bất kỳ nhóm số nào. Các em có nghĩ có mối liên hệ nào giữa sự hữu ích của mười ngón tay trong việc đếm và việc dùng 10 như một người trợ giúp với các số khác không?</p>
+<p>Các bội số của 10 đến 100 là gì?</p>
+<pre class="formula-block"><code>10 20 30 40 50 60 70 80 90 100</code></pre>
+<p>Dễ như đếm từng đơn vị!</p>
+<p>Trước khi dùng hàng chục làm trợ giúp, ta cần chắc chắn các số đơn vị kết hợp thế nào để tạo thành mười. Em có đoán được có bao nhiêu tổ hợp không? Ta có thể làm ra trên Bánh xe Số này.</p>
+<p>Bắt đầu với 9 và đọc các số cùng số đối diện của chúng theo hướng mũi tên, ta tìm được các tổ hợp:</p>
+<pre class="formula-block"><code>9 + 1    4 + 6
+8 + 2    3 + 7
+7 + 3    2 + 8
+6 + 4    1 + 9
+5 + 5</code></pre>
+<p>Từ <code>9 + 1</code> đến <code>5 + 5</code>, có 5 tổ hợp, còn các tổ hợp kia là đối cực của cùng các số.</p>
+<p>Biết các tổ hợp trong 10 giúp ta suy nghĩ ra các số khác:</p>
+<pre class="formula-block"><code>vì 6 khỏi 10 là 4
+6 khỏi 20 là 14
+6 khỏi 50 là 44
+
+70 - 6 = ?   10 - 3 = ?   10 - 9 = ?
+60 - 6 = ?   20 - 3 = ?   20 - 9 = ?
+40 - 6 = ?   50 - 3 = ?   80 - 9 = ?</code></pre>
+<p>Các số khó hơn trở nên dễ hơn nếu ta nhớ hàng chục:</p>
+<pre class="formula-block"><code>50 - 12 = 50 - 10 - 2 = 40 - 2 = 38
+70 - 15 = 70 - 10 - 5 = 60 - 5 = 55
+60 - 14 = ?
+40 - 17 = ?
+30 - 18 = ?
+90 - 19 = ?
+80 - 13 = ?</code></pre>
+<p>Hoặc:</p>
+<pre class="formula-block"><code>50 + 12 = 50 + 10 + 2 = 60 + 2 = 62
+60 + 16 = ?
+40 + 15 = ?
+30 + 19 = ?
+70 + 14 = ?
+v.v.</code></pre>
+<p>Em sẽ nghĩ thế nào để làm <code>50 - 22</code>?</p>
+<pre class="formula-block"><code>50 - 22 = 50 - 20 - 2 = 30 - 2 = 28
+
+70 - 36 = ?
+80 - 54 = ?
+80 - 82 = ?</code></pre>
+<p>Em sẽ nghĩ gì để cộng 43 và 21? Để trừ?</p>
+<pre class="formula-block"><code>40 + 20 = 60      40 - 20 = 20
+3 + 1 = +4        3 - 1 = +2
+43 + 21 = 64      43 - 21 = 22
+
+hoặc 43 - 20 - 1 = 22</code></pre>
+<h4 id="bai-luyen-2" class="minor-title"><span>Bài luyện</span></h4>
+<p>Cộng và trừ các cặp số sau:</p>
+<pre class="formula-block"><code>65 38 54 19 24 35 42 68
+44 22 32 16 13 24 34 31</code></pre>
+<p>Cũng như ta cần biết năm tổ hợp của các số 1 đến 9 tạo thành 10, ta cần biết các tổ hợp cộng lại thành những số lớn hơn 10. Bắt đầu với 9.</p>
+<pre class="formula-block"><code>9 + 2, 9 + 3, 9 + 4, 9 + 5, 9 + 6, 9 + 7, 9 + 8, 9 + 9
+8 + 3, 8 + 4, 8 + 5, 8 + 6, 8 + 7, 8 + 8
+7 + 4, 7 + 5, 7 + 6, 7 + 7
+6 + 5, 6 + 6</code></pre>
+<p>Như vậy, ở đây ta có 20 tổ hợp và cùng với các tổ hợp đối cực của chúng thì có 36. Vì sao vậy? Chúng được gọi là 36 Sự kiện Số trong phép cộng.</p>
+<p>Hãy làm ra một số sự kiện số trong phép trừ và xem có bao nhiêu.</p>
+<p>Ta có 54 Sự kiện Phép trừ, nhưng không quá khó nhớ vì ta đã học rất nhiều tổ hợp số.</p>
+<h4 id="luyen-dung-10-mieng-va-viet" class="minor-title"><span>Luyện dùng 10, miệng và viết</span></h4>
+<pre class="formula-block"><code>11 - 7 = 10 - 7 + 1     11 + 7 = 10 + 7 + 1
+15 - 6 = 10 - 6 + 5     15 + 6 = 10 + 6 + 5
+13 - 8 = 10 - 8 + 3     13 + 8 = 10 + 8 + 3
+16 - 7 = 10 - 7 + 6     16 + 7 = 10 + 7 + 6</code></pre>
+<p>Bắt đầu với hàng chục, hãy cộng:</p>
+<pre class="formula-block"><code>11 + 12   11 + 14   11 + 16   11 + 18   11 + 15   12 + 13
+12 + 14   12 + 17   13 + 13   13 + 15   14 + 14   14 + 15
+15 + 15   14 + 16   13 + 17   12 + 18   11 + 19   15 + 17
+13 + 18   16 + 18   17 + 16   19 + 14   12 + 19   13 + 17
+13 + 18   22 + 39   33 + 29   45 + 37   54 + 39   63 + 29
+44 + 38   75 + 26   53 + 28   v.v.</code></pre>
+<p>Khi đi vào hàng trăm, ta có thể dùng chúng để giúp cộng hoặc trừ, giống như đã dùng hàng chục và các bội số của mười.</p>
+<p>Ví dụ:</p>
+<pre class="formula-block"><code>201 + 308 = 200 + 300 + 1 + 8 = 500 + 9 = 509</code></pre>
+<p>Luyện tính nhẩm:</p>
+<pre class="formula-block"><code>306 + 407, 209 + 306, 408 + 305, 708 + 207, 405 + 506, v.v.</code></pre>
+<h4 id="nhan-va-chia-voi-su-giup-do-cua-hang-chuc" class="minor-title"><span>Nhân và chia với sự giúp đỡ của hàng chục</span></h4>
+<p>Những em biết bảng nhân sẽ thấy việc này dễ.</p>
+<pre class="formula-block"><code>2 × 46 = (2 × 40) + (2 × 6)
+       = 80 + 12
+       = 90 + 2
+       = 92</code></pre>
+<p>Làm vài bài khác theo cùng cách:</p>
+<pre class="formula-block"><code>3 × 35, 4 × 24, 3 × 16, 2 × 37, v.v.</code></pre>
+<p>Nếu 6 là <code>2 × 3</code>, hay 6 chia cho 3 là 2, thì:</p>
+<pre class="formula-block"><code>6 chục chia cho 3 chục là 2.
+60 ÷ 30 = 2.
+600 ÷ 300 = 2.
+v.v.</code></pre>
+<p>Làm các phép chia này trong đầu:</p>
+<pre class="formula-block"><code>80 ÷ 20
+90 ÷ 30
+120 ÷ 40
+150 ÷ 50
+560 ÷ 70
+v.v.</code></pre>
+<h3 id="chia-dai-2" class="lesson-title"><span>Chia dài</span></h3>
+<p>Ôn lại hoặc giới thiệu các thuật ngữ dùng trong phép chia:</p>
+<pre class="formula-block"><code>thương
+số chia ) số bị chia</code></pre>
+<p>Thông thường, cách nhanh nhất để tính ra điều gì đó là suy nghĩ. Tuy nhiên, ta phải có khả năng thể hiện cách mình nghĩ bằng văn bản, và đôi khi việc viết giúp ta suy nghĩ.</p>
+<p>Nếu tôi yêu cầu em chia 56 cho 4, em có thể làm mà không cần viết ra. Em có thể nghĩ <code>10 × 4</code> là 40 và còn dư 16; 16 là <code>4 × 4</code>; 10 lần 4 và 4 lần 4 là 14 lần 4.</p>
+<p>Vậy:</p>
+<pre class="formula-block"><code>56 ÷ 4 = 14</code></pre>
+<p>Hoặc em có thể nghĩ theo cách em viết. 4 vào 5 được 1 và dư 1; mang 1 (như một chục) xuống và thêm 6 để thành 16; 4 vào 16 được 4. Thương (14) được viết phía trên số bị chia.</p>
+<p>Chia trên bảng:</p>
+<pre class="formula-block"><code>84 ÷ 6
+96 ÷ 8</code></pre>
+<p>Cho thấy điều em “mang”.</p>
+<p>Trong các phép chia này, ta không viết mọi “bước suy nghĩ”. Ta có thể dành thời gian làm điều đó trong cái gọi là “chia dài”. Trong chia dài, ta đặt thương phía trên số bị chia:</p>
+<pre class="formula-block"><code>56 ÷ 4 = 14
+
+4 vào 5 được 1; chia.
+1 × 4 = 4; nhân.
+5 - 4 = 1; trừ.
+Hạ 6 xuống; hạ xuống.
+4 vào 16 được 4; lại chia.
+4 × 4 = 16; nhân.
+16 - 16 = 0; trừ.</code></pre>
+<p>Đây là một bài hát để giúp em nhớ phải làm gì:</p>
+<p>Chia - nhân - trừ - hạ xuống.</p>
+<p>Em có thể thấy vì sao việc này được gọi là chia dài. Ta không cần chia theo cách dài khi số chia chỉ có một chữ số; nhưng nếu số chia có 2 chữ số hoặc nhiều hơn, chia dài giúp ta vì ta không phải giữ tất cả các số trong đầu.</p>
+<h4 id="bai-luyen-chia-dai-tren-bang-roi-trong-vo" class="minor-title"><span>Bài luyện chia dài trên bảng, rồi trong vở</span></h4>
+<p>Dùng hàng chục hoặc bội số của hàng chục làm trợ giúp khi chia:</p>
+<pre class="formula-block"><code>510 ÷ 17</code></pre>
+<p>17 không đi vào 5 nhưng sẽ đi vào 51. 20 đi vào 50 ít nhất 2 lần. <code>2 × 17 = 34</code>. <code>51 - 34 = 17</code>. Vậy 17 sẽ đi vào 51 được 3 lần, và đi vào 0 được 0 lần.</p>
+<p>Ông Jones, người nuôi gà, bán 3744 quả trứng cho chợ. Ông đóng chúng theo từng tá vào hộp trứng. Ông đã dùng bao nhiêu hộp?</p>
+<pre class="formula-block"><code>3744 ÷ 12 = ?</code></pre>
+<p>3744 quả trứng này được đẻ bởi 72 con gà mái. Nếu mỗi con đẻ số trứng bằng nhau, mỗi con đã đẻ bao nhiêu quả?</p>
+<pre class="formula-block"><code>3744 ÷ 72 = ?</code></pre>
+<p>V.v.</p>
+<h2 id="mot-tuyen-chon-bai-hoc-cho-lop-nam-2" class="chapter-title"><span class="chapter-eyebrow">Chương</span><span>Một tuyển chọn bài học cho lớp Năm</span></h2>
+<h3 id="lich-su-cac-con-so-2" class="lesson-title"><span>Lịch sử các con số</span></h3>
+<p>Trích từ <em>Numbers and Numerals</em> của Smith và Ginsburg, Bureau of Publications, Teachers College, Columbia University.</p>
+<p>Đối với số một, tất cả các dân tộc được biết đến đều đã dùng hình ảnh ngón tay giơ lên, hoặc một que đặt xuống, hoặc một viên sỏi.</p>
+<p>Đối với số hai, người ta dùng hai ngón tay hoặc hai que. Khi được viết nhanh, các dạng này dần biến đổi thành những ký hiệu được người Ả Rập và Ba Tư dùng, rồi phát triển thành số <code>2</code> của chúng ta.</p>
+<p>Các chữ số hình nêm được người Sumer và Chaldea dùng khoảng 5000 năm trước, và về sau được người Babylon và Assyria dùng, được ấn trên bảng đất sét bằng những que thường có dạng tam giác với cạnh sắc, nhưng cũng có khi tròn.</p>
+<p>Ở Viễn Đông, một dạng ký hiệu biểu thị số 3. Dạng phổ biến nhất ở Trung Quốc và Nhật Bản ngay cả ngày nay là ba nét ngang. Ba nét này khi nối lại đã trở thành số <code>3</code> của chúng ta. Các dạng viết nhanh cũng hình thành những dạng Ba Tư, Ả Rập và Sanskrit khác.</p>
+<p>Số bốn cũng phát triển từ cách sắp xếp que hoặc ngón tay. Nó có dạng riêng ở Babylon, Ai Cập và La Mã. Người Ả Rập nối bốn đường lại, và dạng ấy xuất hiện ngày nay như số <code>4</code>.</p>
+<p>Số <code>27,529</code> được người Ai Cập cổ viết bằng các ký hiệu riêng của họ.</p>
+<p>Ghi chú: Một số ký hiệu cổ trong phần này là hình minh họa trong PDF, không được trích xuất đầy đủ thành văn bản. Khi cần tái tạo bài giảng trực quan, nên đối chiếu trang gốc để vẽ lại các dấu hiệu.</p>
+<h3 id="cau-chuyen-ve-pythagoras-2" class="lesson-title"><span>Câu chuyện về Pythagoras</span></h3>
+<p>Tham khảo: <em>Richards Encyclopedia</em>; <em>History of Math</em>, Vol. 10; <em>Encyclopedia Britannica</em>; <em>The Great Initiates</em> của Edouard Schure.</p>
+<p>Ở Hy Lạp cổ đại, Cha của các vị thần có tên là Zeus. Có một câu chuyện rất xưa kể rằng Zeus muốn tìm chính trung tâm của trái đất, nên ngài cho hai con đại bàng bay từ đông và tây; chúng gặp nhau tại một nơi ở Hy Lạp, nơi có một vòng núi gồ ghề mọc lên và giữa chúng là một hẻm sâu. Từ trong hẻm nổi lên một tảng đá cao, bao quanh bởi vách đá dựng đứng. Tại đây hai con đại bàng gặp nhau; tại đây là trung tâm của thế giới. Ở đây người Hy Lạp xây một đền thờ Apollo, con trai của Zeus và là Thần Ánh sáng. Phía sau đền có một khe nứt trong đá, từ đó bốc lên một làn hơi sương; phía trên khe nứt ngồi một nữ tư tế được gọi là Pythoness. Khi làn sương bốc quanh bà, bà có thể nhìn vào tương lai và nói về những điều một ngày kia sẽ xảy ra. Nhiều người đến nơi này, Delphi, để hỏi về tương lai.</p>
+<p>Một ngày nọ, một người thợ kim hoàn giàu có và người vợ trẻ đến Delphi để hỏi Pythoness. Bà nói với họ rằng họ sẽ có một người con trai “sẽ hữu ích cho mọi người trong mọi thời đại.”</p>
+<p>Khi đứa trẻ ra đời, cha mẹ cậu tràn đầy niềm vui; và khi cậu được một tuổi, mẹ đưa cậu đến một tư tế để được chúc phúc, sao cho khi lớn lên cậu sẽ khôn ngoan và tốt lành.</p>
+<p>Tên cậu bé là Pythagoras, và cậu lớn lên dịu dàng, điềm tĩnh và trầm tư. Từ đôi mắt cậu tỏa ra ánh sáng như của minh triết lớn lao, ngay cả khi còn là một cậu bé nhỏ; và cha mẹ cậu lo cho cậu có những người thầy khôn ngoan nhất.</p>
+<p>Khi Pythagoras lớn hơn và bắt đầu tự suy nghĩ, cậu thấy các thầy không phải ai cũng nói cùng một điều. Một thầy tuyên bố rằng mọi sự sống nảy sinh từ trái đất và các yếu tố của nó, rồi cuối cùng lại trở về đó; và con người là tù nhân của trái đất và thiên nhiên; dù con người không thể làm gì ngoài việc chịu đựng các quy luật tự nhiên, họ có thể cố hiểu và biết các quy luật ấy. Một thầy khác nói rằng mọi sự sống đến từ cõi trời của các vị thần, và con người trên trái đất phải cầu nguyện với các vị thần để sớm được trở về trời.</p>
+<p>Một đêm đầy sao, khi Pythagoras mười tám tuổi, cậu đi lên một đỉnh đồi phía trên thành phố nơi mình sống. Cậu có thể thấy ánh đèn cung điện nhà vua giữa những đốm sáng khác. Cậu thấy bến cảng và ánh đèn của những con tàu từ các xứ khác, và phía trên cậu, các vì sao tỏa sáng. Cậu nghe tiếng hò hét và ca hát của những người vui chơi hoang dại trong cung điện, rồi tiếng thét của các nô lệ, những người bị bán làm nô lệ vì đã không tuân lệnh vua. Họ bị quất bằng dây da gắn đinh để buộc phải lên các tàu nô lệ.</p>
+<p>Khi ấy một câu hỏi lớn nảy sinh trong tâm hồn Pythagoras. Nếu trái đất là nhà tù của con người, và nếu để lên được trời con người phải cầu nguyện với các vị thần, và nếu giữa trời cao bên trên và đất thấp bên dưới là con người đứng trong đau đớn, khổ sở, thậm chí điên loạn, thì vì sao con người tồn tại? Từ đó về sau, câu hỏi này không rời khỏi cậu.</p>
+<p>Để tìm câu trả lời, cậu quyết định đến Ai Cập. Các đền thờ ở đó là những trường học nơi các tư tế dạy câu trả lời cho những câu hỏi như vậy. Cậu ở Ai Cập 22 năm và học những điều được gọi là “các con số thiêng”. Rồi từ Babylon, một đạo quân lớn kéo đến và ngôi đền Ai Cập bị phá hủy. Pythagoras bị bắt làm tù nhân đưa đến Babylon và bị giữ ở đó 12 năm. Tuy vậy, ngay ở đó ông cũng tìm được những bậc thầy khôn ngoan. Từ họ, ông học về các vì sao và chuyển động của chúng.</p>
+<p>Nhiều minh triết trở thành của ông; và khi được tự do rời Babylon, ông trở về Hy Lạp, đến Delphi, để dạy các tư tế của đền thờ những tri thức lớn lao đến mức họ, những người đã bắt đầu nói nhiều lời vô nghĩa, lại có thể trao minh triết cho dân chúng.</p>
+<p>Sau một năm, ông đến Crotona, một thành phố Hy Lạp ở Ý. Tại đó ông mở một trường học, nơi nhiều thanh niên nam nữ đến tìm sự học.</p>
+<p>Bất kỳ học trò mới nào trong trường của Pythagoras cũng được trông đợi phải giữ im lặng trong ít nhất 2 năm, có thể 5 năm, và chủ yếu lắng nghe người hướng dẫn mà không thảo luận hay tranh luận. Một học trò như vậy thậm chí sẽ bị nhốt một mình trong một căn phòng trống, được đưa cho một bảng đá, nước và bánh mì khô, cho đến khi tìm được câu trả lời cho một câu hỏi như: “Ý nghĩa của một tam giác nội tiếp trong một vòng tròn là gì?”</p>
+<p>Khi học trò được đưa ra khỏi phòng “thử thách” và dẫn vào một phòng đầy học trò lớn hơn, họ sẽ chế giễu người ấy như giáo viên đã dặn. Đói, mệt, không biết tam giác nội tiếp trong vòng tròn nghĩa là gì, và nghe các học trò lớn van xin mình kể điều đã khám phá, học trò mới sẽ bộc lộ mình là loại người nào. Nếu cậu mất bình tĩnh, đập vỡ bảng đá, nguyền rủa trường học và thầy giáo rồi bỏ đi, không ai ngăn cậu lại. Nhưng nếu cậu trả lời rằng mình còn nhiều điều phải học và sẵn lòng thử bài kiểm tra như vậy hết lần này đến lần khác, thậm chí một trăm lần, để đạt được chút minh triết, cậu sẽ được chào đón như một học trò xứng đáng trong trường.</p>
+<p>Pythagoras quan tâm học trò của mình là kiểu người nào hơn là việc học trò có khám phá được ý nghĩa của một tam giác nội tiếp trong vòng tròn hay không. Nhưng nếu người ấy làm được điều này thì càng tốt.</p>
+<p>Một số giáo huấn của Pythagoras là gì?</p>
+<p>Ông dạy về Âm nhạc của các Thiên cầu, thứ âm nhạc tinh tế ngọt ngào nhất mà con người từng biết, vang lên khi các thiên thể xoay quanh một ngọn lửa trung tâm lớn, từ đó chúng nhận ánh sáng. Ông khám phá và dạy về các quãng hòa âm nằm dưới sự tạo thành âm thanh âm nhạc, và rằng chiều dài của một dây đàn có quan hệ toán học chính xác với cao độ của âm.</p>
+<p>Ông dạy rằng “mọi sự đều là số,” bởi ông tìm thấy chân lý trong các con số và dùng chúng như chìa khóa để hiểu các quy luật của tự nhiên. Ông dạy rằng toàn bộ thế giới được hình thành thông qua các tổ hợp số khác nhau. Một tổ hợp tạo nên đá, tổ hợp khác tạo nên một đức hạnh như lòng nhân ái. Cũng như có 10 Thiên cầu quay quanh Hestia, ngọn Lửa trung tâm, để tạo nên Âm nhạc của các Thiên cầu, cũng có 10 cặp đối cực trong sự hợp nhất từ đó vũ trụ nảy sinh:</p>
+<ol>
+<li>Cái hữu hạn và cái vô hạn</li>
+<li>Số lẻ và số chẵn</li>
+<li>Cái một và cái nhiều</li>
+<li>Bên phải và bên trái</li>
+<li>Nam và nữ</li>
+<li>Nghỉ ngơi và chuyển động</li>
+<li>Thẳng và cong</li>
+<li>Ánh sáng và bóng tối</li>
+<li>Thiện và ác</li>
+<li>Vuông và chữ nhật thuôn</li>
+</ol>
+<p>Ông dạy rằng các yếu tố của số là lẻ và chẵn. Khi số lẻ được chia thành hai phần bằng nhau, một đơn vị còn lại ở giữa: <code>(oo) o (oo)</code>. Khi số chẵn được chia như vậy, một khoảng trống còn lại, không có chủ và không có số, cho thấy nó khiếm khuyết và chưa trọn vẹn: <code>(oo) (oo)</code>. Số chẵn đầu tiên (2) là nữ tính, số lẻ đầu tiên (3) là nam tính, và sự hợp nhất của <code>2 + 3</code>, tức 5, là hôn nhân. Số 4, số bình phương đầu tiên, là công lý.</p>
+<p>Pythagoras cũng khám phá những con số ẩn trong các hình dạng khác nhau, chẳng hạn tam giác, hình vuông và hình chữ nhật thuôn. Ông gọi chúng là “số tam giác”, “số bình phương” và “số chữ nhật”.</p>
+<p>Các số tam giác nảy sinh qua việc cộng <code>1 + 2 + 3 + 4</code> và cứ thế, vì chúng có thể được hình dung như các tam giác. Số 10 là tam giác của 4.</p>
+<p>Các số bình phương xuất hiện khi, bắt đầu với 1, ta cộng các số lẻ liên tiếp: <code>1 + 3 + 5 + 7</code>, v.v. Chúng có thể được hình dung như tạo thành các hình vuông ngày càng lớn.</p>
+<p>Các số chữ nhật có thể mang hình dạng một hình chữ nhật khi ta cộng các số chẵn liên tiếp: <code>2 + 4 + 6 + 8</code>, v.v.</p>
+<p>Nếu ta đếm số hình trong mỗi hình chữ nhật mới, ta thấy chúng là bội số của một số chẵn và một số lẻ: <code>1 × 2</code>, <code>2 × 3</code>, <code>3 × 4</code>, v.v.</p>
+<p>Pythagoras coi trọng số học hơn mọi thứ, nâng nó lên khỏi việc chỉ phục vụ thương mại và làm nó thành nền tảng của trật tự trong thế giới này. Tuy vậy, ông cũng đưa vào cân đo để người làm thương mại sử dụng. Ông khảo sát và khám phá nhiều quan hệ trong hình học mà ngay cả các em ngày nay cũng sẽ học trong đời sống học đường.</p>
+<p>Pythagoras là một người xưa, nhưng minh triết của ông là một phần của tư tưởng và tri thức hiện đại. Như Pythoness đã tiên tri, nhà tư tưởng này đã “hữu ích cho mọi người trong mọi thời đại.”</p>
+<h3 id="bang-phan-so-tuong-duong-trong-mot-inch-2" class="lesson-title"><span>Bảng phân số tương đương trong một inch</span></h3>
+<p>Ta đã đếm và so sánh các phân số xuất hiện trên thước trong phạm vi một inch. Ta thấy rằng <code>1/8</code> giống với <code>2/16</code>, <code>1/4</code> giống với <code>4/16</code> và <code>2/8</code>, v.v.</p>
+<p>Bằng cách nghiên cứu bảng ta đã lập, em có thể nói phân số bằng nhau, hay phân số tương đương nào (nghĩa là các phân số có giá trị bằng nhau) đã được mở rộng và phân số nào đã được rút gọn không?</p>
+<p>Hãy làm ra:</p>
+<pre class="formula-block"><code>Phân số mở rộng        Phân số rút gọn
+1/8  &lt; 2/16            4/16 &gt; 2/8
+1/4  &lt; 4/16            8/16 &gt; 4/8
+3/8  &lt; 6/16            12/16 &gt; 6/8
+1/2  &lt; 8/16            16/16 &gt; 8/8
+5/8  &lt; 10/16
+v.v.</code></pre>
+<p>Ta dùng phép tính nào để mở rộng phân số? Phép nhân.</p>
+<p>Ta dùng phép tính nào để rút gọn phân số? Phép chia.</p>
+<p>Ta nhân hoặc chia cho những số nào? Trong mỗi cặp phân số có một số nhân duy nhất hoặc một số chia duy nhất. Nếu so sánh các tử số và mẫu số, ta có thể khám phá con số bí mật mà em có thể không nhìn thấy, nhưng nó tác động lên cả hai.</p>
+<p>Khi mở rộng <code>1/2</code> thành <code>8/16</code>, số nhân bí mật là 8.</p>
+<pre class="formula-block"><code>8 × 1 = 8
+8 × 2 = 16</code></pre>
+<p>Khi rút gọn <code>12/16</code> thành <code>6/8</code>, số chia bí mật là 2.</p>
+<pre class="formula-block"><code>12 ÷ 2 = 6
+16 ÷ 2 = 8</code></pre>
+<p>Quy tắc cần theo là: Khi mở rộng hoặc rút gọn một phân số, ta phải nhân hoặc chia cả hai phần của phân số cho cùng một số.</p>
+<p>Không có điểm kết thúc trong việc mở rộng bất kỳ phân số nào. Em có thể tìm các số nhân bí mật trong:</p>
+<pre class="formula-block"><code>2/3 = 4/6 = 20/30 = 40/60 = 120/180</code></pre>
+<p>Khi rút gọn phân số, ta thường đi đến điểm dừng vì không có số chia nào đi vào cả tử số và mẫu số của phân số ấy. Khi đó ta nói rằng ta đã rút gọn nó về dạng thấp nhất. Để tìm hiểu điều này, hãy thử rút gọn các phân số sau cho đến khi không thể làm nữa. Em có thể dùng 2 làm số chia.</p>
+<pre class="formula-block"><code>20/20, 16/20, 12/20, 8/20, 4/20</code></pre>
+<h3 id="chia-voi-phan-so-2" class="lesson-title"><span>Chia với phân số</span></h3>
+<p>Ba câu hỏi:</p>
+<pre class="formula-block"><code>Có bao nhiêu nửa inch trong 1 inch? 2.
+1/2 inch đi vào 1 inch bao nhiêu lần? 2 lần.
+1 inch chia cho 1/2 inch là gì? 2.</code></pre>
+<p>Nếu:</p>
+<pre class="formula-block"><code>2 × 1/2&quot; = 1&quot;   thì 1&quot; ÷ 1/2&quot; = 2
+4 × 1/2&quot; = 2&quot;   thì 2&quot; ÷ 1/2&quot; = 4</code></pre>
+<p>Hoàn thành các câu sau:</p>
+<pre class="formula-block"><code>6 × 1/2&quot; = ?    thì 3&quot; ÷ 1/2&quot; = ?
+2 × 1/4&quot; = ?    thì 1/2&quot; ÷ 1/4&quot; = ?
+3 × 1/4&quot; = ?    thì 3/4&quot; ÷ 1/4&quot; = ?
+4 × 1/4&quot; = ?    thì 1&quot; ÷ 1/4&quot; = ?
+8 × 1/4&quot; = ?    thì 2&quot; ÷ 1/4&quot; = ?
+12 × 1/4&quot; = ?   thì 3&quot; ÷ 1/4&quot; = ?</code></pre>
+<p>Chia cho <code>1/2</code> không giống chia cho 2. Khi ta cắt một chiếc bánh sô-cô-la thành 2 phần bằng nhau, mỗi phần là <code>1/2</code> chiếc bánh.</p>
+<p>Chia cho 2 là tìm <code>1/2</code> của một thứ.</p>
+<p>Chia cho 3 là tìm <code>1/3</code> của một thứ.</p>
+<p>Chia cho 4 hoặc 5 là tìm <code>1/4</code> hoặc <code>1/5</code> của một thứ. Vì vậy, nếu thứ đó là một phân số, nó hoạt động như sau:</p>
+<pre class="formula-block"><code>1/2 ÷ 2 nghĩa là 1/2 của 1/2, hay 1/2 × 1/2
+1/4 ÷ 2 = 1/2 × 1/4
+1/2 ÷ 4 = 1/4 × 1/2</code></pre>
+<p>Điều gì đã thay đổi? Phép chia đã được đổi thành phép nhân. Một điều khác cũng đã thay đổi.</p>
+<p>Điều gì biến mất khi ta đổi từ chia sang nhân? Các số nguyên! 2 trở thành <code>1/2</code>, 4 trở thành <code>1/4</code>. Và quy tắc nhân phân số là gì? Nhân tử số với tử số và mẫu số với mẫu số. Phân số nào đứng trước có quan trọng không?</p>
+<pre class="formula-block"><code>1/2 × 1/4 = 1/8</code></pre>
+<p>cũng giống như:</p>
+<pre class="formula-block"><code>1/4 × 1/2 = 1/8</code></pre>
+<p>Để đi đến quy tắc chia với phân số, ta cần nhớ thêm một điều nữa, đó là ta có thể viết số nguyên dưới dạng phân số:</p>
+<pre class="formula-block"><code>1 = 1/1, 2 = 2/1, 3 = 3/1, 4 = 4/1, ...</code></pre>
+<pre class="formula-block"><code>1/4 ÷ 5/1 nghĩa là 1/5 của 1/4
+hay 1/5 × 1/4</code></pre>
+<p>Bỏ qua hai bước giữa, ta có thể viết:</p>
+<pre class="formula-block"><code>1/4 ÷ 5/1 = 1/4 × 1/5 = 1/20
+1/6 ÷ 3/1 = 1/6 × 1/3 = 1/18
+1/3 ÷ 4/1 = 1/3 × 1/4 = 1/12</code></pre>
+<p>Mỗi lần ta đã làm gì? Ta đã đảo ngược (lật ngược) số chia và nhân. Hãy theo quy tắc này với vài ví dụ khác:</p>
+<pre class="formula-block"><code>1/2 ÷ 3/4 = 1/2 × 4/3 = 4/6 = 2/3
+3/4 ÷ 1/2 = 3/4 × 2/1 = 6/4 = 3/2 = 1 1/2</code></pre>
+<h3 id="em-co-the-triet-tieu-no-2" class="lesson-title"><span>Em có thể triệt tiêu nó</span></h3>
+<p>Em đã nghe bao nhiêu lần rằng một trò chơi hoặc buổi dã ngoại bị hủy vì mưa? Em đã bao giờ hủy lịch hẹn nha sĩ vì bị cảm nặng chưa? Những dịp như vậy đơn giản là bị “gạch bỏ” khỏi lịch dự định của em. Trong làm việc với phân số, ta có thể triệt tiêu một số con số, nhưng điều đó không giống hủy các buổi dã ngoại hay cuộc hẹn vốn không còn đó nữa (trừ khi chúng được dời lại). Trong phân số, một số khác thay thế cho số mà em triệt tiêu.</p>
+<p>Đến giờ em đã biết rõ rằng <code>4/8</code> có thể rút gọn thành <code>1/2</code>, <code>2/6</code> có thể rút gọn thành <code>1/3</code>, v.v. Khi rút gọn <code>4/8</code> thành <code>1/2</code>, em đã chia cả 4 và 8 cho 4. Em đã làm điều đó trong đầu. Nhưng em cũng có thể làm rất nhanh bằng viết. Số 4 được gọi là “thừa số chung”, số mà em chia vào tử số và mẫu số của <code>4/8</code>. Khi viết, em gạch tử số và đặt 1 phía trên, gạch mẫu số và đặt 2 phía dưới. Em đang triệt tiêu một số và đặt số khác vào chỗ của nó.</p>
+<pre class="formula-block"><code>4/8 = 1/2</code></pre>
+<p>4 là thừa số chung; 4 là số lớn nhất có thể đi vào cả 4 và 8.</p>
+<h4 id="vi-du-khac" class="minor-title"><span>Ví dụ khác</span></h4>
+<p>Dùng thừa số chung lớn nhất có thể, hãy đơn giản hóa hoặc rút gọn các phân số sau, cho thấy cách triệt tiêu:</p>
+<pre class="formula-block"><code>4/10, 6/8, 10/12, 6/9, 10/15, 12/18, 7/28</code></pre>
+<p>Giả sử em phải tìm <code>3/4</code> của <code>5/6</code> yard ruy băng đỏ.</p>
+<p>Một cách:</p>
+<pre class="formula-block"><code>3/4 × 5/6 = 15/24 = 5/8 yard</code></pre>
+<p>Bây giờ, thay vì triệt tiêu và rút gọn trong đáp án, em có thể làm điều đó trong số bị nhân hoặc số nhân không? Không trong <code>3/4</code> và không trong <code>5/6</code>, nếu chưa làm thêm một điều khác.</p>
+<p>Ta có thể viết tất cả tử số phía trên một vạch phân số duy nhất và đặt tất cả mẫu số dưới đó:</p>
+<pre class="formula-block"><code>(3 × 5) / (4 × 6) = 15/24</code></pre>
+<p>Em biết rằng trong phép nhân, em có thể đổi vị trí các số phù hợp:</p>
+<pre class="formula-block"><code>(5 × 3) / (4 × 6) = 15/24</code></pre>
+<p>Bây giờ em có thể triệt tiêu trong biểu thức nhân:</p>
+<pre class="formula-block"><code>(5 × 1) / (4 × 2) = 5/8</code></pre>
+<p>Nhưng vì sao phải đổi chỗ các số? Để chúng ở vị trí ban đầu cũng không khác gì. Em vẫn có thể tìm những số cần triệt tiêu.</p>
+<pre class="formula-block"><code>3/4 × 5/6 = 1/4 × 5/2 = 5/8</code></pre>
+<p>Hãy triệt tiêu càng nhiều phân số càng tốt trước khi nhân:</p>
+<pre class="formula-block"><code>2/7 × 14/15 × 5/8 × 6/10 = 1/10</code></pre>
+<h3 id="he-thap-phan-3" class="lesson-title"><span>Hệ thập phân</span></h3>
+<p>Từ “decimal” đến từ tiếng Hy Lạp <em>deka</em>, nghĩa là mười. December từng là tháng thứ mười trong lịch La Mã cổ, vốn bắt đầu năm vào tháng Ba. Một decade là khoảng thời gian mười năm. Một decapod là cua hoặc tôm hùm có mười chân. Một decagon là hình mười cạnh. Hệ thống tiền tệ Hoa Kỳ dựa trên số thập phân, hay các bội số của 10. Các hàng số của ta khi đếm cũng dựa trên các bội số của 10.</p>
+<p>Khi ta di chuyển từ phải sang trái, từ hàng đơn vị đến hàng triệu, mỗi bước ta nhân với 10. Điều gì xảy ra khi ta di chuyển theo hướng ngược lại? Ta đang chia cho 10.</p>
+<p>Ta có thể tiếp tục di chuyển sang phải, vượt quá hàng đơn vị, nhưng ta đặt một dấu chấm giữa hàng đơn vị và các hàng theo sau để cho thấy đó là các phân số thập phân.</p>
+<p>Sự khác biệt giữa <code>9.0</code> và <code>0.9</code> là gì? Ai trong các em sẽ giàu hơn nếu một người có <code>$9.0</code> và người kia có <code>$.90</code>?</p>
+<p>Số nguyên lớn hơn khi chúng di chuyển sang trái của dấu thập phân. Phân số nhỏ hơn khi chúng di chuyển sang phải của dấu thập phân.</p>
+<p>Em có thể đọc phân số xa đến đâu?</p>
+<h3 id="phan-so-thuong-va-phan-so-thap-phan-2" class="lesson-title"><span>Phân số thường và phân số thập phân</span></h3>
+<p>Nếu tôi hỏi: “Bảng nhân nào dễ nhất?” các em sẽ trả lời: “Bảng 1.” Bảng dễ kế tiếp là bảng 10. Tất cả những gì em phải làm là nhân với 1 và thêm một số không vào đáp án: <code>1 × 12 = 12</code>, và <code>10 × 12 = 120</code>. Dễ kế tiếp là bảng 100. <code>100 × 12 = 1200</code>. Và cứ như thế qua hàng nghìn, chục nghìn, trăm nghìn, triệu và cao hơn. Ta chỉ phải theo dõi số lượng số không trong số nhân. Chẳng hạn:</p>
+<pre class="formula-block"><code>99 = 1 × 99
+990 = 10 × 99
+9900 = 100 × 99
+99000 = 1000 × 99</code></pre>
+<p>Phân số nào của một dollar có thể đổi sang cents nhanh nhất?</p>
+<pre class="formula-block"><code>1/5, 1/3, 1/2, 1/20, 1/10, 1/100, 1/12</code></pre>
+<p>Cái nào dễ nghĩ ra hơn?</p>
+<pre class="formula-block"><code>12 + 25 hay 10 + 20
+46 - 7 hay 40 - 10
+21 × 32 hay 20 × 30
+650 ÷ 36 hay 600 ÷ 30</code></pre>
+<p>Cái nào dễ cộng hơn?</p>
+<pre class="formula-block"><code>6 inches + 4 inches
+hay
+6.312 inches + 4.375 inches</code></pre>
+<p>Giả sử em phải đo một thứ chính xác nhất có thể, đến độ rộng của một sợi tóc. Khoảng nhỏ nhất trên thước của em là <code>1/16</code> inch. Độ rộng của một sợi tóc nhỏ hơn nhiều. Có các dụng cụ đo gọi là calipers có thể dùng để đo những phần mảnh như tóc. Nếu em muốn đo các phần hay phân số của <code>1/16</code> inch, nó sẽ như sau. Cho cả lớp làm các ví dụ này.</p>
+<pre class="formula-block"><code>1/2 × 1/16 = 1/32
+1/2 × 1/32 = 1/64
+1/2 × 1/64 = 1/128
+1/16 × 1/16 = 1/256
+1/32 × 1/16 = 1/512
+1/64 × 1/16 = 1/1024</code></pre>
+<p><code>1/1024</code> inch xấp xỉ <code>1/1000</code> inch.</p>
+<p>Có phải sẽ đơn giản hơn nếu inch của em được chia thành phần mười thay vì phần mười sáu không? Điều đó sẽ đọc thế nào?</p>
+<pre class="formula-block"><code>1/2 × 1/10 = 1/20
+1/2 × 1/20 = 1/40
+1/10 × 1/10 = 1/100
+1/10 × 1/100 = 1/1000</code></pre>
+<p>Cũng như việc trả lời các câu hỏi số bằng cách dùng hàng chục dễ hơn, việc dùng phần mười và phần trăm đơn giản hơn dùng phần mười sáu, phần ba mươi sáu và các phân số thường khác.</p>
+<p>Ta chia một yard thành phần ba để có feet, hoặc thành phần ba mươi sáu để có inches. Ta chia feet thành phần mười hai để có inches, và chia inches theo các bội số của 2 như phần tư, phần tám và phần mười sáu.</p>
+<p>Ở châu Âu, đơn vị đo gần yard nhất là meter. Nó được chia thành phần mười để có decimeter, rồi lại được chia thành phần mười để có centimeter. Một centimeter chia cho 10 là một millimeter. Em có thể nói nhanh millimeter là phần nào của meter không? <code>10 × 10 × 10 = ?</code>, hay <code>1/10 × 1/10 × 1/10 = ?</code>. Em có thể nói nhanh như vậy <code>1/16</code> inch là phần nào của một yard không?</p>
+<p>Ngoài hệ mét châu Âu, phần mười, phần trăm và phần nghìn được dùng ở đâu?</p>
+<ul>
+<li>Đồng hồ đo quãng đường xe hơi.</li>
+<li>Ống đo mưa, đo từng <code>1/100</code> inch.</li>
+<li>Tiền Hoa Kỳ.</li>
+<li>Nhiệt kế.</li>
+</ul>
+<p>Đây là một số cách dùng của hệ thập phân.</p>
+<p>Khi ta viết <code>1/10</code>, ta đang viết nó như một phân số thường. Ta đổi nó thành phân số thập phân khi bỏ mẫu số và đổi vạch phân số thành dấu thập phân, như <code>.1</code>.</p>
+<pre class="formula-block"><code>5/10 = .5
+6/10 = .6
+12/100 = .12
+25/100 = .25
+v.v.</code></pre>
+<p>Phân số thập phân là các phân số chỉ có thể ở phần mười, phần trăm, phần nghìn, v.v. Chúng xuất hiện ở đúng hàng của mình bên phải dấu thập phân. Em có thể đọc đúng các phân số thập phân này không:</p>
+<pre class="formula-block"><code>.1
+.01
+.001
+.0001
+.00001
+.000001
+.0000001</code></pre>
+<p>Biết các hàng số này là đủ nếu em muốn đổi phần mười hoặc phần triệu từ phân số thường sang phân số thập phân. Ta phải làm thêm điều gì đó nếu muốn đổi, hay “rút gọn”, các phân số thường khác sang phân số thập phân.</p>
+<p><code>1/10</code> nghĩa là 1 chia cho 10; nếu ta kéo dài số bị chia với sự giúp đỡ của dấu thập phân, ta có thể có đủ hàng số để chia 1 cho 10:</p>
+<pre class="formula-block"><code>1.0 ÷ 10 = 0.1</code></pre>
+<p>Nhưng ta phải biểu thị thương như một phân số, tức một phân số thập phân. Phải có dấu thập phân trong thương ngay phía trên dấu trong số bị chia.</p>
+<h4 id="bai-luyen-lam-trong-lop" class="minor-title"><span>Bài luyện làm trong lớp</span></h4>
+<pre class="formula-block"><code>1/2 = 1.0 ÷ 2 = 0.5
+1/4 = 1.00 ÷ 4 = 0.25
+1/5 = 1.0 ÷ 5 = 0.2
+1/25 = 1.00 ÷ 25 = 0.04</code></pre>
+<p>Đến lúc này, ta có thể thấy rằng mỗi lần đổi một phân số thường thành phân số thập phân, ta đang chia tử số cho mẫu số. Hãy theo quy tắc và làm thêm.</p>
+<pre class="formula-block"><code>2/5 = 0.4
+3/5 = 0.6
+3/20 = 0.15
+9/20 = 0.45</code></pre>
+<h4 id="bai-lam-tren-lop-hoac-o-nha" class="minor-title"><span>Bài làm trên lớp hoặc ở nhà</span></h4>
+<p>Rút gọn các phân số thường này thành phân số thập phân:</p>
+<pre class="formula-block"><code>3/10, 6/10, 7/25, 4/25, 3/20, 6/20, 8/20, 1/12, 3/8</code></pre>
+<h4 id="bang-phan-so-va-so-thap-phan-tuong-duong" class="minor-title"><span>Bảng phân số và số thập phân tương đương</span></h4>
+<p>Làm đến chữ số thập phân thứ hai, với số dư phân số, để ghi nhớ.</p>
+<pre class="formula-block"><code>1 whole = 1.00
+1/2 = .50
+1/3 = .33
+1/4 = .25
+1/5 = .20
+1/6 = .16
+1/7 = .14
+1/8 = .125 hoặc .12
+1/9 = .11
+1/10 = .10
+1/11 = .09
+1/12 = .08
+2/3 = .66
+3/4 = .75
+5/6 = .83
+3/8 = .37
+7/8 = .87
+11/12 = .91</code></pre>
+<h2 id="mot-tuyen-chon-bai-hoc-cho-lop-sau-2" class="chapter-title"><span class="chapter-eyebrow">Chương</span><span>Một tuyển chọn bài học cho lớp Sáu</span></h2>
+<h3 id="he-thap-phan-4" class="lesson-title"><span>Hệ thập phân</span></h3>
+<p>Hệ thập phân là hệ thống tính bằng hàng chục hoặc phần mười. Hệ thống số của ta dựa trên số mười. Mỗi hàng số ở bên trái dấu thập phân có giá trị gấp 10 lần hàng trước nó. Mỗi hàng ở bên phải có giá trị bằng <code>1/10</code> hàng trước đó.</p>
+<h4 id="phan-so-thuong-nhu-phan-so-thap-phan" class="minor-title"><span>Phân số thường như phân số thập phân</span></h4>
+<pre class="formula-block"><code>1/10 = .1
+1/100 = .01
+1/1000 = .001
+1/10000 = .0001
+1/100000 = .00001</code></pre>
+<p>Ta biết rằng:</p>
+<pre class="formula-block"><code>1 = 10/10 = 1.0
+1/2 = 5/10 = .5
+1/5 = 2/10 = .2
+1/4 = 25/100 = .25
+3/4 = 75/100 = .75</code></pre>
+<p>Em sẽ tìm số thập phân tương đương của các phân số thường khác như thế nào? Em có nhớ quy tắc không?</p>
+<p>Chia tử số cho mẫu số!</p>
+<p>Theo quy tắc này và cho thấy rằng:</p>
+<pre class="formula-block"><code>1/3 = .33...
+1/6 = .16...
+1/7 = .14...
+1/8 = .125
+1/9 = .11...
+1/11 = .09...
+1/12 = .08...
+1/16 = .06...</code></pre>
+<p>Cũng tiện để biết các số thập phân tương đương sau:</p>
+<pre class="formula-block"><code>2/3 = 2 × .33... = .66...
+5/6 = 5 × .16... = .83...
+5/8 = 5 × .125 = .625
+7/8 = 7 × .125 = .875
+11/12 = 1.00 - .08... = .91...
+15/16 = 1.00 - .06... = .93...</code></pre>
+<p>Đổi các phân số thường sau thành phân số thập phân đến hàng thứ hai, nếu cần thì biểu thị số dư như phân số thường:</p>
+<pre class="formula-block"><code>2/11, 3/11, 4/7</code></pre>
+<h4 id="chinh-ta" class="minor-title"><span>Chính tả</span></h4>
+<p>Tra nghĩa của các từ này, viết lại và học cách đánh vần:</p>
+<pre class="formula-block"><code>decimal
+decapod
+decagon
+decalog
+decade
+decennial
+decimate</code></pre>
+<h3 id="percent-nghia-la-tren-mot-tram-2" class="lesson-title"><span>Percent nghĩa là trên một trăm</span></h3>
+<p>Năm ngoái ta đã học rằng dùng phân số thập phân dễ hơn phân số thường, và ta có thể đổi phân số thường thành phân số thập phân bằng cách chia tử số cho mẫu số.</p>
+<p>Đổi một phân số thường thành phần trăm là tìm giá trị của nó trên một trăm, hay percent. <em>Centum</em> là từ Latin nghĩa là một trăm.</p>
+<p>Nếu một em làm đúng 12 trong 20 câu trả lời trong một bài kiểm tra, điểm số dưới dạng phân số thường là <code>12/20</code>. Để tìm điểm phần trăm, ta chia 20 vào 12:</p>
+<pre class="formula-block"><code>12 ÷ 20 = .60
+12/20 = 60/100 = .60 = 60%</code></pre>
+<p>Vì <code>$1.00 = 100¢</code>, ta dễ dàng tìm phân số của một dollar thông qua phần trăm, hay percent (<code>%</code>).</p>
+<pre class="formula-block"><code>1/100 của $1.00 giống như 1% của $1.00
+1% của $1.00 = $.01 = 1¢
+
+6/100 của $1.00 giống như 6% của $1.00
+6% của $1.00 = $.06 = 6¢
+
+10/100 của $1.00 là 10% của $1.00, hay 10¢</code></pre>
+<p>Để tìm một phần trăm của nhiều hơn <code>$1.00</code>, chẳng hạn 6% của <code>$2.00</code>, ta có thể nghĩ: vì percent nghĩa là trên một trăm, 6% nghĩa là <code>6/100</code> hay <code>.06</code>.</p>
+<p><code>6/100</code> của <code>$2.00</code> giống như <code>.06 × $2.00</code>.</p>
+<pre class="formula-block"><code>$2.00 × .06 = $.1200 = 12¢</code></pre>
+<p>Dù ta muốn tìm phần trăm của dollar, bushel, pound hay trẻ em, ta đổi phần trăm thành phần trăm dưới dạng phân số thập phân và nhân với nó.</p>
+<p>Các bước để tìm 20% của 30 là gì?</p>
+<pre class="formula-block"><code>20% = 20/100 = .20
+.2 của 30 = .2 × 30 = 6.0
+20% của 30 = 6</code></pre>
+<p>Theo cùng các bước này, hãy tìm:</p>
+<pre class="formula-block"><code>25% của 16
+35% của 84
+90% của 250
+v.v.</code></pre>
+<p>Cũng để trẻ đưa ra ví dụ.</p>
+<h3 id="mill-la-gi-2" class="lesson-title"><span>Mill là gì?</span></h3>
+<p>Các em thường có thể tìm thấy dime, nickel và penny trong ví, nhưng không bao giờ tìm thấy mill. Các em giữ mill trong tâm trí. Nếu em đủ giàu để sở hữu một penny, thì em có 10 mills. Một mill là <code>1/10</code> của một cent.</p>
+<p>Là số thập phân, em viết nó là <code>$.001</code>, đọc là <code>1/1000</code> của một dollar.</p>
+<p>Em biết rằng <code>.01 = 1%</code>, nên <code>.001 = 1/10%</code>.</p>
+<pre class="formula-block"><code>1 mill = 1/10 cent = $.001 = 1/10%
+2 mills = 2/10 cent = $.002 = 2/10%
+3 mills = 3/10 cent = $.003 = 3/10%
+3 3/10 mills = $.0033 = 33/100%
+4 1/2 mills = $.0045 = 45/100%
+1/2 mill = $.0005 = 5/100%
+6 3/8 mills = $.006375 = ?%</code></pre>
+<p>Nếu:</p>
+<pre class="formula-block"><code>1 mill = $1/1000
+19 mills = $19/1000 = $.019 = 1 9/10% của $1.00
+22 mills = $22/1000 = $.022 = 2 2/10% của một dollar</code></pre>
+<p>12 mills, 9 mills, 9.2 mills là bao nhiêu phần trăm của một dollar?</p>
+<h3 id="phan-tram-phan-so-2" class="lesson-title"><span>Phần trăm phân số</span></h3>
+<p>Khi nghĩ theo mill, em có thể hiểu phần trăm phân số, hay các phân số của cent.</p>
+<pre class="formula-block"><code>1/2% = .005
+1/3% = .0033...
+1/4% = .0025
+1/5% = .0020
+v.v.
+
+1 1/2% = .015
+3 1/2% = .035
+2 1/4% = .0225
+v.v.</code></pre>
+<p>Em có thể đổi các phần trăm sau thành số thập phân không?</p>
+<p>Nếu <code>10.3% = .103</code>, vậy <code>22.2%</code>, <code>1.5%</code>, <code>4.25%</code>, <code>5.5%</code> và những số tương tự thì sao?</p>
+<h3 id="dan-nhap-vao-lai-2" class="lesson-title"><span>Dẫn nhập vào lãi</span></h3>
+<p>Nếu Michael hỏi mượn tôi 30¢ tiền xe thì sao? Các em sẽ nghĩ gì về tôi nếu tôi nói: “Tôi sẽ cho em mượn 30¢, nhưng em sẽ phải trả tôi 3¢ mỗi ngày cho mỗi ngày trôi qua trước khi em trả lại số đã mượn. Nếu em mất 7 ngày để trả, em sẽ nợ tôi không chỉ 30¢ mà còn thêm <code>7 × 3¢</code>, tức 21¢, tổng cộng 51¢.” Nói cách khác, tôi sẽ tính Michael 10% số tiền vay mỗi ngày, một cái giá cho việc sử dụng tiền. Các em sẽ nghĩ tôi đang lợi dụng Michael bằng cách bắt em trả lại nhiều hơn số em đã mượn.</p>
+<p>Các em có thể tưởng tượng những thường dân La Mã trở về từ chiến tranh. Ruộng đồng hay cửa hàng của họ bị bỏ bê và cần được khôi phục. Họ muốn mua vật liệu mới nhưng không có tiền. Họ đã không được trả tiền để chiến đấu cho La Mã. Họ phải vay số tiền mình cần và bằng cách nào đó phải trả lại nhiều hơn số đã vay, chỉ vì dùng tiền của ai đó. Nếu không thể, họ bị bắt làm nô lệ hoặc bị đưa vào tù.</p>
+<p>Khoản phí cho việc sử dụng tiền được cho vay này thời trước được gọi là “usury” (cho vay nặng lãi, Latin: <em>usuria</em>). Những người cho vay tiền và tính phí cho việc sử dụng nó được gọi là “usurers” và bị khinh miệt nhiều.</p>
+<p>Họ có một “interest” trong rắc rối của người khác, không phải sự quan tâm để giúp người gặp rắc rối, mà là lợi ích cho chính họ và để làm ra thứ gì đó cho mình từ nhu cầu của người khác. Vì thế, thuật ngữ usury dần được gọi là interest, nghĩa là số tiền người cho vay tính cho khoản vay.</p>
+<p>Vì vậy nếu tôi tính Michael 10% mỗi ngày cho khoản vay 30¢, khoản phí ấy sẽ đại diện cho interest của tôi trong việc cho em vay tiền, chứ hoàn toàn không phải interest của em trong việc vay tiền, tức nhu cầu được đi xe thay vì đi bộ suốt đường về nhà.</p>
+<p>Lãi, như một khoản phí cho việc sử dụng tiền, được tính như một phần trăm của số tiền được vay, gọi là tiền gốc. Thời cổ, tỷ lệ lãi bị tính rất cao; đó là lý do người nghèo, những người phải vay và không thể trả lại tiền gốc cộng lãi, bị trừng phạt bằng tù ngục hoặc nô lệ.</p>
+<p>Ở Hy Lạp, Solon cấm bán con người làm nô lệ vì họ không thể trả lãi cho các khoản vay. Về sau nhiều, người Do Thái và Giáo hội Kitô giáo cấm usury trong cộng đồng của mình, tức cấm tính lãi suất cao. Thời về sau, lãi suất thấp được pháp luật cho phép, và đã đến lúc con người có thể vừa vay vừa tiết kiệm tiền có lãi.</p>
+<p>Điều này nghĩa là gì?</p>
+<p>Nếu một người nghèo, như em hay tôi, cần tiền, người ấy có thể vay từ ngân hàng và trả dần với một lãi suất công bằng và hợp pháp.</p>
+<p>Hoặc nếu một người nghèo muốn tiết kiệm tiền, người ấy có thể cho ngân hàng vay tiền, và ngân hàng sẽ trả lãi cho việc sử dụng tiền của người ấy.</p>
+<p>Thời La Mã, thường là người nghèo phải vay từ những người có tiền. Ngày nay, ngân hàng là nơi bất kỳ ai cũng có thể gửi tiền vào tài khoản tiết kiệm và được ngân hàng trả tiền cho việc sử dụng số tiền ấy.</p>
+<p>Giả sử em đặt <code>$100</code> vào tài khoản tiết kiệm ở ngân hàng. Ngân hàng sẽ trả cho em một tỷ lệ lãi nhất định, có thể <code>5 1/4%</code> mỗi năm, chừng nào em để tiền trong ngân hàng. Em sẽ kiếm được bao nhiêu lãi trong một năm?</p>
+<pre class="formula-block"><code>5 1/4% = .0525
+$100.00 × .0525 = $5.25</code></pre>
+<p>Khi đó tài khoản tiết kiệm của em sẽ có số dư <code>$105.25</code> (tiền gốc cộng lãi), dĩ nhiên nếu em để <code>$100.00</code> trong tài khoản cả năm và không gửi thêm trong năm để kiếm thêm lãi.</p>
+<h3 id="them-vai-van-de-ve-lai-2" class="lesson-title"><span>Thêm vài vấn đề về lãi</span></h3>
+<p>Tiền thuê nhà được trả cho việc sử dụng một ngôi nhà.<br>Tiền vé được trả cho việc sử dụng xe buýt hoặc máy bay.<br>Lãi được trả cho việc sử dụng tiền.</p>
+<p>Tiền được dùng để kiếm tiền thông qua lãi. Khi ngân hàng cho em vay tiền, ngân hàng kiếm phần lãi em trả. Khi ngân hàng vay tiền của em, ngân hàng trả lãi cho em.</p>
+<p>Tiền được vay gọi là principal, tiền gốc (viết tắt là <code>P</code>).</p>
+<p>Interest (<code>I</code>) là tiền được trả cho việc sử dụng tiền gốc.</p>
+<p>“Rate” hay tỷ lệ lãi em trả là một phần trăm của tiền gốc trong một khoảng “time” nhất định.</p>
+<p>Nếu em vay <code>$100</code> và trả <code>$5</code> lãi, em đã trả lãi với tỷ lệ 5%.</p>
+<pre class="formula-block"><code>Principal (P) = $100
+Rate (R) = 5% = .05
+Interest (I) = $5.00</code></pre>
+<p>Số tiền trả lại là <code>P + I = $105.00</code>, và tỷ lệ được tính cho thời gian (<code>T</code>) là một năm.</p>
+<p>Nếu ông Jones vay <code>$600</code> từ ngân hàng với tỷ lệ 6% mỗi năm, rồi trả khoản vay cộng lãi, ông đã trả bao nhiêu cho khoản vay?</p>
+<pre class="formula-block"><code>P = $600
+R = .06 (6%)
+I = $36.00</code></pre>
+<p>Ta tìm lãi bằng cách nhân tiền gốc với tỷ lệ. Ta có thể viết quy tắc, được gọi là công thức:</p>
+<pre class="formula-block"><code>I = P × R</code></pre>
+<p>Giả sử ta đã biết lãi (<code>$36</code>) và tiền gốc (<code>$600</code>) và muốn tìm tỷ lệ. Ta làm thế nào? <code>$36</code> là một phân số của <code>$600</code>, đúng không?</p>
+<pre class="formula-block"><code>36/600 = 6/100 = .06 = 6%</code></pre>
+<p>Công thức để tìm tỷ lệ là gì?</p>
+<pre class="formula-block"><code>I / P = R</code></pre>
+<p>Nếu 6% của số tiền ông Jones vay là <code>$36</code>, ông đã vay bao nhiêu? Nói cách khác, làm thế nào tìm tiền gốc nếu biết tỷ lệ và lãi?</p>
+<p>Nếu <code>P × .06 = 36</code>, thì <code>P</code> và <code>.06</code> là các thừa số của 36. Em có thể chia 36 cho thừa số em biết, <code>.06</code>, để tìm thừa số kia, <code>P</code>, tức số chưa biết.</p>
+<pre class="formula-block"><code>36 ÷ .06 = 600</code></pre>
+<p>Em có thể làm ra công thức để tìm tiền gốc không?</p>
+<pre class="formula-block"><code>I / R = P</code></pre>
+<h3 id="nam-nay-nam-sau-mot-luc-nao-do-2" class="lesson-title"><span>Năm nay? Năm sau? Một lúc nào đó?</span></h3>
+<p>Các khoản vay không nhất thiết được trả lại trong một năm, dù tỷ lệ lãi dựa trên một năm.</p>
+<p>Một thợ xây vay <code>$2500.00</code> từ ngân hàng để hoàn thiện một ngôi nhà. Ông trả lại vào cuối 2 năm với lãi 6% mỗi năm. Ông đã trả bao nhiêu lãi?</p>
+<pre class="formula-block"><code>P = $2500
+R = .06
+I = $150 cho 1 năm
+T = 2 năm
+Tổng I = $300</code></pre>
+<p>Lấy thời gian (<code>T</code>) là độ dài thời gian ông dùng để trả khoản vay, ta thấy:</p>
+<pre class="formula-block"><code>I = P × R × T</code></pre>
+<p>Ông Smith đầu tư <code>$1800</code> (<code>P</code>) và nó sinh <code>$225</code> (<code>I</code>) trong <code>2 1/2</code> năm (<code>T</code>). Tỷ lệ (<code>R</code>) là bao nhiêu?</p>
+<p>Dùng công thức, ta có thể tìm tỷ lệ chưa biết:</p>
+<pre class="formula-block"><code>I = P × R × T
+$225 = $1800 × R × 2.5
+R = I / (P × T)
+R = 225 / (1800 × 2.5) = 5%</code></pre>
+<p>Công thức sẽ là gì?</p>
+<pre class="formula-block"><code>I / (P × T) = R</code></pre>
+<p>Bài toán: Tìm tỷ lệ nếu <code>P = $700</code>, <code>I = $52.50</code>, <code>T = 1 năm 3 tháng</code>.</p>
+<p>Anh trai của ông Smith vay <code>$600</code> với lãi 5% và trả <code>$75</code> lãi. Ông đã mất bao lâu để trả lại khoản vay cùng lãi? Thời gian là thừa số chưa biết. Công thức của ta sẽ là:</p>
+<pre class="formula-block"><code>I / (R × P) = T</code></pre>
+<p>Em có thể làm ra không? Có phải là <code>2 1/2</code> năm không?</p>
+<p>Nếu lãi chưa biết, ta có thể tìm nó bằng cách nhân tiền gốc với tỷ lệ với thời gian:</p>
+<pre class="formula-block"><code>I = P × R × T</code></pre>
+<p>Nếu bất kỳ thừa số nào khác chưa biết, ta có thể tìm nó bằng cách chia lãi cho hai thừa số đã biết:</p>
+<pre class="formula-block"><code>I / (R × P) = T
+I / (P × T) = R
+I / (R × T) = P</code></pre>
+<p>Bây giờ các em đã sẵn sàng hiểu đại số ở lớp Bảy!</p>
+<h3 id="lai-don-va-lai-kep-2" class="lesson-title"><span>Lãi đơn và lãi kép</span></h3>
+<p>Các em có thể không nghĩ rằng những gì mình đã học đến giờ về lãi là rất đơn giản, nhưng nó được gọi là lãi đơn.</p>
+<h4 id="mot-vi-du-ve-lai-don" class="minor-title"><span>Một ví dụ về lãi đơn</span></h4>
+<pre class="formula-block"><code>P × R × T = I
+$100 × .04 × 1 năm = $4.00
+P + I = $104.00</code></pre>
+<p>Giả sử Ngân hàng Tiết kiệm cộng tiền lãi vào tài khoản của em với tỷ lệ 4% mỗi năm, mỗi quý một lần, tức mỗi ba tháng, và em để phần lãi trong tài khoản suốt cả năm. Ngân hàng sẽ trả cho em vì để ngân hàng dùng cả tiền gốc lẫn tiền lãi. Khi ấy tiền của em đang sinh lãi kép.</p>
+<h3 id="lai-kep-2" class="lesson-title"><span>Lãi kép</span></h3>
+<pre class="formula-block"><code>1 Jan - 1 Apr
+P = $100
+R = .04
+I năm = $4.00
+T = .25
+I quý = $1.00
+New P = $101.00
+
+1 Apr - 1 Jul
+P = $101
+R = .04
+I quý = $1.01
+New P = $102.01
+
+1 Jul - 1 Oct
+P = $102.01
+R = .04
+I quý = $1.0201
+New P = $103.03
+
+1 Oct - 1 Jan
+P = $103.03
+R = .04
+I quý = $1.0303
+New P = $104.06</code></pre>
+<h3 id="hoa-hong-2" class="lesson-title"><span>Hoa hồng</span></h3>
+<p>Ta mua hầu hết những gì mình cần với số lượng nhỏ từ các cửa hàng. Chủ cửa hàng, được gọi là “retailer” (người bán lẻ), mua những gì mình cần để dự trữ cửa hàng với số lượng lớn hơn nhiều từ những người sản xuất hoặc lưu kho hàng hóa. Những người này là “wholesalers” (người bán buôn) vì họ xử lý những lượng hàng hóa còn lớn hơn.</p>
+<p>Đây là một cách hoạt động. Người nông dân nuôi bò sữa vắt sữa bò hai lần một ngày, sáng sớm và cuối buổi chiều. Sữa được đổ vào một bồn sữa lớn vô trùng. Nó được một người kinh doanh sữa thu gom; người này đến với xe bồn, gắn một đường ống vô trùng vào bồn sữa của nông dân và hút sữa vào bồn xe. Rồi ông đưa sữa đến cơ sở của mình, nơi ông làm nóng sữa đến một nhiệt độ nhất định, không đun sôi, rồi làm lạnh rất nhanh và niêm phong trong hộp như sữa “tiệt trùng kiểu pasteur”. Một phần sữa được đồng nhất hóa, tức được lắc để kem hòa trộn vĩnh viễn với sữa. Việc đó cũng do người kinh doanh làm. Rồi các hộp sữa được phân phối đến nhiều cửa hàng, nơi ta mua chúng.</p>
+<p>Dọc suốt con đường ấy, sữa phải được trả tiền.</p>
+<p>Người nông dân (người sản xuất) nhận một mức giá nhất định từ người kinh doanh. Sau đó, để pasteur hóa, đồng nhất hóa, đóng gói, v.v., người kinh doanh phải lấy giá cao hơn từ người bán tạp hóa. Người bán tạp hóa tính chúng ta cao hơn số ông đã trả cho người kinh doanh, để bù chi phí của mình, như làm lạnh, cho đến khi ông bán sữa cho ta.</p>
+<p>Vì thế, giữa người sản xuất (nông dân), người bán buôn (người kinh doanh) và người bán tạp hóa (người bán lẻ), giá mà em, với tư cách người tiêu dùng, phải trả cho sữa mình uống đã được tăng hai lần kể từ khi nó rời nông dân: một lần bởi người kinh doanh và một lần nữa bởi người bán tạp hóa.</p>
+<p>Có những tình huống khác nơi bán lẻ đóng vai trò của mình. Ta có thể nói về các agent hoặc agency tham gia bán một thứ gì đó cho người khác. Có đại lý nghệ sĩ, đại lý văn học, và đại lý ô tô. Có các agency việc làm, nơi em có thể đến nhờ giúp tìm việc. Họ bán sức lao động của em cho một người sử dụng lao động, và em phải trả cho agency một khoản hoa hồng từ số mình kiếm được. Có các agency cho thuê, và chủ nhà phải trả hoa hồng cho agency vì tìm được người thuê. Một người bán một thứ gì đó cho người khác, dù là tác phẩm nghệ thuật hay sữa, thường được trả một phần trăm của doanh số, và số tiền người ấy nhận được gọi là hoa hồng.</p>
+<p>Rất thường khi một người bán buôn thuê một người gọi là “broker” (môi giới) để sắp xếp bán hàng hóa cho các cửa hàng bán lẻ. Người bán buôn trả cho môi giới, dưới dạng hoa hồng, một phần của số tiền mà chính ông lẽ ra nhận được nếu bán hàng trực tiếp cho người bán lẻ. Chẳng hạn, người nông dân nuôi bò sữa có thể nhận nhiều tiền hơn cho sữa của mình nếu ông làm tất cả công việc pasteur hóa, đóng gói và phân phối; nhưng ông đã có đủ việc chỉ với chăm sóc bò, chuồng trại, vắt sữa, trồng và thu hoạch cỏ khô và ngô, cùng nhiều việc khác. Vì vậy, người môi giới ở giữa người sản xuất, người kinh doanh và người bán lẻ được gọi là người trung gian. Ông cũng phải kiếm sống, và trong hầu hết các ngành kinh doanh, số tiền ông kiếm được phụ thuộc vào lượng hàng ông bán. Ông được trả theo hoa hồng. Nếu bán nhiều, ông kiếm nhiều. Nếu việc kinh doanh kém, hoặc nếu ông là người bán hàng kém, ông gặp khó khăn.</p>
+<h3 id="mot-so-bai-toan-2" class="lesson-title"><span>Một số bài toán</span></h3>
+<p>Ông Brown thuê một đại lý bất động sản bán nhà cho ông với giá <code>$25,000.00</code>. Hoa hồng của đại lý là 5%. Nếu đại lý bán được nhà, ông ấy sẽ kiếm được bao nhiêu hoa hồng? Ông Brown sẽ nhận được bao nhiêu tiền ròng?</p>
+<pre class="formula-block"><code>$25,000 × .05 = $1,250 hoa hồng
+$25,000 - $1,250 = $23,750 tiền ròng</code></pre>
+<p>Một người trồng cam gửi 1000 thùng cam cho một môi giới. Người môi giới bán chúng với giá <code>$3.75</code> mỗi thùng. Tổng doanh số là bao nhiêu?</p>
+<pre class="formula-block"><code>$3.75 × 1000 = $3,750.00</code></pre>
+<p>Người môi giới chỉ gửi lại <code>$3,300.00</code> cho người trồng. Người môi giới kiếm được bao nhiêu?</p>
+<pre class="formula-block"><code>$3,750 - $3,300 = $450 hoa hồng</code></pre>
+<p>Tỷ lệ hoa hồng của ông là bao nhiêu? <code>$450</code> là bao nhiêu phần trăm của <code>$3,750</code>? Để tìm, hãy rút gọn phân số <code>450/3750</code> về dạng thấp nhất và chia tử số cho mẫu số. Em có được <code>.12</code> hay 12% không?</p>
+<h3 id="them-cong-thuc-2" class="lesson-title"><span>Thêm công thức</span></h3>
+<p>Có ba công thức. Chúng giúp em tìm số chưa biết trong các câu hỏi liên quan đến doanh số, hoa hồng và tỷ lệ.</p>
+<h4 id="tim-hoa-hong" class="minor-title"><span>Tìm hoa hồng</span></h4>
+<p>Nếu doanh số (<code>S</code>) là <code>$500</code>, và tỷ lệ (<code>R</code>) là 5%, hoa hồng (<code>C</code>) là bao nhiêu?</p>
+<pre class="formula-block"><code>S × R = C
+$500 × .05 = $25.00
+C = $25.00</code></pre>
+<h4 id="tim-ty-le" class="minor-title"><span>Tìm tỷ lệ</span></h4>
+<p>Nếu doanh số là <code>$2,750</code> và hoa hồng là <code>$660</code>, tỷ lệ là bao nhiêu?</p>
+<pre class="formula-block"><code>C / S = R
+$660 / $2750 = .24
+R = 24%</code></pre>
+<h4 id="tim-doanh-so" class="minor-title"><span>Tìm doanh số</span></h4>
+<p>Một môi giới trái cây nhận hoa hồng 12% ước tính rằng ông phải kiếm <code>$300</code> mỗi ngày để vận hành công việc. Doanh số hằng ngày phải là bao nhiêu?</p>
+<pre class="formula-block"><code>C / R = S
+$300 / .12 = $2,500.00</code></pre>
+<h3 id="cac-dot-ban-hang-dac-biet-2" class="lesson-title"><span>Các đợt bán hàng đặc biệt</span></h3>
+<p>Tháng Một thường là thời điểm trong năm khi các thương nhân muốn bán hết hàng tồn sau Giáng sinh để có chỗ cho hàng mới sắp đến. Vì lý do nào đó, chúng được gọi là White Sales, có lẽ vì vẫn còn nhiều tuyết rơi. Đó cũng là thời điểm tốt để giá giảm. Thương nhân giảm giá. Phần giảm trong giá được gọi là discount, và tỷ lệ của nó là một phần trăm nhất định của giá trước Giáng sinh. Cũng có những lý do khác cho các đợt sale. Em có nghĩ ra lý do nào không? Người tiết kiệm chờ sale, tìm sale, mua trong sale để tiết kiệm tiền. Họ là những người săn món hời. Họ thích tính xem mình tiết kiệm được gì theo tỷ lệ và số tiền giảm giá.</p>
+<p>Em có thể tính vài câu hỏi này không?</p>
+<p>Đặt <code>P = giá thường</code>, <code>S = giá sale</code>, <code>D = giảm giá</code>, <code>R = tỷ lệ</code>.</p>
+<p>Trong đợt Sale Kỷ niệm 90 năm của một cửa hàng, giá thường của 1 gallon sơn giảm từ <code>$6.98</code> xuống <code>$4.89</code>. Số tiền giảm là bao nhiêu và tỷ lệ là bao nhiêu?</p>
+<pre class="formula-block"><code>P = $6.98
+S = $4.89
+D = ?
+R = ?
+D / P = R</code></pre>
+<p>Một lốp xe thường bán với giá <code>$31.00</code> được giảm 9%. Giá sale là bao nhiêu? Dùng công thức:</p>
+<pre class="formula-block"><code>P × R = D
+P - D = S</code></pre>
+<p>Một Câu lạc bộ Sách giảm giá một tiểu thuyết xuống <code>$2.97</code>. Số tiền giảm là <code>$1.98</code>. Giá trước khi giảm là bao nhiêu?</p>
+<pre class="formula-block"><code>S + D = P</code></pre>
+<p>Tỷ lệ giảm giá là bao nhiêu? Em có biết công thức không?</p>
+<p>Ta đã học về giảm giá trong các đợt sale. Có những lý do khác cho giảm giá, chẳng hạn mua số lượng lớn, như từ người bán buôn, giả sử 500 lbs. đường thay vì 5 lbs.; giảm giá cho tổ chức, như giảm 10% vì em mua cho trường học hoặc trại; giảm giá tiền mặt, như khi trả tiền mặt cùng đơn hàng thay vì trả khi nhận hóa đơn.</p>
+<p>Ngày mai tôi sẽ kể cho các em về những lúc em phải trả nhiều hơn giá của một món hàng thay vì ít hơn.</p>
+<h3 id="thue-2" class="lesson-title"><span>Thuế</span></h3>
+<p>Ghi chú: Các sự kiện và số liệu dùng trong thảo luận này lấy từ <em>World Almanac</em> năm 1964. Thầy cô sẽ phải cập nhật chúng.</p>
+<p>Ở New York City, mọi thứ tôi mua đều khiến tôi trả nhiều hơn giá mà cửa hàng ghi trên hàng hóa. Gần như mọi thứ! Vì sao? Có ai lừa tôi không? Không. Em và tôi đang trả tiền cho các dịch vụ mà chính phủ cung cấp bằng cách trả thuế. Các khoản thuế này cung cấp tiền giúp vận hành chính quyền thành phố, tiểu bang và quốc gia. Có thuế bán hàng: một phần trăm nhất định của giá món hàng được cộng vào giá, và khoản thuế này đi đến chính quyền thành phố hoặc tiểu bang. Có thuế khấu trừ, tức thuế thực sự trên thu nhập của em theo một phần trăm nhất định, đi đến chính quyền tiểu bang (thuế thu nhập tiểu bang) và chính quyền quốc gia (thuế thu nhập liên bang). Ở một số tiểu bang, như New Hampshire, không có thuế bán hàng nhưng có thuế tài sản dựa trên giá trị tài sản của một người. Các khoản thuế này chi trả cho dịch vụ ở thị trấn hoặc thành phố, cũng như trường công.</p>
+<p>Chính phủ phải được công dân hỗ trợ. Chẳng hạn, chính quyền New York City phải trả lương cho tất cả những người làm việc cho thành phố: cảnh sát, nhân viên công viên, người quét đường, nhân viên văn phòng, Thị trưởng, các Ủy viên, Thẩm phán, Giáo viên trường học, Người trông coi, lính cứu hỏa. Thành phố phải trả cho xe cứu hỏa, xe tải, thiết bị văn phòng, hạt giống cỏ, và những vật tư, thiết bị khác quá đa dạng để nghĩ hết cùng lúc. Cũng vậy, chính quyền tiểu bang có chi phí của mình: lương cho Thống đốc, các đại biểu và thượng nghị sĩ, cảnh sát tiểu bang, sở đường cao tốc, v.v. Lương tiểu bang mỗi năm cộng lại.</p>
+<pre class="formula-block"><code>Governor: $50,000
+Lt. Governor: $20,000
+Secretary of State: $28,875
+Treasurer: $35,000
+Attorney General: $35,000
+208 senators and representatives, mỗi người $10,000</code></pre>
+<p>Chính phủ quốc gia, nơi ta dựa vào để nhận sự trợ giúp rộng nhất, phải có tiền trả cho Tổng thống và tất cả trợ lý của ông, các nhà lập pháp trong Quốc hội, thẩm phán liên bang, FBI, Lục quân, Hải quân, Không quân và toàn bộ vũ khí của họ.</p>
+<p>Thuế được thiết lập bởi luật pháp và bởi các đại diện được người dân bầu.</p>
+<p>Thuế 5% trên bữa ăn nhà hàng ở New York City là thuế thành phố. Thuế 15% trên vé đua ngựa là thuế thành phố. Thuế 3% trên giá em trả cho một chiếc xe là thuế thành phố. Thuế của New York City phải được Tiểu bang New York cho phép.</p>
+<p>Một số thuế tiểu bang là: 10% trên mọi đồ trang sức em mua, 5% trên vé máy bay, 5% trên thiết bị gia dụng, 10% trên kính opera, kính trường hoặc ống nhòm, 6¢ mỗi gallon xăng. Một biển số xe ô tô có giá từ <code>$15</code> đến <code>$20</code> mỗi năm và là thuế tiểu bang. Số tiền phụ thuộc vào trọng lượng của xe.</p>
+<p>Tiểu bang New York đánh thuế thu nhập của em, ví dụ:</p>
+<pre class="formula-block"><code>2% trên $1,000
+3% trên $1,001 đến $3,000
+4% trên $3,001 đến $5,000
+5% trên $5,001 đến $7,000
+6% trên $7,001 đến $9,000
+10% trên trên $15,000</code></pre>
+<p>Một số thuế liên bang là: 10% trên vé xem phim, opera và nhà hát; trên lông thú, hành lý, cuộc gọi điện thoại, súng ngắn. Năm ngoái, thuế thu nhập liên bang là 19% thu nhập của em. Năm nay nó được giảm xuống 14% theo yêu cầu của Tổng thống và được Quốc hội biểu quyết. Quốc hội có quyền cuối cùng để áp đặt thuế. Hạ viện đề xuất mức thuế. Chúng phải được cả Hạ nghị sĩ và Thượng nghị sĩ biểu quyết và được Tổng thống thông qua hoặc phủ quyết. Nếu ông phủ quyết một sắc thuế, nó vẫn có thể được <code>2/3</code> Quốc hội biểu quyết thông qua.</p>
+<h3 id="mot-so-cau-trich-dan-ve-thue-2" class="lesson-title"><span>Một số câu trích dẫn về thuế</span></h3>
+<p>Joseph làm thành luật trên đất Ai Cập cho đến ngày nay, rằng Pharaoh sẽ nhận phần năm.</p>
+<ul>
+<li>Sáng thế ký XLVII, 26</li>
+</ul>
+<p>Có một sắc lệnh từ Caesar Augustus rằng cả thế giới phải bị đánh thuế.</p>
+<ul>
+<li>Luke II, 1</li>
+</ul>
+<p>Thuế là gân cốt của nhà nước.</p>
+<ul>
+<li>Cicero</li>
+</ul>
+<p>Thuế và đại diện gắn bó không thể tách rời. Thiên Chúa đã nối chúng lại; không Nghị viện Anh nào có thể chia lìa chúng.</p>
+<ul>
+<li>Lord Camden, 1765</li>
+</ul>
+<p>Đánh thuế mà không có đại diện là bất công và áp bức. Nó đã dẫn đến Cách mạng Mỹ và khai sinh một quốc gia tự do và hùng mạnh.</p>
+<ul>
+<li>Burke</li>
+</ul>
+<p>Sự biếng nhác và kiêu ngạo đánh thuế bằng bàn tay nặng hơn cả các vị vua và nghị viện.</p>
+<ul>
+<li>B. Franklin</li>
+</ul>
+<p>Sự an nghỉ của các quốc gia không thể an toàn nếu không có vũ khí; quân đội không thể được duy trì nếu không có lương; và lương không thể có nếu không có thuế.</p>
+<ul>
+<li>Tacitus</li>
+</ul>
+<p>Thuế là một khoản thanh toán do quyền lực yêu cầu từ một phần cộng đồng vì lợi ích của toàn thể.</p>
+<ul>
+<li>Samuel Johnson</li>
+</ul>
+<p>Thứ thường được làm tăng lên trên đất đô thị là thuế.</p>
+<ul>
+<li>C. D. Warner</li>
+</ul>
+<p>Con ngựa của ông chết, con la của ông què,<br>Và ông mất sáu con bò trong một ván bài poker;<br>Rồi một cơn bão đến vào ngày hè<br>Và thổi bay căn nhà nơi ông sống;<br>Một trận động đất đến khi nhà đã mất,<br>Và nuốt chửng mảnh đất nơi ngôi nhà từng đứng.</p>
+<p>Rồi người thu thuế đi ngang qua,<br>Và tính tiền ông cho cái hố dưới đất.</p>
+<ul>
+<li>Không rõ tác giả</li>
+</ul>
+<h3 id="cac-ty-le-tuong-duong-2" class="lesson-title"><span>Các tỷ lệ tương đương</span></h3>
+<p>Mỗi mùa hè tôi có vài con chim ruồi ăn ngoài cửa sổ. Tôi trộn thức ăn cho chúng và đặt vào các bình thủy tinh. Đó là hỗn hợp mật ong và nước. Công thức là 1 cốc mật ong trộn với 3 cốc nước. Trong toàn bộ hỗn hợp có bao nhiêu cốc nước-mật ong?</p>
+<p>Quan hệ giữa lượng mật ong và lượng nước là gì?</p>
+<p>1 phần mật ong với 3 phần nước, hay 1 với 3 (<code>1:3</code>). Tôi làm một hỗn hợp như vậy ít nhất mỗi tuần một lần trong 12 tuần. Tôi dùng bao nhiêu cốc mật ong và bao nhiêu cốc nước?</p>
+<p>12 cốc mật ong và 36 cốc nước.</p>
+<p>Quan hệ giữa mật ong và nước là như nhau dù trong 1 tuần hay 12 tuần.</p>
+<p><code>1:3</code> là cùng quan hệ với <code>12:36</code>.</p>
+<p>Quan hệ này có một tên đặc biệt, “ratio”, từ tiếng Latin <em>ratio</em>, nghĩa là quan hệ.</p>
+<h4 id="ty-le-mat-ong-voi-nuoc-tung-tuan" class="minor-title"><span>Tỷ lệ mật ong với nước, từng tuần</span></h4>
+<p>Vẽ và điền:</p>
+<pre class="formula-block"><code>Honey  1  2  3  4  5  6  7  8  9  10 11 12
+Water  3  6  9  12 15 18 21 24 27 30 33 36</code></pre>
+<p>Các tỷ lệ này bằng nhau, là tương đương, cũng như em có thể có phân số tương đương: <code>1/3 = 2/6 = 3/9</code>, v.v. Nhưng có khác biệt về ý nghĩa.</p>
+<p><code>1/3</code> là <code>1/3</code> của một cái toàn thể. Nếu tôi có 2 cốc nước-mật ong và <code>1/2</code> là mật ong, <code>1/2</code> là nước, thì tỷ lệ có phải là <code>1:3</code> không? Không. Tỷ lệ sẽ là <code>1:1</code>, mật ong so với nước. Nếu tỷ lệ là <code>1:3</code>, mật ong so với nước, thì lượng mật ong là <code>1/4</code> của toàn bộ và lượng nước là <code>3/4</code> của toàn bộ; có bằng một phần ba lượng mật ong so với lượng nước.</p>
+<p>Nếu em làm đúng <code>4/5</code> số từ trong một bài chính tả, điều đó có cho em biết có bao nhiêu từ trong bài kiểm tra không? Có thể là 20 từ, 100 từ không? Nó có cho em biết bao nhiêu từ đúng, bao nhiêu từ sai không?</p>
+<h3 id="them-cac-ty-le-tuong-duong-2" class="lesson-title"><span>Thêm các tỷ lệ tương đương</span></h3>
+<p>Vẽ và điền:</p>
+<pre class="formula-block"><code>Number of words right: 4   ?   ?   ?    ?
+Number of words in test: 5  10  20  50  100</code></pre>
+<p>Đổi các phân số sau về dạng đơn giản nhất:</p>
+<pre class="formula-block"><code>8/10 = 4/5
+16/20 = 4/5
+40/50 = 4/5
+80/100 = 4/5</code></pre>
+<p><code>80/100</code>, hay <code>80:100</code>, có cùng tỷ lệ với <code>4:5</code>, bất kể cái toàn thể là gì.</p>
+<p><code>80/100</code> như một phân số thật sự nghĩa là 80 trong tổng lượng 100, hay 80%. Tuy nhiên, nếu ta nghĩ percent như một rate, và đổi cách viết từ <code>R A T E</code> sang <code>R A T I O</code>, thì ta có thể hiểu ý nghĩa của một tỷ lệ giữa các số.</p>
+<p>Tỷ lệ là sự so sánh của 2 số.</p>
+<p>So sánh 2 số, chẳng hạn 6 và 4, hay <code>6:4</code>:</p>
+<pre class="formula-block"><code>6 là 1 1/2 × 4</code></pre>
+<p>So sánh 12 và 8:</p>
+<pre class="formula-block"><code>12 là 1 1/2 × 8</code></pre>
+<p>So sánh 9 và 6:</p>
+<pre class="formula-block"><code>9 là 1 1/2 × 6</code></pre>
+<p>Ta có thể nói: 6 đối với 4 cũng như 12 đối với 8 cũng như 9 đối với 6. Chúng là tương đương.</p>
+</main>
+  </article>
+</body>
+</html>

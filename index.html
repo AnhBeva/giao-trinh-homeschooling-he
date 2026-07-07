@@ -3,63 +3,179 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=Giao_trinh_homeschooling_he_2_thang_5-7_va_10-12.html">
-  <title>Giáo trình homeschooling hè 2 tháng</title>
-  <link rel="canonical" href="Giao_trinh_homeschooling_he_2_thang_5-7_va_10-12.html">
+  <title>Thư viện giáo trình BEVA</title>
   <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      background: #f6f8fb;
-      color: #1d1d1f;
+    :root {
+      color-scheme: light;
+      --bg: #f5f6f8;
+      --paper: #ffffff;
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --line: rgba(0, 0, 0, 0.1);
+      --blue: #116ad8;
+      --green: #2f6f73;
+      --warm: #b9802e;
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
     }
 
-    main {
-      width: min(92vw, 560px);
-      padding: 32px;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      border-radius: 8px;
-      background: #fff;
-      box-shadow: 0 18px 60px rgba(17, 106, 216, 0.08);
-      text-align: center;
+    * {
+      box-sizing: border-box;
     }
 
-    img {
-      width: 132px;
-      height: auto;
-      margin-bottom: 18px;
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 8%, rgba(47, 111, 115, 0.12), transparent 28rem),
+        linear-gradient(180deg, #fff 0%, var(--bg) 100%);
+      color: var(--text);
+    }
+
+    main {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: 56px 24px 64px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 54px;
+    }
+
+    .brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
     }
 
     h1 {
-      margin: 0 0 10px;
-      font-size: 28px;
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      max-width: 640px;
+      margin: 18px 0 42px;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.45;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 18px 60px rgba(29, 29, 31, 0.08);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .card h2 {
+      margin: 12px 0;
+      font-size: 30px;
       line-height: 1.12;
       letter-spacing: 0;
     }
 
-    p {
-      margin: 0 0 18px;
-      color: #74777d;
-      line-height: 1.55;
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.56;
     }
 
-    a {
-      color: #116ad8;
-      font-weight: 650;
-      text-decoration: none;
+    .open {
+      margin-top: 28px;
+      color: var(--blue);
+      font-weight: 720;
+    }
+
+    .card.secondary .eyebrow {
+      color: var(--warm);
+    }
+
+    @media (max-width: 760px) {
+      main {
+        padding-top: 32px;
+      }
+
+      .brand {
+        margin-bottom: 38px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: 220px;
+      }
     }
   </style>
 </head>
 <body>
   <main>
-    <img src="logo.jpg" alt="BEVA logo">
-    <h1>Giáo trình homeschooling hè 2 tháng</h1>
-    <p>Đang mở bản HTML đầy đủ.</p>
-    <a href="Giao_trinh_homeschooling_he_2_thang_5-7_va_10-12.html">Mở giáo trình</a>
+    <div class="brand">
+      <img src="logo.jpg" alt="BEVA logo">
+      <div>
+        <strong>BEVA</strong>
+        <span>Thư viện giáo trình và tài liệu đào tạo</span>
+      </div>
+    </div>
+
+    <h1>Giáo trình đẹp, rõ, dùng được ngay.</h1>
+    <p class="intro">Chọn tài liệu cần mở. Các bản HTML được tối ưu để đọc trên trình duyệt và có thể in hoặc xuất PDF.</p>
+
+    <section class="grid" aria-label="Danh sách tài liệu">
+      <a class="card" href="Harrer_Math_Lessons_vi.html">
+        <div>
+          <div class="eyebrow">Waldorf Mathematics</div>
+          <h2>Những bài học Toán cho các lớp Tiểu học</h2>
+          <p>Bản dịch tiếng Việt tài liệu Dorothy Harrer, trình bày theo phong cách sách giáo khoa sang.</p>
+        </div>
+        <div class="open">Mở tài liệu</div>
+      </a>
+
+      <a class="card secondary" href="Giao_trinh_homeschooling_he_2_thang_5-7_va_10-12.html">
+        <div>
+          <div class="eyebrow">Homeschooling</div>
+          <h2>Giáo trình homeschooling hè 2 tháng</h2>
+          <p>Giáo trình hè cho trẻ 5-7 tuổi và 10-12 tuổi, có lịch theo ngày, checklist và rubric.</p>
+        </div>
+        <div class="open">Mở giáo trình</div>
+      </a>
+    </section>
   </main>
 </body>
 </html>
-
