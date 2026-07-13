@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cẩm nang Tiếng Anh Tiểu học theo Waldorf - Bản dịch tiếng Việt</title>
+  <style>
+    :root {
+      --ink: #24302c;
+      --muted: #66746e;
+      --line: #d8ddd6;
+      --paper: #fbfaf6;
+      --panel: #f1f4ee;
+      --accent: #8b3f2f;
+      --accent-2: #2f6f73;
+      --gold: #b3842d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.62;
+      font-size: 17px;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 42px 24px 80px;
+    }
+    header {
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 26px;
+      margin-bottom: 30px;
+    }
+    h1, h2, h3, h4 {
+      line-height: 1.18;
+      letter-spacing: 0;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4vw, 3.7rem);
+    }
+    h2 {
+      margin: 52px 0 14px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 2rem;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 30px 0 10px;
+      font-size: 1.35rem;
+      color: var(--accent-2);
+    }
+    h4 {
+      margin: 22px 0 8px;
+      font-size: 1.05rem;
+      color: var(--ink);
+    }
+    p { margin: 0 0 12px; }
+    ul, ol { margin-top: 8px; padding-left: 1.4rem; }
+    li { margin: 4px 0; }
+    a { color: var(--accent-2); }
+    .meta {
+      color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 760px;
+    }
+    .toc {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 18px 22px;
+      margin: 28px 0 38px;
+      border-radius: 8px;
+    }
+    .toc ol { columns: 2; column-gap: 38px; }
+    .note, .teacher, .summary, .practice, .quote {
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin: 18px 0;
+    }
+    .note { background: var(--panel); border-left: 5px solid var(--gold); }
+    .summary { background: #f7efe9; border-left: 5px solid var(--accent); }
+    .teacher { background: #eaf3f2; border-left: 5px solid var(--accent-2); }
+    .practice { background: #fff; border: 1px solid var(--line); }
+    .quote {
+      background: #fff;
+      border-left: 4px solid var(--line);
+      font-style: italic;
+    }
+    .story {
+      background: #fffdf8;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--gold);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 18px 0 24px;
+    }
+    .label {
+      display: inline-block;
+      margin-bottom: 6px;
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 20px;
+      background: #fff;
+      font-size: 0.96rem;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 9px 10px;
+      vertical-align: top;
+    }
+    th { background: var(--panel); text-align: left; }
+    .verse { white-space: pre-line; margin-left: 1rem; }
+    .small { color: var(--muted); font-size: 0.94rem; }
+    @media print {
+      body { background: #fff; font-size: 12pt; }
+      main { max-width: none; padding: 0; }
+      h2 { break-before: page; }
+      .toc { break-after: page; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Cẩm nang Tiếng Anh Tiểu học theo Waldorf</h1>
+    <p class="meta">Bản dịch tiếng Việt cô đọng từ <em>An English Manual for the Elementary School</em> của Dorothy Harrer, biên tập theo hướng dễ hiểu, đủ ý sư phạm và dùng được trong đào tạo giáo viên. Tài liệu giữ tinh thần Steiner/Waldorf: đi từ hình ảnh, nhịp điệu, vận động, kể chuyện và kinh nghiệm sống trước khi đi tới khái niệm ngữ pháp.</p>
+    <p class="meta">Nguồn PDF: <strong>English manual ws.pdf</strong>. Bản này không thay thế việc đọc nguyên bản khi cần trích dẫn học thuật; mục tiêu là hỗ trợ giáo viên Việt Nam hiểu đúng và triển khai hiệu quả.</p>
+  </header>
+
+  <section class="toc" aria-label="Mục lục">
+    <span class="label">Mục lục</span>
+    <ol>
+      <li><a href="#chuong-1">Nền tảng Steiner về dạy ngôn ngữ</a></li>
+      <li><a href="#chuong-2">Ghi chú workshop về tập làm văn</a></li>
+      <li><a href="#chuong-3">Lớp 2: Bốn loại từ đầu tiên</a></li>
+      <li><a href="#chuong-4">Lớp 3: Câu, miêu tả và trạng từ</a></li>
+      <li><a href="#chuong-5">Lớp 4: Tư tưởng, hành động và ngữ pháp sống</a></li>
+      <li><a href="#chuong-6">Lớp 5: Chủ động, bị động, cụm giới từ, đoạn văn</a></li>
+      <li><a href="#chuong-7">Lớp 6: Cảm quan lời nói và câu điều kiện</a></li>
+      <li><a href="#chuong-8">Lớp 6-7: Nhập môn tập làm văn và thơ</a></li>
+      <li><a href="#chuong-9">Lớp 7: Phong cách, cảm xúc và bài điểm sách</a></li>
+      <li><a href="#chuong-10">Lớp 8: Lời nói, âm thanh, ý nghĩa và tổng kết ngữ pháp</a></li>
+      <li><a href="#chuong-11">Bài luyện phát âm và lời nói</a></li>
+      <li><a href="#phu-luc">Phụ lục triển khai cho giáo viên</a></li>
+    </ol>
+  </section>
+
+  <section id="chuong-1">
+    <h2>1. Nền tảng Steiner về dạy ngôn ngữ</h2>
+    <p>Steiner đặt việc dạy ngôn ngữ trên nền phát triển toàn thể con người. Trước mười hai tuổi, trẻ cần được làm quen sâu với từ loại: danh từ, động từ, tính từ, trạng từ. Sau mười hai tuổi, khi năng lực tư duy trừu tượng rõ hơn, giáo viên mới đi xa hơn vào cú pháp và cấu trúc câu.</p>
+    <p>Việc hiểu câu không nên bắt đầu bằng định nghĩa khô. Trẻ cần được kéo vào việc nói về những gì đang xảy ra quanh mình. Khi trẻ nói “Trời đang mưa”, trẻ còn ở trong sự kiện. Khi trẻ nói “Cỏ mọc xanh”, trẻ đã tách mình ra một chút để nhìn sự vật như đối tượng. Từ đó trẻ dần cảm nhận được chủ ngữ và vị ngữ.</p>
+    <h3>Động từ, danh từ, tính từ</h3>
+    <p><strong>Động từ</strong> gắn với hành động. Khi nói “ai đó viết”, ta không chỉ hiểu bằng đầu mà còn có khuynh hướng tham dự vào hành động ấy bằng thân thể. Động từ đánh thức ý chí.</p>
+    <p><strong>Danh từ</strong> giúp con người ý thức sự độc lập của mình. Khi gọi tên sự vật, ta tách mình khỏi thế giới để nhận biết nó. Danh từ đánh thức năng lực tư duy và định danh.</p>
+    <p><strong>Tính từ</strong> nối con người với phẩm chất của sự vật. Khi nói “chiếc ghế màu xanh”, ta không chỉ gọi tên chiếc ghế mà còn cảm nhận một phẩm chất của nó. Tính từ đi qua cảm xúc và hình ảnh.</p>
+    <h3>Nguyên âm và phụ âm</h3>
+    <p>Lời nói bắt nguồn từ đời sống cảm xúc. Nguyên âm diễn tả sắc thái bên trong: “a” của sự kinh ngạc, “o” của ngạc nhiên hoặc sợ hãi, “ê/i” của sự chỉ trỏ, tiến lại gần, khẳng định. Phụ âm mô phỏng và tạo hình những gì ở thế giới bên ngoài: môi, lưỡi, răng, vòm miệng cùng làm việc để tạo nên hình dạng âm thanh.</p>
+    <h3>Phương pháp dạy</h3>
+    <p>Giáo viên nên đi từ ví dụ sống tới quy tắc. Một ngày sau, quay lại quy tắc và để học sinh tự tìm ví dụ, hoặc nhận ra quy tắc trong bài thơ, câu chuyện, đoạn văn đã thuộc. Ví dụ không cần chép máy móc vào vở; điều cần giữ lại là quy luật đã được trẻ tự cảm thấy.</p>
+    <p>Tập làm văn ở tiểu học nên bắt đầu từ việc kể lại sự kiện đã xảy ra, trải nghiệm đã sống, câu chuyện đã nghe, thay vì “sáng tác tự do” quá sớm. Cách này nuôi năng lực quan sát chính xác và thái độ tôn trọng sự thật.</p>
+    <p>Kể chuyện và văn học cần đánh thức toàn thân trẻ. Khi giáo viên kể chuyện bằng tâm trạng thật, trẻ sống lại câu chuyện bằng cảm xúc, hơi thở, cử chỉ và trí tưởng tượng. Với thơ, điều quan trọng nhất là âm nhạc bên dưới bài thơ; phân tích quá nhiều có thể làm chết sức tác động của thơ.</p>
+    <div class="summary">
+      <span class="label">Tóm tắt chương</span>
+      <p>Dạy ngôn ngữ trong Waldorf là dạy toàn thể con người: danh từ cho tư duy, động từ cho ý chí, tính từ cho cảm xúc, âm thanh cho đời sống thân thể. Trẻ nhỏ cần hình ảnh, kể chuyện, nhịp điệu, vận động và trải nghiệm trước khi học thuật ngữ.</p>
+    </div>
+    <div class="teacher">
+      <span class="label">Hướng dẫn giáo viên sử dụng</span>
+      <ul>
+        <li>Khi dạy một khái niệm ngữ pháp, hãy bắt đầu bằng chuyện kể, động tác, quan sát thật hoặc câu nói của trẻ.</li>
+        <li>Chỉ đưa quy tắc sau khi trẻ đã gặp đủ ví dụ và có trải nghiệm bên trong về quy tắc đó.</li>
+        <li>Với thơ, ưu tiên đọc thành tiếng, nhịp, hơi thở, âm sắc; giải nghĩa ít nhưng đúng lúc.</li>
+        <li>Với tập làm văn, yêu cầu trẻ kể lại điều đã xảy ra thật, theo trình tự rõ, thay vì bịa tự do quá sớm.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="chuong-2">
+    <h2>2. Ghi chú workshop về tập làm văn</h2>
+    <p>Trong chương trình gốc, các bài viết được đặt theo tuổi phát triển của trẻ. Hai lớp đầu chưa yêu cầu trẻ tự soi nội tâm hoặc mô tả trực tiếp thiên nhiên bằng quan sát riêng. Trẻ viết từ những gì đã được nghe trong lớp qua trình bày giàu hình ảnh.</p>
+    <p>Đến lớp 3, trẻ bắt đầu dùng trải nghiệm giác quan và cảm xúc của mình. Sau khi đời sống đạo đức và đời sống thực tế đã được chuẩn bị ở lớp 3, lớp 4 có thể viết thư, kể cả thư mang tính công việc nhỏ, để trẻ học liên hệ với người khác qua chữ viết.</p>
+    <p>Lớp 5 mở rộng khả năng diễn đạt sự khác nhau giữa điều trẻ làm và điều xảy đến với trẻ: chủ động và bị động, lời nói trực tiếp, ý kiến của mình và ý kiến của người khác. Lớp 6 đi vào các điều kiện ảnh hưởng đời sống: hoàn cảnh, nguyên nhân, khả năng, điều có thể xảy ra hoặc không xảy ra. Lớp 7 dùng ước muốn, kinh ngạc và ngạc nhiên như chiếc cầu giữa cảm xúc bên trong và trật tự của thế giới.</p>
+    <p>Các bài viết thực tế, thư từ, ghi chép công việc nên tiếp tục từ lớp 4 trở lên. Chúng cho trẻ kinh nghiệm gián tiếp về cách giao tiếp với người khác trong những việc có thật.</p>
+    <p>Tập làm văn tiểu học nên đặt trẻ đứng vững trên trải nghiệm. Một bài kể chuyến đi hơi khô nhưng trung thực vẫn là nền vững hơn một bài tưởng tượng lỏng lẻo. Khi giáo viên kể từ chính đời sống của mình, lớp dễ được truyền cảm hứng để nói và viết từ trải nghiệm thật.</p>
+    <h3>Phát triển vốn từ</h3>
+    <p>Vốn từ không chỉ là biết nghĩa nhiều từ. Quan trọng hơn là biết từ có thể làm gì:</p>
+    <ul>
+      <li>Tạo hình ảnh: rách, lởm chởm, mỏng như ren, nhợt nhạt, dốc đứng.</li>
+      <li>Gợi âm thanh: cót két, rầm, rắc, gầm, thịch.</li>
+      <li>Gợi xúc giác: ráp, nhão, trơn nhớt, mượt, nhung mịn, gai gai.</li>
+      <li>Bắt chước hành động: bơm, đào, tạt, vỡ toác, cào.</li>
+      <li>Diễn tả cảm xúc: vui tươi, u sầu, cô quạnh, tỉnh táo, rạng rỡ, âm u.</li>
+    </ul>
+    <div class="summary">
+      <span class="label">Tóm tắt chương</span>
+      <p>Tập làm văn phát triển theo tuổi: nghe và kể lại ở lớp nhỏ, trải nghiệm thật ở lớp 3, thư từ và giao tiếp ở lớp 4, chủ động-bị động ở lớp 5, điều kiện đời sống ở lớp 6, cảm xúc tinh tế ở lớp 7. Mục tiêu là giúp trẻ dùng lời để bước vào thế giới một cách vững vàng.</p>
+    </div>
+    <div class="teacher">
+      <span class="label">Hướng dẫn giáo viên sử dụng</span>
+      <ul>
+        <li>Chọn đề văn từ việc trẻ đã nghe, đã làm, đã thấy, đã trải qua.</li>
+        <li>Đừng vội yêu cầu “sáng tạo”; hãy xây khả năng quan sát, trình tự và sự thật trước.</li>
+        <li>Mỗi tuần chọn một nhóm từ: từ gợi hình, gợi âm, gợi chạm, gợi chuyển động hoặc gợi tâm trạng.</li>
+        <li>Sau khi đọc văn mẫu, hỏi: “Từ nào làm con thấy hình ảnh? Từ nào làm con nghe thấy âm thanh?”</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="chuong-3">
+    <h2>3. Lớp 2: Bốn loại từ đầu tiên</h2>
+    <p>Ở lớp 2, ngữ pháp đi vào trẻ qua chuyện kể và màu sắc. Câu chuyện hạt giống hoa tím được đánh thức bởi chú lùn, tiên nước, tiên khí và tiên mặt trời giúp trẻ cảm nhận bốn loại từ: từ gọi tên, từ hành động, từ chỉ cách thức và từ chỉ màu/miêu tả.</p>
+    <p>Chú lùn trả lại tên “hoa tím” cho hạt giống. Tiên nước bảo hạt “lớn lên”. Tiên khí nói “lớn nhanh”. Tiên mặt trời trao màu tím. Cuối cùng thành câu: “Bông hoa tím màu tím lớn lên nhanh.” Từ đó trẻ hiểu: có từ gọi tên, từ cho biết làm gì, từ cho biết làm như thế nào và từ vẽ thêm màu sắc.</p>
+    <div class="story">
+      <span class="label">Bản dịch đầy đủ câu chuyện: Bốn loại từ</span>
+      <p>Một ngày mùa xuân nọ, một chú lùn nhỏ đánh thức một em bé-hạt giống đang ngủ rất say dưới lòng đất.</p>
+      <p>“Dậy đi, dậy đi!” chú lùn gọi.</p>
+      <p>Em bé-hạt giống vẫn còn ngái ngủ đáp: “Ôi, ôi, con đã ngủ lâu quá đến nỗi khó nhớ mình là ai! Xin chú lùn tốt bụng hãy nói cho con biết tên của con.”</p>
+      <p>“Ta nhớ tên con,” chú lùn trả lời, “vì ta phải nhớ tên của tất cả các em bé-hạt giống. Mùa thu năm ngoái con đã gửi tên con cho ta giữ hộ, và bây giờ con có thể nhận lại. Tên con là Violet.”</p>
+      <p>Vừa nghe chú lùn gọi tên mình, em bé-hoa tím cảm thấy hạnh phúc, và thật sự muốn thức dậy để làm một điều gì đó.</p>
+      <p>“Bây giờ con phải làm gì?” em reo lên.</p>
+      <p>“Bạn của ta, nàng tiên nước, sẽ nói cho con biết,” chú lùn đáp.</p>
+      <p>Rồi chú gọi nàng tiên nước đến. Nàng nói với em bé-hoa tím: “Con phải lớn lên!”</p>
+      <p>Vừa nghe từ “lớn lên”, hoa tím liền đẩy chiếc đầu nhỏ của mình lên cao và duỗi đôi chân nhỏ xuống sâu. Em đẩy lên và vươn xuống, trong khi chú lùn nhảy múa quanh em, hát vang tên em: “Violet, Violet!” Còn nàng tiên nước thì mang đến cho em nhiều ngụm nước mát lành và nói: “Lớn lên, lớn lên.”</p>
+      <p>Rồi chú lùn và nàng tiên nước nắm tay nhau, cùng nhảy múa và cùng hát: “Violet lớn lên, Violet lớn lên.”</p>
+      <p>Ngay khi chiếc đầu nhỏ của hoa tím nhô lên khỏi mặt đất và chạm vào không khí, một nàng tiên khí chào em: “Nhanh lên! Violet, hãy lớn nhanh lên.”</p>
+      <p>Bây giờ chú lùn, nàng tiên nước và nàng tiên khí cùng hát: “Violet lớn nhanh!” Và đúng là em lớn nhanh thật. Thân xanh nhỏ của em vươn cao, những chiếc lá xanh nhỏ mở rộng, và chiếc đầu nhỏ của em ngày càng lớn hơn.</p>
+      <p>Rồi một ngày kia, nàng tiên mặt trời đến bên hoa tím, chạm cây đũa ánh sáng vào đầu em và nói: “Ta mang đến cho con một màu từ cầu vồng, màu tím.”</p>
+      <p>Hoa tím hạnh phúc đến nỗi em ngẩng đầu lên, mở to đôi mắt và xòe ra những cánh hoa tím xinh đẹp. Lúc ấy chú lùn, nàng tiên nước, nàng tiên khí và nàng tiên mặt trời cùng cất tiếng chào em bằng những từ mà mỗi người đã trao tặng:</p>
+      <p class="verse">“Bông hoa tím màu tím lớn lên nhanh.”</p>
+      <p>Chú lùn đã trao cho em một cái tên; nàng tiên nước đã nói em phải làm gì; nàng tiên khí đã nói em làm điều đó như thế nào; và nàng tiên mặt trời đã khoác cho em một màu sắc từ cầu vồng.</p>
+      <p>Ta có thể gọi bốn loại từ thần tiên ấy là: từ gọi tên, từ hành động, từ chỉ cách thức và từ chỉ màu sắc.</p>
+    </div>
+    <div class="practice">
+      <span class="label">Cách triển khai mẫu</span>
+      <ol>
+        <li>Kể chuyện bằng giọng chậm, có nhịp, có hình ảnh.</li>
+        <li>Ngày hôm sau, cho trẻ kể lại và đóng vai bốn nhân vật.</li>
+        <li>Viết vài câu ngắn lên bảng: “Mặt trời vàng chiếu sáng rực rỡ”, “Nụ xanh mở chậm rãi”.</li>
+        <li>Dùng màu: tên màu xanh dương, hành động màu đỏ, cách thức màu cam, miêu tả màu xanh lá.</li>
+      </ol>
+    </div>
+    <h3>Giới thiệu động từ</h3>
+    <p>Giáo viên vẽ một em bé đứng thẳng giữa trời và đất, bên cạnh có cây và con vật. Trẻ đứng lên và nói “Tôi đứng”. Từ bàn chân, trẻ tìm các hành động: đi, chạy, nhảy, nhún, múa. Từ bàn tay: vẽ, viết, sơn, đan, vỗ, trao, cầm. Từ đầu: nhìn, nghe, ngửi, nếm, nói, hát.</p>
+    <p>Sau đó trẻ viết câu đơn: “Tôi đứng. Tôi chạy. Tôi viết. Tôi nhìn.” Giáo viên giới thiệu chữ I viết hoa và dấu chấm. Tiếp theo chuyển từ “tôi” sang tên bạn: “Kate nhảy”, “John viết”, để trẻ thấy động từ thêm s trong tiếng Anh khi chủ ngữ là ngôi thứ ba số ít.</p>
+    <h3>Tên và hành động trong vần điệu</h3>
+    <p>Các câu vần như “Ếch nhảy. Sâu uốn. Giun ngoằn ngoèo. Thỏ nhảy lò cò. Ngựa gõ móng.” giúp trẻ nghe nhịp động từ. Có thể thêm từ miêu tả: “Con cá ướt bơi”, “con chim sống bay”, “con ngựa khỏe chạy”.</p>
+    <div class="summary">
+      <span class="label">Tóm tắt chương</span>
+      <p>Lớp 2 học ngữ pháp qua chuyện cổ tích nhỏ, đóng vai, màu sắc và câu rất ngắn. Trẻ chưa cần thuật ngữ “danh từ, động từ, tính từ, trạng từ”; các tên thân thiện như “từ gọi tên”, “từ làm”, “từ vẽ hình”, “từ nói cách làm” phù hợp hơn.</p>
+    </div>
+    <div class="teacher">
+      <span class="label">Hướng dẫn giáo viên sử dụng</span>
+      <ul>
+        <li>Không bắt đầu bằng định nghĩa. Hãy để trẻ sống trong câu chuyện rồi tự tìm loại từ.</li>
+        <li>Dùng màu nhất quán trong vở để trẻ cảm thấy trật tự: tên, hành động, miêu tả, cách thức.</li>
+        <li>Cho trẻ đứng, chạy, vỗ, nhìn, nghe trước khi viết động từ.</li>
+        <li>Giữ câu ngắn, rõ, có dấu chấm; đây là nền cho câu hoàn chỉnh về sau.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="chuong-4">
+    <h2>4. Lớp 3: Câu, miêu tả và trạng từ</h2>
+    <p>Lớp 3 nối việc học tiếng Anh với các câu chuyện Kinh Thánh. Từ chuyện Adam đặt tên cho muôn loài, trẻ học lại “từ gọi tên” và “từ hành động”. Mỗi em chọn một con vật, diễn hành động của nó; một bạn đóng vai Adam gọi tên và nói con vật đang làm gì. Giáo viên viết thành câu: “The fish swims”, “The bird flies”, “The lion leaps”.</p>
+    <div class="story">
+      <span class="label">Bản dịch chi tiết câu chuyện: Adam đặt tên muôn loài</span>
+      <p>Khi trẻ đang học bài chính về các câu chuyện Kinh Thánh và đã nghe chuyện Adam và Eve, giáo viên quay lại câu chuyện ấy trong giờ tiếng Anh. Giáo viên đọc ý từ Sáng thế ký, chương 2: Thiên Chúa thấy con người ở một mình là không tốt. Từ mặt đất, Người tạo nên mọi loài thú ngoài đồng và chim trời, rồi đưa chúng đến với Adam để xem Adam sẽ gọi chúng là gì. Adam gọi mỗi sinh vật sống bằng tên nào, thì đó là tên của nó. Và Adam đặt tên cho gia súc, chim trời và mọi loài thú ngoài đồng.</p>
+      <p>Ta có thể tưởng tượng Adam trong khu vườn Eden xinh đẹp. Ánh sáng của Thiên Chúa chiếu trong khu vườn giữa cây cối và hoa lá. Tiếng nói của Thiên Chúa vang lên, sáng tạo và đưa các loài vật đến trước Adam để ông đặt tên cho chúng.</p>
+      <p>Có các loài gia súc: bò cái, bò đực, cừu và dê. Chúng gặm cỏ, vừa kêu bò rống, be be. Có các loài thú hoang: sư tử, hổ và báo gầm vang, rình mình, nhảy vọt và chạy. Có các loài leo trèo và bò trườn: sóc, chuột rừng, thằn lằn, rắn, ốc sên và giun đất. Có các loài bay: đủ loại chim và côn trùng; rồi có các loài bơi: cá và cá voi.</p>
+      <p>Khi chúng lần lượt xuất hiện, con thì đi, con thì chạy, con thì nhảy, con thì nhảy lò cò, con thì bò, con thì bay, con thì bơi, Adam đặt tên cho tất cả.</p>
+      <p>Sau đó giáo viên mời cả lớp diễn lại. Mỗi em nghĩ về một con vật và một việc con vật ấy làm, rồi dùng thân thể để diễn. Một em đóng vai Adam. Khi mỗi “con vật” đi ngang qua, Adam gọi tên nó và nói nó đang làm gì: cá bơi, chim bay, sóc leo, ốc sên bò, bò cái gặm cỏ, sư tử nhảy, hươu chạy, hổ gầm, cừu kêu, cáo sủa, chim hót, cú kêu.</p>
+      <p>Những câu ấy được viết lên bảng để trẻ thấy: mỗi câu có một từ gọi tên và một từ hành động.</p>
+    </div>
+    <p>Ngày sau, giáo viên đặt câu đố về cái tên mà ai cũng có thể dùng cho chính mình nhưng không dùng cho người khác: “I”. Từ đó trẻ hiểu chữ I luôn viết hoa; mỗi câu bắt đầu bằng chữ hoa và kết thúc bằng dấu chấm. Một câu, dù ngắn hay dài, cần có từ gọi tên và từ hành động.</p>
+    <h3>Từ vẽ hình</h3>
+    <p>Câu chuyện “Người đánh cá và vợ” được dùng để giới thiệu tính từ. Mặt biển đổi màu theo lòng tham của người vợ: xanh, lục đục, tím, xám, đen. Các màu ấy vẽ ra trạng thái của biển. Trẻ thêm từ miêu tả vào câu: “The white stone cracked”, “The brave lion roared”, “The grey rain fell”.</p>
+    <h3>Từ trả lời “như thế nào?”</h3>
+    <p>Giáo viên hỏi: viết nhanh cẩu thả tốt hơn hay viết chậm cẩn thận tốt hơn? Cách ta làm cũng quan trọng như việc ta làm. Trẻ diễn: nói nhỏ, nói to, vỗ nhẹ, dậm mạnh, cười ngọt ngào, cau mày dữ dằn, đi chậm, nhảy vui vẻ. Những từ trả lời “như thế nào?” được gọi là “how words”.</p>
+    <p>Sau đó mở rộng trạng từ: từ trả lời “như thế nào”, “khi nào”, “ở đâu”. Ví dụ: “Ông già khập khiễng đau đớn” (như thế nào), “ông quay lại” (ở đâu/hướng nào), “ông đến muộn” (khi nào). Trẻ lập bảng từ theo ba cột.</p>
+    <h3>Đề tập làm văn và bốn kiểu câu</h3>
+    <p>Các đề lớp 3 nên gần kinh nghiệm: thú cưng của em, búp bê của em, con vật hoang dã em từng quan sát, khi điều ước của em thành sự thật, cơn bão đáng nhớ nhất, nơi yêu thích của em, bị lạc rồi tìm thấy, nếu em có ba điều ước.</p>
+    <p>Bốn kiểu câu được dạy bằng thơ: câu mệnh lệnh, câu cảm thán, câu kể, câu hỏi. Mỗi kiểu có dấu câu tương ứng và một tâm thế lời nói khác nhau.</p>
+    <div class="summary">
+      <span class="label">Tóm tắt chương</span>
+      <p>Lớp 3 củng cố câu hoàn chỉnh, chữ hoa, dấu chấm, từ gọi tên, từ hành động, tính từ và trạng từ. Tất cả đều đi từ kể chuyện, diễn lại, quan sát màu sắc, cách làm, thời gian và nơi chốn.</p>
+    </div>
+    <div class="teacher">
+      <span class="label">Hướng dẫn giáo viên sử dụng</span>
+      <ul>
+        <li>Mỗi bài ngữ pháp nên có ba bước: kể hoặc diễn, viết câu trên bảng, trẻ chép và tô màu/tìm từ.</li>
+        <li>Đề văn nên mời trẻ nhớ lại trải nghiệm thật, không cần viết dài.</li>
+        <li>Khi sửa câu, hỏi: “Câu này nói về ai/cái gì? Người/cái đó làm gì?”</li>
+        <li>Cho trẻ phân biệt bốn kiểu câu bằng giọng đọc và dấu câu, không chỉ bằng tên gọi.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="chuong-5">
+    <h2>5. Lớp 4: Tư tưởng, hành động và ngữ pháp sống</h2>
+    <p>Lớp 4 đưa danh từ và động từ vào trải nghiệm đạo đức: điều ta biết phải trở thành điều ta làm. Câu chuyện “Bốn anh em” kể về vị vua trao cho bốn con bốn tư tưởng: bền vững, lớn lên, cảm nhận, hiểu biết. Bốn người con lập bốn vương quốc: đất đá bền vững, cây cối sinh trưởng, động vật cảm nhận, con người biết và hiểu.</p>
+    <div class="story">
+      <span class="label">Bản dịch đầy đủ câu chuyện: Bốn anh em</span>
+      <p>Ngày xửa ngày xưa, có một vị vua vĩ đại và thông thái cai trị một vương quốc rộng lớn. Theo thời gian, nhà vua có bốn người con trai.</p>
+      <p>Đến ngày bốn anh em phải rời khỏi nhà cha để đi tìm những vương quốc của riêng mình, họ thưa với vua cha: “Thưa cha, cha là người thông thái và hùng mạnh, là vị vua của một vương quốc bao la. Chúng con ra đi tìm vương quốc riêng cũng chỉ để mở rộng thêm vương quốc của cha. Xin cha nói cho chúng con biết bí mật làm nên sự vĩ đại của cha, để chúng con có thể cai trị khôn ngoan, tốt đẹp và xứng đáng là con của cha.”</p>
+      <p>Nhà vua nói: “Các con của ta, cũng như có bốn người trong các con, ta cai trị vương quốc của mình bằng quyền năng của bốn tư tưởng. Nhờ bốn tư tưởng ấy mà ta giữ được quyền trị vì. Khi nói chúng cho các con, ta trao cho các con món quà là sự khôn ngoan của ta. Nếu những tư tưởng ấy trở thành hành động của các con, vương quốc của các con sẽ thịnh vượng. Sự lựa chọn thuộc về các con.”</p>
+      <p>Bốn anh em im lặng lắng nghe khi nhà vua bộc lộ bốn tư tưởng bí mật nhất trong tâm trí mình:</p>
+      <p class="verse">“Bốn tư tưởng sống trong tâm trí ta;
+Nhờ chúng, vương quốc của ta được gắn kết.
+
+Điều thứ nhất chắc chắn rằng:
+Mọi sự sống phải bền vững.
+
+Điều thứ hai ta biết rằng:
+Mọi sự sống phải lớn lên.
+
+Điều thứ ba còn thật hơn nữa:
+Mọi sự sống phải cảm nhận.
+
+Điều thứ tư luôn là vậy:
+Mọi sự sống phải hiểu biết.
+
+Bền vững, lớn lên,
+Cảm nhận, hiểu biết,
+
+Những tư tưởng ấy sống trong tâm trí ta;
+Nhờ chúng, ta gắn kết vương quốc mình.”</p>
+      <p>Bốn anh em rời khỏi nhà cha, mang theo món quà khôn ngoan ấy trong những lời: bền vững, lớn lên, cảm nhận, hiểu biết. Mỗi người cố gắng hiểu ý nghĩa của chúng.</p>
+      <p>Ban đầu, bốn anh em đi cùng nhau. Họ đi rất xa khỏi nhà cha trên một con đường không có lối rẽ. Cuối cùng, họ đến nơi con đường chia thành bốn nhánh. Nếu con đường chỉ chia thành hai, hoặc năm, hoặc sáu nhánh, có lẽ họ sẽ phân vân không biết chọn đường nào; nhưng vì vừa đúng bốn nhánh, họ hiểu rõ rằng đây là nơi họ phải chia tay, mỗi người đi một con đường riêng.</p>
+      <p>Họ nói với nhau: “Hãy nhớ lời cha và để sự khôn ngoan của cha dẫn đường, để tư tưởng của cha trở thành hành động của chúng ta, và trong các vương quốc mà chúng ta tìm thấy để trị vì, vương quốc của cha sẽ được mở rộng.”</p>
+      <p>Rồi họ chạm tay nhau lần cuối và mỗi người đi theo một nhánh đường.</p>
+      <p>Ta cần nhớ rằng bốn tư tưởng của nhà vua đã sống chung trong tâm trí ông như bốn cánh của cùng một bông hoa. Khi bốn anh em còn đi cùng nhau trên một con đường, bốn tư tưởng ấy cũng như một. Nhưng khi họ chia tay, mỗi người bắt đầu tự hỏi tư tưởng nào trong bốn tư tưởng là tốt nhất và nên chọn cho mình.</p>
+      <p>Người anh đi về phương bắc nghĩ: “Còn điều gì tốt hơn việc mọi sự bền vững và tồn tại mãi mãi? Ta chọn điều ấy. Vương quốc của ta sẽ bền vững và tồn tại mãi. Ta sẽ làm mọi thứ chắc chắn đến mức không gì phá hủy được.”</p>
+      <p>Người em thứ hai đi về phương nam nghĩ: “Còn điều gì tốt hơn việc mọi sự lớn lên? Như thế nghĩa là chúng đang sống. Ta chọn điều ấy. Trong vương quốc của ta, mọi thứ sẽ sống, luôn lớn lên, luôn thay đổi và luôn được đổi mới.”</p>
+      <p>Người em thứ ba đi về phương đông nghĩ: “Còn điều gì tốt hơn việc mọi sự biết cảm nhận, biết yêu điều tốt và ghét điều xấu? Ta chọn điều ấy. Trong vương quốc của ta, mọi sinh linh sẽ yêu những gì tốt cho chúng và ghét những gì gây hại cho chúng.”</p>
+      <p>Người em thứ tư đi về phương tây không nghĩ như các anh mình. Anh không tự hỏi tư tưởng nào của cha là tốt nhất. Anh tự hỏi tư tưởng nào có thể giải thích ý nghĩa của tất cả các tư tưởng còn lại. Anh nói với mình: “Nếu ta và tất cả những ai sống trong vương quốc của ta có thể hiểu ý nghĩa của mọi tư tưởng của cha, khi ấy sự khôn ngoan của cha thật sự dẫn đường cho chúng ta. Trong bốn tư tưởng, hiểu biết hẳn là chìa khóa. Ta chọn điều ấy.”</p>
+      <p>Vì thế, bốn người con của nhà vua lập nên bốn vương quốc trên mặt đất, và tư tưởng của nhà vua trở thành hành động của họ.</p>
+      <p>Người chọn tư tưởng “bền vững” xây vương quốc bằng đá và đất chắc. Đó là vương quốc của đồng bằng rộng, đồi lượn, vách đá và đỉnh núi, chính là vương quốc của đất.</p>
+      <p>Người chọn tư tưởng “lớn lên” làm đầy vương quốc bằng sự sống đang sinh trưởng: cỏ, hoa và cây, rễ đâm vào vương quốc đất, chồi vươn lên phía mặt trời. Cây cối là vương quốc của người con thứ hai: mãi lớn lên, nở hoa, tàn đi, thả hạt xuống đất để rồi lại mọc lên.</p>
+      <p>Người chọn tư tưởng “cảm nhận” làm vương quốc mình đầy những sinh vật không chỉ sống mà còn cảm thấy đói và bận rộn đi khắp mặt đất tìm thức ăn; cảm thấy yêu thương và chăm sóc con non; cảm thấy ghét những gì đe dọa mạng sống và chiến đấu vì thức ăn, vì bạn đời, vì con nhỏ. Đó là các loài vật, và người con thứ ba cai trị vương quốc ấy.</p>
+      <p>Trong vương quốc của người con thứ tư, người đã chọn “hiểu biết”, sống những sinh linh không chỉ có phần trong ba vương quốc kia mà còn có quyền năng thứ tư. Họ có thân thể vững chắc, thân thể lớn lên, những cảm xúc yêu thương, đói khát, ghét bỏ; và họ còn có năng lực biết và hiểu đất, cây cối, loài vật.</p>
+      <p>Khi vị vua vĩ đại và thông thái biết bốn con mình đã mở rộng vương quốc của ông trên mặt đất một cách khôn ngoan bằng cách biến tư tưởng thành hành động, ông gọi họ về trước mặt và nói những vần thơ:</p>
+      <p class="verse">“Bốn hành động trên mặt đất có thể tìm thấy:
+Bền vững, lớn lên,
+Cảm nhận, hiểu biết,
+Khắp thế gian ta gặp cả bốn điều.
+
+Đá của đất bền vững và nâng đỡ
+Sức nặng bàn chân,
+Sức bám của rễ,
+Sóng rửa trôi và gió thổi qua.
+
+Cây trong đất lớn lên rồi tàn xuống,
+Khi hạt và hoa
+Được nâng bởi quyền năng
+Của mặt trời sáng và mưa rơi.
+
+Thú vật trên đất cảm thấy yêu hay ghét;
+Bằng nanh và móng,
+Bằng mỏ và vuốt,
+Mỗi loài chiến đấu vì thức ăn và bạn đời.
+
+Còn con người có thể biết nhu cầu thật của thế giới
+Dành cho đá và cây,
+Cho thú vật, và con người
+Có thể học làm hành động bốn phần.”</p>
+    </div>
+    <p>Sau câu chuyện, giáo viên hỏi “hành động là gì?” Trẻ được dẫn tới ý: biết thôi chưa đủ. Nếu biết qua đường khi đèn xanh nhưng vẫn qua đèn đỏ, tri thức chưa thành ý chí. Nếu biết câu cần dấu chấm nhưng không đặt dấu chấm, hiểu biết chưa thành việc làm.</p>
+    <h3>Dấu câu và bốn khí chất</h3>
+    <p>Dấu chấm thích nghỉ. Dấu hỏi muốn biết. Dấu cảm thán có mặt nơi phấn khích. Dấu phẩy chạy giữa câu dài để cho người đọc thở. Trẻ có thể đóng vai các dấu câu; giáo viên có thể chọn học sinh theo khí chất: điềm tĩnh cho dấu chấm, trầm tư cho dấu hỏi, linh hoạt cho dấu cảm thán, mạnh mẽ cho dấu phẩy.</p>
+    <h3>Các từ loại</h3>
+    <p>Các bài thơ về từ loại giúp trẻ thuộc bằng nhịp. Động từ thích hành động. Danh từ đặt tên người, vật, nơi chốn, ý tưởng. Đại từ thay danh từ khi danh từ vắng mặt. Mạo từ đi cùng danh từ. Tính từ vẽ màu cho danh từ. Trạng từ cho biết hành động xảy ra thế nào, khi nào, ở đâu. Giới từ chỉ vị trí và quan hệ. Liên từ nối. Thán từ bật ra trong cảm xúc.</p>
+    <h3>Bài học cụ thể</h3>
+    <p><strong>Danh từ:</strong> Từ cái đầu yên tĩnh biết nhìn, nghe, ngửi, nếm, chạm, ta gọi tên sự vật. Danh từ là tên của người, nơi chốn, vật, hành động, cảm xúc hoặc tư tưởng.</p>
+    <p><strong>Động từ:</strong> Con người không chỉ biết thế giới mà còn làm việc với thế giới. Câu hoàn chỉnh cần một danh từ hoặc đại từ làm chủ thể và một động từ nói chủ thể làm gì hoặc là gì. Động từ quan trọng nhất là “to be”: I am, you are, he is.</p>
+    <p><strong>Tính từ:</strong> Truyện “Cây Judas” cho thấy cùng một cái cây có thể nâu, xanh, hồng hoặc đỏ tùy thời điểm. Tính từ mô tả danh từ bằng màu sắc, hình dạng, cảm giác, phẩm chất.</p>
+    <div class="story">
+      <span class="label">Bản dịch đầy đủ câu chuyện: Cây Judas</span>
+      <p>Ngày xưa có một vị vua có bốn người con trai. Một ngày nọ, họ gọi người đánh xe của vua đến và nói: “Chúng ta muốn thấy một cây Judas. Hãy chỉ cho chúng ta một cây.”</p>
+      <p>“Vâng, tôi sẽ chỉ,” người đánh xe trả lời. Nhưng ông không đưa cả bốn người đi xem cùng lúc.</p>
+      <p>Trước hết, ông đưa người con lớn nhất vào rừng và chỉ cho anh thấy cái cây khi nó chưa có lá. Khi lá đã nảy ra và xanh tươi, ông đưa người con thứ hai đến xem. Ông đưa người con thứ ba đến xem khi những bông hoa hồng đã nở. Còn người con thứ tư thì được thấy cây khi nó mang quả đỏ.</p>
+      <p>Sau đó, một ngày kia, khi bốn anh em đang ngồi cùng nhau, có người hỏi: “Cây Judas là loại cây như thế nào?”</p>
+      <p>Người anh cả trả lời: “Nó màu nâu, giống một gốc cây chết.”</p>
+      <p>Người thứ hai kêu lên: “Không, nó xanh như cây đa!”</p>
+      <p>Người thứ ba nói: “Không, nó hồng như mây lúc bình minh.”</p>
+      <p>Người thứ tư nói: “Nó đỏ như một miếng thịt.”</p>
+      <p>Thế rồi bốn anh em tức giận vì câu trả lời của nhau và chạy đi tìm vua cha.</p>
+      <p>Mỗi người hỏi: “Thưa cha, cây Judas là loại cây như thế nào?”</p>
+      <p>“Các con nói gì vậy?” nhà vua hỏi.</p>
+      <p>Họ kể lại những câu trả lời khác nhau của mình. Nhà vua nói: “Cả bốn con đều đã thấy cái cây. Chỉ có điều, khi người đánh xe chỉ cây cho các con, các con đã không hỏi ông ấy: cây ấy trông như thế nào vào lúc này, và trông như thế nào vào lúc khác. Các con không nghĩ đến điều đó, nên mới nhầm.”</p>
+      <p>Rồi nhà vua đọc một câu thơ:</p>
+      <p class="verse">“Cả bốn đều đã thấy cây Judas,
+Vì sao các con còn bối rối?
+Không ai hỏi người đánh xe
+Hình dáng cây ấy suốt cả năm ra sao!”</p>
+      <p>Câu chuyện giúp trẻ thấy tính từ có thể đúng ở một thời điểm nhưng chưa đủ cho toàn bộ sự vật. Muốn miêu tả chính xác, cần biết sự vật đang ở mùa nào, trạng thái nào, hoàn cảnh nào.</p>
+    </div>
+    <p><strong>Trạng từ:</strong> Trạng từ mô tả động từ, tính từ hoặc trạng từ khác; trả lời “như thế nào, khi nào, ở đâu”. Ví dụ: “đứa trẻ rất nhỏ, gầy khủng khiếp đứng lặng lẽ ngoài phố”.</p>
+    <p><strong>Giới từ:</strong> Trò chơi giấu một vật nhỏ trong lớp giúp trẻ tìm các từ chỉ vị trí: trong, dưới, sau, trên, gần, bên cạnh, giữa. Cụm có giới từ thường chỉ nơi chốn và có một danh từ làm đối tượng của giới từ.</p>
+    <p><strong>Nguyên âm và phụ âm:</strong> Phụ âm là “âm thì thầm”, thường đến từ hình dạng thế giới. Nguyên âm là “âm hát”, bộc lộ cảm xúc. Khi học chính tả, trẻ nghe và thấy cách nguyên âm, phụ âm làm việc với nhau: nguyên âm dài/ngắn, phụ âm cứng/mềm, nhẹ/nặng, có khi câm.</p>
+    <h3>Thì của động từ</h3>
+    <p>Thời gian luôn là điểm gặp của quá khứ, hiện tại và tương lai. Điều ta làm hoặc bỏ dở ở hiện tại trở thành nền đứng cho tương lai. Từ thần thoại Bắc Âu, Yggdrasil và ba Norn, trẻ học ba thì: “I remember”, “I am”, “I shall”.</p>
+    <div class="story">
+      <span class="label">Bản dịch chi tiết câu chuyện: Yggdrasil và ba Norn</span>
+      <p>Sau khi cả lớp đã học ít nhất một phần thần thoại Bắc Âu, giáo viên có thể kể lại câu chuyện về Yggdrasil và ba Norn để dẫn vào ba thì của động từ.</p>
+      <p>Yggdrasil, cây tần bì vĩ đại, vươn rễ của mình vào ba thế giới khác nhau: thế giới của sự sống, thế giới của cái chết, và thế giới của sự khôn ngoan của Mimir, người thông thái vì nhớ tất cả những gì đã từng xảy ra.</p>
+      <p>Nidhogg, con rắn, gặm chiếc rễ vươn vào Niflheim, cố giết chết cây. Nó bị chống lại bởi ba Norn, những người hằng ngày tưới chiếc rễ ấy bằng nước của sự sống để cây không bao giờ chết.</p>
+      <p>Ba chị em ấy là Urd tóc trắng, người coi sóc Quá khứ; Verdandi, người coi sóc Hiện tại; và Skuld, người chị em che mặt, người coi sóc Tương lai. Ba Norn không ngừng đan những sợi chỉ lại với nhau, mỗi sợi là đời sống của một con người. Thỉnh thoảng, một sợi chỉ bị cắt và đời một người kết thúc. Chẳng bao lâu, một sợi chỉ mới lại thay vào đó, và một đời sống mới trên mặt đất bắt đầu chen vào giữa những đời sống khác.</p>
+      <p>Mỗi ngày, các vị thần vui vẻ cùng nhau đến thăm ba chị em để học biết về Quá khứ, Hiện tại và Tương lai. Chính trong một lần thăm như vậy, Odin biết rằng một ngày kia chó sói Fenris sẽ nuốt chửng ông.</p>
+      <p>Sau câu chuyện, giáo viên mời trẻ nhớ lại điều đã xảy ra khi các em còn nhỏ hơn, nhìn vào việc các em đang làm ngay lúc này, rồi nói về điều các em sẽ làm trong kỳ nghỉ sắp tới. Từ đó ba mẫu câu được viết: “I remember...”, “I am...”, “I shall...”.</p>
+    </div>
+    <div class="summary">
+      <span class="label">Tóm tắt chương</span>
+      <p>Lớp 4 chuyển ngữ pháp thành đời sống có ý chí. Trẻ học từ loại chính bằng chuyện kể, vần điệu, đóng vai, trò chơi và các hình ảnh lớn về con người: đầu biết gọi tên, tay chân hành động, trái tim cảm nhận, lời nói đặt trật tự cho tư tưởng.</p>
+    </div>
+    <div class="teacher">
+      <span class="label">Hướng dẫn giáo viên sử dụng</span>
+      <ul>
+        <li>Luôn nối quy tắc với hành vi: “Con biết điều gì? Con đã làm điều đó trong vở/câu chuyện chưa?”</li>
+        <li>Dùng màu, thơ, vai diễn để trẻ nhớ dấu câu và từ loại bằng thân thể.</li>
+        <li>Khi dạy thì, bắt đầu từ ký ức, việc đang làm, kế hoạch sắp tới của trẻ.</li>
+        <li>Với chính tả, cho trẻ nghe âm, phát âm, cảm thấy khẩu hình trước khi ghi quy tắc.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="chuong-6">
+    <h2>6. Lớp 5: Chủ động, bị động, cụm giới từ và đoạn văn</h2>
+    <p>Lớp 5 bắt đầu tinh tế hơn trong quan hệ giữa chủ thể và hành động. Trò chơi “Bốn câu hỏi” cho một học sinh ra ngoài, cả lớp chọn một đồ vật. Khi vào, em chỉ được hỏi câu trả lời “có/không”, dùng lần lượt tính từ, động từ, trạng từ, danh từ: nó đỏ không, lớn không, tròn không; nó tích tắc không, lăn không; nó di chuyển dễ không; có phải cái cửa không?</p>
+    <h3>Động từ chủ động và bị động</h3>
+    <p>“Victor bị mẹ mắng” khác hẳn “Victor mắng mẹ”. “Barbara chọc John” khác “Barbara bị John chọc”. Trẻ thấy chủ ngữ có thể hành động hoặc nhận hành động. Khi chủ ngữ làm hành động, động từ ở thể chủ động. Khi chủ ngữ chịu tác động, động từ ở thể bị động.</p>
+    <p>Bài tập: đổi câu từ chủ động sang bị động mà không đổi nghĩa: “The horse pulled the cart” thành “The cart was pulled by the horse”. Giáo viên cũng chỉ ra khi “to be” kết hợp với động từ hành động, câu thường chuyển sang bị động.</p>
+    <h3>Cụm giới từ</h3>
+    <p>Trẻ diễn các cụm: đứng sau ghế, đi quanh ghế, ngồi trên ghế, đi ra cửa, vào hành lang, gõ cửa. Các cụm này trả lời “ở đâu”. Sau đó tìm cụm trả lời “khi nào”: lúc bình minh, sau bữa sáng, trước giờ học. Rồi cụm trả lời “như thế nào”: với sự dễ dàng, trong ngạc nhiên, trong sợ hãi.</p>
+    <p>Cụm giới từ có thể làm việc như trạng từ khi bổ nghĩa cho động từ, hoặc như tính từ khi trả lời “cái nào/người nào”: người đàn ông trong áo đen, chuông cửa của ngôi nhà vàng.</p>
+    <h3>Dạy đoạn văn qua bốn kiểu người</h3>
+    <p>Giáo viên đưa bốn đoạn văn kém theo bốn kiểu: nói lan man mọi thứ cùng lúc; lặp lại mãi; liệt kê khô; chỉ phản ứng bằng hành động. Học sinh thảo luận đoạn nào rõ, đoạn nào có mở đầu-kết thúc, đoạn nào rối, đoạn nào chán.</p>
+    <p>Sau đó chỉnh: bỏ chi tiết không thuộc đoạn, tránh lặp, thêm hình ảnh cho đoạn khô, giải thích nguyên nhân và cách tránh xung đột trong đoạn quá bốc đồng.</p>
+    <div class="summary">
+      <span class="label">Tóm tắt chương</span>
+      <p>Lớp 5 học cách nhìn quan hệ trong câu và trong đoạn văn: ai làm, ai chịu tác động, cụm từ đang bổ nghĩa cho điều gì, đoạn văn có một dòng ý rõ hay bị rối/lặp/khô/quá bốc đồng.</p>
+    </div>
+    <div class="teacher">
+      <span class="label">Hướng dẫn giáo viên sử dụng</span>
+      <ul>
+        <li>Dạy chủ động-bị động bằng tình huống hài hước, rõ nghĩa, gần đời sống lớp học.</li>
+        <li>Với cụm giới từ, cho trẻ di chuyển trong lớp trước khi viết vào vở.</li>
+        <li>Khi dạy đoạn văn, dùng đoạn văn thật của giáo viên hoặc lớp đã ẩn tên để chỉnh cùng nhau.</li>
+        <li>Tiêu chuẩn đoạn văn: một ý chính, trình tự rõ, không lặp vô ích, có chi tiết làm người đọc thấy được sự việc.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="chuong-7">
+    <h2>7. Lớp 6: Cảm quan lời nói và câu điều kiện</h2>
+    <p>Nói, viết, đọc và nghĩ là những năng lực phân biệt con người với loài vật. Cảm quan lời nói cũng là một giác quan: khả năng nghe, hiểu, đáp lại lời của người khác. Con vật có âm thanh biểu lộ cảm xúc tức thời như đói, đau, sợ, vui; con người có thể giải thích, mô tả, kể chuyện, im lặng, hoặc nói trái với cảm xúc đang trào lên.</p>
+    <h3>Ba kiểu văn: giải thích, miêu tả, kể chuyện</h3>
+    <p>Giáo viên đọc ba đoạn: một đoạn hướng dẫn làm bánh xe giấy, một đoạn tả cảnh đồng cỏ bên suối, một đoạn kể hành động vui nhộn. Trẻ nhận ra: giải thích cần danh từ rõ và trình tự; miêu tả cần tính từ, hình ảnh và cảm giác; kể chuyện cần động từ và hành động.</p>
+    <div class="story">
+      <span class="label">Bản dịch chi tiết ba đoạn mẫu: giải thích, miêu tả, kể chuyện</span>
+      <h4>Bánh xe giấy</h4>
+      <p>Có một món đồ chơi nhỏ rất thú vị mà một cậu bé có thể tự làm trong giờ rảnh. Vật liệu chỉ cần một ít bìa mỏng, một hoặc hai tờ giấy viết thường và một lọ keo trắng. Nan hoa và vành bánh xe phải làm bằng bìa. Cánh hoặc buồm của bánh xe được cắt từ giấy mỏng thành hình tam giác. Một cạnh của tam giác được dán vào một nan hoa sao cho cánh giấy vẫn cong như cánh buồm căng gió. Hãy tung bánh xe lên không trung và quạt nhanh bên dưới nó. Bánh xe sẽ bay lên, vừa xoay vừa lượn quanh.</p>
+      <h4>Cảnh bên dòng French Creek</h4>
+      <p>Trước ngôi nhà trải ra một đồng cỏ chăn bò thoai thoải, dễ chịu, nằm dọc theo dòng French Creek. Trên đỉnh dốc có một hàng cây nhìn xuống; phía dưới là dòng nước lăn tăn chảy qua lòng đá phiến phẳng, từ vũng nước yên tĩnh này sang vũng nước yên tĩnh khác. Một hàng rào gỗ chạy lang thang xuống tận mép nước. Giữa sườn dốc có một cây sồi lớn và một cây anh đào già khẳng khiu, như thể chúng đã bắt đầu đi về phía con suối nhưng rồi không quyết định được nên tiến tiếp hay quay lại.</p>
+      <h4>Mike Fink, Henry và Old Al</h4>
+      <p>Mike Fink và Henry tìm thấy Old Al. Old Al thấy họ đang đến. Khi họ xuống tới bãi sông, Old Al nhấc đuôi lên. Nó quất vào đỉnh đầu Mike Fink và Henry, rồi dộng họ xuống bùn. Nó dộng họ sâu đến mức đáy sông ở phía trên đầu họ đến nửa dặm.</p>
+      <p>Ba đoạn này được đặt cạnh nhau để trẻ tự nhận ra: đoạn thứ nhất giải thích cách làm; đoạn thứ hai dựng cảnh; đoạn thứ ba đẩy hành động lên trước.</p>
+    </div>
+    <p>Bài viết tương ứng: giải thích cách chơi một trò, cách làm một vật, cách tìm mẫu số chung; miêu tả vật đã thấy, người đã biết, âm thanh đã nghe; kể một chuyến phiêu lưu có thật trong trải nghiệm của mình.</p>
+    <h3>Câu điều kiện</h3>
+    <p>Câu điều kiện ở lớp 6 giúp phát triển cảm quan phong cách. Trẻ viết về điều đã xảy ra do một biến cố bất ngờ, rồi viết điều có thể đã xảy ra nếu biến cố ấy không xuất hiện. Trẻ cũng viết về kế hoạch cuối tuần có thể bị thay đổi, hoặc tưởng tượng đời sống mình nếu một điều kiện hiện tại bị thay đổi.</p>
+    <p>Các loại điều kiện:</p>
+    <ul>
+      <li>Điều kiện là nguyên nhân: vì lỡ chuyến bay nên mạng sống được cứu.</li>
+      <li>Điều kiện để việc gì xảy ra: nếu mọi việc ổn, tôi sẽ đi biển; nếu còn ốm, tôi phải ở nhà.</li>
+      <li>So sánh nguyên nhân thật với điều kiện giả định: vì sống ở phố đông nên không có chỗ chơi; nếu sống ở nông trại, tôi có thể chạy trên đồng.</li>
+      <li>Điều trái sự thật: nếu tôi là bạn, tôi sẽ cẩn thận.</li>
+      <li>Điều chưa chắc đúng: nếu cô ấy thất vọng, cô ấy không để lộ.</li>
+    </ul>
+    <p>Trong câu điều kiện, có phần nêu điều kiện và phần nêu kết quả. Mỗi phần có chủ ngữ và vị ngữ riêng, nhưng phần điều kiện thường chưa phải một ý hoàn chỉnh. Đây là bước chuẩn bị cho câu phức ở lớp 7.</p>
+    <div class="summary">
+      <span class="label">Tóm tắt chương</span>
+      <p>Lớp 6 đưa trẻ vào ý thức về lời nói như năng lực người, phân biệt giải thích-miêu tả-kể chuyện, và dùng câu điều kiện để thấy đời sống bị ảnh hưởng bởi hoàn cảnh, nguyên nhân, khả năng và lựa chọn.</p>
+    </div>
+    <div class="teacher">
+      <span class="label">Hướng dẫn giáo viên sử dụng</span>
+      <ul>
+        <li>Trước khi giao bài viết, cho trẻ nghe ba đoạn mẫu thật khác nhau về chức năng.</li>
+        <li>Khi chữa bài, hỏi: “Đây là giải thích, miêu tả hay kể chuyện? Từ loại nào đang làm việc mạnh nhất?”</li>
+        <li>Câu điều kiện nên đi từ đời sống thật của trẻ: kế hoạch bị đổi, cơ hội bị lỡ, lựa chọn đã làm.</li>
+        <li>Không biến câu điều kiện thành bài công thức trước khi trẻ cảm nhận được “nếu... thì...” trong đời sống.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="chuong-8">
+    <h2>8. Lớp 6-7: Nhập môn tập làm văn và thơ</h2>
+    <p>Học ngôn ngữ là học những từ đang sống cùng nhau trong chuyện, thơ, thư từ và bài viết. Từ loại giống những “gương âm thanh” nhỏ phản chiếu các phần của con người: danh từ phản chiếu tư duy, động từ phản chiếu ý chí hành động, tính từ phản chiếu cảm xúc.</p>
+    <p>Một bài văn giống một ngày có sự kiện: có mở đầu, có khoảnh khắc trọng tâm, có kết thúc. Đoạn văn giống những chuyển cảnh trong ngày. Câu là sân khấu nhỏ; các từ là diễn viên cùng diễn để tạo thành một ý trọn vẹn.</p>
+    <h3>Danh từ và sự an tâm khi gọi tên</h3>
+    <p>Câu chuyện người lạc trong rừng nghe tiếng động mà không biết là gió, nước lũ, khỉ đột hay sư tử cho thấy: khi chưa gọi tên được, ta bất an; khi gọi tên được, ta biết mình đứng ở đâu với sự vật. Danh từ cho ta nền tri thức để đứng vững.</p>
+    <div class="story">
+      <span class="label">Bản dịch đầy đủ câu chuyện: Người lạc trong rừng</span>
+      <p>Một người đàn ông bị lạc trong rừng rậm. Ông không biết phải rẽ lối nào, vì bụi cây thấp quá dày khiến ông không nhìn xuyên qua được, còn tán lá phía trên thì che kín bầu trời. Khi ông đứng đó, phân vân không biết làm gì, ông nghe thấy một tiếng động.</p>
+      <p>Lúc đầu, âm thanh ấy có vẻ rất xa. Rồi nó đến gần hơn, gần hơn nữa, mỗi lúc một to. Ông không biết đó là gì, và chính điều ấy làm ông hoang mang. Giá như ông có thể gọi đúng tên thứ dường như đang lao rất nhanh về phía mình, ông đã biết phải làm gì để tự bảo vệ.</p>
+      <p>Trước hết, ông nghĩ đó là một cơn gió gầm rú, nên ông nằm rạp xuống đất và vòng tay ôm lấy rễ một cây cao. Rồi ông lại nghĩ: “Không! Nghe giống nước lũ đang tràn qua mặt đất hơn.” Ông vội bật dậy và bắt đầu trèo lên cây. Trong cơn sợ hãi hấp tấp, ông làm xước tay, xước ống chân và rách quần. Ông leo lên, tay nọ nối tay kia, cho tới khi tới một cành cao.</p>
+      <p>Ông chỉ nghỉ được một thoáng, vì âm thanh càng lúc càng lớn, càng đáng sợ, giống tiếng gầm của một con khỉ đột đang nhảy về phía ông qua những ngọn cây rậm rạp. Trong chớp mắt, ông lại bắt đầu tụt xuống. Vừa chạm đất, tim ông gần như ngừng đập. Bây giờ âm thanh dường như đến từ bụi rậm, giống tiếng gầm của sư tử đến nỗi ông lại trèo lên cây lần nữa.</p>
+      <p>Người đàn ông tội nghiệp gần như mất trí vì sợ, tất cả chỉ vì ông không thể gọi tên sự vật ấy.</p>
+      <p>Sư tử? Khỉ đột? Gió? Lũ? Mỗi cái tên khiến ông phải làm một việc hoàn toàn khác: trèo lên hay tụt xuống để tự cứu mình. Nếu ngay từ đầu ông có thể gọi đúng tên, ông đã không mất bình tĩnh; ông đã có thể giữ sự hiện diện của tâm trí, bình tĩnh và biết phải làm gì trước âm thanh ấy.</p>
+      <p>Các em hỏi: “Câu chuyện kết thúc thế nào?” Cô chỉ có thể kể tiếp nếu cô biết thứ đã tạo nên âm thanh đáng sợ ấy là gì.</p>
+      <p>Khi ta gọi tên được một điều gì, ta biết nó đứng ở đâu trong quan hệ với ta. Có bao giờ con va vào một vật gì trong bóng tối chưa? Thật nhẹ nhõm biết bao khi con nhận ra: “À, chỉ là cái ghế thôi!” Hoặc khi con thấy một đồ vật chưa từng thấy, con có yên tâm được không cho đến khi biết nó là gì, dùng thế nào?</p>
+      <p>Vì vậy, danh từ hay tên gọi cho ta một mặt đất tri thức để đứng lên.</p>
+    </div>
+    <h3>Động từ và khuynh hướng hành động</h3>
+    <p>Động từ đi vào tay chân. Khi kể “leo lên đồi, lao xuống, cua gấp”, trẻ thường cử động tay. Truyện “Người Hindu nghèo và hũ sữa đông” cho thấy tưởng tượng hành động có thể mạnh đến mức người kể đá văng cả hũ sữa. Động từ làm ta muốn diễn ra hành động.</p>
+    <div class="story">
+      <span class="label">Bản dịch đầy đủ câu chuyện: Người Hindu nghèo và hũ sữa đông</span>
+      <p>Một người Hindu nghèo đang đi trên đường thì bắt gặp một con chuột chết. Đúng lúc ấy, một người thông thái đi ngang qua và nói: “Bất cứ chàng trai tử tế nào, nếu có đầu óc nhanh nhạy, chỉ cần nhặt con chuột ấy lên cũng có thể bắt đầu một việc làm ăn và nuôi được vợ.”</p>
+      <p>Người Hindu nghèo nghe thấy thế. Anh nhặt con chuột lên, đem đến một quán rượu gần đó và bán nó với giá một đồng xu nhỏ để làm thức ăn cho mèo của quán. Với đồng xu ấy, anh mua một ít mật đường, rồi mang mật đường cùng một bình nước uống đến bìa rừng, nơi anh gặp những người hái hoa. Anh cho mỗi người một ít mật đường và nước. Đổi lại, họ cho anh một nắm hoa. Anh bán số hoa ấy được ba đồng xu, lại mua thêm mật đường, và ngày hôm sau quay lại gặp những người hái hoa. Lần này, họ đổi cho anh cả những cây đang ra hoa, có nụ, rễ và tất cả. Anh bán chúng được tám đồng xu.</p>
+      <p>Trên đường về, anh gặp một trận gió lớn. Gió làm gãy nhiều cành cây và khiến vườn của nhà vua bừa bộn. Người làm vườn không biết làm sao dọn sạch. Người Hindu nghèo nói rằng anh sẽ dọn giúp nếu được lấy số gỗ ấy. Rồi anh trả công cho nhiều trẻ em bằng mật đường, và bọn trẻ dọn sạch khu vườn giúp anh.</p>
+      <p>Anh bán số gỗ cho một thợ gốm để đốt lò và nhận được mười sáu đồng xu. Bây giờ, với hai mươi bốn đồng xu, anh cảm thấy mình rất giàu. Anh nghĩ mình nên làm việc gì đó lớn hơn. Đúng lúc ấy, anh gặp một người đang mang một hũ sữa đông làm từ sữa dê. Anh mua hũ sữa đông và đem về nhà. Sau khi ăn no mà vẫn còn lại khá nhiều, anh ngồi xuống vui vẻ lập kế hoạch tiếp theo.</p>
+      <p>Anh tự nhủ: “Ta có thể bán số sữa đông này để mua một con dê. Với sữa của con dê ấy, ta có thể bán đủ để mua thêm hai con dê nữa. Chẳng bao lâu ta sẽ có cả một đàn lớn. Ta sẽ phải dựng một cái chuồng cho đàn dê. Rồi ta sẽ xây cho mình một ngôi nhà mới, một ngôi nhà đẹp. Sau đó ta sẽ tìm một người vợ. Nàng sẽ xinh đẹp đến nỗi nhiều người đàn ông phải ghen tị với ta. Ta sẽ cho nàng mặc những tấm lụa đẹp nhất, đeo những món trang sức tốt nhất. Nàng muốn gì cũng sẽ có. Nhưng nếu nàng không vâng lời ta và không làm mọi điều ta bảo, ta sẽ đẩy nàng xuống cầu thang!”</p>
+      <p>Nói đến đó, anh đẩy mạnh đến mức làm hũ sữa đông lật úp. Tất cả những giấc mơ của anh bắn tung tóe và trôi đi cùng sữa đông.</p>
+      <p>Câu chuyện cho thấy điều xảy ra khi ta dùng động từ: dù ta không diễn ra bên ngoài, trong ta vẫn có khuynh hướng muốn hành động theo từ ấy.</p>
+    </div>
+    <h3>Bốn yếu tố của thơ</h3>
+    <p>Thơ có bốn yếu tố: ý nghĩa/cảm hứng, nhịp luật, vần, và âm thanh của từ. Nhịp thơ có thể đi lên hoặc đi xuống, tạo tâm trạng can đảm, nghỉ ngơi, vui nhảy, trang nghiêm. Vần không được phá ý. Âm thanh phải giúp người nghe cảm thấy nghĩa và khí sắc của bài.</p>
+    <h3>Bốn kiểu câu qua tục ngữ</h3>
+    <p>Tục ngữ Hindu được dùng để nhận bốn kiểu câu: câu kể, mệnh lệnh, nghi vấn, cảm thán. Trẻ học không chỉ dấu câu mà cả tư thế lời nói: nói ra sự thật, ra lệnh/khuyên bảo, hỏi, hoặc bật lên cảm xúc.</p>
+    <div class="summary">
+      <span class="label">Tóm tắt chương</span>
+      <p>Lớp 6-7 giúp trẻ thấy bài văn và bài thơ như hình thức sống: bài văn có dòng thời gian, đoạn văn có chuyển ý, câu có chủ thể-hành động-cảm xúc; thơ có ý, nhịp, vần và âm thanh.</p>
+    </div>
+    <div class="teacher">
+      <span class="label">Hướng dẫn giáo viên sử dụng</span>
+      <ul>
+        <li>Dạy bố cục bài văn bằng hình ảnh một ngày: bắt đầu, cao điểm, kết thúc.</li>
+        <li>Dùng vật lạ, âm thanh lạ để trẻ trải nghiệm nhu cầu gọi tên trước khi học danh từ sâu hơn.</li>
+        <li>Khi học động từ, cho một học sinh diễn chuỗi hành động trong câu chuyện.</li>
+        <li>Khi học thơ, đọc thành tiếng nhiều lần để nhịp và âm đi trước phân tích.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="chuong-9">
+    <h2>9. Lớp 7: Phong cách, cảm xúc và bài điểm sách</h2>
+    <p>Lớp 7 bắt đầu bằng câu hỏi “Vì sao học tiếng Anh?” Câu trả lời không chỉ là để viết đúng, mà để nghĩ rõ, nói khôn ngoan, hiểu bản thân và thế giới, từ đó hành động theo lý trí lành mạnh thay vì nóng giận, giả tạo hoặc khoe khoang.</p>
+    <h3>Trạng từ và sự chính xác</h3>
+    <p>Trạng từ làm rõ động từ, tính từ hoặc trạng từ khác: thế nào, khi nào, ở đâu. Khi bổ nghĩa cho động từ, trạng từ thường phải trung thành với sự kiện bên ngoài: đến sớm hay muộn, ở đây hay ở kia, trước hay sau. Khi bổ nghĩa cho tính từ/trạng từ khác, chúng có thể gần với cảm nhận chủ quan hơn: quá nặng, rất yên lặng.</p>
+    <h3>Từ loại phụ thuộc cách dùng</h3>
+    <p>Một từ có thể đổi vai trò theo câu: “cut” là động từ trong “I cut my finger”, là danh từ trong “The cut was not deep”. “Garden” là danh từ trong “digging in the garden”, là tính từ trong “garden door”. Quy tắc: cách một từ được dùng trong câu cho biết nó thuộc từ loại nào.</p>
+    <h3>Đại từ</h3>
+    <p>Câu chuyện bà O’Fidget nói quá nhiều đại từ cho thấy đại từ làm câu rối nếu người nghe không biết “he, she, it, they” chỉ ai. Đại từ phải quy chiếu rõ về danh từ trước đó. Khi nghi ngờ, hãy dùng tên người/vật để giữ nghĩa sáng.</p>
+    <div class="story">
+      <span class="label">Bản dịch chi tiết câu chuyện: Bà O’Fidget nói quá nhiều đại từ</span>
+      <p>Có những người thích nói rất nhiều, nói mà không nghĩ. Bà O’Fidget đúng là một người như thế. Khi ở một mình, bà chẳng có lấy một ý nghĩ; nhưng vừa trông thấy ai quen, bà liền bắt đầu nói nhanh hết mức có thể.</p>
+      <p>Một ngày nọ, bà đang ngồi trên ghế bập bênh ở hiên trước thì thấy bà O’Hara đi ngang qua. Bà O’Fidget trượt khỏi ghế nhanh như một con lươn, chạy xuống bậc thềm ra vỉa hè, vừa kịp chặn chuyến đi của bà O’Hara bằng vài lời.</p>
+      <p>Bà O’Hara buộc phải đứng nghe, lúc thì đứng trên chân này, lúc thì đổi sang chân kia. Lưng bà bắt đầu đau, đầu bà choáng, mí mắt nặng trĩu, vì bà không hiểu bà O’Fidget đang nói gì. Một phần câu chuyện của bà O’Fidget đại khái như thế này:</p>
+      <p>“Bà có biết ông Moriarty bị gãy chân sáng nay khi đi xuống bậc thềm nhà anh trai ông ấy không? Ông ấy đang ngồi trên hiên, và khi ông ấy ngã xuống bậc thềm, ông ấy chạy theo ông ấy, rồi ông ấy nói ông ấy chưa từng biết ai ngã xuống những bậc thềm đó trước đây. Thế là ông ấy đưa ông ấy lên hiên. Tôi có thể nghe tiếng rên lớn của ông ấy. Vợ ông ấy thậm chí không có nhà. Bà ấy đang ở nhà bà Murphy, nên bà ấy chẳng biết gì. Đúng lúc bà ấy đang hỏi bà ấy mọi chuyện về đám cưới của con gái bà ấy, chuông cửa reo và...”</p>
+      <p>Điều gì làm câu chuyện khó hiểu? Có quá nhiều đại từ. Muốn câu rõ hơn, phải dùng tên người thường xuyên hơn. Trong đời sống, ta hay nghe những người nói không rõ vì họ không cho người nghe biết đại từ đang chỉ ai. Quá nhiều đại từ sẽ phá nghĩa. Mỗi đại từ cần quy chiếu rõ về một danh từ, có thể là tên một người.</p>
+    </div>
+    <h3>Tính từ và tâm trạng</h3>
+    <p>Hai người cùng nhìn hoàng hôn nhưng viết hai đoạn khác nhau: người buồn thấy mặt trời mệt mỏi, sóng bất an, gió than; người vui thấy mặt trời rộn rã, sóng nhảy múa, gió ca hát. Tính từ không chỉ mô tả sự vật mà còn hé lộ tâm trạng người viết.</p>
+    <div class="story">
+      <span class="label">Bản dịch đầy đủ đoạn kể: Hai người ngắm hoàng hôn</span>
+      <p>Một lần nọ, có hai người đàn ông đứng cạnh nhau bên bờ đại dương để ngắm hoàng hôn. Dù là bạn tốt, họ rất khác nhau. Một người cao và gầy, đôi mắt buồn tối, đôi bàn tay thon. Người kia thấp và đẫy đà, đôi mắt xanh lấp lánh và đôi má hồng hào. Sau khi mặt trời lặn, họ chia tay, mỗi người về nhà. Hoàng hôn đẹp đến nỗi cả hai đều muốn viết điều gì đó về nó.</p>
+      <p>Người thứ nhất viết:</p>
+      <p class="quote">“Mặt trời mệt mỏi lặn xuống sau những con sóng bất an. Một cơn gió than vãn thổi qua bãi cát trống trải và quanh những vách đá cô độc. Bầu trời rỗng không tối lại khi đêm buồn kéo đến. Từng vì sao lẻ loi xuất hiện, rải xuống thứ ánh sáng yếu ớt của mình.”</p>
+      <p>Người thứ hai viết:</p>
+      <p class="quote">“Mặt trời vui tươi lặn xuống sau những con sóng nhảy múa. Một cơn gió ca hát thổi qua bãi cát vàng và quanh những vách đá vững chãi. Bầu trời sáng rỡ tối lại khi đêm bình yên kéo đến. Từng vì sao thân thiện xuất hiện, rải xuống thứ ánh sáng vui vẻ của mình.”</p>
+      <p>Hai đoạn có vẻ như tả hai hoàng hôn khác nhau, nhưng thật ra chúng cho thấy tâm trạng khác nhau của hai người viết. Chính các tính từ đã làm nên sự khác biệt ấy.</p>
+    </div>
+    <h3>So sánh tính từ và từ tạo hình ảnh</h3>
+    <p>Trẻ học ba cấp: positive, comparative, superlative. Các nhóm quy tắc gồm thêm -er/-est, dùng more/most, đổi y thành i, dạng bất quy tắc như good-better-best, và nhân đôi phụ âm cuối trong một số từ.</p>
+    <p>Trẻ cũng học thay từ sáo mòn như good, nice, great, beautiful, very bằng từ chính xác, gợi hình hơn. Từ tốt không chỉ đúng nghĩa mà còn làm người đọc thấy, nghe, nếm, ngửi hoặc cảm được điều đang nói.</p>
+    <h3>Miêu tả bằng so sánh</h3>
+    <p>Một cây táo già có thể giống người thợ già, hoa táo như bé gái mặc hồng trắng, ngôi nhà cũ như bà cụ ngồi nhìn đời. Có ba mức: miêu tả trực tiếp, so sánh bằng “như”, và ẩn dụ biến sự vật thành hình ảnh sống. So sánh đúng làm bài viết có linh hồn.</p>
+    <h3>Ước muốn, kinh ngạc, ngạc nhiên</h3>
+    <p>Lớp 7 học cách diễn tả các tâm trạng sâu: ước muốn, sự kỳ diệu, bất ngờ. Khi diễn tả ước muốn lớn như hòa bình, lương thực cho người đói, tình huynh đệ, câu “Tôi ước...” có thể quá cái tôi. Các cấu trúc như “Ước gì”, “Xin hãy”, “Mong sao”, “Nếu chỉ...” tạo sắc thái khiêm nhường hơn.</p>
+    <p>Từ đó đi vào thức của động từ: indicative (trần thuật), imperative (mệnh lệnh), subjunctive (giả định/cầu chúc). Ví dụ: “Spring comes”, “Come, Spring”, “May Spring come”.</p>
+    <div class="story">
+      <span class="label">Bản dịch chi tiết các chuyện ngắn về sự ngạc nhiên</span>
+      <h4>Điều bất ngờ với con chim bị thương</h4>
+      <p>Một học sinh viết: “Đột nhiên, ở khóe mắt, tôi thấy một con chim. Nó đậu trên lan can cầu thang, cách tôi chưa đầy hai bàn chân. Điều lạ nhất là nó không bay đi. Nó chỉ ngồi đó. Nó cũng nhìn tôi, rất cẩn thận.</p>
+      <p>Rõ ràng con chim bị thương, nên tôi đi vào trong để hỏi xem liệu tôi có thể mang nó vào không. Khi tôi quay lại, nó ngẩng lên như thể nhận ra tôi. Tôi bước một bước về phía nó thì, các bạn nghĩ sao, nó bay khỏi lan can xuống vỉa hè! Nó quay lại nhìn tôi bằng vẻ rất bị tổn thương, rồi thong thả đi giữa những người qua đường.</p>
+      <p>Thôi nhé, đừng nghĩ các bạn còn bắt gặp tôi xen vào chuyện của một con chim lần nữa!”</p>
+      <h4>Câu chuyện bữa sáng ở Nhà Trắng</h4>
+      <p>Một vị khách ăn sáng tại Nhà Trắng dưới thời Tổng thống Coolidge vô cùng ngạc nhiên khi thấy Tổng thống rót đồ uống từ tách ra đĩa lót. Không muốn thua kém, vị khách cũng làm theo.</p>
+      <p>Tổng thống cho kem và đường vào chiếc đĩa, rồi dùng thìa nếm hỗn hợp. Vị khách vừa định làm y như vậy thì ông Coolidge đặt chiếc đĩa xuống sàn cho chó.</p>
+      <p>Những chuyện ngắn kiểu này thường dẫn tới một kết thúc bất ngờ. Cách viết tốt là giữ lại những chi tiết cần thiết, để sự ngạc nhiên bật ra ở cuối.</p>
+    </div>
+    <h3>Bài điểm sách</h3>
+    <p>Lớp 7 nên giới thiệu bối cảnh, thời kỳ, nhân vật chính, một thử thách kiểm nghiệm tính cách, tóm tắt cốt truyện, cách tác giả tạo hồi hộp, lý do chọn sách và phần gây hứng thú nhất. Lớp 8 tiến thêm: không tiết lộ kết thúc khi cần giữ hứng thú, bình luận điều tác giả muốn làm rõ qua nhân vật, phân tích hành động của nhân vật ở điểm cao trào.</p>
+    <div class="summary">
+      <span class="label">Tóm tắt chương</span>
+      <p>Lớp 7 đưa ngôn ngữ vào phong cách và nội tâm: dùng trạng từ chính xác, nhận từ loại theo ngữ cảnh, dùng đại từ rõ, chọn tính từ theo tâm trạng, làm giàu từ vựng gợi hình, diễn tả ước muốn và kinh ngạc bằng câu có sắc thái.</p>
+    </div>
+    <div class="teacher">
+      <span class="label">Hướng dẫn giáo viên sử dụng</span>
+      <ul>
+        <li>Khi sửa văn, không chỉ sửa đúng/sai; hỏi từ nào làm rõ sự kiện, từ nào bộc lộ tâm trạng.</li>
+        <li>Tạo bảng “từ bị dùng quá nhiều” và cùng lớp thay bằng từ gợi hình hơn.</li>
+        <li>Với đại từ, yêu cầu trẻ gạch mũi tên từ đại từ về danh từ mà nó thay thế.</li>
+        <li>Bài điểm sách cần tránh kể lại toàn bộ; trọng tâm là nhân vật, cao trào, lựa chọn và nhận định riêng.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="chuong-10">
+    <h2>10. Lớp 8: Lời nói, âm thanh, ý nghĩa và tổng kết ngữ pháp</h2>
+    <p>Lớp 8 nhìn ngôn ngữ trong chiều dài văn hóa và tinh thần. Trước chữ viết là lời nói; trong thời cổ, lời nói gần với hát hơn nói thường. Con người xưa không chỉ chú ý nghĩa của từ mà còn cảm hiểu từ qua âm thanh như nghe nhạc. Thơ và ca hát còn giữ ký ức về thời lời nói có nhạc tính linh thiêng.</p>
+    <h3>Lời nói trong các nền văn hóa</h3>
+    <p>Người Ấn cổ hướng về thế giới thiêng bên trong, gọi Thượng đế là “Người yêu dấu”. Người Ba Tư cảm nhận đất mạnh hơn: nhà cửa, gia súc, lửa, ruộng khô được tưới, ruộng ướt được tháo nước. Thánh vịnh Do Thái nghe thấy tạo vật “nói” vinh quang của Thiên Chúa. Ai Cập thấy thế giới vật chất như chữ viết của thần linh. Hy Lạp cảm nhận thần linh trong vẻ đẹp sáng của thế giới. La Mã chinh phục đất nhưng đánh mất trời; thơ Lucretius diễn tả mọi vật trôi qua, không gì bền giữ.</p>
+    <p>Qua các đoạn văn ấy, học sinh thấy ngôn ngữ không chỉ truyền thông tin; nó mang cách con người từng nhìn trời, đất, thần linh, cái chết, sự sống và chính mình.</p>
+    <div class="story">
+      <span class="label">Bản dịch chi tiết đoạn thần thoại: Orpheus kể về Dionysos</span>
+      <p>Với người Hy Lạp, thế giới sáng sủa và đẹp đẽ. Họ cũng cảm thấy sự hiện diện của các vị thần, nhưng như thể các vị thần đã chết vào trong trái đất. Vì thế Orpheus, nhạc sĩ xứ Thrace, người có thể ru ngủ thú hoang và làm cây cối chuyển động bằng âm nhạc, đã hát về Dionysos, con trai của Zeus.</p>
+      <p>Zeus là Đấng tạo dựng hùng mạnh. Dionysos là con của Zeus, là lời đã được biểu hiện của Người. Dionysos, tinh thần rực rỡ, trí tuệ sống động, là vẻ huy hoàng trong nơi ở của cha mình.</p>
+      <p>Một ngày kia, khi cúi xuống chiêm ngưỡng vực thẳm của bầu trời và các chòm sao, Dionysos thấy hình ảnh của chính mình phản chiếu trong chiều sâu xanh thẳm, với đôi tay dang rộng. Say mê bóng dáng đẹp đẽ ấy, cái bóng đôi của chính mình, chàng lao xuống để nắm lấy. Nhưng hình ảnh ấy luôn thoát khỏi chàng, kéo chàng xuống tận đáy vực.</p>
+      <p>Cuối cùng, chàng thấy mình ở trong một thung lũng rợp bóng, thơm ngát, tận hưởng những làn gió dịu dàng vuốt ve thân thể. Sâu trong một hang động, chàng thấy Persephone. Maia, người thợ dệt xinh đẹp, đang dệt một tấm màn; trên mặt tấm màn ấy trôi nổi hình ảnh của mọi sinh linh. Câm lặng vì say mê, chàng đứng trước trinh nữ thiêng liêng.</p>
+      <p>Đúng lúc đó, các Titan kiêu hãnh và các Titanide tự do nhìn thấy chàng. Các Titan thì ghen tị với vẻ đẹp của chàng; các Titanide thì bị một đam mê cuồng dại thúc đẩy. Họ lao vào chàng như những nguyên tố nổi giận và xé chàng thành từng mảnh.</p>
+      <p>Sấm sét của Jupiter tiêu diệt các Titan, còn Minerva mang trái tim của Dionysos lên vùng ether; nơi đó, trái tim trở thành một mặt trời rực sáng. Từ khói thân thể chàng, linh hồn loài người sinh ra và lại đi lên trời. Khi những bóng hình nhợt nhạt hợp nhất trở lại quanh trái tim bừng cháy của vị thần, họ sẽ bốc lên như những ngọn lửa, và Dionysos toàn vẹn sẽ sống lại mãi mãi trên những tầng cao của Empyreum.</p>
+      <p>Đó là mầu nhiệm về cái chết của Dionysos. Còn đây là mầu nhiệm về sự phục sinh của chàng: con người là thịt và máu của Dionysos; những người bất hạnh là các phần thân thể bị phân tán của chàng, đang tìm cách đoàn tụ qua đau khổ, tội lỗi và thù hận trong hàng nghìn kiếp sống. Nhưng chúng ta, những người được khai tâm, biết điều ở trên và điều ở dưới, là những người cứu giúp linh hồn. Như nam châm, chúng ta hút các linh hồn về phía mình, trong khi chính chúng ta được các vị thần hút lên. Nhờ những lời ca thiêng liêng, chúng ta tái tạo thân thể sống động của Thần linh. Trong chúng ta, Thần chết đi; trong chúng ta, Người cũng tái sinh.</p>
+      <p>Đoạn này được dùng trong sách để cho học sinh lớp 8 thấy ngôn ngữ, thần thoại, âm nhạc và cảm quan tinh thần từng gắn bó với nhau như thế nào.</p>
+    </div>
+    <h3>Runes, rags và quyền năng của âm</h3>
+    <p>Các rag Ấn Độ là lời-hát linh thiêng, gắn với mùa, thời điểm, mục đích; âm điệu cũng có nghĩa như lời. Rune Bắc Âu nghĩa là “bí mật”, là âm, chữ và dấu hiệu được xem có quyền năng. Dù ngày nay ta không dạy trẻ tin vào ma thuật chữ, giáo viên có thể giúp trẻ nhận ra lời nói vẫn có sức mạnh: lời thô làm tổn thương, lời đẹp nâng con người tới hành động tốt.</p>
+    <h3>Âm thanh và nghĩa trong từ</h3>
+    <p>Hai đoạn tả bão có thể khác nhau hoàn toàn. Đoạn khô chỉ nói thông tin; đoạn sống khiến ta nghe sấm, thấy mây đen, cảm gió và nước nhờ âm thanh trong từ. Nhiều từ nghe gần với nghĩa: tap, drip, roll, wiggle, whisper, rustle, roar, crackle, splash.</p>
+    <p>Nguyên âm bộc lộ cảm xúc: Oh, Ah, Oo, Ee, Aye. Khi đi vào từ, chúng mang sắc thái người. Phụ âm thường không đứng một mình; chúng thì thầm và chờ nguyên âm lấp đầy. Phụ âm tạo hình cho nguyên âm như nhạc cụ tạo hình cho âm thanh. Môi, răng, lưỡi, họng đều tham gia.</p>
+    <p>Một số liên hệ được gợi ý: F với lửa, H với khí, L với nước, G với đất. Nguyên âm mở ra đời sống bên trong; phụ âm mang quyền năng tạo hình của thiên nhiên. Trong lời nói, con người và thế giới gặp nhau.</p>
+    <h3>Từ loại và bản chất người</h3>
+    <p>Động vật có chuyển động, cảm xúc, chăm con, săn mồi, chơi đùa, nhưng không gọi tên. Nếu tưởng tượng động vật dùng lời, chúng có thể gần với động từ, tính từ, trạng từ: chạy, bò, vồ; ngon, nguy hiểm; nhanh, lặng, đói. Nhưng danh từ đòi hỏi năng lực ý thức: thấy, tách ra, gọi tên, hiểu điều đứng sau tên gọi.</p>
+    <p>Bốn từ loại chính phản chiếu con người: động từ cho hành động, tính từ cho cảm xúc, trạng từ cho cách hành động, danh từ cho tư duy và tri thức. Vì vậy mọi ngôn ngữ đều cần danh từ, động từ, tính từ, trạng từ; chúng diễn tả con người toàn vẹn.</p>
+    <h3>Tổng kết ngữ pháp</h3>
+    <p>Học ngữ pháp giống đi qua một công trình sống. Ngôn ngữ có cấu trúc vững, nhưng không cứng như thép; nó như được điêu khắc bởi tư tưởng, cảm xúc và hành động của con người. Âm thanh nảy sinh từ cảm nhận thế giới; từ loại nảy sinh từ suy nghĩ, việc làm, cảm xúc; cụm từ và mệnh đề cho phép lồng, nối, tách và sắp xếp ý; biến đổi hình thái cho ngôn ngữ linh hoạt trong thời, thể, ngôi, số, mức độ.</p>
+    <p>Khi hiểu ngữ pháp, trẻ không chỉ viết đúng hơn mà còn sáng rõ hơn trong tư duy.</p>
+    <div class="summary">
+      <span class="label">Tóm tắt chương</span>
+      <p>Lớp 8 tổng kết ngữ pháp như một khoa học nhân văn: lời nói có lịch sử thiêng liêng, âm thanh có sức tạo hình, nguyên âm-phụ âm nối người với thế giới, từ loại phản chiếu tư duy-cảm xúc-ý chí, và ngữ pháp làm tư duy sáng rõ.</p>
+    </div>
+    <div class="teacher">
+      <span class="label">Hướng dẫn giáo viên sử dụng</span>
+      <ul>
+        <li>Đọc các đoạn văn/thơ như trải nghiệm âm thanh trước, sau đó mới hỏi về nghĩa.</li>
+        <li>Cho học sinh lập sổ từ nghe như nghĩa của nó: tiếng nước, lửa, gió, va chạm, chuyển động.</li>
+        <li>Khi ôn từ loại, liên hệ với con người: đầu gọi tên, tay chân hành động, trái tim cảm nhận, cách làm được trạng từ làm rõ.</li>
+        <li>Kết thúc block ngữ pháp bằng bài viết phản tư: “Ngữ pháp giúp em nghĩ rõ hơn như thế nào?”</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="chuong-11">
+    <h2>11. Bài luyện phát âm và lời nói</h2>
+    <p>Phần cuối sách là các bài luyện nói theo lớp. Mục tiêu không chỉ là phát âm chuẩn, mà là làm miệng, hơi thở, nhịp, âm và hình ảnh trở nên sống động.</p>
+    <h3>Lớp 1</h3>
+    <p>Các câu ngắn theo vai: người khổng lồ lầm bầm làm đất rung, phù thủy rít với mèo đen, vua cầm luật trong tay, hiệp sĩ chiến đấu, chú lùn đào đất tìm vàng, hoàng hậu áo bạc, nàng tiên bay trong không khí, tinh linh thì thầm và nhảy. Trẻ nói bằng hình ảnh và thân thể.</p>
+    <h3>Lớp 1-4</h3>
+    <p>Chuỗi luyện âm tập trung vào phụ âm và nhịp: R trong “round the rough and rugged rock”, TH trong “Theophilus Thistle”, P trong “Peter Piper”, W trong “woodchuck”, M trong “munching mouse”, N trong “Nid nod Nanny goat”, G/D trong tiếng cồng, S/SH trong “sea-shells”.</p>
+    <p>Giáo viên nên chọn bài theo nhu cầu lớp: âm nào trẻ nuốt, âm nào nói cứng, âm nào thiếu hơi, nhịp nào làm lớp thức tỉnh hoặc dịu xuống.</p>
+    <h3>Lớp 5-8</h3>
+    <p>Các lớp lớn có thể luyện bài dài hơn, giàu nhịp, âm điệu và chuyển sắc. Trọng tâm là rõ chữ, hơi thở đều, âm cuối không rơi mất, câu có điểm nhấn, và người nói đứng vững trong nội dung.</p>
+    <div class="summary">
+      <span class="label">Tóm tắt chương</span>
+      <p>Luyện nói trong Waldorf là luyện thân thể lời nói: hơi thở, môi, lưỡi, răng, nhịp, hình ảnh, tư thế. Bài luyện âm nên được chọn như thuốc đúng liều cho nhu cầu của lớp.</p>
+    </div>
+    <div class="teacher">
+      <span class="label">Hướng dẫn giáo viên sử dụng</span>
+      <ul>
+        <li>Luyện ngắn mỗi ngày 3-7 phút, đều hơn là thỉnh thoảng luyện dài.</li>
+        <li>Bắt đầu bằng giáo viên đọc mẫu rõ, đẹp, có nhịp; học sinh lặp lại theo nhóm rồi cá nhân.</li>
+        <li>Luôn đứng thẳng, thở tự nhiên, mắt sáng; không luyện khi trẻ đang căng hoặc bị chê cười.</li>
+        <li>Ghi chú âm khó của lớp và quay lại sau một tuần để nghe tiến bộ.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="phu-luc">
+    <h2>Phụ lục triển khai cho giáo viên</h2>
+    <h3>Nhịp một bài ngữ pháp Waldorf</h3>
+    <ol>
+      <li>Mở bằng hình ảnh: chuyện kể, tranh bảng, câu đố, trò chơi hoặc vận động.</li>
+      <li>Cho trẻ trải nghiệm bằng thân thể: nói, đi, diễn, nghe, tô màu, sắp xếp.</li>
+      <li>Rút ra nhận xét bằng câu hỏi nhẹ: “Con thấy từ nào gọi tên? Từ nào làm việc?”</li>
+      <li>Đặt tên khái niệm sau cùng: noun, verb, adjective, adverb...</li>
+      <li>Viết vào vở bằng câu đẹp, màu nhất quán, ví dụ ngắn.</li>
+      <li>Ngày sau quay lại quy tắc và để trẻ tự tạo ví dụ.</li>
+    </ol>
+    <h3>Checklist trước giờ dạy</h3>
+    <ul>
+      <li>Tôi biết mục tiêu phát triển của bài: tư duy, cảm xúc, ý chí, lời nói hay viết.</li>
+      <li>Tôi có hình ảnh mở bài đủ sống động, không chỉ định nghĩa.</li>
+      <li>Tôi chuẩn bị bảng màu/từ khóa/câu mẫu rõ ràng.</li>
+      <li>Trẻ có phần được nói, diễn, nghe, viết hoặc quan sát thật.</li>
+      <li>Tôi có một bài tập ngắn để trẻ tự vận dụng ngay.</li>
+    </ul>
+    <h3>Checklist trong giờ dạy</h3>
+    <ul>
+      <li>Trẻ tham gia bằng giọng nói và thân thể, không chỉ chép.</li>
+      <li>Quy tắc xuất hiện sau ví dụ.</li>
+      <li>Câu hỏi của giáo viên mở, ngắn, không hỏi dồn.</li>
+      <li>Lỗi của trẻ được dùng như dữ liệu để làm rõ bài học.</li>
+      <li>Vở ghi sạch, ít nhưng có chất lượng.</li>
+    </ul>
+    <h3>Checklist sau giờ dạy</h3>
+    <ul>
+      <li>Trẻ có thể nêu một ví dụ của riêng mình.</li>
+      <li>Trẻ dùng đúng khái niệm trong câu mới, không chỉ nhắc lại định nghĩa.</li>
+      <li>Tôi ghi nhận trẻ nào cần hỗ trợ về âm, chữ, câu hoặc trật tự tư duy.</li>
+      <li>Bài hôm sau có điểm nối lại: kể lại, đọc lại, tự tìm ví dụ hoặc sửa câu.</li>
+    </ul>
+    <h3>Tiêu chuẩn hoàn thành tài liệu</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Tiêu chuẩn</th>
+          <th>Đạt khi</th>
+          <th>Cần chỉnh khi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Đúng tinh thần Waldorf</td>
+          <td>Bài học đi từ hình ảnh, nhịp, vận động, trải nghiệm tới khái niệm.</td>
+          <td>Giờ học bắt đầu bằng định nghĩa và bài tập máy móc.</td>
+        </tr>
+        <tr>
+          <td>Vừa sức theo tuổi</td>
+          <td>Lớp nhỏ dùng tên thân thiện; lớp lớn dùng thuật ngữ và phân tích sâu hơn.</td>
+          <td>Đưa cú pháp trừu tượng quá sớm hoặc giữ lớp lớn ở mức quá đơn giản.</td>
+        </tr>
+        <tr>
+          <td>Ngôn ngữ sống</td>
+          <td>Trẻ nghe, nói, đọc, viết bằng câu có hình ảnh và nhịp.</td>
+          <td>Trẻ chỉ chép bảng, không có trải nghiệm lời nói.</td>
+        </tr>
+        <tr>
+          <td>Quan sát được</td>
+          <td>Giáo viên thấy trẻ dùng được khái niệm trong câu mới.</td>
+          <td>Trẻ thuộc định nghĩa nhưng không nhận ra trong văn bản.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+</body>
+</html>
